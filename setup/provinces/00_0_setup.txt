@@ -18131,23 +18131,29 @@
 }
 
 12768={ #PROV12768
-   terrain=""
-   culture="0"
-   religion="0"
-   trade_goods="0"
+   terrain="hills"
+   culture="chisima_ainu"
+   religion="kamuy"
+   trade_goods="whales"
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
+   tribesmen={
+      amount=1
+   }
 }
 
 12767={ #PROV12767
-   terrain=""
-   culture="0"
-   religion="0"
-   trade_goods="0"
+   terrain="hills"
+   culture="chisima_ainu"
+   religion="kamuy"
+   trade_goods="whales"
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
+   tribesmen={
+      amount=1
+   }
 }
 
 12766={ #PROV12766
@@ -18171,13 +18177,16 @@
 }
 
 12764={ #PROV12764
-   terrain=""
-   culture="0"
-   religion="0"
-   trade_goods="0"
-   civilization_value=0
+   terrain="plains"
+   culture="japanese"
+   religion="mahayana"
+   trade_goods="iron"
+   civilization_value=10
    barbarian_power=0
    province_rank="settlement"
+   lower_strata={
+      amount=1
+   }
 }
 
 12763={ #Atlantic
@@ -18191,10 +18200,10 @@
 }
 
 12762={ #PROV12762
-   terrain=""
-   culture="0"
-   religion="0"
-   trade_goods="0"
+   terrain="forest"
+   culture="karafuto_ainu"
+   religion="kamuy"
+   trade_goods="wood"
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
@@ -18221,20 +18230,20 @@
 }
 
 12759={ #PROV12759
-   terrain=""
-   culture="0"
-   religion="0"
-   trade_goods="0"
+   terrain="low_mountain"
+   culture="itelmen"
+   religion="siberian_shamanism"
+   trade_goods="wool"
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
 }
 
 12758={ #PROV12758
-   terrain=""
-   culture="0"
-   religion="0"
-   trade_goods="0"
+   terrain="low_mountain"
+   culture="itelmen"
+   religion="siberian_shamanism"
+   trade_goods="wool"
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
@@ -18531,13 +18540,16 @@
 }
 
 12751={ #PROV12751
-   terrain=""
-   culture="0"
-   religion="0"
-   trade_goods="0"
+   terrain="boreal_forest"
+   culture="itelmen"
+   religion="siberian_shamanism"
+   trade_goods="whales"
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
+   tribesmen={
+      amount=1
+   }
 }
 
 12725={ #PROV12725
@@ -18571,10 +18583,10 @@
 }
 
 12722={ #PROV12722
-   terrain=""
-   culture="0"
-   religion="0"
-   trade_goods="0"
+   terrain="extreme_mountain"
+   culture="itelmen"
+   religion="siberian_shamanism"
+   trade_goods="whales"
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
@@ -20971,23 +20983,26 @@
 }
 
 12660={ #PROV12660
-   terrain=""
-   culture="0"
-   religion="0"
-   trade_goods="0"
+   terrain="extreme_mountain"
+   culture="itelmen"
+   religion="siberian_shamanism"
+   trade_goods="whales"
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
 }
 
 12659={ #PROV12659
-   terrain=""
-   culture="0"
-   religion="0"
-   trade_goods="0"
+   terrain="low_mountain"
+   culture="itelmen"
+   religion="siberian_shamanism"
+   trade_goods="whales"
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
+   tribesmen={
+      amount=1
+   }
 }
 
 4770={ #Pacific
@@ -21101,20 +21116,20 @@
 }
 
 12694={ #PROV12694
-   terrain=""
-   culture="0"
-   religion="0"
-   trade_goods="0"
+   terrain="extreme_mountain"
+   culture="itelmen"
+   religion="siberian_shamanism"
+   trade_goods="whales"
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
 }
 
 12693={ #PROV12693
-   terrain=""
-   culture="0"
-   religion="0"
-   trade_goods="0"
+   terrain="extreme_mountain"
+   culture="itelmen"
+   religion="siberian_shamanism"
+   trade_goods="whales"
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
@@ -21131,10 +21146,10 @@
 }
 
 12692={ #PROV12692
-   terrain=""
-   culture="0"
-   religion="0"
-   trade_goods="0"
+   terrain="extreme_mountain"
+   culture="itelmen"
+   religion="siberian_shamanism"
+   trade_goods="whales"
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"

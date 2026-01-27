@@ -6,6 +6,9 @@
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
+   tribesmen={
+      amount=1
+   }
 }
 
 4300={ #McCarthy
@@ -16,6 +19,9 @@
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
+   tribesmen={
+      amount=1
+   }
 }
 
 9937={ #Fairbanks
@@ -36,6 +42,9 @@
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
+   tribesmen={
+      amount=1
+   }
 }
 
 3688={ #Unimak
@@ -46,6 +55,9 @@
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
+   tribesmen={
+      amount=1
+   }
 }
 
 3014={
@@ -69,6 +81,9 @@
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
+   tribesmen={
+      amount=1
+   }
 }
 
 5602={ #Nome
@@ -79,6 +94,9 @@
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
+   tribesmen={
+      amount=1
+   }
 }
 
 6227={ #Bethel
@@ -89,6 +107,9 @@
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
+   tribesmen={
+      amount=1
+   }
 }
 
 2477={ #Kodiak
@@ -99,6 +120,9 @@
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
+   tribesmen={
+      amount=1
+   }
 }
 
 1858={ #Yakutak
@@ -109,6 +133,9 @@
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
+   tribesmen={
+      amount=1
+   }
 }
 
 4984={ #Katmai
@@ -119,6 +146,9 @@
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
+   tribesmen={
+      amount=1
+   }
 }
 
 5503={ #Unalaska
@@ -129,6 +159,9 @@
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
+   tribesmen={
+      amount=1
+   }
 }
 
 5000={ #Nondalton
@@ -139,6 +172,9 @@
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
+   tribesmen={
+      amount=1
+   }
 }
 
 8989={ #Andreanoff
@@ -149,6 +185,9 @@
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
+   tribesmen={
+      amount=1
+   }
 }
 
 12259={
@@ -159,6 +198,9 @@
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
+   tribesmen={
+      amount=1
+   }
 }
 
 12259={
@@ -169,6 +211,9 @@
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
+   tribesmen={
+      amount=1
+   }
 }
 
 12337={
@@ -179,6 +224,9 @@
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
+   tribesmen={
+      amount=1
+   }
 }
 
 12593={
@@ -189,6 +237,9 @@
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
+   tribesmen={
+      amount=1
+   }
 }
 
 12408={
@@ -209,6 +260,9 @@
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
+   tribesmen={
+      amount=1
+   }
 }
 
 12339={
@@ -229,16 +283,9 @@
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
-}
-
-12591={
-   terrain="tundra"
-   culture="inupiat"
-   religion="inuit"
-   trade_goods="fur"
-   civilization_value=0
-   barbarian_power=0
-   province_rank="settlement"
+   tribesmen={
+      amount=1
+   }
 }
 
 12591={
@@ -269,6 +316,9 @@
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
+   tribesmen={
+      amount=1
+   }
 }
 
 12601={
@@ -279,6 +329,9 @@
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
+   tribesmen={
+      amount=1
+   }
 }
 
 12605={
@@ -299,6 +352,9 @@
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
+   tribesmen={
+      amount=1
+   }
 }
 
 12607={
@@ -309,6 +365,9 @@
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
+   tribesmen={
+      amount=1
+   }
 }
 
 
@@ -339,6 +398,9 @@
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
+   tribesmen={
+      amount=1
+   }
 }
 
 12594={
