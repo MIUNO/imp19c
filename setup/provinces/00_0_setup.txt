@@ -15551,7 +15551,7 @@
 }
 
 10514={ #Atlantic
-   terrain="coastal_terrain"
+   terrain=""
    culture="0"
    religion="0"
    trade_goods="0"
