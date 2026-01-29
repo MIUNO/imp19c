@@ -6958,7 +6958,16 @@ types Base_GUI_Types
 			textbox = {
 				using = BaseFontS
 				using = Default_FontColor
-				text = "[BuildingItem.GetLevel]"
+				block "Level" { text = "[BuildingItem.GetLevel]" }
+				autoresize = yes
+				align = center|nobaseline
+				
+			}
+			textbox = {
+				using = BaseFontS
+				using = Default_FontColor
+				block "VisibleSeparation" { visible = no }
+				text = "/"
 				autoresize = yes
 				align = center|nobaseline
 				
@@ -6967,7 +6976,7 @@ types Base_GUI_Types
 				using = BaseFontS
 				using = Default_FontColor
 				visible = "[BuildingItem.HasQueue]"
-				text = "+[BuildingItem.GetQueueSize]"
+				block "QueueSize" { text = "+[BuildingItem.GetQueueSize]" }
 				autoresize = yes
 				align = center|nobaseline
 				
@@ -6993,7 +7002,7 @@ types Base_GUI_Types
 						layoutpolicy_horizontal = fixed
 						using = BaseFontS
 						using = Highlight_FontColor
-						text = "[BuildingItem.GetBuildCost]"
+						block "Cost" { text = "[BuildingItem.GetBuildCost]" }
 						align = center|nobaseline
 						autoresize = yes
 					}

@@ -934,27 +934,24 @@ types NEW_GUI {
 			flowcontainer = {
 				direction = vertical
 				spacing = 5
+				margin = { 5 5 }
+				using = background_widget
 				panelka_center = {
-					size = { 100% 32 }
+					size = { 132 32 }
 					blockoverride "TextBox" { text = "buildings_ports" }
 					blockoverride "Icon" { texture = "gfx/interface/icons/new_icons/color/ports.dds" }
 				}
-				#tag = {
-				#	parentanchor = center
-				#	block "TagText" { text = "Ports" }
-				#}
-				widget = {
-					size = { 132 80 }
-					flowcontainer = {
-						block "PortItems" { }
-					}
+				flowcontainer = {
+					block "PortItems" { }
 				}
 			}
 			flowcontainer = {
 				direction = vertical
 				spacing = 5
+				margin = { 5 5 }
+				using = background_widget
 				panelka_center = {
-					size = { 100% 32 }
+					size = { 132 32 }
 					blockoverride "TextBox" { text = "buildings_education" }
 					blockoverride "Icon" { texture = "gfx/interface/icons/new_icons/color/education.dds" }
 				}
@@ -965,8 +962,10 @@ types NEW_GUI {
 			flowcontainer = {
 				direction = vertical
 				spacing = 5
+				margin = { 5 5 }
+				using = background_widget
 				panelka_center = {
-					size = { 100% 32 }
+					size = { 132 32 }
 					blockoverride "TextBox" { text = "buildings_industrial" }
 					blockoverride "Icon" { texture = "gfx/interface/icons/new_icons/color/industrialisation.dds" }
 				}
@@ -980,8 +979,10 @@ types NEW_GUI {
 			flowcontainer = {
 				direction = vertical
 				spacing = 5
+				margin = { 5 5 }
+				using = background_widget
 				panelka_center = {
-					size = { 100% 32 }
+					size = { 330 32 }
 					blockoverride "TextBox" { text = "buildings_infrastructure" }
 					blockoverride "Icon" { texture = "gfx/interface/icons/new_icons/color/infrastructure.dds" }
 				}
@@ -995,8 +996,10 @@ types NEW_GUI {
 			flowcontainer = {
 				direction = vertical
 				spacing = 5
+				margin = { 5 5 }
+				using = background_widget
 				panelka_center = {
-					size = { 100% 32 }
+					size = { 132 32 }
 					blockoverride "TextBox" { text = "buildings_military" }
 					blockoverride "Icon" { texture = "gfx/interface/icons/new_icons/color/military.dds" }
 				}
@@ -1007,8 +1010,10 @@ types NEW_GUI {
 			flowcontainer = {
 				direction = vertical
 				spacing = 5
+				margin = { 5 5 }
+				using = background_widget
 				panelka_center = {
-					size = { 100% 32 }
+					size = { 264 32 }
 					blockoverride "TextBox" { text = "buildings_urban_districts" }
 					blockoverride "Icon" { texture = "gfx/interface/icons/new_icons/color/urban_districts.dds" }
 				}
@@ -1899,6 +1904,7 @@ types NEW_GUI {
 	type topbar_left_button = widget {
 		size = { 70 @topbar_left_button_height }
 		allow_outside = yes
+		tooltip_parentanchor = bottom|right
 		background = {
 			shaderfile = "gfx/FX/pdxgui_default.shader"
 			using = black_background
@@ -2064,7 +2070,6 @@ types NEW_GUI {
 					block "On_click_Sound" { }
 					block "On_click_additional_1" { }
 					block "Details" { }
-					tooltip_parentanchor = bottom|right
 					button = {
 						gfxtype = buttongfx
 						size = { 50 50 }
@@ -2108,7 +2113,6 @@ types NEW_GUI {
 					block "On_click" { }
 					block "On_click_additional_2" { }
 					block "Details_toggled" { }
-					tooltip_parentanchor = bottom|right
 					button = {
 						gfxtype = buttongfx
 						size = { 50 50 }
@@ -3118,6 +3122,40 @@ types NEW_GUI {
 		icon_button_square = {
 			size = { 30 30 }
 			parentanchor = center
+		}
+	}
+
+	type province_colonization_block = flowcontainer {
+		direction = vertical
+		spacing = 5
+		margin = { 5 5 }
+		using = background_widget
+		panelka_center = {
+			size = { 258 32 }
+		}
+		flowcontainer = {
+			flowcontainer = {
+				parentanchor = vcenter
+				direction = vertical
+				spacing = 5
+				textbox = {
+					using = HeaderFont
+					using = Default_FontColor
+					text = "province_score"
+					size = { 60 30 }
+					align = hcenter|bottom
+					fontsize = 20
+				}
+				textbox = {
+					using = HeaderFont
+					using = Default_FontColor
+					text = "3/9"
+					size = { 60 30 }
+					align = hcenter|top
+					fontsize = 20
+				}
+			}
+			block "Items" { }
 		}
 	}
 }
