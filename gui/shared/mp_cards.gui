@@ -86,11 +86,6 @@ types MP_CARDS {
                                 spriteborder = { 27 27 }
                             }
                             modify_texture = {
-                                texture = "gfx/interface/base_parts/background_pattern.dds"
-                                blend_mode = alphamultiply
-                                spriteType = Corneredtiled
-                            }
-                            modify_texture = {
                                 texture = "gfx/interface/base_parts/demanded_filth.dds"
                                 blend_mode = alphamultiply
                                 spriteType = Corneredtiled

@@ -71,7 +71,7 @@ types economy_types {
 				icon_and_text = {
 					size = { 140 0 }
 					blockoverride "Text" { block "rate_text" { } }
-					blockoverride "Icon" { texture = "[gfx/interface/icons/shared_icons/treasury.dds]" }
+					blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/treasury.dds" }
 					tooltip = "[IncomeItem.GetModifierTooltip]"
 				}
 			}
@@ -138,7 +138,7 @@ types economy_types {
 				icon_and_text = {
 					size = { 140 0 }
 					blockoverride "Text" { block "rate_text" { } }
-					blockoverride "Icon" { texture = "[gfx/interface/icons/shared_icons/treasury.dds]" }
+					blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/treasury.dds" }
 					tooltip = "[IncomeItem.GetModifierTooltip]"
 				}
 			}

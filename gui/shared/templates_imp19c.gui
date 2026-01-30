@@ -445,7 +445,7 @@ type PeaceNegotiationBlock = scrollarea {
 															blockoverride "FlagOverlord" {
 																datacontext = "[Scope.GetProvince.MakeScope.GetVariable('PEACE_requested_by').GetCountry]"
 																texture = "[Country.GetOverlord.AccessCoatOfArms.GetTexture('(int32)32','(int32)32')]"
-																frame = "[Countryr.GetOverlord.AccessCoatOfArms.GetFrame('(int32)32','(int32)32')]"
+																frame = "[Country.GetOverlord.AccessCoatOfArms.GetFrame('(int32)32','(int32)32')]"
 																framesize = { 32 32 }
 															}
 														}

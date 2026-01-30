@@ -1668,7 +1668,6 @@ window = {
 						}
 					}
 					widget = {
-						spacing = 2
 						margin_widget = {
 							size = { 100% 2 }
 							position = { 1 45 }
@@ -2033,7 +2032,8 @@ window = {
 									tooltip = "Imports: #R [ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('order_size_sulphur').GetValue|0] #!Exports: #G [ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('amount_exported_sulphur').GetValue|0]"
 								}
 								blockoverride "Shortage" {
-									visible "= [ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('IsSet)"]
+									#visible = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('IsSet)"]"
+									visible = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('shortage_sulphur').IsSet]"
 									text = "#R [ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('shortage_sulphur').GetValue0|%]"
 								}
 							}

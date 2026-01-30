@@ -160,7 +160,7 @@ template header_l
 template header_secondary_pattern
 {
 	#texture = "gfx/interface/base_parts/header_s_pattern_no_lines_x104bd_right_cut.dds"
-	texture = "gfx/interface/base_parts/header_s_pattern_x104bd_right_cut2.dds"
+	texture = "gfx/interface/base_parts/header_s_pattern_x104bd_right_cut3.dds"
 }
 
 template scroll_area_icon_t
@@ -534,6 +534,7 @@ template black_background
 {
 	texture = "gfx/interface/base_parts/base_color.dds"
 	color = { 0.004 0.051 0.051 1 } #Pacific Darken #010d0d
+	#color = { 0.082 0.125 0.114 1 } #Pacific Darken #15201D
 }
 template white_background
 {
@@ -1344,7 +1345,7 @@ types Base_GUI_Types
 				margin_left = -2
 				margin_right = -5
 				modify_texture = {
-					texture = "gfx/interface/base_parts/header_s_pattern_x104bd_right_cut2.dds"
+					texture = "gfx/interface/base_parts/header_s_pattern_x104bd_right_cut3.dds"
 					blend_mode = alphamultiply
 					spriteType = Corneredtiled
 				}
@@ -1840,7 +1841,7 @@ types Base_GUI_Types
 	#				using = header_ornament
 	#				using = top_bar_alpha_x120bd_full
 	#				modify_texture = {
-	#					texture = "gfx/interface/base_parts/header_s_pattern_x104bd_right_cut2.dds"
+	#					texture = "gfx/interface/base_parts/header_s_pattern_x104bd_right_cut3.dds"
 	#					blend_mode = alphamultiply
 	#					spriteType = Corneredtiled
 	#				}
@@ -6656,7 +6657,6 @@ types Base_GUI_Types
 			alpha = 0.5
 		}
 		widget = {
-			using = beige_background
 			size = { 100% 100% }
 			alpha = 0.5
 			background = {

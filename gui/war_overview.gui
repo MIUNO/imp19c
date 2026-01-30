@@ -715,7 +715,7 @@ widget = {
 						blockoverride "FlagOverlord" {
 							datacontext = "[WarOverview.GetWar.GetDefenderWarLeader]"
 							texture = "[Country.GetOverlord.AccessCoatOfArms.GetTexture('(int32)120','(int32)120')]"
-							frame = "[Countryr.GetOverlord.AccessCoatOfArms.GetFrame('(int32)120','(int32)120')]"
+							frame = "[Country.GetOverlord.AccessCoatOfArms.GetFrame('(int32)120','(int32)120')]"
 							framesize = { 120 120 }
 						}
 						onmousehierarchyenter = "[SetHighlightCountry(WarOverview.GetWar.GetDefenderWarLeader.GetCountry)]"
@@ -829,7 +829,7 @@ widget = {
 										blockoverride "FlagOverlord" {
 											datacontext = "[Scope.Country]"
 											texture = "[Country.GetOverlord.AccessCoatOfArms.GetTexture('(int32)56','(int32)56')]"
-											frame = "[Countryr.GetOverlord.AccessCoatOfArms.GetFrame('(int32)56','(int32)56')]"
+											frame = "[Country.GetOverlord.AccessCoatOfArms.GetFrame('(int32)56','(int32)56')]"
 											framesize = { 56 56 }
 										}
 										onmousehierarchyenter = "[SetHighlightCountry(Scope.GetCountry)]"
@@ -1116,7 +1116,7 @@ widget = {
 										blockoverride "FlagOverlord" {
 											datacontext = "[Scope.Country]"
 											texture = "[Country.GetOverlord.AccessCoatOfArms.GetTexture('(int32)56','(int32)56')]"
-											frame = "[Countryr.GetOverlord.AccessCoatOfArms.GetFrame('(int32)56','(int32)56')]"
+											frame = "[Country.GetOverlord.AccessCoatOfArms.GetFrame('(int32)56','(int32)56')]"
 											framesize = { 56 56 }
 										}
 										onmousehierarchyenter = "[SetHighlightCountry(Scope.GetCountry)]"

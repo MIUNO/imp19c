@@ -1,4 +1,4 @@
-loyalty_poisoner_vindicated = {
+﻿loyalty_poisoner_vindicated = {
 	value = 10
 	yearly_decay = 2
 }

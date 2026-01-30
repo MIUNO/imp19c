@@ -244,6 +244,9 @@ types MultiplayerLobby
 				flowcontainer = {
 					scrollarea = {
 						size = { 412 580 }
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						scrollbarpolicy_horizontal = always_off
 						scrollbar_vertical = {
 							using = VerticalScrollBar
 						}
@@ -1441,15 +1444,15 @@ JominiMultiplayerLobby = {
 
 	blockoverride "host_modify_button" {}
 
-	blockoverride "remove_player_button_style" {
-		texture = "gfx/interface/icons/font_icons/font_icon_electronics_cross.dds"
-		gfxtype = framedbuttongfx
-		effectname = "NoHighlight"
-		framesize = { 16 16 }
-		upframe = 1
-		downframe = 2
-		overframe = 2
-	}
+	#blockoverride "remove_player_button_style" {
+	#	texture = "gfx/interface/icons/font_icons/font_icon_electronics_cross.dds"
+	#	gfxtype = framedbuttongfx
+	#	effectname = "NoHighlight"
+	#	framesize = { 16 16 }
+	#	upframe = 1
+	#	downframe = 2
+	#	overframe = 2
+	#}
 	
 
 	blockoverride "jomini_standard_textbox" {
