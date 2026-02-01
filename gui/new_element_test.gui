@@ -134,6 +134,7 @@ types TEST_ELEMENTS {
 			}
 		}
 		background = {
+			shaderfile = "gfx/FX/pdxgui_default.shader"
 			using = black_background
 		}
 		alwaystransparent = no

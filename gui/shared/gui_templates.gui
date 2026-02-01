@@ -23,13 +23,17 @@ template VerticalScrollBar_Diplomatic
 				effectname = "NoHighlight"
 			
 				background = {
-					texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
 					shaderfile = "gfx/FX/pdxgui_default.shader"
-					spriteType = corneredtiled
-					spriteborder = { 6 6 }
+					using = shadow_background
 					margin_left = 4
 					margin_bottom = 4
 					alpha = 0.5
+					modify_texture = {
+						texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
+						blend_mode = alphamultiply
+						spriteType = corneredtiled
+						spriteborder = { 6 6 }
+					}
 				}
 				
 				background = {
@@ -124,13 +128,16 @@ template red_idea_button
 template background_widget
 {
 	background = {
-		name = "Shadow"
-		texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
 		shaderfile = "gfx/FX/pdxgui_default.shader"
-		spriteType = corneredtiled
-		spriteborder = { 8 8 }
+		using = shadow_background
 		margin = { 4 4 }
 		alpha = 0.5
+		modify_texture = {
+			texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
+			blend_mode = alphamultiply
+			spriteType = corneredtiled
+			spriteborder = { 8 8 }
+		}
 	}
 	background = {
 		shaderfile = "gfx/FX/pdxgui_default.shader"
@@ -170,13 +177,16 @@ template background_widget
 template color_background
 {
 	background = {
-		name = "Shadow"
-		texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
 		shaderfile = "gfx/FX/pdxgui_default.shader"
-		spriteType = corneredtiled
-		spriteborder = { 8 8 }
+		using = shadow_background
 		margin = { 3 3 }
 		alpha = 0.5
+		modify_texture = {
+			texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
+			blend_mode = alphamultiply
+			spriteType = corneredtiled
+			spriteborder = { 8 8 }
+		}
 	}
 	background = {
 		shaderfile = "gfx/FX/pdxgui_default.shader"
@@ -206,13 +216,16 @@ template color_background
 template image_background
 {
 	background = {
-		name = "Shadow"
-		texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
 		shaderfile = "gfx/FX/pdxgui_default.shader"
-		spriteType = corneredtiled
-		spriteborder = { 8 8 }
+		using = shadow_background
 		margin = { 4 4 }
 		alpha = 0.5
+		modify_texture = {
+			texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
+			blend_mode = alphamultiply
+			spriteType = corneredtiled
+			spriteborder = { 8 8 }
+		}
 	}
 	background = {
 		shaderfile = "gfx/FX/pdxgui_default.shader"
@@ -239,8 +252,8 @@ template image_background
 	}
 	background = {
 		shaderfile = "gfx/FX/pdxgui_default.shader"
-		using = portrait_x32y32bd_alpha
 		using = beige_background
+		using = portrait_x32y32bd_alpha
 		alpha = 0.15
 		margin = { -2 -2 }
 		modify_texture = {
@@ -275,16 +288,20 @@ types NEW_GUI {
 	}
 	type panelka_left = widget {
 		background = {
-			texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
 			shaderfile = "gfx/FX/pdxgui_default.shader"
-			spriteType = corneredtiled
-			spriteborder = { 8 8 }
+			using = shadow_background
 			margin = { 4 4 }
 			alpha = 0.25
+			modify_texture = {
+				texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 8 8 }
+			}
 		}
 		background = {
 			shaderfile = "gfx/FX/pdxgui_default.shader"
-			using = black_background
+			using = shadow_background
 			alpha = 0.6
 			margin_right = 50%
 			modify_texture = {
@@ -329,16 +346,20 @@ types NEW_GUI {
 	type panelka_right = widget {
 		parentanchor = right
 		background = {
-			texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
 			shaderfile = "gfx/FX/pdxgui_default.shader"
-			spriteType = corneredtiled
-			spriteborder = { 8 8 }
+			using = shadow_background
 			margin = { 4 4 }
 			alpha = 0.25
+			modify_texture = {
+				texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 8 8 }
+			}
 		}
 		background = {
 			shaderfile = "gfx/FX/pdxgui_default.shader"
-			using = black_background
+			using = shadow_background
 			alpha = 0.6
 			margin_left = 50%
 			modify_texture = {
@@ -382,12 +403,16 @@ types NEW_GUI {
 	}
 	type panelka_center = widget {
 		background = {
-			texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
 			shaderfile = "gfx/FX/pdxgui_default.shader"
-			spriteType = corneredtiled
-			spriteborder = { 8 8 }
+			using = shadow_background
 			margin = { 4 4 }
 			alpha = 0.25
+			modify_texture = {
+				texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 8 8 }
+			}
 		}
 		background = {
 			shaderfile = "gfx/FX/pdxgui_default.shader"
@@ -430,12 +455,16 @@ types NEW_GUI {
 	}
 	type panelka_center_2 = widget {
 		background = {
-			texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
 			shaderfile = "gfx/FX/pdxgui_default.shader"
-			spriteType = corneredtiled
-			spriteborder = { 8 8 }
+			using = shadow_background
 			margin = { 4 4 }
 			alpha = 0.25
+			modify_texture = {
+				texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 8 8 }
+			}
 		}
 		background = {
 			shaderfile = "gfx/FX/pdxgui_default.shader"
@@ -531,13 +560,15 @@ types NEW_GUI {
 		block "Layer" { layer = middle_top }
 		
 		background = {
-			name = "Shadow"
-			texture = "gfx/interface/base_parts/shadows/background_x60bd_shadow_hard.dds"
 			shaderfile = "gfx/FX/pdxgui_default.shader"
-			blend_mode = alphamultiply
-			spriteType = Corneredtiled
-			spriteborder = { 60 60 }
+			using = shadow_background
 			alpha = 0.5
+			modify_texture = {
+				texture = "gfx/interface/base_parts/shadows/background_x60bd_shadow_hard.dds"
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 60 60 }
+			}
 			block "Drop_shadow" { visible = yes }			
 		}
 		background = {
@@ -591,7 +622,7 @@ types NEW_GUI {
 		}
 		icon = {
 			name = "background_gradient_sides"
-			using = black_background
+			using = shadow_background
 			size = { 100% 100% }
 			alpha = 0.2
 			modify_texture = {
@@ -612,13 +643,15 @@ types NEW_GUI {
 		block "Layer" { layer = middle_top }
 		
 		background = {
-			name = "Shadow"
-			texture = "gfx/interface/base_parts/shadows/background_x60bd_shadow_one_corner.dds"
 			shaderfile = "gfx/FX/pdxgui_default.shader"
-			blend_mode = alphamultiply
-			spriteType = Corneredtiled
-			spriteborder = { 60 60 }
+			using = shadow_background
 			alpha = 0.5
+			modify_texture = {
+				texture = "gfx/interface/base_parts/shadows/background_x60bd_shadow_one_corner.dds"
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 60 60 }
+			}
 			block "Drop_shadow" { visible = yes }			
 		}
 		background = {
@@ -674,7 +707,7 @@ types NEW_GUI {
 		}
 		icon = {
 			name = "background_gradient_sides"
-			using = black_background
+			using = shadow_background
 			size = { 100% 100% }
 			alpha = 0.2
 			modify_texture = {
@@ -718,12 +751,15 @@ types NEW_GUI {
 				}
 			}
 			background = {
-				name = "Shadow"
-				texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
 				shaderfile = "gfx/FX/pdxgui_default.shader"
-				spriteType = corneredtiled
-				spriteborder = { 8 8 }
+				using = shadow_background
 				alpha = 0.5
+				modify_texture = {
+					texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 8 8 }
+				}
 			}
 			button = {
 				parentanchor = center
@@ -734,11 +770,11 @@ types NEW_GUI {
 	}
 	type siege_card = icon {
 		block "Size" { size = { 64 60 } }
-		using = black_background
+		using = shadow_background
 		using = portrait_x32y32bd_alpha
 		modify_texture = {
-			blend_mode = alphamultiply
 			texture = "gfx/interface/base_parts/gradient_black_invert.dds"
+			blend_mode = alphamultiply
 		}
 		margin_widget = {
 			margin = { 2 2 }
@@ -1362,13 +1398,16 @@ types NEW_GUI {
 		size = { 40 40 }
 		margin = { 2 2 }
 		background = {
-			name = "Shadow"
-			texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
 			shaderfile = "gfx/FX/pdxgui_default.shader"
-			spriteType = corneredtiled
-			spriteborder = { 8 8 }
+			using = shadow_background
 			margin = { 4 4 }
 			alpha = 0.5
+			modify_texture = {
+				texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 8 8 }
+			}
 		}
 		background = {
 			shaderfile = "gfx/FX/pdxgui_default.shader"
@@ -1397,8 +1436,8 @@ types NEW_GUI {
 		}
 		background = {
 			shaderfile = "gfx/FX/pdxgui_default.shader"
-			using = portrait_x32y32bd_alpha
 			using = beige_background
+			using = portrait_x32y32bd_alpha
 			alpha = 0.15
 			margin = { -2 -2 }
 			modify_texture = {
@@ -1492,13 +1531,16 @@ types NEW_GUI {
 			size = { 18 18 }
 			parentanchor = center
 			background = {
-				name = "Shadow"
-				texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
 				shaderfile = "gfx/FX/pdxgui_default.shader"
-				spriteType = corneredtiled
-				spriteborder = { 8 8 }
+				using = shadow_background
 				margin = { 3 3 }
 				alpha = 0.5
+				modify_texture = {
+					texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 8 8 }
+				}
 			}
 		}
 		button = {
@@ -1571,13 +1613,16 @@ types NEW_GUI {
 	type offices_color_background = widget {
 		size = { 100% 100% }
 		background = {
-			name = "Shadow"
-			texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
 			shaderfile = "gfx/FX/pdxgui_default.shader"
-			spriteType = corneredtiled
-			spriteborder = { 8 8 }
+			using = shadow_background
 			margin = { 4 4 }
 			alpha = 0.5
+			modify_texture = {
+				texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 8 8 }
+			}
 		}
 		background = {
 			shaderfile = "gfx/FX/pdxgui_default.shader"
@@ -1638,8 +1683,8 @@ types NEW_GUI {
 		}
 		background = {
 			shaderfile = "gfx/FX/pdxgui_default.shader"
-			using = portrait_x32y32bd_alpha
 			using = beige_background
+			using = portrait_x32y32bd_alpha
 			alpha = 0.15
 			margin = { -2 -2 }
 			modify_texture = {
@@ -1907,7 +1952,7 @@ types NEW_GUI {
 		tooltip_parentanchor = bottom|right
 		background = {
 			shaderfile = "gfx/FX/pdxgui_default.shader"
-			using = black_background
+			using = shadow_background
 			modify_texture = {
 				texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black.dds"
 				blend_mode = alphamultiply
@@ -2060,7 +2105,11 @@ types NEW_GUI {
 				icon = {
 					size = { 54 54 }
 					parentanchor = center
-					texture = "gfx/interface/base_parts/round_button_frame_24_shadow.dds"
+					using = shadow_background
+					modify_texture = {
+						texture = "gfx/interface/base_parts/round_button_frame_24_shadow.dds"
+						blend_mode = alphamultiply
+					}
 				}
 				button = {
 					gfxtype = buttongfx
@@ -2157,13 +2206,16 @@ types NEW_GUI {
 		size = { 100% 38 }
 		hbox = {
 			background = {
-				name = "Shadow"
-				texture = "gfx/interface/base_parts/shadows/round_button_right_alpha_x2_shadow.dds"
 				shaderfile = "gfx/FX/pdxgui_default.shader"
-				spriteType = corneredtiled
-				spriteborder = { 18 17 }
+				using = shadow_background
 				margin = { 27 -1 }
 				alpha = 0.5
+				modify_texture = {
+					texture = "gfx/interface/base_parts/shadows/round_button_right_alpha_x2_shadow.dds"
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 18 17 }
+				}
 			}
 			background = {
 				shaderfile = "gfx/FX/pdxgui_default.shader"
@@ -2262,17 +2314,6 @@ types NEW_GUI {
 						# If there is an Icon set this to Size X - 50.
 						max_width = 300
 					}
-					#background = {
-					#	shaderfile = "gfx/FX/pdxgui_default.shader"
-					#	using = portrait_x32y32bd_alpha
-					#	texture = "gfx/interface/base_parts/background_noninteractable_texture.dds"
-					#	alpha = 0.15
-					#	margin = { 1 -1 }
-					#	modify_texture = {
-					#		texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black.dds"
-					#		blend_mode = alphamultiply
-					#	}
-					#}
 				}
 			}
 			
@@ -2306,12 +2347,7 @@ types NEW_GUI {
 			tooltip = "[OutlinerCategory.GetTooltip]"
 			alpha = 0.5
 			using = tooltip_es
-			#using = beige_background
 			using = black_background
-			#modify_texture = {
-			#	blend_mode = alphamultiply
-			#	texture = "gfx/interface/base_parts/horizontal_gradient_stretch_inverted.dds"
-			#}
 			widget = {
 				size = { 3 100% }
 				alpha = 2.0
@@ -2410,12 +2446,15 @@ types NEW_GUI {
 			spriteborder = { 21 20 }
 		}
 		background = {
-			name = "Shadow"
-			texture = "gfx/interface/base_parts/shadows/round_button_right_alpha_x2_shadow.dds"
 			shaderfile = "gfx/FX/pdxgui_default.shader"
-			spriteType = corneredtiled
-			spriteborder = { 18 17 }
+			using = shadow_background
 			alpha = 0.5
+			modify_texture = {
+				texture = "gfx/interface/base_parts/shadows/round_button_right_alpha_x2_shadow.dds"
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 18 17 }
+			}
 		}
 		background = {
 			shaderfile = "gfx/FX/pdxgui_default.shader"
@@ -2505,9 +2544,13 @@ types NEW_GUI {
 				parentanchor = left|vcenter
 				background = {
 					shaderfile = "gfx/FX/pdxgui_default.shader"
-					texture = "gfx/interface/base_parts/round_button_frame_24_shadow.dds"
+					using = shadow_background
 					margin = { 3 3 }
 					alpha = 0.5
+					modify_texture = {
+						texture = "gfx/interface/base_parts/round_button_frame_24_shadow.dds"
+						blend_mode = alphamultiply
+					}
 				}
 				background = {
 					shaderfile = "gfx/FX/pdxgui_default.shader"
