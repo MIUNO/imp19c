@@ -559,13 +559,11 @@ types WikiTemplates {
 				}
 				icon = {
 					size = { 209 228 }
+					using = shadow_background
 					position = { 200 35 }
-					using = flat_background_white
-					spriteType = corneredstretched
 					modify_texture = {
-						name = "Alpha"
-						blend_mode = alphamultiply
 						texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black.dds"
+						blend_mode = alphamultiply
 					}
 				}
 				tooltip = "[MacroBuilderProvinceBuildable.GetTooltip]"

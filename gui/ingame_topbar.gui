@@ -645,23 +645,23 @@ vbox = {
 			position = { 65 100 }
 			background = {
 				shaderfile = "gfx/FX/pdxgui_default.shader"
-				using = black_background
+				using = shadow_background
 				alpha = 0.5
 				modify_texture = {
-					blend_mode = alphamultiply
 					texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black.dds"
+					blend_mode = alphamultiply
 				}
 				modify_texture = {
-					blend_mode = alphamultiply
 					texture = "gfx/interface/base_parts/gradient_black_short.dds"
+					blend_mode = alphamultiply
 				}
 			}
 			background = {
 				shaderfile = "gfx/FX/pdxgui_default.shader"
 				using = darken_red_background
 				modify_texture = {
-					blend_mode = alphamultiply
 					texture = "gfx/interface/images/elements/right_image.dds"
+					blend_mode = alphamultiply
 				}
 			}
 		}
@@ -675,13 +675,15 @@ vbox = {
 			allow_outside = yes
 			#visible = no
 			background = {
-				name = "Shadow"
 				shaderfile = "gfx/FX/pdxgui_default.shader"
-				texture = "gfx/interface/base_parts/shadows/side_bar_shadow.dds"
-				blend_mode = alphamultiply
-				spriteType = Corneredtiled
-				spriteborder = { 70 75 }
+				using = shadow_background
 				alpha = 0.5
+				modify_texture = {
+					texture = "gfx/interface/base_parts/shadows/side_bar_shadow.dds"
+					blend_mode = alphamultiply
+					spriteType = Corneredtiled
+					spriteborder = { 70 75 }
+				}
 			}
 			background = {
 				shaderfile = "gfx/FX/pdxgui_default.shader"
@@ -725,9 +727,12 @@ vbox = {
 				}
 			}
 			icon = {
-				name = "Top Gradient"
 				size = { 70 210 }
-				texture = "gfx/interface/base_parts/gradient_black.dds"
+				using = shadow_background
+				modify_texture = {
+					texture = "gfx/interface/base_parts/gradient_black.dds"
+					blend_mode = alphamultiply
+				}
 				modify_texture = {
 					texture = "gfx/interface/base_parts/side_bar_alpha_2.dds"
 					blend_mode = alphamultiply
@@ -742,13 +747,15 @@ vbox = {
 			size = { 800 55 }
 			alwaystransparent = no
 			background = {
-				name = "Shadow"
-				texture = "gfx/interface/base_parts/shadows/top_bar_shadow.dds"
 				shaderfile = "gfx/FX/pdxgui_default.shader"
-				blend_mode = alphamultiply
-				spriteType = Corneredtiled
-				spriteborder = { 62 0 }
+				using = shadow_background
 				alpha = 0.5
+				modify_texture = {
+					texture = "gfx/interface/base_parts/shadows/top_bar_shadow.dds"
+					blend_mode = alphamultiply
+					spriteType = Corneredtiled
+					spriteborder = { 62 0 }
+				}
 			}
 			background = {
 				shaderfile = "gfx/FX/pdxgui_default.shader"
@@ -1084,13 +1091,16 @@ vbox = {
 		flowcontainer = {
 			margin_left = 1
 			background = {
-				name = "Shadow"
-				texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
 				shaderfile = "gfx/FX/pdxgui_default.shader"
-				spriteType = corneredtiled
-				spriteborder = { 8 8 }
+				using = shadow_background
 				margin = { 3 3 }
 				alpha = 0.5
+				modify_texture = {
+					texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 8 8 }
+				}
 			}
 			background = {
 				shaderfile = "gfx/FX/pdxgui_default.shader"
@@ -1315,13 +1325,16 @@ vbox = {
 			size = { 374 292 }
 			movable = no
 			background = {
-				name = "Shadow"
-				texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
 				shaderfile = "gfx/FX/pdxgui_default.shader"
-				spriteType = corneredtiled
-				spriteborder = { 8 8 }
-				margin = { 2 2 }
+				using = shadow_background
 				alpha = 0.5
+				modify_texture = {
+					texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 8 8 }
+					margin = { 2 2 }
+				}
 			}
 			background = {
 				shaderfile = "gfx/FX/pdxgui_default.shader"

@@ -762,10 +762,14 @@ base_window = {
 							tooltip = "[OverviewView.GetPlayer.GetPossibleCivilWarTooltip]"
 							
 							icon = {
-								texture = "gfx/interface/pie_charts/pie_chart_alpha_60_shadow.dds"
 								size = { 54 54 }
+								using = shadow_background
 								parentanchor = center
 								alpha = 0.5
+								modify_texture = {
+									texture = "gfx/interface/pie_charts/pie_chart_alpha_60_shadow.dds"
+									blend_mode = alphamultiply
+								}
 							}
 							icon = {
 								texture = "gfx/interface/base_parts/yellow_button_color_200fs.dds"

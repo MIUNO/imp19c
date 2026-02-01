@@ -6,18 +6,16 @@ widget = {
 	
 	widget = {
 		size = { 100% 100% }
-		alwaystransparent = yes
 		icon = {
 			texture = "gfx/frontend/imp19_main_menu_bkg3.dds"
 			size = { 100% 100% }
 			icon = {
-				texture = "gfx/interface/base_parts/background_texture.dds"
-				spriteType = Corneredtiled
 				size = { 100% 100% }
+				using = shadow_background
 				alpha = 0.8
 				modify_texture = {
-					blend_mode = alphamultiply
 					texture = "gfx/interface/base_parts/fade_bg_ingame_menu.dds"
+					blend_mode = alphamultiply
 				}
 			}
 		}
