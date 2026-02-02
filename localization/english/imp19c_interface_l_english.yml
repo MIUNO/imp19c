@@ -60,10 +60,8 @@
  economic_laws:0 "Economic"
  governmental_laws:0 "Governmental"
  monarchy_laws:0 "Monarchy"
- monetary_policy_setting:0 "Monetary Policy"
  republic_laws:0 "Republic"
  social_laws:0 "Social"
- standing_army_laws:0 "Standing Army"
  upper_house_laws:0 "Upper House"
 
  # Diplomatic >>>

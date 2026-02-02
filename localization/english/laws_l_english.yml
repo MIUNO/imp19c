@@ -362,9 +362,7 @@
 #########IMPERATRIX VICTORIA########
 
 ##Administrative Laws##
-
- monetary_policy_law:0 "Monetary Policy Law"
-
+ monetary_policy_law:0 "Monetary Policy"
  executive_monetary_policy:0 "Executive Monetary Policy"
  executive_monetary_policy_desc:0 ""
  delegated_monetary_policy:0 "Delegated Monetary Policy"
@@ -373,46 +371,55 @@
  legislative_monetary_policy_desc:0 ""
 
 ##Army Laws##
-
- army_recruitment_law:1 "Army Recruitment Law"
-
- conscription_law:0 "Conscription Law"
+ army_recruitment_law:1 "Army Recruitment"
+ conscription_law:0 "Conscription"
  conscription_law_desc:0 "Individuals may be called into the army at any time"
- national_service_law:0 "National Service Law"
+ national_service_law:0 "National Service"
  national_service_law_desc:0 "Individuals are expected to train and serve in the military for a short period in their youth, saving exceptions"
  regional_militias:0 "Regional Militias"
  regional_militias_desc:0 "The army is drawn from regional militias organised on the local level"
  voluntary_service:0 "Voluntary Service"
  voluntary_service_desc:0 "The army is comprised of volunteers who go through training out of their own choice"
 
+ standing_army_laws:0 "Standing Army"
+ no_standing_army:0 "No Standing Army"
+ no_standing_army_desc:0 "No Standing Army desc"
+ limited_army:0 "Limited Army"
+ limited_army_desc:0 "Limited Army desc"
+ standing_army:0 "Standing Army"
+ standing_army_desc:0 "Standing Army desc"
+
+ army_supply_law:0 "Army Supply"
+ self_supplied_army:0 "Self Supplied Army"
+ self_supplied_army_desc:0 "Self Supplied Army desc"
+ irregular_state_supplied_army:0 "Irregular State Supplied Army"
+ irregular_state_supplied_army_desc:0 "The state sponsors the purchasing of equipment for its soldiers"
+ regular_state_supplied_army:0 "Regular State Supplied Army"
+ regular_state_supplied_army_desc:0 "The state commissions and regulates all military equipment"
+
 ##Civil Laws##
-
  citizens_rights:0 "Citizens Rights"
-
  judicial_discretion_rights:0 "Judicial Discretion Rights"
- judicial_discretion_rights_desc:0 ""
+ judicial_discretion_rights_desc:0 "Judicial Discretion Rights desc"
  wealth_based_rights:0 "Wealth Based Rights"
- wealth_based_rights_desc:0 ""
+ wealth_based_rights_desc:0 "Wealth Based Rights desc"
  bill_of_rights:0 "Bill of Rights"
- bill_of_rights_desc:0 ""
+ bill_of_rights_desc:0 "Bill of Rights desc"
  constitutional_rights:0 "Constitutional Rights"
- constitutional_rights_desc:0 ""
+ constitutional_rights_desc:0 "Constitutional Rights desc"
 
 ##Constitional Laws##
-
  constitutional_monarchy_laws:0 "Constitutional Monarchy"
- 
  no_monarchy:0 "No Monarchy"
- no_monarchy_desc:0 ""
+ no_monarchy_desc:0 "No Monarchy desc"
  symbolic_monarchy:0 "Symbolic Monarchy"
- symbolic_monarchy_desc:0 ""
+ symbolic_monarchy_desc:0 "Symbolic Monarchy desc"
  advisory_monarchy:0 "Advisory Monarchy"
- advisory_monarchy_desc:0 ""
+ advisory_monarchy_desc:0 "Advisory Monarchy desc"
  administrative_monarchy:0 "Administrative Monarchy"
- administrative_monarchy_desc:0 ""
+ administrative_monarchy_desc:0 "Administrative Monarchy desc"
 
  election_terms_law:0 "Election Terms"
-
  1_year_terms:0 "1 Year Terms"
  1_year_terms_desc:0 ""
  4_year_terms:0 "4 Year Terms"
@@ -423,7 +430,6 @@
  8_year_terms_desc:0 ""
 
  oligarchy_type:0 "Oligarchy Laws"
-
  oligarchy_bourgeouis_dictatorship:0 "Bourgeois Dictatorship"
  oligarchy_bourgeouis_dictatorship_desc:0 ""
  oligarchy_multiple_monarchy:0 "Multiple Monarchy"
@@ -434,7 +440,6 @@
  oligarchy_consortium_desc:0 ""
 
  election_terms_stratocracy:0 "Election Terms Stratocracy"
-
  stratocracy_standard_ruler_retirement:0 "Standard Ruler Retirement"
  stratocracy_standard_ruler_retirement_desc:0 ""
  stratocracy_rule_for_life:0 "Rule for Life"
@@ -445,7 +450,6 @@
  stratocracy_regular_elections_desc:0 ""
 
  election_terms_megacorporation:0 "Election Terms Megacorporation"
-
  megacorporation_regular_board_elections:0 "Regular Board Elections"
  megacorporation_regular_board_elections_desc:0 ""
  megacorporation_double_terms:0 "Souble Terms"
@@ -456,7 +460,6 @@
  megacorporation_life_appointment_desc:0 ""
 
  election_terms_viceroyalty:0 "Election Terms Viceroyalty"
-
  viceroyalty_15_year_terms:0 "15 Year Terms"
  viceroyalty_15_year_terms_desc:0 ""
  viceroyalty_10_year_terms:0 "10 Year Terms"
@@ -467,7 +470,6 @@
  viceroyalty_life_appointment_desc:0 ""
 
  judiciary_law:0 "Judiciary"
-
  civil_judiciary:0 "Civil Judiciary"
  civil_judiciary_desc:0 "Legal practitioners are trained up on a civil-service track but remain independent from the political arm of government"
  independent_bar:0 "Independent Bar"
@@ -478,7 +480,6 @@
  political_judiciary_desc:0 "Members of the executive or legislature have judicial powers"
 
  supreme_court_law:0 "Supreme Court"
-
  supreme_court_head_of_state:0 "Head of State as Supreme Court"
  supreme_court_head_of_state_desc:0 "The office of the head of state, or even the head of state personally may give rulings of last instance in court cases"
  supreme_court_high_council:0 "High Council Supreme Court"
@@ -489,7 +490,6 @@
  supreme_court_independent_desc:0 "The supreme court's membership is fully under the control of the independent judiciary, who, subject to some checks and balances imposed by the government, run the court totally separately to the other constitutional bodies."
 
  regional_government_law:0 "Regional Governments"
-
  vicarious_regional_governments:0 "Vicarious Regional Government"
  vicarious_regional_governments_desc:0 "Regional governments are centrally managed and act as an extension of central government"
  feudal_regional_governments:0 "Feudal Administration"
@@ -500,7 +500,6 @@
  devolved_regional_governments_desc:0 "Regional governments are empowered to diverge from central government on a large number of civil and economic matters, even forming different constitutional laws, but are bound by the powers granted by central government."
  
  suffrage_law:0 "Electoral Suffrage"
-
  noble_suffrage:0 "Noble Suffrage"
  noble_suffrage_desc:0 "Upper strata x1"
  weighted_landed_suffrage:0 "Weighted Landed"
@@ -511,7 +510,6 @@
  universal_suffrage_desc:0 "Upper strata x1, middle strata x1, lower strata x1, proletariat x1"
 
  vote_count_law:0 "Vote Count"
-
  electoral_college:0 "Electoral College"
  electoral_college_desc:0 "Each area submits one vote based on the majority vote therein"
  first_past_the_post:0 "First Past the Post"
@@ -522,53 +520,200 @@
  transferable_vote_desc:0 "Each territory submits three votes; two for the most popular candidate there and one for the second-most popular candidate."
 
  treaty_making_power:0 "Treaty-Making Power"
-
+ executive:0 "Executive"
+ executive_desc:0 "Executive desc"
+ legislative:0 "Legislative"
+ legislative_desc:0 "Legislative desc"
 
  legislative_body_law:0 "Legislative Body"
-
+ unicameral_legislature:0 "Unicameral Legislature"
+ unicameral_legislature_desc:0 "Unicameral Legislature desc"
+ bicameral_legislature:0 "Bicameral Legislature"
+ bicameral_legislature_desc:0 "Bicameral Legislature desc"
+ legislative_assembly:0 "Legislative Assembly"
+ legislative_assembly_desc:0 "Legislative Assembly desc"
+ executive_legislature:0 "Executive Legislature"
+ executive_legislature_desc:0 "Executive Legislature desc"
 
  legislative_process_law:0 "Legislative Process"
+ debate_floor:0 "Debate Floor"
+ debate_floor_desc:0 "Debate Floor desc"
+ plebiscite:0 "Plebiscite"
+ plebiscite_desc:0 "Plebiscite desc"
+ technocratic_oversight:0 "Technocratic Oversight"
+ technocratic_oversight_desc:0 "Technocratic Oversight desc"
+ technocratic_mandate:0 "Technocratic Mandate"
+ technocratic_mandate_desc:0 "Technocratic Mandate desc"
 
+ constitutional_process_law:0 "Constitutional Process"
+ parliamentary_sovereignty:0 "Parliamentary Sovereignty"
+ parliamentary_sovereignty_desc:0 "Parliamentary Sovereignty desc"
+ ratification_by_states:0 "Ratification by States"
+ ratification_by_states_desc:0 "Ratification by States desc"
+ compulsory_review:0 "Compulsory Review"
+ compulsory_review_desc:0 "Compulsory Review desc"
+ supermajority:0 "Supermajority"
+ supermajority_desc:0 "Supermajority desc"
 
-  constitutional_process_law:0 "None123"
+ # Economic Laws >>>
+ currency_law:0 "Currency"
+ precious_metal_content_coinage:0 "Precious Metal Content Coinage"
+ precious_metal_content_coinage_desc:0 "Precious Metal Content Coinage desc"
+ silver_standard_currency:0 "Silver Standard Currency"
+ silver_standard_currency_desc:0 "Silver Standard Currency desc"
+ promissory_notes:0 "Promissory Notes"
+ promissory_notes_desc:0 "Promissory Notes desc"
+ fiat_currency:0 "Fiat Currency"
+ fiat_currency_desc:0 "Fiat Currency desc"
 
+ non_tribal_land_law:0 "Non Tribal Land"
+ indentured_tenancy:0 "Indentured Tenancy"
+ indentured_tenancy_desc:0 "Peasantry, serfdom, including freedom to rent"
+ state_distribution:0 "State Distribution"
+ state_distribution_desc:0 "The government distributes land, for example to communes or to corporations"
+ chartered_land:0 "Chartered Land"
+ chartered_land_desc:0 "Land may be owned privately by anyone and ownership exists only in deeds, or in charters issued by the government"
+ registered_land:0 "Registered Land"
+ registered_land_desc:0 "Land may be owned privately by anyone and its ownership is organised within the civil service"
 
- ##Economic Laws##
+ labour_organisation_law:0 "Labour Organisation"
+ labour_law_guilds:0 "Labour Guilds"
+ labour_law_guilds_desc:0 "Labour Guild desc"
+ labour_law_trade_unions:0 "Labour Trade Unions"
+ labour_law_trade_unions_desc:0 "Labour Trade Unions desc"
+ labour_law_corporate_self_regulation:0 "Labour Corporate Self Regulation"
+ labour_law_corporate_self_regulation_desc:0 "Labour Corporate Self Regulation desc"
+ labour_law_state_monopoly:0 "Labour State Monopoly"
+ labour_law_state_monopoly_desc:0 "Labour State Monopoly desc"
 
-# currency_law
+ business_regulation_law:0 "Business Regulation"
+ business_corporate_self_regulation:0 "Business Corporate Self Regulation"
+ business_corporate_self_regulation_desc:0 "Business Corporate Self Regulation desc"
+ business_corporate_financial_encouragement:0 "Business Corporate Financial Encouragement"
+ business_corporate_financial_encouragement_desc:0 "Business Corporate Financial Encouragement desc"
+ business_light_regulations:0 "Business Light Regulations"
+ business_light_regulations_desc:0 "Business Light Regulations desc"
+ business_heavy_regulations:0 "Business Heavy Regulations"
+ business_heavy_regulations_desc:0 "Business Heavy Regulations desc"
+ full_state_planning:0 "Full State Planning"
+ full_state_planning_desc:0 "Full State Planning desc"
 
-# non_tribal_land_law
+# Government Laws >>>
+ government_office_appointment_law:0 "Government Office Appointment"
+ appointment_from_ruling_party:0 "Appointment From Ruling Party"
+ appointment_from_ruling_party_desc:0 "Appointment From Ruling Party desc"
+ appointment_from_any_party:0 "Appointment From Any Party"
+ appointment_from_any_party_desc:0 "Appointment From Any Party desc"
 
-# labour_organisation_law
- 
-# business_regulation_law
+# Upper House >>>
+ upper_house_powers_law:0 "Upper House Powers"
+ power_of_veto:0 "Power of Veto"
+ power_of_veto_desc:0 "Power of Veto desc"
+ power_of_review:0 "Power of Review"
+ power_of_review_desc:0 "Power of Review desc"
+ power_of_delay:0 "Power of Delay"
+ power_of_delay_desc:0 "Power of Delay desc"
+ upper_house_composition_law:0 "Upper House Composition"
+ appointed_hereditary_spiritual:0 "Appointed Hereditary Spiritual"
+ appointed_hereditary_spiritual_desc:0 "Appointed Hereditary Spiritual desc"
+ appointed:0 "Appointed"
+ appointed_desc:0 "Appointed desc"
+ elected:0 "Elected"
+ elected_desc:0 "Elected desc"
+ state_representatives:0 "State Representatives"
+ state_representatives_desc:0 "State Representatives desc"
 
+# Monetary Policy Setting >>>
+ monetary_policy_setting:0 "Monetary Policy Setting"
+ currency_recall:0 "Currency Recall"
+ currency_recall_desc:0 "Currency Recall desc"
+ limited_minting:0 "Limited Minting"
+ limited_minting_desc:0 "Limited Minting desc"
+ more_minting:0 "More Minting"
+ more_minting_desc:0 "More Minting desc"
+ issue_bonds:0 "Issue Bonds"
+ issue_bonds_desc:0 "Issue Bonds desc"
 
+# Social Laws >>>
+ immigration_law:0 "Immigration"
+ immigration_closed_borders:0 "Closed Borders"
+ immigration_closed_borders_desc:0 "Closed Borders desc"
+ immigration_commerce_only:0 "Commerce Only"
+ immigration_commerce_only_desc:0 "Commerce desc"
+ immigration_residency:0 "Residency"
+ immigration_residency_desc:0 "Residency desc"
+ immigration_naturalisation:0 "Naturalisation"
+ immigration_naturalisation_desc:0 "Naturalisation desc"
 
-##Government Laws##
- 
-# government_office_appointment_law
+ emigration_law:0 "Emigration"
+ emigration_closed_borders:0 "Closed Borders"
+ emigration_closed_borders_desc:0 "Closed Borders desc"
+ emigration_commerce_only:0 ""Commerce Only"
+ emigration_commerce_only_desc:0 ""Commerce Only desc"
+ emigration_passports:0 "Passports"
+ emigration_passports_desc:0 "Passports desc"
 
-##Monetary Policy Setting##
+ cultural_protections_law:0 "Cultural Protections"
+ dominant_culture_primacy:0 "Dominant_ Culture Primacy"
+ dominant_culture_primacy_desc:0 "The dominant culture is protected above all others"
+ limited_cultural_recognition:0 "Limited Cultural Recognition"
+ limited_cultural_recognition_desc:0 "Non-dominant cultures are recognised in law but enjoy very limited rights"
+ cultural_federalism:0 "Cultural Federalism"
+ cultural_federalism_desc:0 "Cultures are separate but equal under the law"
+ multiculturalism_law:0 "Multiculturalism"
+ multiculturalism_law_desc:0 "All cultures are treated totally equally and inseparably in law"
 
-# monetary_policy_setting
+ religious_law:0 "Religious"
+ enforced_state_religion_law:0 "Enforced State Religion"
+ enforced_state_religion_law_desc:0 "Enforced State Religion desc"
+ nominal_state_religion_law:0 "Nominal State Religion"
+ nominal_state_religion_law_desc:0 "Nominal State Religion desc"
+ state_secularism:0 "State Secularism"
+ state_secularism_desc:0 "State Secularism desc"
+ state_atheism:0 "State Atheism"
+ state_atheism_desc:0 "State Atheism desc"
 
-##Social Laws##
- 
-# immigration_law
+ womens_law:0 "Womens law"
+ women_second_class_status:0 "Women Second Class Status"
+ women_second_class_status_desc:0 "Women Second Class Status desc"
+ women_limited_legal_rights:0 "Women Limited Legal Rights"
+ women_limited_legal_rights_desc:0 "Women Limited Legal Rights desc"
+ women_equal_legal_rights:0 "Women Equal Legal Rights"
+ women_equal_legal_rights_desc:0 "Women Equal Legal Rights desc"
+ womens_suffrage_law:0 "Womens Suffrage"
+ womens_suffrage_law_desc:0 "Womens Suffrage desc"
 
-# emigration_law
+ healthcare_law:0 "Healthcare"
+ charitable_healthcare:0 "Charitable Healthcare"
+ charitable_healthcare_desc:0 "Charitable Healthcare desc"
+ regulated_private_healthcare:0 "Regulated Private Healthcare"
+ regulated_private_healthcare_desc:0 "Regulated Private Healthcare desc"
+ funded_employers_health_insurance:0 "Funded Employers Health Insurance"
+ funded_employers_health_insurance_desc:0 "Funded Employers Health Insurance desc"
+ national_health_insurance:0 "National Health Insurance"
+ national_health_insurance_desc:0 "National Health Insurance desc"
 
-# cultural_protections_law
-
-# religious_law
-
-# womens_law
-
-# university_law
+ university_law:0 "University"
  # Religious colleges
  law_university_religious_colleges:0 "Religious colleges"
- law_university_religious_colleges_desc:0 "#W @education_t2_bg! Local Tier 2 education per university: #R -10%#!\n@education_t2_bg! Local Tier 2 education capped by pops following the #Y State religion#!.\n@education_t2_bg! National Tier 2 education bonus from universities: #R -10% and capped by religious unity#! #!"
+ law_university_religious_colleges_desc:0 "#W  @education_t2_bg! Local Tier 2 education per university: #R -10%#!\n @education_t2_bg! Local Tier 2 education capped by pops following the #Y State religion#!.\n @education_t2_bg! National Tier 2 education bonus from universities: #R -10% and capped by religious unity#! #!"
  # Classical institutions
  law_university_classical_institutions:0 "Classical institutions"
- law_university_classical_institutions_desc:0 ""
+ law_university_classical_institutions_desc:0 "Classical institutions desc"
+ # Secular institutions
+ law_university_secular_instutions:0 "Secular institutions"
+ law_university_secular_instutions_desc:0 "Secular institutions desc"
+ # Technical Colleges
+ law_university_technical_colleges:0 "Technical Colleges"
+ law_university_technical_colleges_desc:0 "Technical Colleges desc"
+
+ financial_assistance_law:0 "Financial Assistance"
+ no_state_financial_assistance:0 "No State Financial Assistance"
+ no_state_financial_assistance_desc:0 "No State Financial Assistance desc"
+ local_poor_laws:0 "Local Poor"
+ local_poor_laws_desc:0 "Local Poor desc"
+ central_social_security:0 "Central Social Security"
+ central_social_security_desc:0 "Central Social Security desc"
+
+# :0 ""
+# _desc:0 " desc"
