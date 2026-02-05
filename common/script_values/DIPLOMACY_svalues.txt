@@ -208,6 +208,7 @@ DIPLOMACY_show_colonial_canton = {
 		                tag = FRG
 		                tag = RUA
 		                tag = POL
+		                tag = NOR
 		            }
 		            OR = {
 		                NOT = {
