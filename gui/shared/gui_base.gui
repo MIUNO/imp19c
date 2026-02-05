@@ -6381,19 +6381,6 @@ types Base_GUI_Types
 			background = {
 				shaderfile = "gfx/FX/pdxgui_default.shader"
 				using = beige_background
-				using = portrait_x32y32bd_alpha
-				modify_texture = {
-					texture = "gfx/interface/base_parts/button_vignette.dds"
-					blend_mode = alphamultiply
-					spriteType = corneredtiled
-					spriteborder = { 20 20 }
-				}
-			}
-			background = {
-				shaderfile = "gfx/FX/pdxgui_default.shader"
-				using = beige_background
-				using = portrait_x32y32bd_alpha
-				alpha = 0.3
 				modify_texture = {
 					texture = "gfx/interface/base_parts/button_vignette.dds"
 					blend_mode = alphamultiply

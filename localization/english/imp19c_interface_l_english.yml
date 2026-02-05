@@ -123,6 +123,10 @@
  peace_def_concessions:0 "Defenders' concessions"
  peace_attack_concessions:0 "Attackers' concessions"
  offer_peace:0 "Offer Peace"
+
+ # Government >>>
+ #government_parliament:0 "Parliament"
+
  # none >>>
 
  # none >>>
