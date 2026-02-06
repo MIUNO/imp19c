@@ -685,6 +685,36 @@ base_window = {
 								}
 							}
 						}
+						widget = { #Monarch
+							size = { 130 232 }
+							visible = "[And(GovernmentView.GetPlayer.MakeScope.Var('monarch_character').IsSet,Not(And(GovernmentView.GetPlayer.MakeScope.Var('monarch_character').GetCharacter.IsRuler,EqualTo_string(GovernmentView.GetPlayer.MakeScope.Var('monarch_character').GetCharacter.GetEmployer.GetTag,GovernmentView.GetPlayer.GetTag))))]"
+							using = background_widget
+							blockoverride "Margin" { margin = { 2 2 } }
+							flowcontainer = {
+								direction = vertical
+								margin_widget = {
+									size = { 130 47 }
+									margin = { 5 5 }
+									sub_header = {
+										size = { 120 32 }
+										blockoverride "Title_text"
+										{
+											text = "government_monarch"
+										}
+									}
+								}
+								flowcontainer = {
+									portrait_button = {
+										name = "monarchpic"
+										size = { 130 195 }
+										using = pt_button_large
+										pop_out = yes
+										datacontext = "[GovernmentView.GetPlayer.MakeScope.Var('monarch_character').GetCharacter]"
+										portrait_texture = "[Character.GetPortrait('default', 'looking_left')]"
+									}
+								}
+							}
+						}
 						widget = { #Republic CoRuler
 							size = { 220 232 }
 							visible = "[And( GovernmentView.GetPlayer.GetGovernment.IsRepublic, GovernmentView.GetPlayer.UseCoRuler)]"

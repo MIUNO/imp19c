@@ -125,7 +125,7 @@
  offer_peace:0 "Offer Peace"
 
  # Government >>>
- #government_parliament:0 "Parliament"
+ government_monarch:0 "Monarch"
 
  # none >>>
 
