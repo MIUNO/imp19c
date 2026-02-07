@@ -511,7 +511,7 @@ base_window = {
 										spacing = 10
 										icon_card = {
 											size = { 110 40 }
-											tooltip = "[GovernmentView.GetPlayer.GetLegitimacyTooltip]"
+											tooltip = "[GovernmentView.GetPlayer.GetSuccession.GetPrimaryHeir.GetSuccessionScoreInfo]"
 											blockoverride "Icon" { 
 												size = { 32 32 }
 												parentanchor = left
@@ -532,16 +532,14 @@ base_window = {
 											parentanchor = hcenter
 											blockoverride "Icon" { using = icon_loyalty }
 											blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetSuccession.GetPrimaryHeir.GetLoyalty|0]" }
-											tooltipwidget = { 
-												using = character_loyalty_tooltip 
-											}
+											tooltip = "[GovernmentView.GetPlayer.GetSuccession.GetPrimaryHeir.GetLoyaltyToolTip]"
 										}
 										panelka_center = {
 											size = { 110 32 }
 											parentanchor = hcenter
 											blockoverride "Icon" { texture = "gfx/interface/icons/modifiers/max_friends.dds" }
 											blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetSuccession.GetPrimaryHeir.GetNumOfSupportsAsHeir]" }
-											tooltip = "[Character.GetHeirSupportInformation]"
+											tooltip = "[GovernmentView.GetPlayer.GetSuccession.GetPrimaryHeir.GetHeirSupportInformation]"
 										}
 									}
 								}
@@ -593,7 +591,7 @@ base_window = {
 										spacing = 10
 										icon_card = {
 											size = { 110 40 }
-											tooltip = "[GovernmentView.GetPlayer.GetLegitimacyTooltip]"
+											tooltip = "[GovernmentView.GetPlayer.GetSuccession.GetPrimaryHeir.GetSuccessionScoreInfo`]"
 											blockoverride "Icon" { 
 												size = { 32 32 }
 												parentanchor = left
@@ -614,9 +612,7 @@ base_window = {
 											parentanchor = hcenter
 											blockoverride "Icon" { using = icon_loyalty }
 											blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetSuccession.GetPrimaryHeir.GetLoyalty|0]" }
-											tooltipwidget = { 
-												using = character_loyalty_tooltip 
-											}
+											tooltip = "[GovernmentView.GetPlayer.GetSuccession.GetPrimaryHeir.GetLoyaltyToolTip]"
 										}
 									}
 								}
@@ -978,7 +974,7 @@ base_window = {
 					}
 				}
 			}
-			widget = {
+			widget = { #Line
 				size = { @window_width 2 }
 				icon = {
 					size = { 100% 300 }
@@ -998,120 +994,6 @@ base_window = {
 					position = { 2 0 }
 					using = brighten_red_background
 					size = { @line_size 2 }
-				}
-			}
-			margin_widget = { #Unique Mechanics for gov archetypes
-				size = { @window_width 168 }
-				visible = "[GovernmentView.GetPlayer.GetGovernment.IsMonarchy]"
-				margin_widget = {
-					size = { 100% 100% }
-					margin = { 2 5 }
-					icon = {
-						size = { @window_width 300 }
-						using = shadow_background
-						position = { -2 -2 }
-						modify_texture = {
-							texture = "gfx/interface/base_parts/gradient_black.dds"
-							blend_mode = alphamultiply
-						}
-						modify_texture = {
-							texture = "gfx/interface/base_parts/background_x60bd_alpha_two_corner.dds"
-							blend_mode = alphamultiply
-							spriteType = Corneredtiled
-							spriteborder = { 60 60 }
-						}
-					}
-					icon = {
-						using = brighten_red_background
-						spriteType = Corneredtiled
-						size = { @line_size 2 }
-					}
-					margin_widget = {
-						size = { 100% 100% }
-						margin = { 8 5 }
-						flowcontainer = {
-							direction = vertical
-							spacing = 5
-							sub_header = {
-								size = { 472 32 }
-								blockoverride "Title_text" { text = "LEGITIMACY" }
-								tooltip = "[GovernmentView.GetLegitimacyTooltip]"
-							}
-							flowcontainer = {
-								spacing = 10
-								icon_button_square = {
-									tooltip = "[GovernmentView.GetIncreaseLegitimacyDesc]"
-									blockoverride "Icon" { texture = "gfx/interface/buttons/button_endorse.dds" }
-									blockoverride "On_click" 
-									{
-										enabled = "[GovernmentView.CanIncreaseLegitimacy]"
-										onclick = "[GovernmentView.IncreaseLegitimacy]"
-									}
-									blockoverride "ClickSound"
-									{
-										clicksound = "event:/SFX/UI/Actions/sfx_ui_action_convert_currency"
-										oversound = "event:/SFX/UI/Generic/sfx_ui_generic_mouse_over"
-									}
-								}
-								panelka_left = { #legitimacy
-									parentanchor = vcenter
-									size = { 150 32 }
-									blockoverride "Icon" { using = icon_legitimacy }
-									blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetLegitimacy|0]%" }
-									blockoverride "Tooltip" { tooltip = "[GovernmentView.GetLegitimacyTooltip]" }
-								}
-							}
-							margin_widget = {
-								size = { 264 120 }
-								tooltip = "GOV_SCREN_LEG_EFF"
-								textbox = {
-									parentanchor = top
-									using = BaseFontXS
-									using = Default_FontColor
-									maximumsize = { 264 120 }
-									autoresize = yes
-									align = left
-									fontsize = 16
-									text = "[GovernmentView.GetLegitimacyEffectInfo]"
-									parentanchor = vcenter
-								}
-							}
-						}
-						flowcontainer = {
-							parentanchor = right
-							direction = vertical
-							spacing = 5
-							sub_header = {
-								size = { 472 32 }
-								blockoverride "Title_text" { text = "SUCCESSION" }
-								tooltip = "[GovernmentView.GetLegitimacyTooltip]"
-							}
-							flowcontainer = {
-								spacing = 10
-								cpt_button = {
-									size = { 76 113 }
-									blockoverride "Context" { datacontext = "[GovernmentView.GetPlayer.GetSuccession.GetPrimaryHeir]" }
-								}
-								flowcontainer = {
-									margin_top = 10
-									direction = vertical
-									spacing = 24
-									panelka_left = { #legitimacy
-										size = { 150 32 }
-										blockoverride "Icon" { using = icon_legitimacy }
-										blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetModifierPureValue('next_ruler_legitimacy')|0]%" }
-										blockoverride "Tooltip" { tooltip = "[GovernmentView.GetPlayer.GetModifierTooltip('next_ruler_legitimacy')]" }
-									}
-									panelka_left = { #score
-										size = { 150 32 }
-										blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/leader.dds" }
-										blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetSuccession.GetPrimaryHeir.GetSuccessionScore|0]" }
-										blockoverride "Tooltip" { tooltip = "[GovernmentView.GetPlayer.GetSuccession.GetPrimaryHeir.GetSuccessionScoreInfo]" }
-									}
-								}
-							}
-						}
-					}
 				}
 			}
 			margin_widget = { #Unique Mechanics for gov archetypes
@@ -1256,112 +1138,182 @@ base_window = {
 				}
 			}
 			margin_widget = { #Monarchy mechanics
-				size = { @window_width 360 }
-				margin = { 10 0 }
-				#using = NoninteractableBG
+				size = { @window_width 520 }
+				margin = { 10 5 }
 				visible = "[GovernmentView.GetPlayer.GetGovernment.IsMonarchy]"
-				#datacontext = "[GetScriptedGui('is_non_parliamentary_government')]"
-				#visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( Player.MakeScope ).End )]"
-				icon = { #background
+				icon = {
+					size = { 800 319 }
 					texture = "gfx/interface/gov_view/monarchy_gov_view.dds"
-					using = portrait_x32y32bd_alpha
-					scale = 0.7
+					position = { 0 -5 }
 					parentanchor = top|hcenter
-					position = { 0 42 }
 					modify_texture = {
-						texture = "gfx/interface/base_parts/horizontal_gradient_stretch_sides_black_invert_terrain.dds"
+						texture = "gfx/interface/base_parts/horizontal_gradient_black.dds"
+						blend_mode = alphamultiply
+					}
+					modify_texture = {
+						texture = "gfx/interface/base_parts/gradient_black.dds"
 						blend_mode = alphamultiply
 					}
 				}
-				sub_header = { 
-					size = { 100% 32 } 
-					blockoverride "Title_text" { text = "SUCCESSION_AND_PRETENDERS" }
-				}
 				flowcontainer = {
-					parentanchor = vcenter
-					ignoreinvisible = yes
-					icon_button_square = {
-						datacontext = "[GetScriptedGui('assemble_war_council_button')]"
-						visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( Player.MakeScope ).End )]"
-						blockoverride "On_click"
-						{
-							enabled = "[ScriptedGui.IsValid( GuiScope.SetRoot( Player.MakeScope ).End )]"
-							onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
+					spacing = 10
+					flowcontainer = {
+						direction = vertical
+						spacing = 5
+						sub_header = {
+							size = { 210 32 }
+							blockoverride "Title_text" { text = "LEGITIMACY" }
+							tooltip = "[GovernmentView.GetLegitimacyTooltip]"
 						}
-						tooltip = "ASSEMBLE_WAR_COUNCIL_BUTTON_TOOLTIP"
-						
-						blockoverride "ClickSound" { clicksound = "event:/SFX/UI/Actions/sfx_ui_action_goverment_interactions" }
-						blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/war_council.dds" }
-					}
-					icon_button_square = {
-						datacontext = "[GetScriptedGui('oaths_of_allegiance_button')]"
-						visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( Player.MakeScope ).End )]"
-						blockoverride "On_click"
-						{
-							enabled = "[ScriptedGui.IsValid( GuiScope.SetRoot( Player.MakeScope ).End )]"
-							onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
-						}
-						tooltip = "OATHS_OF_ALLEGIANCE_BUTTON_TOOLTIP"
-						
-						blockoverride "ClickSound" { clicksound = "event:/SFX/UI/Actions/sfx_ui_action_goverment_interactions" }
-						
-						blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/demand_oaths_of_allegience.dds" }
-					}
-				}
-				flowcontainer = {
-					parentanchor = vcenter|right
-					ignoreinvisible = yes
-					icon_button_square = {
-						datacontext = "[GetScriptedGui('hold_games_button')]"
-						visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( Player.MakeScope ).End )]"
-						blockoverride "On_click"
-						{
-							enabled = "[ScriptedGui.IsValid( GuiScope.SetRoot( Player.MakeScope ).End )]"
-							onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
-						}
-						tooltip = "HOLD_GAMES_BUTTON_TOOLTIP"
-						
-						blockoverride "ClickSound" { clicksound = "event:/SFX/UI/Actions/sfx_ui_action_goverment_interactions" }
-						blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/hold_games.dds" }
-					}
-					
-					icon_button_square = {
-						datacontext = "[GetScriptedGui('patron_of_arts_button')]"
-						visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( Player.MakeScope ).End )]"
-						blockoverride "On_click"
-						{
-							enabled = "[ScriptedGui.IsValid( GuiScope.SetRoot( Player.MakeScope ).End )]"
-							onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
-						}
-						tooltip = "PATRON_OF_ARTS_BUTTON_TOOLTIP"
-						
-						blockoverride "ClickSound" { clicksound = "event:/SFX/UI/Actions/sfx_ui_action_goverment_interactions" }
-						blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/patronize_arts.dds" }
-					}
-				}
-				dynamicgridbox = {
-					parentanchor = hcenter|bottom
-					flipdirection = yes
-					datamodel = "[GovernmentView.GetPlayer.GetSuccession.GetSuccessors]"
-					item = {
 						flowcontainer = {
-							margin = { 5 0 }
-							flowcontainer = {
-								margin = { 5 5 }
-								direction = vertical
-								spacing = 5
-								using = background_widget
-								flowcontainer = {
-									spacing = 5
-									cpt_button = {
-										#datacontext implicit
-										size = { 60 90 }
+							margin = { 5 5 }
+							spacing = 10
+							icon_button_square = {
+								tooltip = "[GovernmentView.GetIncreaseLegitimacyDesc]"
+								blockoverride "Icon" { texture = "gfx/interface/buttons/button_endorse.dds" }
+								blockoverride "On_click" 
+								{
+									enabled = "[GovernmentView.CanIncreaseLegitimacy]"
+									onclick = "[GovernmentView.IncreaseLegitimacy]"
+								}
+								blockoverride "ClickSound"
+								{
+									clicksound = "event:/SFX/UI/Actions/sfx_ui_action_convert_currency"
+									oversound = "event:/SFX/UI/Generic/sfx_ui_generic_mouse_over"
+								}
+							}
+							panelka_left = { #legitimacy
+								parentanchor = vcenter
+								size = { 150 32 }
+								blockoverride "Icon" { using = icon_legitimacy }
+								blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetLegitimacy|0]%" }
+								blockoverride "Tooltip" { tooltip = "[GovernmentView.GetLegitimacyTooltip]" }
+							}
+						}
+						margin_widget = {
+							size = { 210 120 }
+							tooltip = "GOV_SCREN_LEG_EFF"
+							textbox = {
+								using = BaseFontXS
+								using = Default_FontColor
+								maximumsize = { 220 120 }
+								multiline = yes
+								autoresize = yes
+								align = left
+								text = "[GovernmentView.GetLegitimacyEffectInfo]"
+							}
+						}
+						flowcontainer = {
+							spacing = 5
+							ignoreinvisible = yes
+							icon_button_square = {
+								datacontext = "[GetScriptedGui('assemble_war_council_button')]"
+								visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( Player.MakeScope ).End )]"
+								blockoverride "On_click"
+								{
+									enabled = "[ScriptedGui.IsValid( GuiScope.SetRoot( Player.MakeScope ).End )]"
+									onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
+								}
+								tooltip = "ASSEMBLE_WAR_COUNCIL_BUTTON_TOOLTIP"
+								
+								blockoverride "ClickSound" { clicksound = "event:/SFX/UI/Actions/sfx_ui_action_goverment_interactions" }
+								blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/war_council.dds" }
+							}
+							icon_button_square = {
+								datacontext = "[GetScriptedGui('oaths_of_allegiance_button')]"
+								visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( Player.MakeScope ).End )]"
+								blockoverride "On_click"
+								{
+									enabled = "[ScriptedGui.IsValid( GuiScope.SetRoot( Player.MakeScope ).End )]"
+									onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
+								}
+								tooltip = "OATHS_OF_ALLEGIANCE_BUTTON_TOOLTIP"
+								
+								blockoverride "ClickSound" { clicksound = "event:/SFX/UI/Actions/sfx_ui_action_goverment_interactions" }
+								
+								blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/demand_oaths_of_allegience.dds" }
+							}
+							icon_button_square = {
+								datacontext = "[GetScriptedGui('hold_games_button')]"
+								visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( Player.MakeScope ).End )]"
+								blockoverride "On_click"
+								{
+									enabled = "[ScriptedGui.IsValid( GuiScope.SetRoot( Player.MakeScope ).End )]"
+									onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
+								}
+								tooltip = "HOLD_GAMES_BUTTON_TOOLTIP"
+								
+								blockoverride "ClickSound" { clicksound = "event:/SFX/UI/Actions/sfx_ui_action_goverment_interactions" }
+								blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/hold_games.dds" }
+							}
+							icon_button_square = {
+								datacontext = "[GetScriptedGui('patron_of_arts_button')]"
+								visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( Player.MakeScope ).End )]"
+								blockoverride "On_click"
+								{
+									enabled = "[ScriptedGui.IsValid( GuiScope.SetRoot( Player.MakeScope ).End )]"
+									onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
+								}
+								tooltip = "PATRON_OF_ARTS_BUTTON_TOOLTIP"
+								
+								blockoverride "ClickSound" { clicksound = "event:/SFX/UI/Actions/sfx_ui_action_goverment_interactions" }
+								blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/patronize_arts.dds" }
+							}
+						}
+					}
+					flowcontainer = {
+						direction = vertical
+						spacing = 5
+						widget = { size = { 510 150 } }
+						sub_header = {
+							size = { 510 32 } 
+							blockoverride "Title_text" { text = "SUCCESSION_AND_PRETENDERS" }
+						}
+						dynamicgridbox = {
+							parentanchor = hcenter
+							flipdirection = yes
+							datamodel = "[GovernmentView.GetPlayer.GetSuccession.GetSuccessors]"
+							item = {
+								margin_widget = {
+									size = { 125 270 }
+									margin = { 5 5 }
+									tooltip = "[PartyItemGlue.GetTooltip]"
+									widget = {
+										size = { 100% 100% }
+										using = background_widget
+										blockoverride "Margin" { margin = { 2 2 } }
+										flowcontainer = {
+											widget = {
+												size = { 115 110 }
+												icon = {
+													size = { 115 50 }
+													parentanchor = bottom
+													using = shadow_background
+													modify_texture = {
+														texture = "gfx/interface/base_parts/gradient_black_invert.dds"
+														blend_mode = alphamultiply
+													}
+												}
+												icon = {
+													size = { 115 2 }
+													parentanchor = bottom
+													using = brighten_red_background
+												}
+											}
+										}
 									}
 									flowcontainer = {
+										margin = { 5 10 }
 										direction = vertical
 										spacing = 5
+										cpt_button = {
+											size = { 60 90 }
+											parentanchor = hcenter
+										}
+										widget = { size = { 105 5 } }
 										icon_and_text = {
 											size = { 90 30 }
+											parentanchor = hcenter
 											blockoverride "Icon" { using = icon_loyalty }
 											blockoverride "Text" { text = "[Character.GetLoyalty|0]" }
 											tooltipwidget = { 
@@ -1369,37 +1321,71 @@ base_window = {
 											}
 										}
 										icon_and_text = {
-											size = { 90 30 } 
+											size = { 90 30 }
+											parentanchor = hcenter
 											blockoverride "Text" { text = "[Character.GetSuccessionScore|0]" }
 											tooltip = "[Character.GetSuccessionScoreInfo]"
 										}
 										icon_and_text = {
 											size = { 90 30 }
+											parentanchor = hcenter
 											blockoverride "Icon" { texture = "gfx/interface/icons/modifiers/max_friends.dds" }
 											blockoverride "Text" { text = "[Character.GetNumOfSupportsAsHeir]" }
 											tooltip = "[Character.GetHeirSupportInformation]"
 										}
+										text_button_square = { 
+											size = { 105 28 }
+											datacontext = "[GetScriptedGui('anoint_heir')]"
+											visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( Character.MakeScope ).AddScope('player', Player.MakeScope ).End )]"
+											blockoverride "On_click"
+											{
+												enabled = "[ScriptedGui.IsValid( GuiScope.SetRoot( Character.MakeScope ).AddScope( 'player', Player.MakeScope ).End )]"
+												onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( Character.MakeScope ).AddScope( 'player', Player.MakeScope ).End )]"
+											}
+											tooltip = "[ScriptedGui.BuildTooltip( GuiScope.SetRoot( Character.MakeScope ).AddScope( 'player', Player.MakeScope ).End )]"
+											blockoverride "Center_text" { text = "NOMINATE_HEIR_BUTTON" }
+										}
 									}
 								}
-								text_button_square = { 
-									size = { 150 28 }
-									parentanchor = hcenter
-									datacontext = "[GetScriptedGui('anoint_heir')]"
-									visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( Character.MakeScope ).AddScope('player', Player.MakeScope ).End )]"
-									blockoverride "On_click"
-									{
-										enabled = "[ScriptedGui.IsValid( GuiScope.SetRoot( Character.MakeScope ).AddScope( 'player', Player.MakeScope ).End )]"
-										onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( Character.MakeScope ).AddScope( 'player', Player.MakeScope ).End )]"
-									}
-									tooltip = "[ScriptedGui.BuildTooltip( GuiScope.SetRoot( Character.MakeScope ).AddScope( 'player', Player.MakeScope ).End )]"
-									blockoverride "Center_text" { text = "NOMINATE_HEIR_BUTTON" }
+							}
+						}
+					}
+					flowcontainer = {
+						direction = vertical
+						spacing = 5
+						sub_header = {
+							size = { 210 32 }
+							blockoverride "Title_text" { text = "SUCCESSION" }
+							tooltip = "[GovernmentView.GetLegitimacyTooltip]"
+						}
+						flowcontainer = {
+							spacing = 10
+							cpt_button = {
+								size = { 76 113 }
+								blockoverride "Context" { datacontext = "[GovernmentView.GetPlayer.GetSuccession.GetPrimaryHeir]" }
+							}
+							flowcontainer = {
+								margin_top = 10
+								direction = vertical
+								spacing = 24
+								panelka_left = { #legitimacy
+									size = { 110 32 }
+									blockoverride "Icon" { using = icon_legitimacy }
+									blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetModifierPureValue('next_ruler_legitimacy')|0]%" }
+									blockoverride "Tooltip" { tooltip = "[GovernmentView.GetPlayer.GetModifierTooltip('next_ruler_legitimacy')]" }
+								}
+								panelka_left = { #score
+									size = { 110 32 }
+									blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/leader.dds" }
+									blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetSuccession.GetPrimaryHeir.GetSuccessionScore|0]" }
+									blockoverride "Tooltip" { tooltip = "[GovernmentView.GetPlayer.GetSuccession.GetPrimaryHeir.GetSuccessionScoreInfo]" }
 								}
 							}
 						}
 					}
 				}
 			}
-			margin_widget = { #Unique Mechanics for Republic
+			margin_widget = { #Republic mechanics
 				size = { @window_width 520 }
 				margin = { 10 5 }
 				visible = "[GovernmentView.GetPlayer.GetGovernment.IsRepublic]"
@@ -1421,26 +1407,49 @@ base_window = {
 				}
 				flowcontainer = {
 					spacing = 10
-					dynamicgridbox = { #left block
-						size = { 160 200 }
-						flipdirection = yes
-						datamodel_wrap = 5
-						datamodel = "[GovernmentView.GetLeftSenate]"
+					flowcontainer = {
+						direction = vertical
+						spacing = 5
+						dynamicgridbox = {
+							size = { 160 200 }
+							flipdirection = yes
+							datamodel_wrap = 5
+							datamodel = "[GovernmentView.GetLeftSenate]"
 
-						item = {
-							margin_widget = {
-								size = { 34 34 }
-								margin = { 1 1 }
-								icon_card = {
-									name = "Faction_Base"
-									size = { 100% 100% }
-									blockoverride "Icon" { 
-										texture = "[GetPartyIcon(SenateItemGlue.GetType)]" 
-										size = { 18 18 }
+							item = {
+								margin_widget = {
+									size = { 34 34 }
+									margin = { 1 1 }
+									icon_card = {
+										name = "Faction_Base"
+										size = { 100% 100% }
+										blockoverride "Icon" { 
+											texture = "[GetPartyIcon(SenateItemGlue.GetType)]" 
+											size = { 18 18 }
+										}
+										tooltip = "[SenateItemGlue.GetPartyName|T]"
 									}
-									tooltip = "[SenateItemGlue.GetPartyName|T]"
 								}
 							}
+						}
+						icon_button_square = {
+							size = { 44 44 }
+							datacontext = "[GetScriptedGui('summon_curiate_assembly')]"
+							visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( Player.MakeScope ).End )]"
+							blockoverride "On_click"
+							{
+								enabled = "[ScriptedGui.IsValid( GuiScope.SetRoot( Player.MakeScope ).End )]"
+								onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
+							}
+							tooltip = "SUMMON_CURIATE_ASSEMBLY_BUTTON_TOOLTIP"
+							
+							blockoverride "ClickSound"
+							{
+								oversound = "event:/SFX/UI/Generic/sfx_ui_generic_mouse_over"
+								clicksound = "event:/SFX/UI/Actions/sfx_ui_action_goverment_interactions"
+							}
+							
+							blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/curiate_assembly.dds" }					
 						}
 					}
 					flowcontainer = {
@@ -1498,7 +1507,7 @@ base_window = {
 							text = "SENATE_FACTIONS"
 							tooltip = "SENATE_FACTIONS_TT"
 						}
-						dynamicgridbox = { #senate
+						dynamicgridbox = {
 							datamodel = "[GovernmentView.GetParties]"
 							item = {
 								margin_widget = {
@@ -1610,7 +1619,7 @@ base_window = {
 												icon_button_square = {
 													size = { 40 40 }
 													datacontext = "[GetScriptedGui('republic_party_button')]"
-													blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/time.dds" }
+													blockoverride "Icon" { texture = "gfx/interface/icons/new_icons/color/state.dds" }
 													blockoverride "On_click" 
 													{
 														enabled = "[ScriptedGui.IsValid( GuiScope.SetRoot( PartyItemGlue.GetPartyLeader.MakeScope ).AddScope('player', Player.MakeScope ).End )]"
@@ -1625,69 +1634,50 @@ base_window = {
 							}		
 						}
 					}
-					dynamicgridbox = { #right block	
-						flipdirection = yes
-						datamodel_wrap = 5
-						datamodel = "[GovernmentView.GetRightSenate]"
+					flowcontainer = {
+						direction = vertical
+						spacing = 5
+						dynamicgridbox = {
+							flipdirection = yes
+							datamodel_wrap = 5
+							datamodel = "[GovernmentView.GetRightSenate]"
 
-						item = {
-							margin_widget = {
-								size = { 34 34 }
-								margin = { 1 1 }
-								icon_card = {
-									name = "Faction_Base"
-									size = { 100% 100% }
-									blockoverride "Icon" { 
-										texture = "[GetPartyIcon(SenateItemGlue.GetType)]" 
-										size = { 18 18 }
+							item = {
+								margin_widget = {
+									size = { 34 34 }
+									margin = { 1 1 }
+									icon_card = {
+										name = "Faction_Base"
+										size = { 100% 100% }
+										blockoverride "Icon" { 
+											texture = "[GetPartyIcon(SenateItemGlue.GetType)]" 
+											size = { 18 18 }
+										}
+										tooltip = "[SenateItemGlue.GetPartyName|T]"
 									}
-									tooltip = "[SenateItemGlue.GetPartyName|T]"
 								}
 							}
 						}
-					}
-				}
-				margin_widget = {
-					size = { 100% 44 }
-					position = { 0 350 }
-					icon_button_square = {
-						size = { 44 44 }
-						datacontext = "[GetScriptedGui('summon_curiate_assembly')]"
-						visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( Player.MakeScope ).End )]"
-						blockoverride "On_click"
-						{
-							enabled = "[ScriptedGui.IsValid( GuiScope.SetRoot( Player.MakeScope ).End )]"
-							onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
+						icon_button_square = {
+							parentanchor = right
+							size = { 44 44 }
+							datacontext = "[GetScriptedGui('assemble_war_council_republic_button')]"
+							visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( Player.MakeScope ).End )]"
+							blockoverride "On_click"
+							{
+								enabled = "[ScriptedGui.IsValid( GuiScope.SetRoot( Player.MakeScope ).End )]"
+								onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
+							}
+							tooltip = "ASSEMBLE_WAR_COUNCIL_REPUBLIC_BUTTON_TOOLTIP"
+							
+							blockoverride "ClickSound"
+							{
+								oversound = "event:/SFX/UI/Generic/sfx_ui_generic_mouse_over"
+								clicksound = "event:/SFX/UI/Actions/sfx_ui_action_goverment_interactions"
+							}
+							
+							blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/war_council.dds" }					
 						}
-						tooltip = "SUMMON_CURIATE_ASSEMBLY_BUTTON_TOOLTIP"
-						
-						blockoverride "ClickSound"
-						{
-							oversound = "event:/SFX/UI/Generic/sfx_ui_generic_mouse_over"
-							clicksound = "event:/SFX/UI/Actions/sfx_ui_action_goverment_interactions"
-						}
-						
-						blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/curiate_assembly.dds" }					
-					}
-					icon_button_square = {
-						parentanchor = right
-						size = { 44 44 }
-						datacontext = "[GetScriptedGui('assemble_war_council_republic_button')]"
-						visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( Player.MakeScope ).End )]"
-						blockoverride "On_click"
-						{
-							enabled = "[ScriptedGui.IsValid( GuiScope.SetRoot( Player.MakeScope ).End )]"
-							onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
-						}
-						tooltip = "ASSEMBLE_WAR_COUNCIL_REPUBLIC_BUTTON_TOOLTIP"
-						
-						blockoverride "ClickSound"
-						{
-							oversound = "event:/SFX/UI/Generic/sfx_ui_generic_mouse_over"
-							clicksound = "event:/SFX/UI/Actions/sfx_ui_action_goverment_interactions"
-						}
-						
-						blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/war_council.dds" }					
 					}
 				}
 			}
@@ -1776,12 +1766,11 @@ base_window = {
 			visible = "[GovernmentView.IsShowOffices]"
 
 			scrollarea = {
-				scrollbarpolicy_horizontal = always_off
 				size = { 950 800 }
+				scrollbarpolicy_horizontal = always_off
 				scrollbar_vertical = {
 					using = VerticalScrollBar
 				}
-				
 				scrollwidget = {
 					dynamicgridbox = {
 						parentanchor = hcenter
