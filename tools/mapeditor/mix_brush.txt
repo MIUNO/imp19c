@@ -1,72 +1,56 @@
 ﻿MaterialSetter={
 	Samples={
 		Sample={
-			Name="Sample from 3614, 1571"
+			Name="Sample from 2149, 1535"
 			Materials={
 				Material={
 					MaterialId="rock_european"
-					Value=139
+					Value=125
 				}
 
 				Material={
 					MaterialId="mountains"
-					Value=60
+					Value=67
 				}
 
 				Material={
 					MaterialId="boulders_european"
-					Value=41
-				}
-
-				Material={
-					MaterialId="grass_dry"
-					Value=15
-				}
-
-			}
-		}
-
-		Sample={
-			Name="Sample from 3816, 1658"
-			Materials={
-				Material={
-					MaterialId="grass_plain"
-					Value=171
-				}
-
-				Material={
-					MaterialId="grass_dry"
-					Value=79
-				}
-
-				Material={
-					MaterialId="woodlands"
-					Value=5
-				}
-
-			}
-		}
-
-		Sample={
-			Name="Sample from 3828, 1651"
-			Materials={
-				Material={
-					MaterialId="beach"
-					Value=122
-				}
-
-				Material={
-					MaterialId="seafloor"
-					Value=103
-				}
-
-				Material={
-					MaterialId="grass_plain"
-					Value=27
+					Value=50
 				}
 
 				Material={
 					MaterialId="grass_hills"
+					Value=10
+				}
+
+				Material={
+					MaterialId="grass_2"
+					Value=2
+				}
+
+				Material={
+					MaterialId="woodlands"
+					Value=1
+				}
+
+			}
+		}
+
+		Sample={
+			Name="Sample from 1054, 1461"
+			Materials={
+				Material={
+					MaterialId="grass_plain"
+					Value=205
+				}
+
+				Material={
+					MaterialId="grass_2"
+					Value=47
+				}
+
+				Material={
+					MaterialId="farmlands"
 					Value=2
 				}
 
@@ -79,57 +63,21 @@
 		}
 
 		Sample={
-			Name="Sample from 3602, 1649"
+			Name="Sample from 1079, 1650"
 			Materials={
 				Material={
 					MaterialId="woodlands"
-					Value=209
+					Value=211
 				}
 
 				Material={
 					MaterialId="grass_plain"
-					Value=29
-				}
-
-				Material={
-					MaterialId="boulders_european"
-					Value=12
-				}
-
-				Material={
-					MaterialId="grass_dry"
-					Value=4
+					Value=43
 				}
 
 				Material={
 					MaterialId="hills_india"
 					Value=1
-				}
-
-			}
-		}
-
-		Sample={
-			Name="Sample from 2125, 1541"
-			Materials={
-				Material={
-					MaterialId="snow"
-					Value=198
-				}
-
-				Material={
-					MaterialId="rock_european"
-					Value=29
-				}
-
-				Material={
-					MaterialId="mountains"
-					Value=18
-				}
-
-				Material={
-					MaterialId="boulders_european"
-					Value=10
 				}
 
 			}
