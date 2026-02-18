@@ -3,7 +3,8 @@
 	layer="tree_layer"
 
 	meshes={
-		"tree_pine_01_mesh" = 100.000000
+		"tree_pine_01_mesh" = 70.000000
+		"tree_pine_02_mesh" = 30.000000
 	}
 
 	max_density=0.600000
