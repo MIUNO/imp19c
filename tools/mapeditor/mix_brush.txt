@@ -1,0 +1,201 @@
+﻿MaterialSetter={
+	Samples={
+		Sample={
+			Name="Sample from 2149, 1535"
+			Materials={
+				Material={
+					MaterialId="rock_european"
+					Value=125
+				}
+
+				Material={
+					MaterialId="mountains"
+					Value=67
+				}
+
+				Material={
+					MaterialId="boulders_european"
+					Value=50
+				}
+
+				Material={
+					MaterialId="grass_hills"
+					Value=10
+				}
+
+				Material={
+					MaterialId="grass_2"
+					Value=2
+				}
+
+				Material={
+					MaterialId="woodlands"
+					Value=1
+				}
+
+			}
+		}
+
+		Sample={
+			Name="Sample from 1054, 1461"
+			Materials={
+				Material={
+					MaterialId="grass_plain"
+					Value=205
+				}
+
+				Material={
+					MaterialId="grass_2"
+					Value=47
+				}
+
+				Material={
+					MaterialId="farmlands"
+					Value=2
+				}
+
+				Material={
+					MaterialId="hills_india"
+					Value=1
+				}
+
+			}
+		}
+
+		Sample={
+			Name="Sample from 1079, 1650"
+			Materials={
+				Material={
+					MaterialId="woodlands"
+					Value=211
+				}
+
+				Material={
+					MaterialId="grass_plain"
+					Value=43
+				}
+
+				Material={
+					MaterialId="hills_india"
+					Value=1
+				}
+
+			}
+		}
+
+		Sample={
+			Name="Sample from 2214, 1523"
+			Materials={
+				Material={
+					MaterialId="grass_plain"
+					Value=97
+				}
+
+				Material={
+					MaterialId="grass_hills"
+					Value=80
+				}
+
+				Material={
+					MaterialId="grass_2"
+					Value=54
+				}
+
+				Material={
+					MaterialId="farmlands"
+					Value=23
+				}
+
+				Material={
+					MaterialId="hills_india"
+					Value=1
+				}
+
+			}
+		}
+
+		Sample={
+			Name="Sample from 1865, 1940"
+			Materials={
+				Material={
+					MaterialId="rock_european"
+					Value=103
+				}
+
+				Material={
+					MaterialId="boulders_european"
+					Value=79
+				}
+
+				Material={
+					MaterialId="grass_plain"
+					Value=45
+				}
+
+				Material={
+					MaterialId="grass_hills"
+					Value=26
+				}
+
+				Material={
+					MaterialId="hills_india"
+					Value=2
+				}
+
+			}
+		}
+
+		Sample={
+			Name="Sample from 2263, 1466"
+			Materials={
+				Material={
+					MaterialId="beach"
+					Value=92
+				}
+
+				Material={
+					MaterialId="grass_2"
+					Value=79
+				}
+
+				Material={
+					MaterialId="seafloor"
+					Value=35
+				}
+
+				Material={
+					MaterialId="grass_plain"
+					Value=34
+				}
+
+				Material={
+					MaterialId="rock_european"
+					Value=5
+				}
+
+				Material={
+					MaterialId="grass_hills"
+					Value=4
+				}
+
+				Material={
+					MaterialId="gravel_1"
+					Value=3
+				}
+
+				Material={
+					MaterialId="hills_india"
+					Value=2
+				}
+
+				Material={
+					MaterialId="boulders_european"
+					Value=1
+				}
+
+			}
+		}
+
+	}
+}
+

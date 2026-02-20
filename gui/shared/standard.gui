@@ -2377,40 +2377,40 @@ types Standard_Types
 		#		texture = "gfx/interface/banners/pole_banner.dds"
 		#	}
 		#}
-		widget = {
-			block "Size" { size = { 120 80 } }
-			parentanchor = center
-			icon = {
-				size = { 100% 100% }
-				gfxtype = icongfx
-				shaderfile = "gfx/FX/pdxgui_default_flag.shader"
-				texture = "gfx/interface/base_parts/background_texture.dds"
-				block "Shadow" { }
-			}
-			button = {
-				size = { 100% 100% }
-				block "BannerClick" { onclick = "[OpenDiplomacy( Country.Self )]" }
-				gfxtype = buttongfx
-				shaderfile = "gfx/FX/pdxgui_pushbutton_flag.shader"
-				block "flag" {
-					texture = "[Country.AccessCoatOfArms.GetTexture('(int32)120','(int32)120')]"
-					frame = "[Country.AccessCoatOfArms.GetFrame('(int32)120','(int32)120')]"
-					framesize = { 120 120 }
-				}
-				block "Banner" { }
-				button = {
-					size = { 103% 103% }
-					datacontext = "[GetScriptedGui('DIPLO_colonial_canton')]"
-					visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( Country.MakeScope ).End )]"
-					gfxtype = buttongfx
-					shaderfile = "gfx/FX/pdxgui_pushbutton_flag_subject.shader"
-					texture = "[Country.GetOverlord.AccessCoatOfArms.GetTexture('(int32)120','(int32)120')]"
-					frame = "[Country.GetOverlord.AccessCoatOfArms.GetFrame('(int32)120','(int32)120')]"
-					framesize = { 120 120 }
-					block "BannerColony" { }
-				}
-			}
-		}
+		#widget = {
+		#	block "Size" { size = { 120 80 } }
+		#	parentanchor = center
+		#	icon = {
+		#		size = { 100% 100% }
+		#		gfxtype = icongfx
+		#		shaderfile = "gfx/FX/pdxgui_default_flag.shader"
+		#		texture = "gfx/interface/base_parts/background_texture.dds"
+		#		block "Shadow" { }
+		#	}
+		#	button = {
+		#		size = { 100% 100% }
+		#		block "BannerClick" { onclick = "[OpenDiplomacy( Country.Self )]" }
+		#		gfxtype = buttongfx
+		#		shaderfile = "gfx/FX/pdxgui_pushbutton_flag.shader"
+		#		block "flag" {
+		#			texture = "[Country.AccessCoatOfArms.GetTexture('(int32)120','(int32)120')]"
+		#			frame = "[Country.AccessCoatOfArms.GetFrame('(int32)120','(int32)120')]"
+		#			framesize = { 120 120 }
+		#		}
+		#		block "Banner" { }
+		#		button = {
+		#			size = { 103% 103% }
+		#			datacontext = "[GetScriptedGui('DIPLO_colonial_canton')]"
+		#			visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( Country.MakeScope ).End )]"
+		#			gfxtype = buttongfx
+		#			shaderfile = "gfx/FX/pdxgui_pushbutton_flag_subject.shader"
+		#			texture = "[Country.GetOverlord.AccessCoatOfArms.GetTexture('(int32)120','(int32)120')]"
+		#			frame = "[Country.GetOverlord.AccessCoatOfArms.GetFrame('(int32)120','(int32)120')]"
+		#			framesize = { 120 120 }
+		#			block "BannerColony" { }
+		#		}
+		#	}
+		#}
 	}
 
 	type small_country_banner = widget {

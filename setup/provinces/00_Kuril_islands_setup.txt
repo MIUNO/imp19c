@@ -43,7 +43,7 @@
 }
 
 2231={ #Urup
-   terrain=""
+   terrain="hills"
    culture="chisima_ainu"
    religion="kamuy"
    trade_goods="whales"

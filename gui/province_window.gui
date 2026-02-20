@@ -249,7 +249,7 @@ window = {
 			size = { 120 100% }
 			background = {
 				shaderfile = "gfx/FX/pdxgui_default.shader"
-				using = black_background
+				using = shadow_background
 				alpha = 0.75
 				modify_texture = {
 					texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black.dds"
@@ -333,165 +333,173 @@ window = {
 			flowcontainer = {
 				spacing = 5
 				flowcontainer = {
-					spacing = 2
 					direction = vertical
 					margin_left = 3
-					ignoreinvisible = yes
 					widget = {
 						size = { 10 0 }
 						icon = {
 							position = { 0 -39  }
 							using = brighten_red_background
-							size = { 2 42 }
+							size = { 2 40 }
 						}
 					}
-					category_tab_vertical = {
-						tooltip = "province_tt_raw"
-						blockoverride "MinSize" { size = { @mincategorybuttonwidth_top @mincategorybuttonheight_top } }
-						blockoverride "MaxSize" { size = { @maxcategorybuttonwidth_top @maxcategorybuttonheight_top } }
-						blockoverride "MinVisible" { visible = "[Not( GetVariableSystem.HasValue('state_up_tabs', 'raw'))]" }
-						blockoverride "MaxVisible" { visible = "[GetVariableSystem.HasValue('state_up_tabs', 'raw')]" }
-						######## Shared Overrides
-						blockoverride "Center_text" { visible = no }
-						blockoverride "Center_text_and_icon" { visible = yes }
-						blockoverride "Button_text" { visible = no }
-						blockoverride "Icon" {
-							size = { 30 30 }
-							using = white_background
-							modify_texture = {
-								texture = "gfx/interface/icons/new_icons/alpha/raw.dds"
-								blend_mode = alphamultiply
+					flowcontainer = {
+						direction = vertical
+						spacing = 2
+						ignoreinvisible = yes
+						category_tab_vertical = {
+							tooltip = "province_tt_raw"
+							blockoverride "MinSize" { size = { @mincategorybuttonwidth_top @mincategorybuttonheight_top } }
+							blockoverride "MaxSize" { size = { @maxcategorybuttonwidth_top @maxcategorybuttonheight_top } }
+							blockoverride "MinVisible" { visible = "[Not( GetVariableSystem.HasValue('state_up_tabs', 'raw'))]" }
+							blockoverride "MaxVisible" { visible = "[GetVariableSystem.HasValue('state_up_tabs', 'raw')]" }
+							blockoverride "Center_text" { visible = no }
+							blockoverride "Center_text_and_icon" { visible = yes }
+							blockoverride "Button_text" { visible = no }
+							blockoverride "Icon" {
+								size = { 30 30 }
+								using = white_background
+								modify_texture = {
+									texture = "gfx/interface/icons/new_icons/alpha/raw.dds"
+									blend_mode = alphamultiply
+								}
 							}
+							blockoverride "ClickFunction" { onclick = "[GetVariableSystem.Set('state_up_tabs', 'raw')]" }
 						}
-						######## Small Button Overrides
-						blockoverride "ClickFunction" { onclick = "[GetVariableSystem.Set('state_up_tabs', 'raw')]" }
-					}
-					category_tab_vertical = {
-						tooltip = "province_tt_manufactured_goods"
-						blockoverride "MinSize" { size = { @mincategorybuttonwidth_top @mincategorybuttonheight_top } }
-						blockoverride "MaxSize" { size = { @maxcategorybuttonwidth_top @maxcategorybuttonheight_top } }
-						blockoverride "MinVisible" { visible = "[Not( GetVariableSystem.HasValue('state_up_tabs', 'manufactured_goods'))]" }
-						blockoverride "MaxVisible" { visible = "[GetVariableSystem.HasValue('state_up_tabs', 'manufactured_goods')]" }
-						######## Shared Overrides
-						blockoverride "Center_text" { visible = no }
-						blockoverride "Center_text_and_icon" { visible = yes }
-						blockoverride "Button_text" { visible = no }
-						blockoverride "Icon" {
-							size = { 30 30 }
-							using = white_background
-							modify_texture = {
-								texture = "gfx/interface/icons/new_icons/alpha/manufactured_goods.dds"
-								blend_mode = alphamultiply
+						category_tab_vertical = {
+							tooltip = "province_tt_manufactured_goods"
+							blockoverride "MinSize" { size = { @mincategorybuttonwidth_top @mincategorybuttonheight_top } }
+							blockoverride "MaxSize" { size = { @maxcategorybuttonwidth_top @maxcategorybuttonheight_top } }
+							blockoverride "MinVisible" { visible = "[Not( GetVariableSystem.HasValue('state_up_tabs', 'manufactured_goods'))]" }
+							blockoverride "MaxVisible" { visible = "[GetVariableSystem.HasValue('state_up_tabs', 'manufactured_goods')]" }
+							blockoverride "Center_text" { visible = no }
+							blockoverride "Center_text_and_icon" { visible = yes }
+							blockoverride "Button_text" { visible = no }
+							blockoverride "Icon" {
+								size = { 30 30 }
+								using = white_background
+								modify_texture = {
+									texture = "gfx/interface/icons/new_icons/alpha/manufactured_goods.dds"
+									blend_mode = alphamultiply
+								}
 							}
+							blockoverride "ClickFunction" { onclick = "[GetVariableSystem.Set('state_up_tabs', 'manufactured_goods')]" }
 						}
-						######## Small Button Overrides
-						blockoverride "ClickFunction" { onclick = "[GetVariableSystem.Set('state_up_tabs', 'manufactured_goods')]" }
-					}
-					category_tab_vertical = {
-						tooltip = "province_tt_education"
-						blockoverride "MinSize" { size = { @mincategorybuttonwidth_top @mincategorybuttonheight_top } }
-						blockoverride "MaxSize" { size = { @maxcategorybuttonwidth_top @maxcategorybuttonheight_top } }
-						blockoverride "MinVisible" { visible = "[Not( GetVariableSystem.HasValue('state_up_tabs', 'education'))]" }
-						blockoverride "MaxVisible" { visible = "[GetVariableSystem.HasValue('state_up_tabs', 'education')]" }
-						######## Shared Overrides
-						blockoverride "Center_text" { visible = no }
-						blockoverride "Center_text_and_icon" { visible = yes }
-						blockoverride "Button_text" { visible = no }
-						blockoverride "Icon" {
-							size = { 30 30 }
-							using = white_background
-							modify_texture = {
-								texture = "gfx/interface/icons/new_icons/alpha/education.dds"
-								blend_mode = alphamultiply
+						category_tab_vertical = {
+							tooltip = "province_tt_education"
+							blockoverride "MinSize" { size = { @mincategorybuttonwidth_top @mincategorybuttonheight_top } }
+							blockoverride "MaxSize" { size = { @maxcategorybuttonwidth_top @maxcategorybuttonheight_top } }
+							blockoverride "MinVisible" { visible = "[Not( GetVariableSystem.HasValue('state_up_tabs', 'education'))]" }
+							blockoverride "MaxVisible" { visible = "[GetVariableSystem.HasValue('state_up_tabs', 'education')]" }
+							blockoverride "Center_text" { visible = no }
+							blockoverride "Center_text_and_icon" { visible = yes }
+							blockoverride "Button_text" { visible = no }
+							blockoverride "Icon" {
+								size = { 30 30 }
+								using = white_background
+								modify_texture = {
+									texture = "gfx/interface/icons/new_icons/alpha/education.dds"
+									blend_mode = alphamultiply
+								}
 							}
+							blockoverride "ClickFunction" { onclick = "[GetVariableSystem.Set('state_up_tabs', 'education')]" }
 						}
-						######## Small Button Overrides
-						blockoverride "ClickFunction" { onclick = "[GetVariableSystem.Set('state_up_tabs', 'education')]" }
-					}
-					category_tab_vertical = {
-						tooltip = "province_tt_state"
-						blockoverride "MinSize" { size = { @mincategorybuttonwidth_top @mincategorybuttonheight_top } }
-						blockoverride "MaxSize" { size = { @maxcategorybuttonwidth_top @maxcategorybuttonheight_top } }
-						blockoverride "MinVisible" { visible = "[Not( GetVariableSystem.HasValue('state_up_tabs', 'state'))]" }
-						blockoverride "MaxVisible" { visible = "[GetVariableSystem.HasValue('state_up_tabs', 'state')]" }
-						######## Shared Overrides
-						blockoverride "Center_text" { visible = no }
-						blockoverride "Center_text_and_icon" { visible = yes }
-						blockoverride "Button_text" { visible = no }
-						blockoverride "Icon" {
-							size = { 30 30 }
-							using = white_background
-							modify_texture = {
-								texture = "gfx/interface/icons/new_icons/alpha/state.dds"
-								blend_mode = alphamultiply
+						category_tab_vertical = {
+							tooltip = "province_tt_state"
+							blockoverride "MinSize" { size = { @mincategorybuttonwidth_top @mincategorybuttonheight_top } }
+							blockoverride "MaxSize" { size = { @maxcategorybuttonwidth_top @maxcategorybuttonheight_top } }
+							blockoverride "MinVisible" { visible = "[Not( GetVariableSystem.HasValue('state_up_tabs', 'state'))]" }
+							blockoverride "MaxVisible" { visible = "[GetVariableSystem.HasValue('state_up_tabs', 'state')]" }
+							blockoverride "Center_text" { visible = no }
+							blockoverride "Center_text_and_icon" { visible = yes }
+							blockoverride "Button_text" { visible = no }
+							blockoverride "Icon" {
+								size = { 30 30 }
+								using = white_background
+								modify_texture = {
+									texture = "gfx/interface/icons/new_icons/alpha/state.dds"
+									blend_mode = alphamultiply
+								}
 							}
+							blockoverride "ClickFunction" { onclick = "[GetVariableSystem.Set('state_up_tabs', 'state')]" }
 						}
-						######## Small Button Overrides
-						blockoverride "ClickFunction" { onclick = "[GetVariableSystem.Set('state_up_tabs', 'state')]" }
-					}
-					category_tab_vertical = {
-						tooltip = "province_tt_building"
-						blockoverride "MinSize" { size = { @mincategorybuttonwidth_top @mincategorybuttonheight_top } }
-						blockoverride "MaxSize" { size = { @maxcategorybuttonwidth_top @maxcategorybuttonheight_top } }
-						blockoverride "MinVisible" { visible = "[Not( GetVariableSystem.HasValue('state_up_tabs', 'province_building'))]" }
-						blockoverride "MaxVisible" { visible = "[GetVariableSystem.HasValue('state_up_tabs', 'province_building')]" }
-						######## Shared Overrides
-						blockoverride "Center_text" { visible = no }
-						blockoverride "Center_text_and_icon" { visible = yes }
-						blockoverride "Button_text" { visible = no }
-						blockoverride "Icon" {
-							size = { 30 30 }
-							using = white_background
-							modify_texture = {
-								texture = "gfx/interface/icons/new_icons/alpha/building.dds"
-								blend_mode = alphamultiply
+						category_tab_vertical = {
+							tooltip = "province_tt_building"
+							blockoverride "MinSize" { size = { @mincategorybuttonwidth_top @mincategorybuttonheight_top } }
+							blockoverride "MaxSize" { size = { @maxcategorybuttonwidth_top @maxcategorybuttonheight_top } }
+							blockoverride "MinVisible" { visible = "[Not( GetVariableSystem.HasValue('state_up_tabs', 'province_building'))]" }
+							blockoverride "MaxVisible" { visible = "[GetVariableSystem.HasValue('state_up_tabs', 'province_building')]" }
+							blockoverride "Center_text" { visible = no }
+							blockoverride "Center_text_and_icon" { visible = yes }
+							blockoverride "Button_text" { visible = no }
+							blockoverride "Icon" {
+								size = { 30 30 }
+								using = white_background
+								modify_texture = {
+									texture = "gfx/interface/icons/new_icons/alpha/building.dds"
+									blend_mode = alphamultiply
+								}
 							}
+							blockoverride "ClickFunction" { onclick = "[GetVariableSystem.Set('state_up_tabs', 'province_building')]" }
 						}
-						######## Small Button Overrides
-						blockoverride "ClickFunction" { onclick = "[GetVariableSystem.Set('state_up_tabs', 'province_building')]" }
-					}
-					category_tab_vertical = {
-						tooltip = "[ProvinceWindow.GetProvince.GetPopulationCapacityInfo]"
-						blockoverride "MinSize" { size = { @mincategorybuttonwidth_top @mincategorybuttonheight_top } }
-						blockoverride "MaxSize" { size = { @maxcategorybuttonwidth_top @maxcategorybuttonheight_top } }
-						blockoverride "MinVisible" { visible = "[Not( GetVariableSystem.HasValue('state_up_tabs', 'province_pops'))]" }
-						blockoverride "MaxVisible" { visible = "[GetVariableSystem.HasValue('state_up_tabs', 'province_pops')]" }
-						######## Shared Overrides
-						blockoverride "Center_text" { visible = no }
-						blockoverride "Center_text_and_icon" { visible = yes }
-						blockoverride "Button_text" { visible = no }
-						blockoverride "Icon" {
-							size = { 30 30 }
-							using = white_background
-							modify_texture = {
-								texture = "gfx/interface/icons/new_icons/alpha/state.dds"
-								blend_mode = alphamultiply
+						category_tab_vertical = {
+							tooltip = "[ProvinceWindow.GetProvince.GetPopulationCapacityInfo]"
+							blockoverride "MinSize" { size = { @mincategorybuttonwidth_top @mincategorybuttonheight_top } }
+							blockoverride "MaxSize" { size = { @maxcategorybuttonwidth_top @maxcategorybuttonheight_top } }
+							blockoverride "MinVisible" { visible = "[Not( GetVariableSystem.HasValue('state_up_tabs', 'province_pops'))]" }
+							blockoverride "MaxVisible" { visible = "[GetVariableSystem.HasValue('state_up_tabs', 'province_pops')]" }
+							blockoverride "Center_text" { visible = no }
+							blockoverride "Center_text_and_icon" { visible = yes }
+							blockoverride "Button_text" { visible = no }
+							blockoverride "Icon" {
+								size = { 30 30 }
+								using = white_background
+								modify_texture = {
+									texture = "gfx/interface/icons/new_icons/alpha/state.dds"
+									blend_mode = alphamultiply
+								}
 							}
+							blockoverride "ClickFunction" { onclick = "[GetVariableSystem.Set('state_up_tabs', 'province_pops')]" }
 						}
-						######## Small Button Overrides
-						blockoverride "ClickFunction" { onclick = "[GetVariableSystem.Set('state_up_tabs', 'province_pops')]" }
-					}
-					category_tab_vertical = {
-						visible = "[Or( ProvinceWindow.GetProvince.HasGreatWork, ProvinceWindow.GetProvince.HasSecondaryGreatWork )]"
-						tooltip = "province_tt_great_works"
-						blockoverride "MinSize" { size = { @mincategorybuttonwidth_top @mincategorybuttonheight_top } }
-						blockoverride "MaxSize" { size = { @maxcategorybuttonwidth_top @maxcategorybuttonheight_top } }
-						blockoverride "MinVisible" { visible = "[Not( GetVariableSystem.HasValue('state_up_tabs', 'great_works'))]" }
-						blockoverride "MaxVisible" { visible = "[GetVariableSystem.HasValue('state_up_tabs', 'great_works')]" }
-						######## Shared Overrides
-						blockoverride "Center_text" { visible = no }
-						blockoverride "Center_text_and_icon" { visible = yes }
-						blockoverride "Button_text" { visible = no }
-						blockoverride "Icon" {
-							size = { 30 30 }
-							using = white_background
-							modify_texture = {
-								texture = "gfx/interface/icons/new_icons/alpha/great_work.dds"
-								blend_mode = alphamultiply
+						category_tab_vertical = {
+							tooltip = "province_tt_diplomacy"
+							blockoverride "MinSize" { size = { @mincategorybuttonwidth_top @mincategorybuttonheight_top } }
+							blockoverride "MaxSize" { size = { @maxcategorybuttonwidth_top @maxcategorybuttonheight_top } }
+							blockoverride "MinVisible" { visible = "[Not( GetVariableSystem.HasValue('state_up_tabs', 'diplomacy'))]" }
+							blockoverride "MaxVisible" { visible = "[GetVariableSystem.HasValue('state_up_tabs', 'diplomacy')]" }
+							blockoverride "Center_text" { visible = no }
+							blockoverride "Center_text_and_icon" { visible = yes }
+							blockoverride "Button_text" { visible = no }
+							blockoverride "Icon" {
+								size = { 30 30 }
+								using = white_background
+								modify_texture = {
+									texture = "gfx/interface/icons/menu_buttons/menu_diplomacy.dds"
+									blend_mode = alphamultiply
+								}
 							}
+							blockoverride "ClickFunction" { onclick = "[GetVariableSystem.Set('state_up_tabs', 'diplomacy')]" }
 						}
-						######## Small Button Overrides
-						blockoverride "ClickFunction" { onclick = "[GetVariableSystem.Set('state_up_tabs', 'great_works')]" }
+						category_tab_vertical = {
+							visible = "[Or( ProvinceWindow.GetProvince.HasGreatWork, ProvinceWindow.GetProvince.HasSecondaryGreatWork )]"
+							tooltip = "province_tt_great_works"
+							blockoverride "MinSize" { size = { @mincategorybuttonwidth_top @mincategorybuttonheight_top } }
+							blockoverride "MaxSize" { size = { @maxcategorybuttonwidth_top @maxcategorybuttonheight_top } }
+							blockoverride "MinVisible" { visible = "[Not( GetVariableSystem.HasValue('state_up_tabs', 'great_works'))]" }
+							blockoverride "MaxVisible" { visible = "[GetVariableSystem.HasValue('state_up_tabs', 'great_works')]" }
+							blockoverride "Center_text" { visible = no }
+							blockoverride "Center_text_and_icon" { visible = yes }
+							blockoverride "Button_text" { visible = no }
+							blockoverride "Icon" {
+								size = { 30 30 }
+								using = white_background
+								modify_texture = {
+									texture = "gfx/interface/icons/new_icons/alpha/great_work.dds"
+									blend_mode = alphamultiply
+								}
+							}
+							blockoverride "ClickFunction" { onclick = "[GetVariableSystem.Set('state_up_tabs', 'great_works')]" }
+						}
 					}
 					widget = {
 						size = { 10 0 }
@@ -499,13 +507,13 @@ window = {
 							visible = "[Or( ProvinceWindow.GetProvince.HasGreatWork, ProvinceWindow.GetProvince.HasSecondaryGreatWork )]"
 							position = { 0 -2 }
 							using = brighten_red_background
-							size = { 2 46 }
+							size = { 2 6 }
 						}
 						icon = {
 							visible = "[Not(Or( ProvinceWindow.GetProvince.HasGreatWork, ProvinceWindow.GetProvince.HasSecondaryGreatWork ))]"
 							position = { 0 -2 }
 							using = brighten_red_background
-							size = { 2 90 }
+							size = { 2 48 }
 						}
 					}
 				}
@@ -787,12 +795,10 @@ window = {
 										}
 										icon = {
 											size = { 148 120 }
-											using = flat_background_white
-											#using = portrait_x32y32bd_alpha
+											using = shadow_background
 											modify_texture = {
-												name = "Alpha"
-												blend_mode = alphamultiply
 												texture = "gfx/interface/base_parts/gradient_black_flip.dds"
+												blend_mode = alphamultiply
 											}
 										}
 										margin_widget = {
@@ -868,12 +874,10 @@ window = {
 										}
 										icon = {
 											size = { 148 120 }
-											using = flat_background_white
-											#using = portrait_x32y32bd_alpha
+											using = shadow_background
 											modify_texture = {
-												name = "Alpha"
-												blend_mode = alphamultiply
 												texture = "gfx/interface/base_parts/gradient_black_flip.dds"
+												blend_mode = alphamultiply
 											}
 										}
 										margin_widget = {
@@ -899,12 +903,10 @@ window = {
 										using = cultural_province_ranks
 										icon = {
 											size = { 148 120 }
-											using = flat_background_white
-											#using = portrait_x32y32bd_alpha
+											using = shadow_background
 											modify_texture = {
-												name = "Alpha"
-												blend_mode = alphamultiply
 												texture = "gfx/interface/base_parts/gradient_black_flip.dds"
+												blend_mode = alphamultiply
 											}
 										}
 										margin_widget = {
@@ -1364,13 +1366,16 @@ window = {
 											size = { 58 58 }
 											parentanchor = center
 											background = {
-												name = "Shadow"
-												texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
 												shaderfile = "gfx/FX/pdxgui_default.shader"
-												spriteType = corneredtiled
-												spriteborder = { 8 8 }
+												using = shadow_background
 												margin = { 3 3 }
 												alpha = 0.5
+												modify_texture = {
+													texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
+													blend_mode = alphamultiply
+													spriteType = corneredtiled
+													spriteborder = { 8 8 }
+												}
 											}
 										}
 										icon = {
@@ -1381,7 +1386,7 @@ window = {
 											enabled = "[GreaterThanOrEqualTo_int32(ProvinceWindow.GetProvince.GetFortLevel, '(int32)1')]"
 											icon = {
 												size = { 100% 100% }
-												using = black_background
+												using = shadow_background
 												using = portrait_x32y32bd_alpha
 												alpha = 0.5
 												modify_texture = {
@@ -1395,8 +1400,8 @@ window = {
 											}
 											icon = {
 												size = { 100% 100% }
-												using = portrait_x32y32bd_alpha
 												using = beige_background
+												using = portrait_x32y32bd_alpha
 												alpha = 0.5
 												modify_texture = {
 													texture = "gfx/interface/base_parts/gradient_black_invert.dds"
@@ -1405,8 +1410,8 @@ window = {
 											}
 											icon = {
 												size = { 100% 100% }
+												using = shadow_background
 												using = portrait_x32y32bd_alpha
-												using = black_background
 												alpha = 0.5
 												modify_texture = {
 													texture = "gfx/interface/base_parts/button_vignette.dds"
@@ -1660,7 +1665,6 @@ window = {
 						}
 					}
 					widget = {
-						spacing = 2
 						margin_widget = {
 							size = { 100% 2 }
 							position = { 1 45 }
@@ -2025,8 +2029,9 @@ window = {
 									tooltip = "Imports: #R [ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('order_size_sulphur').GetValue|0] #!Exports: #G [ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('amount_exported_sulphur').GetValue|0]"
 								}
 								blockoverride "Shortage" {
-									visible "= [ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('IsSet)"]
-									text = "#R [ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('shortage_sulphur').GetValue0|%]"
+									#visible = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('IsSet)"]"
+									visible = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('shortage_sulphur').IsSet]"
+									text = "#R [ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('shortage_sulphur').GetValue|%0]"
 								}
 							}
 							icon_card_goods = {
@@ -4068,15 +4073,13 @@ window = {
 					flowcontainer = {
 						direction = vertical
 						parentanchor = hcenter
-						secondary_header = {  
-							size = { 480 36 }
+						sub_header = {  
+							size = { 480 32 }
 							blockoverride "Title_text"
 							{
 								text = "province_buildings"
 								tooltip = "province_tt_building"
-								margin_left = @window_margin_left_title
 							}
-							blockoverride "White_buttons" { visible = no }
 						}
 						flowcontainer = {
 							direction = vertical
@@ -4693,6 +4696,205 @@ window = {
  								using = Default_FontColor
 
 							text = "Pops: [ProvinceWindow.GetProvince.GetPopulation('total')] Capacity: [ProvinceWindow.GetProvince.GetPopulationCapacityValue]"
+						}
+					}
+				}
+				margin_widget = {
+					size = { 500 600 }
+					margin = { 10 0 }
+					visible = "[GetVariableSystem.HasValue('state_up_tabs', 'diplomacy')]"
+					flowcontainer = {
+						direction = vertical
+						spacing = 10
+						flowcontainer = {
+							parentanchor = hcenter
+							spacing = 5
+							text_button_square_highlighted = {
+								size = { 180 28 }
+								blockoverride "Center_text" { text = "province_diplomatic_play" }
+								blockoverride "On_click"
+								{
+									#onclick = ""
+									enabled = yes
+									tooltip = "province_diplomatic_play_tt"
+								}
+							}
+							text_button_square_highlighted = {
+								size = { 180 28 }
+								blockoverride "Center_text" { text = "province_colonization" }
+								blockoverride "On_click"
+								{
+									#onclick = ""
+									enabled = yes
+									tooltip = "province_colonization_tt"
+								}
+							}
+						}
+						flowcontainer = {
+							spacing = 10
+							sub_header_v = {
+								size = { 190 520 }
+								enabled = no
+								blockoverride "Title_text" { text = "province_diplomatic_play" }
+							}
+							sub_header_v = {
+								size = { 280 520 }
+								enabled = no
+								blockoverride "Title_text" { text = "province_colonization" }
+								flowcontainer = {
+									position = { 0 32 }
+									margin = { 5 5 }
+									direction = vertical
+									spacing = 8
+									province_colonization_block = {
+										blockoverride "TextBox" { text = "province_colonization_military" }
+										blockoverride "Icon" { texture = "gfx/interface/icons/new_icons/color/ports.dds" }
+										blockoverride "Items" {
+											building_item_button = {
+												blockoverride "Enabled" { enabled = yes }
+												blockoverride "Texture" { texture = "gfx/interface/icons/buildings/fortress_building.dds" }
+												blockoverride "On_click" { 
+													#onclick = "" 
+												}
+												blockoverride "Tooltip" { tooltip = "123" }
+												blockoverride "Cost" { text = "10" }
+												blockoverride "Level" { text = "1" }
+												blockoverride "VisibleSeparation" { visible = yes }
+												blockoverride "QueueSize" { text = "3" }
+											}
+											building_item_button = {
+												blockoverride "Enabled" { enabled = yes }
+												blockoverride "Texture" { texture = "gfx/interface/icons/buildings/fortress_building.dds" }
+												blockoverride "On_click" { 
+													#onclick = "" 
+												}
+												blockoverride "Tooltip" { tooltip = "123" }
+												blockoverride "Cost" { text = "10" }
+												blockoverride "Level" { text = "1" }
+												blockoverride "VisibleSeparation" { visible = yes }
+												blockoverride "QueueSize" { text = "3" }
+											}
+											building_item_button = {
+												blockoverride "Enabled" { enabled = yes }
+												blockoverride "Texture" { texture = "gfx/interface/icons/buildings/fortress_building.dds" }
+												blockoverride "On_click" { 
+													#onclick = "" 
+												}
+												blockoverride "Tooltip" { tooltip = "123" }
+												blockoverride "Cost" { text = "10" }
+												blockoverride "Level" { text = "1" }
+												blockoverride "VisibleSeparation" { visible = yes }
+												blockoverride "QueueSize" { text = "3" }
+											}
+										}
+									}
+									province_colonization_block = {
+										blockoverride "TextBox" { text = "province_colonization_commercial" }
+										blockoverride "Icon" { texture = "gfx/interface/icons/new_icons/color/ports.dds" }
+										blockoverride "Items" {
+											building_item_button = {
+												blockoverride "Enabled" { enabled = yes }
+												blockoverride "Texture" { texture = "gfx/interface/icons/buildings/URB_commerce_district.dds" }
+												blockoverride "On_click" { 
+													#onclick = "" 
+												}
+												blockoverride "Tooltip" { tooltip = "123" }
+												blockoverride "Cost" { text = "10" }
+												blockoverride "Level" { text = "1" }
+												blockoverride "VisibleSeparation" { visible = yes }
+												blockoverride "QueueSize" { text = "3" }
+											}
+											building_item_button = {
+												blockoverride "Enabled" { enabled = yes }
+												blockoverride "Texture" { texture = "gfx/interface/icons/buildings/URB_commerce_district.dds" }
+												blockoverride "On_click" { 
+													#onclick = "" 
+												}
+												blockoverride "Tooltip" { tooltip = "123" }
+												blockoverride "Cost" { text = "10" }
+												blockoverride "Level" { text = "1" }
+												blockoverride "VisibleSeparation" { visible = yes }
+												blockoverride "QueueSize" { text = "3" }
+											}
+											building_item_button = {
+												blockoverride "Enabled" { enabled = yes }
+												blockoverride "Texture" { texture = "gfx/interface/icons/buildings/URB_commerce_district.dds" }
+												blockoverride "On_click" { 
+													#onclick = "" 
+												}
+												blockoverride "Tooltip" { tooltip = "123" }
+												blockoverride "Cost" { text = "10" }
+												blockoverride "Level" { text = "1" }
+												blockoverride "VisibleSeparation" { visible = yes }
+												blockoverride "QueueSize" { text = "3" }
+											}
+										}
+									}
+									province_colonization_block = {
+										blockoverride "TextBox" { text = "province_colonization_cultural" }
+										blockoverride "Icon" { texture = "gfx/interface/icons/new_icons/color/ports.dds" }
+										blockoverride "Items" {
+											building_item_button = {
+												blockoverride "Enabled" { enabled = yes }
+												blockoverride "Texture" { texture = "gfx/interface/icons/buildings/EDU_school.dds" }
+												blockoverride "On_click" { 
+													#onclick = "" 
+												}
+												blockoverride "Tooltip" { tooltip = "123" }
+												blockoverride "Cost" { text = "10" }
+												blockoverride "Level" { text = "1" }
+												blockoverride "VisibleSeparation" { visible = yes }
+												blockoverride "QueueSize" { text = "3" }
+											}
+											building_item_button = {
+												blockoverride "Enabled" { enabled = yes }
+												blockoverride "Texture" { texture = "gfx/interface/icons/buildings/EDU_school.dds" }
+												blockoverride "On_click" { 
+													#onclick = "" 
+												}
+												blockoverride "Tooltip" { tooltip = "123" }
+												blockoverride "Cost" { text = "10" }
+												blockoverride "Level" { text = "1" }
+												blockoverride "VisibleSeparation" { visible = yes }
+												blockoverride "QueueSize" { text = "3" }
+											}
+											building_item_button = {
+												blockoverride "Enabled" { enabled = yes }
+												blockoverride "Texture" { texture = "gfx/interface/icons/buildings/EDU_school.dds" }
+												blockoverride "On_click" { 
+													#onclick = "" 
+												}
+												blockoverride "Tooltip" { tooltip = "123" }
+												blockoverride "Cost" { text = "10" }
+												blockoverride "Level" { text = "1" }
+												blockoverride "VisibleSeparation" { visible = yes }
+												blockoverride "QueueSize" { text = "3" }
+											}
+										}
+									}
+									textbox = {
+										using = HeaderFont
+										using = Default_FontColor
+										text = "province_current_score"
+										size = { 200 20 }
+										align = center
+										parentanchor = hcenter
+										fontsize = 20
+										tooltip = "province_current_score_tt"
+									}
+									text_button_square = {
+										size = { 180 28 }
+										parentanchor = hcenter
+										blockoverride "Center_text" { text = "province_colonization_declare" }
+										blockoverride "On_click"
+										{
+											#onclick = ""
+											enabled = yes
+											tooltip = "province_colonization_declare_tt"
+										}
+									}
+								}
+							}
 						}
 					}
 				}

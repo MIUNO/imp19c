@@ -154,8 +154,8 @@ types NEW_WINDOW {
 				}
 				background = {
 					shaderfile = "gfx/FX/pdxgui_default.shader"
-					using = portrait_x32y32bd_alpha
 					using = beige_background
+					using = portrait_x32y32bd_alpha
 					alpha = 0.3
 					modify_texture = {
 						texture = "gfx/interface/base_parts/button_vignette.dds"
@@ -173,8 +173,8 @@ types NEW_WINDOW {
 				}
 				background = {
 					shaderfile = "gfx/FX/pdxgui_default.shader"
-					using = portrait_x32y32bd_alpha
 					using = beige_background
+					using = portrait_x32y32bd_alpha
 					alpha = 0.15
 					margin = { -3 -3 }
 					modify_texture = {
@@ -453,7 +453,17 @@ types NEW_WINDOW {
 		}
 		background = {
 			shaderfile = "gfx/FX/pdxgui_default.shader"
-			using = pattern_black_background
+			using = pattern_black_background_layer_01
+			modify_texture = {
+				texture = "gfx/interface/base_parts/background_x60bd_alpha_two_corner.dds"
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 60 60 }
+			}
+		}
+		background = {
+			shaderfile = "gfx/FX/pdxgui_default.shader"
+			using = pattern_black_background_layer_02
 			modify_texture = {
 				texture = "gfx/interface/base_parts/background_x60bd_alpha_two_corner.dds"
 				blend_mode = alphamultiply
@@ -744,12 +754,12 @@ types NEW_WINDOW {
 		#left panel
 		icon = {
 			size = { 600 100% }
+			using = shadow_background
 			parentanchor = left
-			texture = "gfx/interface/base_parts/background_texture.dds"
 			alpha = 0.8
 			modify_texture = {
-				blend_mode = alphamultiply
 				texture = "gfx/interface/base_parts/fade_bg_ingame_menu.dds"
+				blend_mode = alphamultiply
 			}
 		}
 		flowcontainer = {
@@ -879,12 +889,12 @@ types NEW_WINDOW {
 		#right panel
 		icon = {
 			size = { 600 100% }
+			using = shadow_background
 			parentanchor = right
-			texture = "gfx/interface/base_parts/background_texture.dds"
 			alpha = 0.8
 			modify_texture = {
-				blend_mode = alphamultiply
 				texture = "gfx/interface/base_parts/fade_bg_ingame_menu_right.dds"
+				blend_mode = alphamultiply
 			}
 		}
 		flowcontainer = {
@@ -954,12 +964,12 @@ types NEW_WINDOW {
 						margin_top = 30
 						#margin_bottom = 5
 						modify_texture = {
-							blend_mode = alphamultiply
 							texture = "gfx/interface/base_parts/horizontal_gradient_stretch_inverted.dds"
+							blend_mode = alphamultiply
 						}
 						modify_texture = {
-							blend_mode = alphamultiply
 							texture = "gfx/interface/base_parts/gradient_black_invert.dds"
+							blend_mode = alphamultiply
 						}
 					}
 					margin_widget = {
@@ -1278,7 +1288,7 @@ types NEW_WINDOW {
 		icon = {
 			size = { 500 280 }
 			parentanchor = center
-			using = black_background
+			using = shadow_background
 			modify_texture = {
 				texture = "gfx/interface/base_parts/horizontal_gradient_black.dds"
 				blend_mode = alphamultiply
@@ -1674,7 +1684,7 @@ types NEW_WINDOW {
 		icon = {
 			size = { 1500 280 }
 			parentanchor = center
-			using = black_background
+			using = shadow_background
 			modify_texture = {
 				texture = "gfx/interface/base_parts/horizontal_gradient_black.dds"
 				blend_mode = alphamultiply

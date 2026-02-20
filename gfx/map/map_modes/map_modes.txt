@@ -1126,6 +1126,7 @@ macro_builder_build_in_province = {
 		loyalty = no
 		unit = no
 		population = no
+		#population = yes
 		holy_site = no
 		decorative_map = no 
 	}

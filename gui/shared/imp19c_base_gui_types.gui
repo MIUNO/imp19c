@@ -184,7 +184,6 @@ types Imp19c_GUI_Types
 		}
 		textbox = {
 			size = { 100% 100% }
-			size = { 100% 100% }
 			using = BaseFontM
 			using = Default_FontColor
 			fontsize = 16

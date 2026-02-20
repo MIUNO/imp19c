@@ -70,15 +70,15 @@ base_window = {
 			icon = {
 				size = { @window_width 182 }
 				position = { 0 2 }
-				using = black_background
+				using = shadow_background
 				using = border3
 				modify_texture = {
-					blend_mode = alphamultiply
 					texture = "gfx/interface/base_parts/horizontal_gradient_stretch_sides_black.dds"
+					blend_mode = alphamultiply
 				}
 				modify_texture = {
-					blend_mode = alphamultiply
 					texture = "gfx/interface/base_parts/gradient_black.dds"
+					blend_mode = alphamultiply
 				}
 			}
 			flowcontainer = {
@@ -198,10 +198,14 @@ base_window = {
 					tooltip_offset = { 20 20 }
 
 					icon = {
-						texture = "gfx/interface/pie_charts/pie_chart_alpha_60_shadow.dds"
 						size = { 42 42 }
+						using = shadow_background
 						parentanchor = center
 						alpha = 0.5
+						modify_texture = {
+							texture = "gfx/interface/pie_charts/pie_chart_alpha_60_shadow.dds"
+							blend_mode = alphamultiply
+						}
 					}
 					icon = {
 						texture = "gfx/interface/base_parts/yellow_button_color_200fs.dds"
@@ -2546,13 +2550,16 @@ template idea_slot_not_available
 		parentanchor = center	
 		tooltip = "SLOT_NOT_UNLOCKED"
 		background = {
-			name = "Shadow"
-			texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
 			shaderfile = "gfx/FX/pdxgui_default.shader"
-			spriteType = corneredtiled
-			spriteborder = { 8 8 }
+			using = shadow_background
 			margin = { 4 4 }
 			alpha = 0.5
+			modify_texture = {
+				texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 8 8 }
+			}
 		}
 		background = {
 			shaderfile = "gfx/FX/pdxgui_default.shader"
@@ -2561,8 +2568,8 @@ template idea_slot_not_available
 		}
 		background = {
 			shaderfile = "gfx/FX/pdxgui_default.shader"
+			using = beige_background
 			using = portrait_x32y32bd_alpha
-			texture = "gfx/interface/base_parts/background_noninteractable_texture.dds"
 			alpha = 0.3
 			modify_texture = {
 				texture = "gfx/interface/base_parts/button_vignette.dds"
@@ -2579,9 +2586,9 @@ template idea_slot_not_available
 		}
 		icon = {
 			name = "Idea Mark"
-			parentanchor = center
-			using = black_background	
 			size = { 70% 70% }
+			using = black_background
+			parentanchor = center
 			alpha = 0.75
 			modify_texture = {
 				name = "Pattern"

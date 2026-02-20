@@ -246,8 +246,8 @@ posteffect_volumes = {
 		posteffect_values_day = india
 		posteffect_values_night = india
 		
-		position = { 6175.0 0.0 2400.0 }
-		size = { 350.0 @height 300.0 }
+		position = { 6200.0 0.0 2400.0 }
+		size = { 300.0 @height 300.0 }
 		fade_distance = 50.0
 	}
 	posteffect_volume = {
@@ -256,7 +256,7 @@ posteffect_volumes = {
 		posteffect_values_day = india
 		posteffect_values_night = india
 		
-		position = { 6400.0 0.0 2150.0 }
+		position = { 6400.0 0.0 2100.0 }
 		size = { 300.0 @height 400.0 }
 		fade_distance = 50.0
 	}

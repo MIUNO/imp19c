@@ -42,12 +42,12 @@ recruit_naval_units = {
 
 #	sound = "event:/SFX/UI/Province/sfx_ui_province_pop_move"
 
-import_tradegood = {
-    base = trade_goods
-    layout = trade_goods
-    map_mode = trade
-	
-	includes = all
-
-	sound = "event:/SFX/UI/Trade/sfx_ui_trade_trade"
-}
+#import_tradegood = {
+#    base = trade_goods
+#    layout = trade_goods
+#    map_mode = trade
+#	
+#	includes = all
+#
+#	sound = "event:/SFX/UI/Trade/sfx_ui_trade_trade"
+#}

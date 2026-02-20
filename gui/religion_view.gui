@@ -65,15 +65,15 @@ base_window = {
 			icon = {
 				size = { @window_width 182 }
 				position = { 0 2 }
-				using = black_background
+				using = shadow_background
 				using = border3
 				modify_texture = {
-					blend_mode = alphamultiply
 					texture = "gfx/interface/base_parts/horizontal_gradient_stretch_sides_black.dds"
+					blend_mode = alphamultiply
 				}
 				modify_texture = {
-					blend_mode = alphamultiply
 					texture = "gfx/interface/base_parts/gradient_black.dds"
+					blend_mode = alphamultiply
 				}
 			}
 			flowcontainer = {

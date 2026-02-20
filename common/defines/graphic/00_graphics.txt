@@ -346,7 +346,7 @@ NMapIcon = {
 	ZOOM_STEP_RANGE_GOVERNOR_WIDGET = { -1 @country_zoomstep_max }
 	ZOOM_STEP_RANGE_AREA_WIDGET = { -1 @state_zoomstep_min }
 	ZOOM_STEP_RANGE_LOYALTY_WIDGET = { -1 @state_zoomstep_min }
-	ZOOM_STEP_RANGE_POPULATION_WIDGET = { -1 @province_zoomstep_min }
+	ZOOM_STEP_RANGE_POPULATION_WIDGET = { -1 @state_zoomstep_max }
 	ZOOM_STEP_RANGE_CHARACTER = 		{ 0 0 }
 
 	ZOOM_STEP_RANGE_SMALL_UNIT = { 9 9 }
