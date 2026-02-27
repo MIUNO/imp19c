@@ -196,6 +196,52 @@
 			}
 		}
 
+		Sample={
+			Name="Sample from 2001, 1620"
+			Materials={
+				Material={
+					MaterialId="seafloor"
+					Value=117
+				}
+
+				Material={
+					MaterialId="boulders_european"
+					Value=94
+				}
+
+				Material={
+					MaterialId="beach"
+					Value=18
+				}
+
+				Material={
+					MaterialId="grass_yellow"
+					Value=11
+				}
+
+				Material={
+					MaterialId="grass_plain"
+					Value=6
+				}
+
+				Material={
+					MaterialId="rock_european"
+					Value=3
+				}
+
+				Material={
+					MaterialId="gravel_1"
+					Value=3
+				}
+
+				Material={
+					MaterialId="hills_india"
+					Value=3
+				}
+
+			}
+		}
+
 	}
 }
 
