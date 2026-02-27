@@ -4259,10 +4259,10 @@
 }
 
 10440={ #PROV10440
-   terrain=""
-   culture="0"
-   religion="0"
-   trade_goods="0"
+   terrain="low_mountain"
+   culture="korean"
+   religion="mahayana"
+   trade_goods="grain"
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
@@ -10528,10 +10528,10 @@
 }
 
 10630={ #Korean Mountains
-   terrain="extreme_mountain"
-   culture="0"
-   religion="0"
-   trade_goods="0"
+   terrain="low_mountain"
+   culture="korean"
+   religion="mahayana"
+   trade_goods="grain"
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
@@ -12038,10 +12038,10 @@
 }
 
 10799={ #Korean Mountains
-   terrain="extreme_mountain"
-   culture="0"
-   religion="0"
-   trade_goods="0"
+   terrain="low_mountain"
+   culture="korean"
+   religion="mahayana"
+   trade_goods="grain"
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
@@ -19553,20 +19553,20 @@
 }
 
 12811={ #PROV12811
-   terrain=""
-   culture="0"
-   religion="0"
-   trade_goods="0"
+   terrain="extreme_mountain"
+   culture="amur"
+   religion="siberian_shamanism"
+   trade_goods="wood"
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
 }
 
 12810={ #PROV12810
-   terrain=""
-   culture="0"
-   religion="0"
-   trade_goods="0"
+   terrain="extreme_mountain"
+   culture="amur"
+   religion="siberian_shamanism"
+   trade_goods="wood"
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
@@ -20183,10 +20183,10 @@
 }
 
 12609={ #PROV12609
-   terrain=""
-   culture="0"
-   religion="0"
-   trade_goods="0"
+   terrain="extreme_mountain"
+   culture="amur"
+   religion="siberian_shamanism"
+   trade_goods="wood"
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
@@ -20273,16 +20273,6 @@
 }
 
 12596={ #PROV12596
-   terrain=""
-   culture="0"
-   religion="0"
-   trade_goods="0"
-   civilization_value=0
-   barbarian_power=0
-   province_rank="settlement"
-}
-
-12594={ #PROV12594
    terrain=""
    culture="0"
    religion="0"
@@ -20783,10 +20773,10 @@
 }
 
 12610={ #PROV12610
-   terrain=""
-   culture="0"
-   religion="0"
-   trade_goods="0"
+   terrain="extreme_mountain"
+   culture="amur"
+   religion="siberian_shamanism"
+   trade_goods="wood"
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
@@ -20803,10 +20793,10 @@
 }
 
 12612={ #PROV12612
-   terrain=""
-   culture="0"
-   religion="0"
-   trade_goods="0"
+   terrain="extreme_mountain"
+   culture="amur"
+   religion="siberian_shamanism"
+   trade_goods="wood"
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
@@ -21446,10 +21436,10 @@
 }
 
 12615={ #PROV12615
-   terrain=""
-   culture="0"
-   religion="0"
-   trade_goods="0"
+   terrain="extreme_mountain"
+   culture="amur"
+   religion="siberian_shamanism"
+   trade_goods="wood"
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
@@ -26616,10 +26606,10 @@
 }
 
 12439={ #PROV12439
-   terrain=""
-   culture="0"
-   religion="0"
-   trade_goods="0"
+   terrain="low_mountain"
+   culture="korean"
+   religion="mahayana"
+   trade_goods="grain"
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
@@ -27556,10 +27546,10 @@
 }
 
 12388={ #PROV12388
-   terrain=""
-   culture="0"
-   religion="0"
-   trade_goods="0"
+   terrain="low_mountain"
+   culture="korean"
+   religion="mahayana"
+   trade_goods="grain"
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
@@ -28136,10 +28126,10 @@
 }
 
 12488={ #PROV12488
-   terrain=""
-   culture="0"
-   religion="0"
-   trade_goods="0"
+   terrain="low_mountain"
+   culture="korean"
+   religion="mahayana"
+   trade_goods="grain"
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
@@ -28526,10 +28516,10 @@
 }
 
 12511={ #PROV12511
-   terrain=""
-   culture="0"
-   religion="0"
-   trade_goods="0"
+   terrain="extreme_mountain"
+   culture="amur"
+   religion="siberian_shamanism"
+   trade_goods="wood"
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
@@ -28879,10 +28869,10 @@
 }
 
 12300={ #PROV12300
-   terrain=""
-   culture="0"
-   religion="0"
-   trade_goods="0"
+   terrain="extreme_mountain"
+   culture="amur"
+   religion="siberian_shamanism"
+   trade_goods="wood"
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
@@ -28969,10 +28959,10 @@
 }
 
 12485={ #PROV12485
-   terrain=""
-   culture="0"
-   religion="0"
-   trade_goods="0"
+   terrain="extreme_mountain"
+   culture="amur"
+   religion="siberian_shamanism"
+   trade_goods="wood"
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
@@ -29769,20 +29759,20 @@
 }
 
 12483={ #PROV12483
-   terrain=""
-   culture="0"
-   religion="0"
-   trade_goods="0"
+   terrain="extreme_mountain"
+   culture="amur"
+   religion="siberian_shamanism"
+   trade_goods="wood"
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
 }
 
 12484={ #PROV12484
-   terrain=""
-   culture="0"
-   religion="0"
-   trade_goods="0"
+   terrain="extreme_mountain"
+   culture="amur"
+   religion="siberian_shamanism"
+   trade_goods="wood"
    civilization_value=0
    barbarian_power=0
    province_rank="settlement"
