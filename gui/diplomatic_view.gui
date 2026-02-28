@@ -642,6 +642,7 @@ base_window = {
 										margin = { 0 4 }
 										vbox = { #trade agreements
 											name = "trade_agreements"
+											visible = "[Not(IsDataModelEmpty(DiplomaticView.GetTargetCountry.MakeScope.GetList('list_of_trade_partners_all_categories')))]"
 											layoutpolicy_horizontal = expanding 
 											layoutpolicy_vertical = shrinking
 											margin_right = 12

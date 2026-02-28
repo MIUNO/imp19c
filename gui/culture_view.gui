@@ -539,7 +539,7 @@ base_window = {
 		###########################
 		margin_widget = {
 			name = "Culture Scroll List"
-	        size = { @window_width 570 }
+	        size = { @window_width 555 }
 	        margin = { 10 0 }
 
 	        scrollarea = {

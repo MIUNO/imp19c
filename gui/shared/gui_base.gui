@@ -9113,17 +9113,13 @@ types Base_GUI_Types
 		
 	}
 	type pop_widget = widget {
-		size = { 60 114 }
+		size = { 60 150 }
+		using = background_widget
 		icon = {
 			name = "background_image"
-			size = { 120 250 }
-			position = { 0 0 }
-			scale = 0.5
-			alpha = 1
+			size = { 60 120 }
 			block "BackgroundTexture" { texture = "gfx/interface/base_parts/background_x60bd_alpha.dds" }
-			spriteType = Corneredtiled
 			parentanchor = hcenter
-			
 			modify_texture = { 
 				name = "bottom gradient"
 				texture = "gfx/interface/base_parts/gradient_black.dds"
@@ -9131,22 +9127,17 @@ types Base_GUI_Types
 				spriteType = Corneredtiled
 				spriteborder = { 30 4 }
 			}
-			
 			modify_texture = {
-				name = "edge_alpha"
-				texture = "gfx/interface/base_parts/background_x60bd_alpha.dds"
+				texture = "gfx/interface/base_parts/margin_02.dds"
 				blend_mode = alphamultiply
 				spriteType = Corneredtiled
-				spriteborder = { 60 60 }
+				spriteborder = { 20 20 }
 			}
-			
 		}
 		progressbar = {
-			size = { 56 114 }
-			position = { 2 0 }
+			size = { 60 120 }
 			noprogresstexture = "gfx/interface/base_parts/gradient_black.dds"
-			alpha = 0.7
-			parentanchor = vcenter
+			alpha = 0.5
 			direction = vertical
 			block "HappinessBarValue"
 			{
@@ -9155,25 +9146,17 @@ types Base_GUI_Types
 			}
 			marker = {
 				container = {
-					name = "progress_marker"           
-					alwaystransparent = yes
-					alpha = 1.4
+					name = "progress_marker"
 					position = { 0 -10 }
+					parentanchor = hcenter
+					alpha = 2.0
 					icon = {
-						position = { 0 0 }
-						alwaystransparent = yes
-						using = selected_color_texture
-						modify_texture = {
-							blend_mode = alphamultiply
-							texture = "gfx/interface/base_parts/thin_red_line_x20bd.dds"
-						}
+						using = gold_background
 						parentanchor = vcenter
-						size = { 57 4 }
-						using = DropShadow
+						size = { 56 4 }
 						block "MarkerVisible" {}
 					}
 					icon = {
-						alwaystransparent = yes
 						texture = "gfx/interface/icons/shared_icons/pop_happy.dds"
 						framesize = { 50 50 }
 						block "Frame" { frame = 1 }
@@ -9188,11 +9171,11 @@ types Base_GUI_Types
 		widget = { 
 			size = { 100% 100% }
 			allow_outside = yes 
-			position = { 0 18 }
 			parentanchor = hcenter
 			textbox = {
 				name = "Text"
-				size = { 100% 24 }					
+				size = { 100% 24 }
+				position = { 0 -2 }
 				align = center
 				using = BaseFontM
 				using = Default_FontColor 
@@ -9204,7 +9187,7 @@ types Base_GUI_Types
 			}
 			icon = {
 				size = { 38 38 }
-				position = { 0 -22 }
+				position = { 0 -26 }
 				parentanchor = bottom|hcenter 
 				block "Icon"
 				{

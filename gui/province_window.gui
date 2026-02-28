@@ -4186,6 +4186,7 @@ window = {
 					visible = "[GetVariableSystem.HasValue('state_up_tabs', 'province_pops')]"
 					flowcontainer = {
 						direction = vertical
+						spacing = 5
 						flowcontainer = {
 							ignoreinvisible = yes
 							icon_and_text = {
@@ -4469,8 +4470,8 @@ window = {
 							size = { 1 20 }
 						}
 						flowcontainer = {
-							spacing = 2
-							pop_widget_province = {
+							spacing = 5
+							pop_widget = {
 								tooltip = "[ProvinceWindow.GetProvince.GetPopHappyInformation('upper_strata')]"
 								tooltip_widgetanchor = vcenter|left
 								blockoverride "BackgroundTexture" { texture = "gfx/interface/icons/pop_types/upper_strata_bg.dds" }
@@ -4498,7 +4499,7 @@ window = {
 									frame = "[ProvinceWindow.GetProvince.GetPopHappyFrame( 'upper_strata' )]"
 								}
 							}
-							pop_widget_province = {
+							pop_widget = {
 								tooltip = "[ProvinceWindow.GetProvince.GetPopHappyInformation('middle_strata')]"
 								tooltip_widgetanchor = vcenter|left
 								blockoverride "BackgroundTexture" { texture = "gfx/interface/icons/pop_types/middle_strata_bg.dds" }
@@ -4526,7 +4527,7 @@ window = {
 									frame = "[ProvinceWindow.GetProvince.GetPopHappyFrame( 'middle_strata' )]"
 								}
 							}
-							pop_widget_province = {
+							pop_widget = {
 								tooltip = "[ProvinceWindow.GetProvince.GetPopHappyInformation('proletariat')]"
 								tooltip_widgetanchor = vcenter|left
 								blockoverride "BackgroundTexture" { texture = "gfx/interface/icons/pop_types/proletariat_bg.dds" }
@@ -4554,7 +4555,7 @@ window = {
 									frame = "[ProvinceWindow.GetProvince.GetPopHappyFrame( 'proletariat' )]"
 								}
 							}
-							pop_widget_province = {
+							pop_widget = {
 								tooltip = "[ProvinceWindow.GetProvince.GetPopHappyInformation('lower_strata')]"
 								tooltip_widgetanchor = vcenter|left
 								blockoverride "BackgroundTexture" { texture = "gfx/interface/icons/pop_types/lower_strata_bg.dds" }
@@ -4582,7 +4583,7 @@ window = {
 									frame = "[ProvinceWindow.GetProvince.GetPopHappyFrame( 'lower_strata' )]"
 								}	
 							} 
-							pop_widget_province = {
+							pop_widget = {
 								tooltip = "[ProvinceWindow.GetProvince.GetPopHappyInformation('indentured')]"
 								tooltip_widgetanchor = vcenter|left
 								blockoverride "BackgroundTexture" { texture = "gfx/interface/icons/pop_types/indentured_bg.dds" }
@@ -4610,7 +4611,7 @@ window = {
 									frame = "[ProvinceWindow.GetProvince.GetPopHappyFrame( 'indentured' )]"
 								}	
 							} 
-							pop_widget_province = {
+							pop_widget = {
 								tooltip = "[ProvinceWindow.GetProvince.GetPopHappyInformation('tribesmen')]"
 								tooltip_widgetanchor = vcenter|left
 								blockoverride "BackgroundTexture" { texture = "gfx/interface/icons/pop_types/tribesmen_bg.dds" }
@@ -4639,7 +4640,7 @@ window = {
 									frame = "[ProvinceWindow.GetProvince.GetPopHappyFrame( 'tribesmen' )]"
 								}
 							}
-							pop_widget_province = {
+							pop_widget = {
 								tooltip = "[ProvinceWindow.GetProvince.GetPopHappyInformation('slaves')]"
 								tooltip_widgetanchor = vcenter|left
 								blockoverride "BackgroundTexture" { texture = "gfx/interface/icons/pop_types/slaves_bg.dds" }
@@ -4689,7 +4690,7 @@ window = {
 						#	visible = "[ProvinceWindow.IsPlayerProvince]"
 						#}
 						textbox = {
-							margin_top = 50
+							#margin_top = 50
 							autoresize = yes
 							tooltip = "[ProvinceWindow.GetProvince.GetPopulationCapacityInfo]"
 							using = BaseFontM
