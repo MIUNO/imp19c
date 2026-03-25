@@ -333,7 +333,7 @@ diplomatic_play.2 = {
         }
         scope:captured_province = {
             DIPLOMACY_add_colonial_outpost = {
-                owner = scope:play_instigator
+                outpost_owner = scope:play_instigator
             }
         }
         scope:diplomatic_play = {
