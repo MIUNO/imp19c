@@ -3,7 +3,7 @@ pdxmesh = {
 	file = "new_brig.mesh"
 
 	animation = { id = "idle" 			type = "new_brig_idle.anim" }
-	animation = { id = "move_start" 	type = "new_brig_idle.anim" }
+	animation = { id = "move_start" 	type = "new_brig_move_start.anim" }
 	animation = { id = "moving" 		type = "new_brig_moving.anim" }
 	animation = { id = "port_idle" 		type = "new_brig_idle.anim" }
 	animation = { id = "death" 			type = "new_brig_idle.anim" }
@@ -71,6 +71,22 @@ entity = {
 		name = "port_idle"
     	animation = "port_idle"
     }
+	state = {
+		name = "move"
+    	animation = "move_start"
+		looping = no
+		chance = {
+			if_current_state = {
+				"idle" = 100
+				"move" = 0
+			}
+		}
+		next_state = "move"
+		event = { time = 0 node = "hull_front_locator" particle = "units/ship_water_front_01_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "hull_back_locator" particle = "units/ship_water_back_01_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "root" particle = "units/ship_wind_01_effect" keep_particle = yes trigger_once = yes }
+		start_event = { sound = { soundeffect = "event:/SFX/Animations/Ships/Generic/sfx_anim_ship_generic_start" } keep_sound = yes }
+	}
 	state = {
 		name = "move"
     	animation = "moving"
