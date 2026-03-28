@@ -1,9 +1,29 @@
-﻿color = rgb { 20  150  70 }
-color2 = rgb { 150 0 0 }
+﻿color = rgb { 210 247 250 }
+color2 = rgb { 215 43 38 }
 
 gender_equality = no
 
 ship_names = {
-	Aife Airmed Ancasta Boudica Bricta Cartanda Chiomara Damona Gwendolen Litava Maeve Keyne Iseult Ygern Kamma Smerta
-	#culture female names - perhaps to be replaced
+	Aist "Aleksandr Nevskij" Amerika Anapa "Apostol Pavel" "Apostol Pyotr" Arfa "Arxangel Gavriil" "Arxangel Mixail" "Arxangel Rafail" "Arxangel Uriil" "Arxistratig Mixail" Astraxan Aziya Azov
+	Baraban Bezboyazn "Blagoe nachalo" Blagopoluchie "Blagoslovenie Predvidenie" "Bogoyavlenie Gospodne" "Boris i Gleb" Brien
+	Cherepaxa Chesma "Czvet vojny"
+	Delfin Derbent Deris "Dmitrij Donskoj" Dumkraxt "Dvenadczat apostolov"
+	Edinorog Ekaterina Elisaveta Evropa "Evstafij Plakida"
+	Flag Fridemaker Fridrixshtadt
+	Gangut Gavriil Gerkules "Gorod Arxangelsk" "Graf Orlov" "Granat-Apol"
+	Ingermanland "Ioann Predtecha" "Isaak-Viktoriya" Isidor
+	Kamen "Kir Ioann" Kolokol Koron Krasnoj Krepost Kronshtadt Kulm
+	Lastka Leferm Lesnoe Lev Liliya
+	"Maksim Ispovednik" Mariya "Mariya Magdalina" "Mariya Magdalina Vtoraya" Merkurij Mironosicz Modon Moreya Moskva "Muchenik Leontij" Myach
+	Narva Nataliya "Ne tron menya" "Neptunus" "Novaya Nadezhda" Novopavlovsk
+	"Osnovanie izmeneniya" "Otvoryonnye vrata"
+	"Pamyat Evstafiya" Pantelejmon "Pantelejmon-Viktoriya" Parizh Pernov Pobeda Pobedonosecz Poltava Pravyj "Preobrazhenie Gospodne" Preslava "Pyotr Vtoroj"
+	Rafail Ratnyj "Razzhyonnoe zhelezo" Revel Riga Rostislav "Rozhdestvo Xristovo" Rys
+	Samson "Sankt-Mixail" Saratov Schaste Selafail "Severnaya Zvezda" "Severnyj Oryol" Shlisselburg Shpaga Sila Skorpion "Slava Rossii" Slon Sobaka Soedinenie Sokol Spiridon "Spyashhij lev" "Staryj dub" "Staryj oryol" Strus Stul Sulicza "Svyataya Ekaterina" "Svyataya Natalya" "Svyataya Troicza" "Svyataya velikomuchenicza Varvara" "Svyatoj Aleksandr Nevskij" "Svyatoj Andrej" "Svyatoj Georgij" "Svyatoj Georgij Pobedonosecz" "Svyatoj Ioann Zlatoust" "Svyatoj Isaakij" "Svyatoj knyaz Vladimir" "Svyatoj Nikolaj" "Svyatoj Nikolaj Chudotvorecz" "Svyatoj Pantelejmon" "Svyatoj Pyotr" "Svyatoj Ravnoapostolskij knyaz Vladimir" "Svyatoj Sergij" "Svyatoj Vladimir" "Svyatoj Yanvarij" Svyatoslav
+	Taganrog "Tolskaya Bogorodicza" "Tri ryumki" "Tryox Ierarxov" "Tryox svyatitelej" Tver Tvyordyj
+	Uriil
+	Varaxail Vesy Viktor Vingelgak "Vinogradnaya vetv" Voronezh Vsevolod Vyacheslav Vyborg
+	Xrabryj
+	Yagudiil Yanuarij Yozh
+	"Zachatie Svyatoj Anny" "Zhuravl steregushhij" Zhurzha Zvezda
 }
