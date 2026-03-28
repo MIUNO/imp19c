@@ -24,20 +24,20 @@
 "WaterSpecular" = 0.025000									# Specular intensity
 "WaterSpecularFactor" = 0.08								# ?
 
-"WaterFoamScale" = 1.25										# Size of foam, lower value is bigger in size
+"WaterFoamScale" = 5.0										# Size of foam, lower value is bigger in size
 "WaterFoamDistortFactor" = 0.5							# How much the foam should be distorted
 "WaterFoamShoreMaskDepth" = 1.000000						# Foam fade on beaches low = no cut of. 1.0 very smooth cut of. 
 "WaterFoamShoreMaskSharpness" = 0.500000
-"WaterFoamNoiseScale" = 0.003000							# Scale of the mask which generates some randomness to where foam appears. 
+"WaterFoamNoiseScale" = 0.3000							# Scale of the mask which generates some randomness to where foam appears. 
 "WaterFoamNoiseSpeed" = 0.005000							# The speed of the noise moving over the map
-"WaterFoamStrength" = 1.0									#z 2.0 
+"WaterFoamStrength" = 1.5									#z 2.0 
 
 "WaterZoomedInHeight" = 0.000000							# ?
-"WaterZoomedOutHeight" = 1500.000000						# ?
+"WaterZoomedOutHeight" = 2000.000000						# ?
 
 "WaterFresnelBias" = 0.02500								#
 "WaterZoomedOutFresnelBiasOffset" = 0.025000				# Amount of reflection when zoomed out
-"WaterFresnelPow" = 5.000000
+"WaterFresnelPow" = 4.000000
 "WaterZoomedOutFresnelPowOffset" = 0.00000
 "WaterReflectionFlatten" = 4.000000							# Reflection blurry ness. The higher it is, the more the eflections "ignore" normals more to be less distorted the higher the value is. 
 
