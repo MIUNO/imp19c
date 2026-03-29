@@ -21269,13 +21269,25 @@
 }
 
 12655={ #PROV12655
-   terrain=""
-   culture="0"
-   religion="0"
-   trade_goods="0"
-   civilization_value=0
+   terrain="farmland"
+   culture="north_german"
+   religion="lutheran"
+   trade_goods="livestock"
+   civilization_value=20
    barbarian_power=0
    province_rank="settlement"
+   lower_strata={
+      amount=6
+   }
+   middle_strata={
+      amount=2
+   }
+   upper_strata={
+      amount=2
+   }
+   proletariat={
+      amount=5
+   }
 }
 
 12631={ #PROV12631
