@@ -560,13 +560,13 @@ types NEW_GUI {
 				spriteborder = { 8 8 }
 			}
 		}
-		background = {
-			shaderfile = "gfx/FX/pdxgui_default.shader"
+		icon = {
+			size = { 100% 100% }
 			block "Image" { texture = "gfx/interface/icons/buildings/fortress_building.dds" }
 			block "Color" { }
 		}
-		background = {
-			shaderfile = "gfx/FX/pdxgui_default.shader"
+		icon = {
+			size = { 100% 100% }
 			using = shadow_background
 			alpha = 0.5
 			modify_texture = {
@@ -578,8 +578,8 @@ types NEW_GUI {
 				blend_mode = alphamultiply
 			}
 		}
-		background = {
-			shaderfile = "gfx/FX/pdxgui_default.shader"
+		icon = {
+			size = { 100% 100% }
 			using = beige_background
 			alpha = 0.5
 			modify_texture = {
@@ -587,8 +587,8 @@ types NEW_GUI {
 				blend_mode = alphamultiply
 			}
 		}
-		background = {
-			shaderfile = "gfx/FX/pdxgui_default.shader"
+		icon = {
+			size = { 100% 100% }
 			using = shadow_background
 			alpha = 0.5
 			modify_texture = {

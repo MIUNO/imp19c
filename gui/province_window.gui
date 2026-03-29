@@ -1369,8 +1369,10 @@ window = {
 										image_block = {
 											size = { 54 54 }
 											parentanchor = center
-											blockoverride "Image" { texture = "gfx/interface/icons/buildings/fortress_building.dds" }
-											enabled = "[GreaterThanOrEqualTo_int32(ProvinceWindow.GetProvince.GetFortLevel, '(int32)1')]"
+											blockoverride "Image" {
+												texture = "gfx/interface/icons/buildings/fortress_building.dds"
+												enabled = "[GreaterThanOrEqualTo_int32(ProvinceWindow.GetProvince.GetFortLevel, '(int32)1')]"
+											}
 										}
 										textbox = {
 											using = SubHeaderFont
