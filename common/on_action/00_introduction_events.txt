@@ -1,7 +1,4 @@
 ﻿on_game_initialized = {
-	effect = {
-
-	}
 	events = {
 		introduction_events.1
 		introduction_events.2
