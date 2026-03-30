@@ -723,12 +723,6 @@ on_move_country = { #scope:old_country is the origin country
 	}
 }
 
-on_game_initialized = {
-	effect = {
-	
-	}
-}
-
 on_province_colonized = {
 	events = {
 
