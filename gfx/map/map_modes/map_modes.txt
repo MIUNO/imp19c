@@ -1302,7 +1302,6 @@ trade = {
 		before_lighting_blend =		@filled_far_before_lighting_blend
 		after_lighting_blend =		@filled_far_after_lighting_blend
 	}
-
 }
 
 fortifications = {
@@ -1787,8 +1786,7 @@ province_rank = {
 		edge_color_mult = 			@filled_far_edge_color_mult
 		before_lighting_blend =		0.5#@filled_far_before_lighting_blend
 		after_lighting_blend =		0.6#@filled_far_after_lighting_blend
-	}	
-
+	}
 }
 
 government = {
@@ -1942,8 +1940,7 @@ levies = {
 		edge_color_mult = 			@filled_far_edge_color_mult
 		before_lighting_blend =		0.5#@filled_far_before_lighting_blend
 		after_lighting_blend =		0.6#@filled_far_after_lighting_blend
-	}	
-
+	}
 }
 
 province_rank_bordered = {
@@ -1992,8 +1989,7 @@ province_rank_bordered = {
 		edge_color_mult = 			@filled_far_edge_color_mult
 		before_lighting_blend =		0.5#@filled_far_before_lighting_blend
 		after_lighting_blend =		0.5#@filled_far_after_lighting_blend
-	}	
-
+	}
 }
 
 province_rank_ink_style = {
@@ -2074,5 +2070,4 @@ province_rank_ink_style = {
 		before_lighting_blend =		@filled_far_before_lighting_blend
 		after_lighting_blend =		@filled_far_after_lighting_blend
 	}
-
 }
