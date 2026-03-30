@@ -388,7 +388,7 @@ RasterizerState ShadowRasterizerState
 	# DepthBias = 40000
 	# SlopeScaleDepthBias = 2
 	DepthBias = 2000
-	SlopeScaleDepthBias = 2
+	SlopeScaleDepthBias = 4
 	# END MOD
 }
 

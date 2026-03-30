@@ -634,8 +634,8 @@ DepthStencilState depth_no_write
 
 RasterizerState ShadowRasterizerState
 {
-	DepthBias = 40000
-	SlopeScaleDepthBias = 2
+	DepthBias = 2000
+	SlopeScaleDepthBias = 4
 }
 
 
