@@ -3,9 +3,9 @@
 	layer="tree_layer"
 
 	meshes={
-		"tree_oak_2_mesh" = 30.000000
-		"tree_oak_2_variation_1_mesh" = 20.000000
-		"tree_oak_2_variation_2_mesh" = 20.000000
+		"tree_oak_01_mesh" = 30.000000
+		"tree_oak_02_mesh" = 20.000000
+		"tree_oak_03_mesh" = 20.000000
 	}
 
 	max_density=0.400000
