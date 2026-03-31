@@ -47,10 +47,10 @@ types SupranationalWindows
 	            size = { 42 42 }
 	        }
 	    }
-		panelka = {
+		only_text = {
 			size = { 120 32 }
 			position = { 46 0 }
-			block "TextBox" { text = "Candidate" }
+			#block "TextBox" { text = "Candidate" }
 		}
 	    textbox = {
 			size = { 120 20 }

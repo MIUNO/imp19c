@@ -266,35 +266,25 @@ base_window = {
 							spacing = 5
 							margin = { 5 5 }
 							using = background_widget
-							panelka_trade = {
+							only_text = {
 								size = { 370 32 }
-								#blockoverride "Icon" { texture = "gfx/interface/icons/powers/religious.dds" }
-								blockoverride "TextBox" { text = "National trade balance:" }
-								blockoverride "TextValue" { text = "£[GuiScope.SetRoot(TradeView.GetPlayer.MakeScope).ScriptValue('TRADE_national_balance')|+=3]" }
+								blockoverride "Text" { text = "National trade balance: £[GuiScope.SetRoot(TradeView.GetPlayer.MakeScope).ScriptValue('TRADE_national_balance')|+=3]" }
 							}
-							panelka_trade = {
+							only_text = {
 								size = { 370 32 }
-								#blockoverride "Icon" { texture = "gfx/interface/icons/powers/religious.dds" }
-								blockoverride "TextBox" { text = "All exports value:" }
-								blockoverride "TextValue" { text = "#G + £[GuiScope.SetRoot(TradeView.GetPlayer.MakeScope).ScriptValue('TRADE_national_income')|3]" }
+								blockoverride "Text" { text = "All exports value: #G + £[GuiScope.SetRoot(TradeView.GetPlayer.MakeScope).ScriptValue('TRADE_national_income')|3]" }
 							}
-							panelka_trade = {
+							only_text = {
 								size = { 370 32 }
-								#blockoverride "Icon" { texture = "gfx/interface/icons/powers/religious.dds" }
-								blockoverride "TextBox" { text = "All imports value:" }
-								blockoverride "TextValue" { text = "#R - £[GuiScope.SetRoot(TradeView.GetPlayer.MakeScope).ScriptValue('TRADE_national_expenditure')|3]" }
+								blockoverride "Text" { text = "All imports value: #R - £[GuiScope.SetRoot(TradeView.GetPlayer.MakeScope).ScriptValue('TRADE_national_expenditure')|3]" }
 							}
-							panelka_trade = {
+							only_text = {
 								size = { 370 32 }
-								#blockoverride "Icon" { texture = "gfx/interface/icons/powers/religious.dds" }
-								blockoverride "TextBox" { text = "Income from shipping:" }
-								blockoverride "TextValue" { text = "#G + £[GuiScope.SetRoot(TradeView.GetPlayer.MakeScope).ScriptValue('SHIPPING_earned_all_TZs')|3]" }
+								blockoverride "Text" { text = "Income from shipping: #G + £[GuiScope.SetRoot(TradeView.GetPlayer.MakeScope).ScriptValue('SHIPPING_earned_all_TZs')|3]" }
 							}
-							panelka_trade = {
+							only_text = {
 								size = { 370 32 }
-								#blockoverride "Icon" { texture = "gfx/interface/icons/powers/religious.dds" }
-								blockoverride "TextBox" { text = "Expenses on shipping:" }
-								blockoverride "TextValue" { text = "#R - £[GuiScope.SetRoot(TradeView.GetPlayer.MakeScope).ScriptValue('SHIPPING_national_expenses')|3]" }
+								blockoverride "Text" { text = "Expenses on shipping: #R - £[GuiScope.SetRoot(TradeView.GetPlayer.MakeScope).ScriptValue('SHIPPING_national_expenses')|3]" }
 							}
 						}
 						widget = {
@@ -305,11 +295,9 @@ base_window = {
 							spacing = 5
 							margin = { 5 5 }
 							using = background_widget
-							panelka_trade = {
+							only_text = {
 								size = { 370 32 }
-								#blockoverride "Icon" { texture = "gfx/interface/icons/powers/religious.dds" }
-								blockoverride "TextBox" { text = "Export value in colonies:" }
-								blockoverride "TextValue" { text = "#G + £[GuiScope.SetRoot(TradeView.GetPlayer.MakeScope).ScriptValue('TRADE_all_colony_export_income')|3]" }
+								blockoverride "Text" { text = "Export value in colonies: #G + £[GuiScope.SetRoot(TradeView.GetPlayer.MakeScope).ScriptValue('TRADE_all_colony_export_income')|3]" }
 							}
 						}
 					}
@@ -2966,13 +2954,11 @@ base_window = {
 													alpha = 0.15
 													margin = { -3 -3 }
 												}
-												panelka_center = {
+												icon_and_text = {
 													size = { 170 34 }
 													parentanchor = center
 													blockoverride "Icon" { texture = "gfx/interface/icons/new_icons/color/shipping.dds" }
-													blockoverride "TextBox" { 
-														text = "#T [Scope.GetProvince.MakeScope.Var('TZ_shipping').GetValue|0]#!/ #Y [GuiScope.SetRoot( Scope.GetProvince.MakeScope ).ScriptValue('SHIPPING_total_in_TZ')|0]" 
-													}
+													blockoverride "Text" { text = "#T [Scope.GetProvince.MakeScope.Var('TZ_shipping').GetValue|0]#!/ #Y [GuiScope.SetRoot( Scope.GetProvince.MakeScope ).ScriptValue('SHIPPING_total_in_TZ')|0]" }
 													tooltip = "#T Actual convoys passing through #! / #Y Capacity for convoys"
 												}
 											}

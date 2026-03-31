@@ -210,11 +210,11 @@ base_window = {
 						texture = "[MissionView.GetHeaderImage]"
 						size = { 624 120 }
 					}
-					panelka_center_2 = {
+					icon_and_text = {
 						size = { 624 32 }
 						parentanchor = hcenter|bottom
 						position = { 0 -6 }
-						blockoverride "TextBox" { text = "[MissionItem.GetTitle]" }
+						blockoverride "Text" { text = "[MissionItem.GetTitle]" }
 					}
 				}
 				margin_widget = {
@@ -377,14 +377,12 @@ base_window = {
 															next = "progress_down"
 														}
 													}
-													panelka_center_2 = {
+													icon_and_text = {
 														size = { 280 32 }
 														alpha = "[TransparentIfTrue( MissionTaskItem.IsCompleted )]"
 														parentanchor = hcenter|bottom
 														position = { 0 -6 }
-														blockoverride "TextBox" {
-															text = "[MissionTaskItem.GetText]"
-														}
+														blockoverride "Text" { text = "[MissionTaskItem.GetText]" }
 													}
 												}
 												icon = {
