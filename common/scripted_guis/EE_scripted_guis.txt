@@ -1333,6 +1333,7 @@ DIPLO_begin_or_end_play = {
                     play_target_area = scope:player.var:selected_province
                     play_target_country = scope:player.var:selected_province.owner
                     play_goal = flag:get_territory
+                    play_type = manual
                 }
                 # TODO: Trigger an AI attitude assessment immediately
             }   
