@@ -581,7 +581,6 @@ tradezones = {
 	medium_map_names = trade_goods
 	large_map_names = trade_goods
 	fill_in_impassable = no
-	quick_action_slot = 4
 	
 	icon_mask = {
 		barbarian_power = no
@@ -589,7 +588,7 @@ tradezones = {
 		governor = no
 		area = no
 		loyalty = no
-		population = yes
+		population = no
 		holy_site = no
 		decorative_map = no 
 	}
@@ -765,9 +764,6 @@ region = {
 	}
 }
 
-
-
-
 simple_terrain = {
 	color_mode = simple_terrain
 	small_map_names = province
@@ -816,15 +812,14 @@ simple_terrain = {
 	}
 }
 
-
 climate = {
 	color_mode = climate
 	small_map_names = province
 	medium_map_names = state
 	large_map_names = country	
 	fill_in_impassable = no
-	visible = no
-	visible = no
+	#visible = no
+	#visible = no
 	
 	icon_mask = {
 		barbarian_power = no
@@ -1009,7 +1004,6 @@ diplomacy = {
 		after_lighting_blend =		@filled_far_after_lighting_blend
 	}
 }
-
 
 barbarian_power = {
 	color_mode = barbarian_power
@@ -1308,9 +1302,7 @@ trade = {
 		before_lighting_blend =		@filled_far_before_lighting_blend
 		after_lighting_blend =		@filled_far_after_lighting_blend
 	}
-
 }
-
 
 fortifications = {
 	color_mode = fortifications
@@ -1794,8 +1786,7 @@ province_rank = {
 		edge_color_mult = 			@filled_far_edge_color_mult
 		before_lighting_blend =		0.5#@filled_far_before_lighting_blend
 		after_lighting_blend =		0.6#@filled_far_after_lighting_blend
-	}	
-
+	}
 }
 
 government = {
@@ -1949,8 +1940,7 @@ levies = {
 		edge_color_mult = 			@filled_far_edge_color_mult
 		before_lighting_blend =		0.5#@filled_far_before_lighting_blend
 		after_lighting_blend =		0.6#@filled_far_after_lighting_blend
-	}	
-
+	}
 }
 
 province_rank_bordered = {
@@ -1999,8 +1989,7 @@ province_rank_bordered = {
 		edge_color_mult = 			@filled_far_edge_color_mult
 		before_lighting_blend =		0.5#@filled_far_before_lighting_blend
 		after_lighting_blend =		0.5#@filled_far_after_lighting_blend
-	}	
-
+	}
 }
 
 province_rank_ink_style = {
@@ -2081,5 +2070,4 @@ province_rank_ink_style = {
 		before_lighting_blend =		@filled_far_before_lighting_blend
 		after_lighting_blend =		@filled_far_after_lighting_blend
 	}
-
 }

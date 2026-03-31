@@ -5,9 +5,11 @@ pdxmesh = {
 	animation = { id = "idle" 			type = "new_medium_steamer_idle.anim" }
 	animation = { id = "move_start" 	type = "new_medium_steamer_idle.anim" }
 	animation = { id = "moving" 		type = "new_medium_steamer_moving.anim" }
-	animation = { id = "port_idle" 		type = "new_medium_steamer_port.anim" }
+	animation = { id = "port_idle" 		type = "new_medium_steamer_idle.anim" }
 	animation = { id = "death" 			type = "new_medium_steamer_idle.anim" }
 	animation = { id = "combat" 		type = "new_medium_steamer_combat.anim" }
+
+	scale = 1.5
 
 	meshsettings = {
 		name = "medium_steamer_LOD0"
@@ -38,8 +40,6 @@ pdxmesh = {
 		shader = "flag_color_ship"
 		shader_file = "gfx/FX/pdxmesh.shader"
 	}
-	
-	scale = 2.0
 }
 
 entity = {
@@ -96,8 +96,6 @@ entity = {
 		event = { time = 3 node = "ship_main" particle = "units/ship_idle_wave_01_effect" keep_particle = yes trigger_once = no }
 		start_event = { sound = { soundeffect = "event:/SFX/Animations/Ships/Generic/sfx_anim_ship_vfx_combat_arrows"}}	
 	}
-	
-	scale = 1
 }
 
 entity = {
@@ -107,10 +105,5 @@ entity = {
 
 entity = {
 	name = "greek_gfx_screw_frigate"
-	clone = "new_medium_steamer"
-}
-
-entity = {
-	name = "greek_gfx_brig"
 	clone = "new_medium_steamer"
 }
