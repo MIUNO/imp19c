@@ -627,26 +627,34 @@ AI_begin_diplomatic_play = {
 				}
 			}
 		}
-		ordered_in_list = {
-			list = play_targets
-			order_by = var:play_target_rating
-
-			if = {
-				limit = {
-					NOT = { THIS = scope:diplomatic_play.var:play_instigator }
-				}
-				save_scope_as = play_target_country_scope
-				scope:diplomatic_play = {
-					set_variable = {
-						name = play_target_country
-						value = scope:play_target_country_scope
-					}
+		if = {
+			limit = {
+				NOT = {
+					has_variable = play_target_country
 				}
 			}
+			ordered_in_list = {
+				list = play_targets
+				order_by = var:play_target_rating
 
-			max = 1 # Select only the best one
-			check_range_bounds = no
+				if = {
+					limit = {
+						NOT = { THIS = scope:diplomatic_play.var:play_instigator }
+					}
+					save_scope_as = play_target_country_scope
+					scope:diplomatic_play = {
+						set_variable = {
+							name = play_target_country
+							value = scope:play_target_country_scope
+						}
+					}
+				}
+
+				max = 1 # Select only the best one
+				check_range_bounds = no
+			}
 		}
+		
 		every_in_list = {
 			list = play_targets
 			remove_from_list = play_targets
