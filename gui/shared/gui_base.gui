@@ -2369,20 +2369,41 @@ types Base_GUI_Types
 	type icon_and_text = widget {
 		# Size needed
 		minimumsize = { 0 32 }
-		icon = {
-			position = { 0 @Minimum_button_size }
-			size = { 100% 6 }
-			#texture = "gfx/interface/base_parts/base_color.dds"
-			#color = { 0.95  0.8  0.44 1 }
-			#alpha = 0.75
-			texture = "gfx/interface/base_parts/background_noninteractable_texture.dds"
+		background = {
+			shaderfile = "gfx/FX/pdxgui_default.shader"
+			using = shadow_background
+			margin = { 4 4 }
+			alpha = 0.25
 			modify_texture = {
-				texture = "gfx/interface/base_parts/brown_underline_x60bd.dds"
+				texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 8 8 }
+			}
+		}
+		background = {
+			shaderfile = "gfx/FX/pdxgui_default.shader"
+			using = beige_background
+			alpha = 0.2
+			modify_texture = {
+				texture = "gfx/interface/base_parts/gradient_black_invert.dds"
 				blend_mode = alphamultiply
 			}
-			block "LineVisibility"
-			{
-				
+			modify_texture = {
+				texture = "gfx/interface/base_parts/horizontal_gradient_black.dds"
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 40 0 }
+			}
+		}
+		margin_widget = {
+			size = { 100% 2 }
+			position = { 0 100% }
+			margin = { 2 0 }
+			icon = {
+				size = { 100% 100% }
+				alpha = 0.5
+				using = darken_red_background
 			}
 		}
 		
@@ -5657,7 +5678,7 @@ types Base_GUI_Types
 					flowcontainer = {
 						spacing = 5
 						parentanchor = right
-						panelka_center = {
+						icon_and_text = {
 							size = { 320 32 }
 							blockoverride "Icon" {
 								icon = {
@@ -5668,19 +5689,19 @@ types Base_GUI_Types
 									parentanchor = left|vcenter
 								}
 							}
-							blockoverride "TextBox" { text = "[Character.GetNameWithNoTooltip]" }
+							blockoverride "Text" { text = "[Character.GetNameWithNoTooltip]" }
 						}
-						panelka_center = {
+						icon_and_text = {
 							name = "Culture"
 							size = { 200 32 }
 							blockoverride "Icon" { using = icon_culture }
-							blockoverride "TextBox" { text = "[Character.GetCulture.GetName]" }
+							blockoverride "Text" { text = "[Character.GetCulture.GetName]" }
 						}
 					}
 					flowcontainer = {
 						spacing = 5
 						parentanchor = right
-						panelka_center = {
+						icon_and_text = {
 							visible = "[Character.HasTitle]"
 							size = { 240 32 }
 							blockoverride "Icon" {
@@ -5691,20 +5712,20 @@ types Base_GUI_Types
 									tooltip = "[Character.GetRelevantDescription]"
 								}
 							}
-							blockoverride "TextBox" { text = "[Character.GetTitleNameShort]" }
+							blockoverride "Text" { text = "[Character.GetTitleNameShort]" }
 							tooltip = "[Character.GetTitle.GetTooltip]"
 						}
-						panelka_center = {
+						icon_and_text = {
 							name = "Religion"
 							size = { 200 32 }
 							blockoverride "Icon" { using = icon_religious }
-							blockoverride "TextBox" { text = "[Character.GetReligion.GetName]" }
+							blockoverride "Text" { text = "[Character.GetReligion.GetName]" }
 						}
 					}
 					flowcontainer = {
 						spacing = 5
 						parentanchor = right
-						panelka_center = {
+						icon_and_text = {
 							name = "Age"
 							size = { 130 32 }
 							blockoverride "Icon" {
@@ -5713,10 +5734,10 @@ types Base_GUI_Types
 									size = { 30 30 }
 								}
 							}
-							blockoverride "TextBox" { text = "[Character.GetAgeInfo]" }
+							blockoverride "Text" { text = "[Character.GetAgeInfo]" }
 							tooltip = "[Character.GetAgeOnDeathOrBirthDate]"
 						}
-						panelka_center = {
+						icon_and_text = {
 							name = "PowerBase"
 							size = { 110 32 }
 							blockoverride "Icon" {
@@ -5725,10 +5746,10 @@ types Base_GUI_Types
 									size = { 30 30 }
 								}
 							}
-							blockoverride "TextBox" { text = "[Character.GetPowerBase|0]" }
+							blockoverride "Text" { text = "[Character.GetPowerBase|0]" }
 							tooltip = "[Character.GetPowerBaseInfo]"
 						}
-						panelka_center = {
+						icon_and_text = {
 							name = "Loyalty"
 							size = { 90 32 }
 							blockoverride "Icon" {
@@ -5737,10 +5758,10 @@ types Base_GUI_Types
 									size = { 30 30 }
 								}
 							}
-							blockoverride "TextBox" { text = "[Character.GetLoyalty|0]" }
+							blockoverride "Text" { text = "[Character.GetLoyalty|0]" }
 							tooltip = "[Character.GetLoyaltyToolTip]"
 						}
-						panelka_center = {
+						icon_and_text = {
 							name = "Popularity"
 							size = { 90 32 }
 							blockoverride "Icon" {
@@ -5749,7 +5770,7 @@ types Base_GUI_Types
 									size = { 30 30 }
 								}
 							}
-							blockoverride "TextBox" { text = "[Character.GetPopularity|0]" }
+							blockoverride "Text" { text = "[Character.GetPopularity|0]" }
 							tooltip = "[Character.GetPopularityToolTip]"
 						}
 					}
@@ -5757,7 +5778,7 @@ types Base_GUI_Types
 						spacing = 5
 						ignoreinvisible = yes
 						parentanchor = right
-						panelka_center = {
+						icon_and_text = {
 							name = "LoyalCohorts"
 							size = { 110 32 }
 							blockoverride "Icon" {
@@ -5766,17 +5787,17 @@ types Base_GUI_Types
 									size = { 30 30 }
 								}
 							}
-							blockoverride "TextBox" { text = "[Character.GetNumberOfLoyalCohorts]" }
+							blockoverride "Text" { text = "[Character.GetNumberOfLoyalCohorts]" }
 							tooltip = "LOYAL_VETS_TOOLTIP"
 						}
-						panelka_center = {
+						icon_and_text = {
 							name = "Wealth"
 							size = { 130 32 }
 							blockoverride "Icon" { using = icon_treasury }
-							blockoverride "TextBox" { text = "[Character.GetWealth|0]" }
+							blockoverride "Text" { text = "[Character.GetWealth|0]" }
 							tooltip = "[Character.GetWealthInformation]"
 						}
-						panelka_center = {
+						icon_and_text = {
 							name = "Prominence"
 							visible = "[Not( Character.GetEmployer.GetGovernment.IsRepublic )]"
 							size = { 110 32 }
@@ -5786,18 +5807,18 @@ types Base_GUI_Types
 									size = { 30 30 }
 								}
 							}
-							blockoverride "TextBox" { text = "[Character.GetProminence|0]" }
+							blockoverride "Text" { text = "[Character.GetProminence|0]" }
 							tooltip = "[Character.GetProminenceToolTip]"
 						}
-						panelka_center = {
+						icon_and_text = {
 							name = "Statesmanship"
 							visible = "[Character.GetEmployer.GetGovernment.IsRepublic]"
 							size = { 90 32 }
 							blockoverride "Icon" { using = icon_statesmanship }
-							blockoverride "TextBox" { text = "[Character.GetExperience|0]" }
+							blockoverride "Text" { text = "[Character.GetExperience|0]" }
 							tooltip = "[Character.GetExperienceInformation]"
 						}
-						panelka_center = {
+						icon_and_text = {
 							name = "Corruption"
 							size = { 90 32 }
 							blockoverride "Icon" {
@@ -5806,14 +5827,14 @@ types Base_GUI_Types
 									size = { 30 30 }
 								}
 							}
-							blockoverride "TextBox" { text = "[Character.GetCorruption|0]" }
+							blockoverride "Text" { text = "[Character.GetCorruption|0]" }
 							tooltip = "[Character.GetCorruptionToolTip]"
 						}
 					}
 					flowcontainer = {
 						spacing = 5
 						parentanchor = right
-						panelka_center = {
+						icon_and_text = {
 							name = "Martial"
 							size = { 110 32 }
 							blockoverride "Icon" {
@@ -5822,10 +5843,10 @@ types Base_GUI_Types
 									size = { 30 30 }
 								}
 							}
-							blockoverride "TextBox" { text = "[Character.GetMartial]" }
+							blockoverride "Text" { text = "[Character.GetMartial]" }
 							tooltip = "[Character.GetMartialToolTip]"
 						}
-						panelka_center = {
+						icon_and_text = {
 							name = "Finesse"
 							size = { 110 32 }
 							blockoverride "Icon" {
@@ -5834,14 +5855,14 @@ types Base_GUI_Types
 									size = { 30 30 }
 								}
 							}
-							blockoverride "TextBox" { text = "[Character.GetFinesse]" }
+							blockoverride "Text" { text = "[Character.GetFinesse]" }
 							tooltip = "[Character.GetFinesseToolTip]"
 						}
 					}
 					flowcontainer = {
 						spacing = 5
 						parentanchor = right
-						panelka_center = {
+						icon_and_text = {
 							name = "Oratory"
 							size = { 110 32 }
 							blockoverride "Icon" {
@@ -5850,10 +5871,10 @@ types Base_GUI_Types
 									size = { 30 30 }
 								}
 							}
-							blockoverride "TextBox" { text = "[Character.GetCharisma]" }
+							blockoverride "Text" { text = "[Character.GetCharisma]" }
 							tooltip = "[Character.GetCharismaToolTip]"
 						}
-						panelka_center = {
+						icon_and_text = {
 							name = "Zeal"
 							size = { 110 32 }
 							blockoverride "Icon" {
@@ -5862,7 +5883,7 @@ types Base_GUI_Types
 									size = { 30 30 }
 								}
 							}
-							blockoverride "TextBox" { text = "[Character.GetZeal]" }
+							blockoverride "Text" { text = "[Character.GetZeal]" }
 							tooltip = "[Character.GetZealToolTip]"
 						}
 					}
@@ -10106,11 +10127,11 @@ types Base_GUI_Types
 			blockoverride "Icon" { texture = "[MissionItem.GetImage]" }
 			tooltip = "[MissionItem.GetButtonTooltip]"
 		}
-		panelka_center_2 = {
+		icon_and_text = {
 			size = { 280 32 }
 			parentanchor = hcenter|bottom
 			position = { 0 -6 }
-			blockoverride "TextBox" { text = "[MissionItem.GetTitle]" }
+			blockoverride "Text" { text = "[MissionItem.GetTitle]" }
 		}
 		##### MISSION NAME BANNER
 	}

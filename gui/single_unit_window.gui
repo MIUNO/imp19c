@@ -737,22 +737,22 @@ base_window = {
 												size = { 26 26 }
 												parentanchor = vcenter
 											}
-											#panelka_center = {
+											#icon_and_text = {
 											#	size = { 80 32 }
 											#	blockoverride "Icon" { using = icon_morale }
-											#	blockoverride "TextBox" { text = "[SubUnit.GetMoralePercent|0]%" }
+											#	blockoverride "Text" { text = "[SubUnit.GetMoralePercent|0]%" }
 											#	tooltip = "[SubUnit.GetMoraleInfo]"
 											#}
-											panelka_center = {
+											icon_and_text = {
 												size = { 80 32 }
 												blockoverride "Icon" { using = icon_military_experience }
-												blockoverride "TextBox" { text = "[SubUnit.GetExperience|0]%" }
+												blockoverride "Text" { text = "[SubUnit.GetExperience|0]%" }
 												tooltip = "[SubUnit.GetExperienceInfo]"
 											}
-											panelka_center = {
+											icon_and_text = {
 												size = { 100 32 }
 												blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/strength.dds" }
-												blockoverride "TextBox" { text = "[SubUnit.GetStrength]" }
+												blockoverride "Text" { text = "[SubUnit.GetStrength]" }
 												tooltip = "[SubUnit.GetStrengthDescription]"
 											}
 										}

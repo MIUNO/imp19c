@@ -16,7 +16,6 @@ template VerticalScrollBar_Diplomatic
 		}
 		
 		slider = {
-			
 			button = {
 				size = { 10 25 }
 				gfxtype = buttongfx
@@ -35,13 +34,11 @@ template VerticalScrollBar_Diplomatic
 						spriteborder = { 6 6 }
 					}
 				}
-				
 				background = {
 					shaderfile = "gfx/FX/pdxgui_default.shader"
 					using = flat_background_white
 					spriteType = Corneredtiled
 				}
-				
 				background = {
 					shaderfile = "gfx/FX/pdxgui_default.shader"
 					using = black_background
@@ -264,286 +261,36 @@ template image_background
 }
 
 types NEW_GUI {
-	type panelka = widget {
-		margin_widget = {
-			size = { 100% 100% }
-			textbox = {
-				minimumsize = { 0 32 }
-				parentanchor = left
-				elide = right
-				font = BaseFont
-				using = Default_FontColor
-				autoresize = yes
-				fontsize_min = 12
-				block "TextBox" {
-					max_width = 100
-					text = "none"
-				}
+	type only_text = widget {
+		hbox = {
+			widget = {
+				size = { 6 6 }
+				layoutpolicy_horizontal = fixed
 			}
-		}
-		#textbox = {
-		#	size = { 90% 32 }
-		#	position = { 0 5 }
-		#	margin_left = 10
-		#	parentanchor = top|left
-		#	maximumsize = { 120 -1 }
-		#	block "TextBox" { text = "none" }
-		#	autoresize = yes
-		#	using = BaseFontM
-		#	using = Default_FontColor
-		#}
-	}
-	type panelka_left = widget {
-		background = {
-			shaderfile = "gfx/FX/pdxgui_default.shader"
-			using = shadow_background
-			margin = { 4 4 }
-			alpha = 0.25
-			modify_texture = {
-				texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
-				blend_mode = alphamultiply
-				spriteType = corneredtiled
-				spriteborder = { 8 8 }
-			}
-		}
-		background = {
-			shaderfile = "gfx/FX/pdxgui_default.shader"
-			using = shadow_background
-			alpha = 0.6
-			margin_right = 50%
-			modify_texture = {
-				texture = "gfx/interface/base_parts/horizontal_gradient_stretch.dds"
-				blend_mode = alphamultiply
-			}
-		}
-		background = {
-			shaderfile = "gfx/FX/pdxgui_default.shader"
-			using = beige_background
-			alpha = 0.2
-			margin_right = -50%
-			modify_texture = {
-				texture = "gfx/interface/base_parts/horizontal_gradient_stretch.dds"
-				blend_mode = alphamultiply
-			}
-		}
-		icon = {
-			size = { 100% 2 }
-			position = { 0 100% }
-			alpha = 0.5
-			using = darken_red_background
-		}
-		icon = {
-			size = { 34 34 }
-			block "Icon" { texture = "gfx/interface/icons/shared_icons/leader.dds" }
-		}
-		margin_widget = {
-			size = { 100% 100% }
-			margin_left = 10
-			margin_right = 5
-			textbox = {
-				minimumsize = { 0 32 }
-				parentanchor = right
-				elide = right
-				font = BaseFont
-				using = Default_FontColor
-				autoresize = yes
-				fontsize_min = 12
-				block "TextBox" {
-					max_width = 100
-					text = "none"
-				}
-			}
-		}
-	}
-	type panelka_right = widget {
-		parentanchor = right
-		background = {
-			shaderfile = "gfx/FX/pdxgui_default.shader"
-			using = shadow_background
-			margin = { 4 4 }
-			alpha = 0.25
-			modify_texture = {
-				texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
-				blend_mode = alphamultiply
-				spriteType = corneredtiled
-				spriteborder = { 8 8 }
-			}
-		}
-		background = {
-			shaderfile = "gfx/FX/pdxgui_default.shader"
-			using = shadow_background
-			alpha = 0.6
-			margin_left = 50%
-			modify_texture = {
-				texture = "gfx/interface/base_parts/horizontal_gradient_stretch_inverted.dds"
-				blend_mode = alphamultiply
-			}
-		}
-		background = {
-			shaderfile = "gfx/FX/pdxgui_default.shader"
-			using = beige_background
-			alpha = 0.2
-			margin_left = -50%
-			modify_texture = {
-				texture = "gfx/interface/base_parts/horizontal_gradient_stretch_inverted.dds"
-				blend_mode = alphamultiply
-			}
-		}
-		icon = {
-			size = { 100% 2 }
-			position = { 0 100% }
-			alpha = 0.5
-			using = darken_red_background
-		}
-		icon = {
-			size = { 34 34 }
-			block "Icon" { texture = "gfx/interface/icons/shared_icons/leader.dds" }
-		}
-		margin_widget = {
-			size = { 100% 100% }
-			margin_left = 10
-			margin_right = 5
-			textbox = {
-				minimumsize = { 0 32 }
-				parentanchor = right
-				elide = right
-				font = BaseFont
-				using = Default_FontColor
-				autoresize = yes
-				fontsize_min = 12
-				block "TextBox" {
-					max_width = 100
-					text = "none"
-				}
-			}
-		}
-	}
-	type panelka_center = widget {
-		background = {
-			shaderfile = "gfx/FX/pdxgui_default.shader"
-			using = shadow_background
-			margin = { 4 4 }
-			alpha = 0.25
-			modify_texture = {
-				texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
-				blend_mode = alphamultiply
-				spriteType = corneredtiled
-				spriteborder = { 8 8 }
-			}
-		}
-		background = {
-			shaderfile = "gfx/FX/pdxgui_default.shader"
-			using = beige_background
-			alpha = 0.2
-			modify_texture = {
-				texture = "gfx/interface/base_parts/gradient_black_invert.dds"
-				blend_mode = alphamultiply
-			}
-			modify_texture = {
-				texture = "gfx/interface/base_parts/horizontal_gradient_black.dds"
-				blend_mode = alphamultiply
-				spriteType = Corneredtiled
-				spriteborder = { 40 0 }
-			}
-		}
-		icon = {
-			size = { 100% 2 }
-			position = { 0 100% }
-			alpha = 0.5
-			using = darken_red_background
-		}
-		icon = {
-			size = { 34 34 }
-			block "Icon" { texture = "gfx/interface/icons/shared_icons/leader.dds" }
-		}
-		margin_widget = {
-			size = { 100% 100% }
-			margin_left = 10
-			margin_right = 5
-			textbox = {
-				minimumsize = { 0 32 }
-				parentanchor = right
-				elide = right
-				font = BaseFont
-				using = Default_FontColor
-				autoresize = yes
-				fontsize_min = 12
-				block "TextBox" {
-					max_width = 100
-					text = "none"
-				}
-			}
-		}
-	}
-	type panelka_center_2 = widget {
-		background = {
-			shaderfile = "gfx/FX/pdxgui_default.shader"
-			using = shadow_background
-			margin = { 4 4 }
-			alpha = 0.25
-			modify_texture = {
-				texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
-				blend_mode = alphamultiply
-				spriteType = corneredtiled
-				spriteborder = { 8 8 }
-			}
-		}
-		background = {
-			shaderfile = "gfx/FX/pdxgui_default.shader"
-			using = beige_background
-			alpha = 0.2
-			modify_texture = {
-				texture = "gfx/interface/base_parts/gradient_black_invert.dds"
-				blend_mode = alphamultiply
-			}
-			modify_texture = {
-				texture = "gfx/interface/base_parts/horizontal_gradient_black.dds"
-				blend_mode = alphamultiply
-				spriteType = Corneredtiled
-				spriteborder = { 40 0 }
-			}
-		}
-		icon = {
-			size = { 100% 2 }
-			position = { 0 100% }
-			alpha = 0.5
-			using = darken_red_background
-		}
-		margin_widget = {
-			size = { 100% 100% }
-			margin_left = 10
-			margin_right = 5
-			textbox = {
-				minimumsize = { 0 32 }
-				parentanchor = right
-				elide = right
-				font = BaseFont
-				using = Default_FontColor
-				autoresize = yes
-				fontsize_min = 12
-				block "TextBox" {
-					max_width = 100
-					text = "none"
-				}
-			}
-		}
-	}
-	type panelka_trade = widget {
-		panelka_center = { size = { 270 32 } }
-		textbox = {
-			name = "Text"
-			position = { 272 3 }
-			size = { 100 32 }					
-			align = left|nobaseline
-			elide = right
-			using = BaseFontM
-			using = Default_FontColor 
-			fontsize_min = 14
-			block "TextValue"
-			{
+			widget = {
+				size = { 0 24 }
+				layoutpolicy_horizontal = expanding
 				
-				text = "0"
+				textbox = {
+					name = "Text"
+					position = { 0 1 }
+					size = { 100% 24 }					
+					align = left|nobaseline
+					elide = right
+					using = BaseFontM
+					using = Default_FontColor 
+					fontsize_min = 13
+					block "Text"
+					{
+						text = "888.88%"
+					}
+				}
 			}
+			
+			widget = {
+				size = { 6 6 }
+				layoutpolicy_horizontal = fixed
+			}			
 		}
 	}
 	type image_block = widget {
@@ -1015,9 +762,9 @@ types NEW_GUI {
 				spacing = 5
 				margin = { 5 5 }
 				using = background_widget
-				panelka_center = {
+				icon_and_text = {
 					size = { 132 32 }
-					blockoverride "TextBox" { text = "buildings_ports" }
+					blockoverride "Text" { text = "buildings_ports" }
 					blockoverride "Icon" { texture = "gfx/interface/icons/new_icons/color/ports.dds" }
 				}
 				flowcontainer = {
@@ -1029,9 +776,9 @@ types NEW_GUI {
 				spacing = 5
 				margin = { 5 5 }
 				using = background_widget
-				panelka_center = {
+				icon_and_text = {
 					size = { 132 32 }
-					blockoverride "TextBox" { text = "buildings_education" }
+					blockoverride "Text" { text = "buildings_education" }
 					blockoverride "Icon" { texture = "gfx/interface/icons/new_icons/color/education.dds" }
 				}
 				flowcontainer = {
@@ -1043,9 +790,9 @@ types NEW_GUI {
 				spacing = 5
 				margin = { 5 5 }
 				using = background_widget
-				panelka_center = {
+				icon_and_text = {
 					size = { 132 32 }
-					blockoverride "TextBox" { text = "buildings_industrial" }
+					blockoverride "Text" { text = "buildings_industrial" }
 					blockoverride "Icon" { texture = "gfx/interface/icons/new_icons/color/industrialisation.dds" }
 				}
 				flowcontainer = {
@@ -1060,9 +807,9 @@ types NEW_GUI {
 				spacing = 5
 				margin = { 5 5 }
 				using = background_widget
-				panelka_center = {
+				icon_and_text = {
 					size = { 330 32 }
-					blockoverride "TextBox" { text = "buildings_infrastructure" }
+					blockoverride "Text" { text = "buildings_infrastructure" }
 					blockoverride "Icon" { texture = "gfx/interface/icons/new_icons/color/infrastructure.dds" }
 				}
 				flowcontainer = {
@@ -1077,9 +824,9 @@ types NEW_GUI {
 				spacing = 5
 				margin = { 5 5 }
 				using = background_widget
-				panelka_center = {
+				icon_and_text = {
 					size = { 132 32 }
-					blockoverride "TextBox" { text = "buildings_military" }
+					blockoverride "Text" { text = "buildings_military" }
 					blockoverride "Icon" { texture = "gfx/interface/icons/new_icons/color/military.dds" }
 				}
 				flowcontainer = {
@@ -1091,9 +838,9 @@ types NEW_GUI {
 				spacing = 5
 				margin = { 5 5 }
 				using = background_widget
-				panelka_center = {
+				icon_and_text = {
 					size = { 264 32 }
-					blockoverride "TextBox" { text = "buildings_urban_districts" }
+					blockoverride "Text" { text = "buildings_urban_districts" }
 					blockoverride "Icon" { texture = "gfx/interface/icons/new_icons/color/urban_districts.dds" }
 				}
 				flowcontainer = {
@@ -2777,7 +2524,7 @@ types NEW_GUI {
 	}
 
 	type diplomatic_play_item = margin_widget {
-		size = { 520 220 }
+		size = { 470 220 }
 		using = list_item
 		flowcontainer = {
 			margin = { 5 5 }
@@ -2859,8 +2606,9 @@ types NEW_GUI {
 				direction = vertical
 				margin_top = 10
 				textbox = {
-					size = { 260 40 }
+					size = { 250 40 }
 					align = hcenter|top
+					parentanchor = hcenter
 					using = BaseFontM
 					using = Default_FontColor
 					multiline = yes
@@ -2878,7 +2626,7 @@ types NEW_GUI {
 						blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/strength.dds" }
 					}
 					icon_and_text = {
-						size = { 100 0 }
+						size = { 75 0 }
 						blockoverride "Text" {
 							text = "[GuiScope.SetRoot( Scope.Province.MakeScope ).ScriptValue('DIPLOMACY_play_progression_percent')|%0]" 
 							tooltip = "Play progress"
@@ -2886,7 +2634,7 @@ types NEW_GUI {
 						blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/time.dds" }
 					}
 					icon_and_text = {
-						size = { 100 0 }
+						size = { 75 0 }
 						blockoverride "Text" {
 							text = "[Scope.GetProvince.MakeScope.GetVariable('diplomatic_play_success').GetValue|0]%" 
 							tooltip = "Play success chance"
@@ -2929,7 +2677,7 @@ types NEW_GUI {
 					}
 				}
 				textbox = {
-					size = { 260 20 }
+					size = { 250 20 }
 					align = hcenter
 					using = BaseFontM
 					using = Default_FontColor
@@ -3036,7 +2784,7 @@ types NEW_GUI {
 				}
 			}
 		}
-	} 
+	}
 
 	type global_powers = margin_widget {
 		size = { 420 75 }
@@ -3216,7 +2964,7 @@ types NEW_GUI {
 		spacing = 5
 		margin = { 5 5 }
 		using = background_widget
-		panelka_center = {
+		icon_and_text = {
 			size = { 258 32 }
 		}
 		flowcontainer = {
@@ -3269,13 +3017,10 @@ types NEW_GUI {
 				multiline = yes
 				block "Name" { text = "Name" }
 			}
-			panelka_center = {
+			icon_and_text = {
 				size = { 82 32 }
 				blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/treasury.dds" }
-				blockoverride "TextBox" {
-					max_width = 67
-					block "Wealth" { text = "Wealth" }
-				}
+				blockoverride "Text" { block "Wealth" { text = "Wealth" } }
 			}
 			widget = {
 				size = { 82 30 }
@@ -3322,12 +3067,8 @@ types NEW_GUI {
 		margin_widget = {
 			size = { 200 32 }
 			margin_left = 5
-			panelka = {
+			icon_and_text = {
 				size = { 100% 100% }
-				blockoverride "TextBox" {
-					max_width = 180
-					block "Text" { text = "none" }
-				}
 				#tooltip = "GDP"
 			}
 		}

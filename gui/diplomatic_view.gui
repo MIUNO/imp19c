@@ -86,7 +86,7 @@ base_window = {
 				flowcontainer = {
 					direction = vertical
 					spacing = 15
-					panelka_left = { #religion
+					icon_and_text = { #religion
 						size = { 200 32 }
 						blockoverride "Icon" {
 							#texture = "gfx/interface/icons/powers/religious.dds"
@@ -96,28 +96,19 @@ base_window = {
 								parentanchor = hcenter
 							}
 						}
-						blockoverride "TextBox" {
-							max_width = 185
-							text = "[DiplomaticView.GetTargetCountry.GetReligion.GetName]"
-						}
+						blockoverride "Text" { text = "[DiplomaticView.GetTargetCountry.GetReligion.GetName]" }
 						tooltip = "[DiplomaticView.GetTargetCountry.GetReligion.GetTooltip]"
 					}
-					panelka_left = { #Industrialisation
+					icon_and_text = { #Industrialisation
 						size = { 200 32 }
 						blockoverride "Icon" { texture = "gfx/interface/icons/new_icons/color/industrialisation.dds" }
-						blockoverride "TextBox" {
-							max_width = 185
-							text = "[GuiScope.SetRoot(DiplomaticView.GetTargetCountry.MakeScope).ScriptValue('TECH_country_industrialisation_level')|0]"
-						}
+						blockoverride "Text" { text = "[GuiScope.SetRoot(DiplomaticView.GetTargetCountry.MakeScope).ScriptValue('TECH_country_industrialisation_level')|0]" }
 						tooltip = "Industrialisation"
 					}
-					panelka_left = { #manpower
+					icon_and_text = { #manpower
 						size = { 150 32 }
 						blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/manpower.dds" }
-						blockoverride "TextBox" {
-							max_width = 135
-							text = "[DiplomaticView.GetTargetCountry.GetManpower]"
-						}
+						blockoverride "Text" { text = "[DiplomaticView.GetTargetCountry.GetManpower]" }
 						tooltip = "[DiplomaticView.GetTargetCountry.GetManpowerTooltip]"
 					}
 				}
@@ -152,31 +143,23 @@ base_window = {
 				flowcontainer = {
 					direction = vertical
 					spacing = 15
-					panelka_right = { #treasury
+					icon_and_text = { #treasury
 						size = { 200 32 }
 						blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/treasury.dds" }
-						blockoverride "TextBox" {
-							max_width = 185
-							text = "[GuiScope.SetRoot(DiplomaticView.GetTargetCountry.MakeScope).ScriptValue('DIPLOMACY_power')|0]"
-						}
+						blockoverride "Text" { text = "[GuiScope.SetRoot(DiplomaticView.GetTargetCountry.MakeScope).ScriptValue('DIPLOMACY_power')|0]" }
 						tooltip = "diplomatic_power_tt"
 					}
-					panelka_right = { #pop
+					icon_and_text = { #pop
 						size = { 200 32 }
 						blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/pop_type.dds" }
-						blockoverride "TextBox" {
-							max_width = 185
-							text = "[DiplomaticView.GetTargetCountry.GetTotalPopulation]"
-						}
+						blockoverride "Text" { text = "[DiplomaticView.GetTargetCountry.GetTotalPopulation]" }
 						tooltip = "[DiplomaticView.GetTargetCountry.BuildTotalPopulationToolTip]"
 					}
-					panelka_right = { #stability
+					icon_and_text = { #stability
 						size = { 150 32 }
+						parentanchor = right
 						blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/stability.dds" }
-						blockoverride "TextBox" {
-							max_width = 135
-							text = "[DiplomaticView.GetTargetCountry.GetStability|2]"
-						}
+						blockoverride "Text" { text = "[DiplomaticView.GetTargetCountry.GetStability|2]" }
 						tooltip = "[DiplomaticView.GetTargetCountry.GetStabilityTooltip]"
 					}
 				}
@@ -391,32 +374,23 @@ base_window = {
 							spacing = 10
 							margin_left = 10
 							visible = "[Not(DiplomaticView.GetTargetCountry.IsBarbarian)]"
-							panelka_center = { #GDP
+							icon_and_text = { #GDP
 								size = { 130 32 }
 								datacontext = "[DiplomaticView.GetTargetCountry]"
 								#blockoverride "Icon" { texture = "" }
-								blockoverride "TextBox" {
-									max_width = 115
-									text = "£[GuiScope.SetRoot(DiplomaticView.GetTargetCountry.MakeScope).ScriptValue('WEALTH_total_private_moveable_wealth')|3]"
-								}
+								blockoverride "Text" { text = "£[GuiScope.SetRoot(DiplomaticView.GetTargetCountry.MakeScope).ScriptValue('WEALTH_total_private_moveable_wealth')|3]" }
 								tooltip = "GDP"
 							}
-							panelka_center = { # % of global shipping controlled
+							icon_and_text = { # % of global shipping controlled
 								size = { 130 32 }
 								#blockoverride "Icon" { texture = "" }
-								blockoverride "TextBox" {
-									max_width = 115
-									text = "[GuiScope.SetRoot(DiplomaticView.GetTargetCountry.MakeScope).ScriptValue('TRADE_percentage_of_global_shipping')|%]"
-								}
+								blockoverride "Text" { text = "[GuiScope.SetRoot(DiplomaticView.GetTargetCountry.MakeScope).ScriptValue('TRADE_percentage_of_global_shipping')|%]" }
 								tooltip = "SHIPPING_CONTROLLED_TT"
 							}
-							panelka_center = { # Quarterly trading activity value 
+							icon_and_text = { # Quarterly trading activity value 
 								size = { 130 32 }
 								#blockoverride "Icon" { texture = "" }
-								blockoverride "TextBox" {
-									max_width = 115
-									text = "£[GuiScope.SetRoot(DiplomaticView.GetTargetCountry.MakeScope).ScriptValue('TRADE_activity_value')|3]"
-								}
+								blockoverride "Text" { text = "£[GuiScope.SetRoot(DiplomaticView.GetTargetCountry.MakeScope).ScriptValue('TRADE_activity_value')|3]" }
 								tooltip = "TRADE_ACTIVITY_VALUE_TT"
 							}
 						}
@@ -424,26 +398,17 @@ base_window = {
 							direction = vertical
 							spacing = 10
 							visible = "[Not(DiplomaticView.GetTargetCountry.IsBarbarian)]"
-							panelka = { #capital
+							only_text = { #capital
 								size = { 210 32 }
-								blockoverride "TextBox" {
-									max_width = 210
-									text = "capita_dip"
-								}
+								blockoverride "Text" { text = "capita_dip" }
 							}
-							panelka = { #population
+							only_text = { #population
 								size = { 210 32 }
-								blockoverride "TextBox" {
-									max_width = 210
-									text = "NATIONAL_POPULATION"
-								}
+								blockoverride "Text" { text = "NATIONAL_POPULATION" }
 							}
-							panelka = { #cities
+							only_text = { #cities
 								size = { 210 32 }
-								blockoverride "TextBox" {
-									max_width = 210
-									text = "provinces_dip"
-								}
+								blockoverride "Text" { text = "provinces_dip" }
 							}
 						}
 					}
@@ -933,22 +898,16 @@ base_window = {
 								direction = vertical 
 								flowcontainer = {
 									spacing = 10
-									panelka_center = { #agressive expansion
+									icon_and_text = { #agressive expansion
 										size = { @icon_width_our_details 32 }
 										blockoverride "Icon" { texture = "gfx/interface/icons/modifiers/agressive_expansion_monthly_decay.dds" }
-										blockoverride "TextBox" {
-											max_width = 105
-											text = "[DiplomaticView.GetAEChange |2]"
-										}
+										blockoverride "Text" { text = "[DiplomaticView.GetAEChange |2]" }
 										tooltip = "[DiplomaticView.GetAEChangeInfo]"
 									}
-									panelka_center = { #agressive expansion impact
+									icon_and_text = { #agressive expansion impact
 										size = { @icon_width_our_details 32 }
 										blockoverride "Icon" { texture = "gfx/interface/icons/modifiers/agressive_expansion_impact.dds" }
-										blockoverride "TextBox" {
-											max_width = 105
-											text = "[DiplomaticView.GetPlayer.GetModifierValue('agressive_expansion_impact')]"
-										}
+										blockoverride "Text" { text = "[DiplomaticView.GetPlayer.GetModifierValue('agressive_expansion_impact')]" }
 										tooltip = "[DiplomaticView.GetPlayer.GetModifierTooltip('agressive_expansion_impact')]"
 									}
 									flowcontainer = {
@@ -984,22 +943,16 @@ base_window = {
 								}
 								flowcontainer = { 
 									spacing = 10
-									panelka_center = { #diplomatic range
+									icon_and_text = { #diplomatic range
 										size = { @icon_width_our_details 32 }
 										blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/diplomatic_range.dds" }
-										blockoverride "TextBox" {
-											max_width = 105
-											text = "[DiplomaticView.GetDiplomaticRange]"
-										}
+										blockoverride "Text" { text = "[DiplomaticView.GetDiplomaticRange]" }
 										tooltip = "[DiplomaticView.GetDiplomaticRangeTooltip]"
 									}
-									panelka_center = { #diplomatic stance change cost
+									icon_and_text = { #diplomatic stance change cost
 										size = { @icon_width_our_details 32 }
 										blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/diplomacy.dds" }
-										blockoverride "TextBox" {
-											max_width = 105
-											text = "[DiplomaticView.GetPlayer.GetModifierValue('change_diplomatic_stance_cost_modifier')]"
-										}
+										blockoverride "Text" { text = "[DiplomaticView.GetPlayer.GetModifierValue('change_diplomatic_stance_cost_modifier')]" }
 										tooltip = "[DiplomaticView.GetPlayer.GetNumStanceChangesInfo]"
 									}
 									flowcontainer = {
@@ -1036,31 +989,22 @@ base_window = {
 								}
 								flowcontainer = {
 									spacing = 10
-									panelka_center = { #improve relation
+									icon_and_text = { #improve relation
 										size = { @icon_width_our_details 32 }
 										blockoverride "Icon" { texture = "gfx/interface/icons/modifiers/improve_relation.dds" }
-										blockoverride "TextBox" {
-											max_width = 105
-											text = "[DiplomaticView.GetPlayer.GetModifierValue('improve_relation_impact')]"
-										}
+										blockoverride "Text" { text = "[DiplomaticView.GetPlayer.GetModifierValue('improve_relation_impact')]" }
 										tooltip = "[DiplomaticView.GetPlayer.GetModifierTooltip('improve_relation_impact')]"
 									}
-									panelka_center = { #diplomatic reputation
+									icon_and_text = { #diplomatic reputation
 										size = { 80 32 }
 										blockoverride "Icon" { texture = "gfx/interface/icons/modifiers/diplomatic_reputation.dds" }
-										blockoverride "TextBox" {
-											max_width = 65
-											text = "[DiplomaticView.GetPlayer.GetModifierValue('diplomatic_reputation')]"
-										}
+										blockoverride "Text" { text = "[DiplomaticView.GetPlayer.GetModifierValue('diplomatic_reputation')]" }
 										tooltip = "DIP_VIEW_REPUTATION_TOOLTIP"
 									}
-									panelka_center = { #active diplomatic relations
+									icon_and_text = { #active diplomatic relations
 										size = { 80 32 }
 										blockoverride "Icon" { texture = "gfx/interface/icons/modifiers/diplomatic_relations.dds" tooltip = "[DiplomaticView.GetPlayer.GetActiveRelationsInfo]" }
-										blockoverride "TextBox" {
-											max_width = 65
-											text = "[DiplomaticView.GetPlayer.GetNumActiveRelations]/[DiplomaticView.GetPlayer.GetNumActiveRelationsLimit]"
-										}
+										blockoverride "Text" { text = "[DiplomaticView.GetPlayer.GetNumActiveRelations]/[DiplomaticView.GetPlayer.GetNumActiveRelationsLimit]" }
 										tooltip = "[DiplomaticView.GetPlayer.GetModifierTooltip( 'diplomatic_relations' )]"
 									}
 								}
@@ -1569,22 +1513,22 @@ base_window = {
 							direction = vertical
 							ignoreinvisible = yes
 							spacing = 10
-							panelka_center = { #religion
+							icon_and_text = { #religion
 								size = { 120 32 }
 								blockoverride "Icon" { texture = "gfx/interface/icons/powers/religious.dds" }
-								blockoverride "TextBox" { text = "[DiplomaticView.GetTargetCountry.GetReligion.GetName]" }
+								blockoverride "Text" { text = "[DiplomaticView.GetTargetCountry.GetReligion.GetName]" }
 								tooltip = "[DiplomaticView.GetTargetCountry.GetReligion.GetTooltip]"
 							}
-							panelka_center = { #culture
+							icon_and_text = { #culture
 								size = { 120 32 }
 								blockoverride "Icon" { texture = "gfx/interface/icons/governor_policies/cultural_assimilation.dds" }
-								blockoverride "TextBox" { text = "[DiplomaticView.GetTargetCountry.GetPrimaryCulture.GetName]" }
+								blockoverride "Text" { text = "[DiplomaticView.GetTargetCountry.GetPrimaryCulture.GetName]" }
 								tooltip = "[DiplomaticView.GetTargetCountry.GetPrimaryCulture.GetTooltip]"
 							}
-							panelka_center = { #manpower
+							icon_and_text = { #manpower
 								size = { 120 32 }
 								blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/manpower.dds" }
-								blockoverride "TextBox" { text = "[DiplomaticView.GetTargetCountry.GetManpower]" }
+								blockoverride "Text" { text = "[DiplomaticView.GetTargetCountry.GetManpower]" }
 								tooltip = "[DiplomaticView.GetTargetCountry.GetManpowerTooltip]"
 							}
 						}
@@ -1592,22 +1536,22 @@ base_window = {
 							direction = vertical
 							ignoreinvisible = yes
 							spacing = 10
-							panelka_center = { #treasury
+							icon_and_text = { #treasury
 								size = { 120 32 }
 								blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/treasury.dds" }
-								blockoverride "TextBox" { text = "[DiplomaticView.GetTargetCountry.GetTreasury|0]" }
+								blockoverride "Text" { text = "[DiplomaticView.GetTargetCountry.GetTreasury|0]" }
 								tooltip = "[DiplomaticView.GetTargetCountry.GetTreasuryTooltip]"
 							}
-							panelka_center = { #pop
+							icon_and_text = { #pop
 								size = { 120 32 }
 								blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/pop_type.dds" }
-								blockoverride "TextBox" { text = "Egg" }
+								blockoverride "Text" { text = "Egg" }
 								tooltip = "[DiplomaticView.GetTargetCountry.BuildTotalPopulationToolTip]"
 							}
-							panelka_center = { #stability
+							icon_and_text = { #stability
 								size = { 120 32 }
 								blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/stability.dds" }
-								blockoverride "TextBox" { text = "[DiplomaticView.GetTargetCountry.GetStability|2]" }
+								blockoverride "Text" { text = "[DiplomaticView.GetTargetCountry.GetStability|2]" }
 								tooltip = "[DiplomaticView.GetTargetCountry.GetStabilityTooltip]"
 							}
 						} 
@@ -1778,15 +1722,15 @@ base_window = {
 						flowcontainer = {
 							direction = vertical
 							ignoreinvisible = yes
-							panelka = {
+							only_text = {
 								size = { 220 32 }
-								blockoverride "TextBox" { text = "Type: Governorate" }
+								blockoverride "Text" { text = "Type: Governorate" }
 								tooltip = "Type: Governorate"
 							}
 							widget = { size = { 0 6 } }
-							panelka = {
+							only_text = {
 								size = { 220 32 }
-								blockoverride "TextBox" { text = "Autonomy: number" }
+								blockoverride "Text" { text = "Autonomy: number" }
 								tooltip = "Autonomy: number"
 							}
 						} 

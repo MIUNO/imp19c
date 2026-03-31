@@ -389,19 +389,19 @@ base_window = {
 									margin = { 5 5 }
 									spacing = 10
 									parentanchor = hcenter
-									panelka_center = {
+									icon_and_text = {
 										name = "Popularity"
 										size = { 120 32 }
 										blockoverride "Icon" { using = icon_popularity }
-										blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetRuler.GetPopularity|/0]" }
+										blockoverride "Text" { text = "[GovernmentView.GetPlayer.GetRuler.GetPopularity|/0]" }
 										tooltip = "[GovernmentView.GetPlayer.GetRuler.GetPopularityToolTip]"
 									}
-									panelka_center = {
+									icon_and_text = {
 										name = "Corruption"
 										alpha = "[TransparentIfZero(GovernmentView.GetPlayer.GetRuler.GetCorruption)]"
 										size = { 120 32 }
 										blockoverride "Icon" { using = icon_corruption }
-										blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetRuler.GetCorruption|/0]" }
+										blockoverride "Text" { text = "[GovernmentView.GetPlayer.GetRuler.GetCorruption|/0]" }
 										tooltip = "[GovernmentView.GetPlayer.GetRuler.GetCorruptionToolTip]"
 									}
 								}
@@ -445,11 +445,11 @@ base_window = {
 												using = Default_FontColor
 											}
 										}
-										panelka_center = {
+										icon_and_text = {
 											size = { 110 32 }
 											parentanchor = hcenter
 											blockoverride "Icon" { using = icon_power_base }
-											blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetSuccession.GetPrimaryHeir.GetPowerBase|/0]" }
+											blockoverride "Text" { text = "[GovernmentView.GetPlayer.GetSuccession.GetPrimaryHeir.GetPowerBase|/0]" }
 											tooltip = "[GovernmentView.GetPlayer.GetSuccession.GetPrimaryHeir.GetPowerBaseInfo]"
 										}
 									}
@@ -471,18 +471,18 @@ base_window = {
 									parentanchor = hcenter
 									flowcontainer = {
 										spacing = 10
-										panelka_center = {
+										icon_and_text = {
 											name = "Corruption"
 											alpha = "[TransparentIfZero(GovernmentView.GetPlayer.GetRuler.GetCorruption)]"
 											size = { 80 32 }
 											blockoverride "Icon" { using = icon_corruption }
-											blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetRuler.GetCorruption|/0]" }
+											blockoverride "Text" { text = "[GovernmentView.GetPlayer.GetRuler.GetCorruption|/0]" }
 											tooltip = "[GovernmentView.GetPlayer.GetRuler.GetCorruptionToolTip]"
 										}
-										panelka_center = {
+										icon_and_text = {
 											size = { 80 32 }
 											blockoverride "Icon" { using = icon_power_base }
-											blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetRuler.GetPowerBase|/0]" }
+											blockoverride "Text" { text = "[GovernmentView.GetPlayer.GetRuler.GetPowerBase|/0]" }
 											tooltip = "[GovernmentView.GetPlayer.GetRuler.GetPowerBaseInfo]"
 										}
 									}
@@ -527,18 +527,18 @@ base_window = {
 												using = Default_FontColor
 											}
 										}
-										panelka_center = {
+										icon_and_text = {
 											size = { 110 32 }
 											parentanchor = hcenter
 											blockoverride "Icon" { using = icon_loyalty }
-											blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetSuccession.GetPrimaryHeir.GetLoyalty|0]" }
+											blockoverride "Text" { text = "[GovernmentView.GetPlayer.GetSuccession.GetPrimaryHeir.GetLoyalty|0]" }
 											tooltip = "[GovernmentView.GetPlayer.GetSuccession.GetPrimaryHeir.GetLoyaltyToolTip]"
 										}
-										panelka_center = {
+										icon_and_text = {
 											size = { 110 32 }
 											parentanchor = hcenter
 											blockoverride "Icon" { texture = "gfx/interface/icons/modifiers/max_friends.dds" }
-											blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetSuccession.GetPrimaryHeir.GetNumOfSupportsAsHeir]" }
+											blockoverride "Text" { text = "[GovernmentView.GetPlayer.GetSuccession.GetPrimaryHeir.GetNumOfSupportsAsHeir]" }
 											tooltip = "[GovernmentView.GetPlayer.GetSuccession.GetPrimaryHeir.GetHeirSupportInformation]"
 										}
 									}
@@ -558,12 +558,12 @@ base_window = {
 									margin = { 5 5 }
 									spacing = 10
 									parentanchor = hcenter
-									panelka_center = {
+									icon_and_text = {
 										name = "Corruption"
 										alpha = "[TransparentIfZero(GovernmentView.GetPlayer.GetRuler.GetCorruption)]"
 										size = { 120 32 }
 										blockoverride "Icon" { using = icon_corruption }
-										blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetRuler.GetCorruption|/0]" }
+										blockoverride "Text" { text = "[GovernmentView.GetPlayer.GetRuler.GetCorruption|/0]" }
 										tooltip = "[GovernmentView.GetPlayer.GetRuler.GetCorruptionToolTip]"
 									}
 								}
@@ -607,11 +607,11 @@ base_window = {
 												using = Default_FontColor
 											}
 										}
-										panelka_center = {
+										icon_and_text = {
 											size = { 110 32 }
 											parentanchor = hcenter
 											blockoverride "Icon" { using = icon_loyalty }
-											blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetSuccession.GetPrimaryHeir.GetLoyalty|0]" }
+											blockoverride "Text" { text = "[GovernmentView.GetPlayer.GetSuccession.GetPrimaryHeir.GetLoyalty|0]" }
 											tooltip = "[GovernmentView.GetPlayer.GetSuccession.GetPrimaryHeir.GetLoyaltyToolTip]"
 										}
 									}
@@ -649,32 +649,32 @@ base_window = {
 										direction = vertical
 										spacing = 10
 										margin_top = 15
-										panelka_center = { #military
+										icon_and_text = { #military
 											visible = "[GreaterThanOrEqualTo_int32( GovernmentView.GetPlayer.GetRuler.GetMartial, GovernmentView.GetPlayer.GetCoRuler.GetMartial )]"
 											size = { 80 32 }
 											blockoverride "Icon" { using = icon_military }
-											blockoverride "TextBox" { text = "[Select_int32( GovernmentView.GetPlayer.UseCoRuler, Select_int32( GreaterThanOrEqualTo_int32( GovernmentView.GetPlayer.GetCoRuler.GetMartial, GovernmentView.GetPlayer.GetRuler.GetMartial ), GovernmentView.GetPlayer.GetCoRuler.GetMartial, GovernmentView.GetPlayer.GetRuler.GetMartial ), Select_int32( GovernmentView.GetPlayer.UseConsort, Select_int32( GreaterThanOrEqualTo_int32( GovernmentView.GetPlayer.GetConsort.GetMartial, GovernmentView.GetPlayer.GetRuler.GetMartial ), GovernmentView.GetPlayer.GetConsort.GetMartial, GovernmentView.GetPlayer.GetRuler.GetMartial ), GovernmentView.GetPlayer.GetRuler.GetMartial))]" }
+											blockoverride "Text" { text = "[Select_int32( GovernmentView.GetPlayer.UseCoRuler, Select_int32( GreaterThanOrEqualTo_int32( GovernmentView.GetPlayer.GetCoRuler.GetMartial, GovernmentView.GetPlayer.GetRuler.GetMartial ), GovernmentView.GetPlayer.GetCoRuler.GetMartial, GovernmentView.GetPlayer.GetRuler.GetMartial ), Select_int32( GovernmentView.GetPlayer.UseConsort, Select_int32( GreaterThanOrEqualTo_int32( GovernmentView.GetPlayer.GetConsort.GetMartial, GovernmentView.GetPlayer.GetRuler.GetMartial ), GovernmentView.GetPlayer.GetConsort.GetMartial, GovernmentView.GetPlayer.GetRuler.GetMartial ), GovernmentView.GetPlayer.GetRuler.GetMartial))]" }
 											tooltip = "[GovernmentView.GetMartialTooltip]"
 										}
-										panelka_center = { #civic
+										icon_and_text = { #civic
 											visible = "[GreaterThanOrEqualTo_int32( GovernmentView.GetPlayer.GetRuler.GetFinesse, GovernmentView.GetPlayer.GetCoRuler.GetFinesse )]"
 											size = { 80 32 }
 											blockoverride "Icon" { using = icon_civic }
-											blockoverride "TextBox" { text = "[Select_int32( GovernmentView.GetPlayer.UseCoRuler, Select_int32( GreaterThanOrEqualTo_int32( GovernmentView.GetPlayer.GetCoRuler.GetFinesse, GovernmentView.GetPlayer.GetRuler.GetFinesse ), GovernmentView.GetPlayer.GetCoRuler.GetFinesse, GovernmentView.GetPlayer.GetRuler.GetFinesse ), Select_int32( GovernmentView.GetPlayer.UseConsort, Select_int32( GreaterThanOrEqualTo_int32( GovernmentView.GetPlayer.GetConsort.GetFinesse, GovernmentView.GetPlayer.GetRuler.GetFinesse ), GovernmentView.GetPlayer.GetConsort.GetFinesse, GovernmentView.GetPlayer.GetRuler.GetFinesse ), GovernmentView.GetPlayer.GetRuler.GetFinesse))]" }
+											blockoverride "Text" { text = "[Select_int32( GovernmentView.GetPlayer.UseCoRuler, Select_int32( GreaterThanOrEqualTo_int32( GovernmentView.GetPlayer.GetCoRuler.GetFinesse, GovernmentView.GetPlayer.GetRuler.GetFinesse ), GovernmentView.GetPlayer.GetCoRuler.GetFinesse, GovernmentView.GetPlayer.GetRuler.GetFinesse ), Select_int32( GovernmentView.GetPlayer.UseConsort, Select_int32( GreaterThanOrEqualTo_int32( GovernmentView.GetPlayer.GetConsort.GetFinesse, GovernmentView.GetPlayer.GetRuler.GetFinesse ), GovernmentView.GetPlayer.GetConsort.GetFinesse, GovernmentView.GetPlayer.GetRuler.GetFinesse ), GovernmentView.GetPlayer.GetRuler.GetFinesse))]" }
 											tooltip = "[GovernmentView.GetFinesseTooltip]"
 										}
-										panelka_center = { #oratory
+										icon_and_text = { #oratory
 											visible = "[GreaterThanOrEqualTo_int32( GovernmentView.GetPlayer.GetRuler.GetCharisma, GovernmentView.GetPlayer.GetCoRuler.GetCharisma )]"
 											size = { 80 32 }
 											blockoverride "Icon" { using = icon_oratory }
-											blockoverride "TextBox" { text = "[Select_int32( GovernmentView.GetPlayer.UseCoRuler, Select_int32( GreaterThanOrEqualTo_int32( GovernmentView.GetPlayer.GetCoRuler.GetCharisma, GovernmentView.GetPlayer.GetRuler.GetCharisma ), GovernmentView.GetPlayer.GetCoRuler.GetCharisma, GovernmentView.GetPlayer.GetRuler.GetCharisma ), Select_int32( GovernmentView.GetPlayer.UseConsort, Select_int32( GreaterThanOrEqualTo_int32( GovernmentView.GetPlayer.GetConsort.GetCharisma, GovernmentView.GetPlayer.GetRuler.GetCharisma ), GovernmentView.GetPlayer.GetConsort.GetCharisma, GovernmentView.GetPlayer.GetRuler.GetCharisma ), GovernmentView.GetPlayer.GetRuler.GetCharisma))]" }
+											blockoverride "Text" { text = "[Select_int32( GovernmentView.GetPlayer.UseCoRuler, Select_int32( GreaterThanOrEqualTo_int32( GovernmentView.GetPlayer.GetCoRuler.GetCharisma, GovernmentView.GetPlayer.GetRuler.GetCharisma ), GovernmentView.GetPlayer.GetCoRuler.GetCharisma, GovernmentView.GetPlayer.GetRuler.GetCharisma ), Select_int32( GovernmentView.GetPlayer.UseConsort, Select_int32( GreaterThanOrEqualTo_int32( GovernmentView.GetPlayer.GetConsort.GetCharisma, GovernmentView.GetPlayer.GetRuler.GetCharisma ), GovernmentView.GetPlayer.GetConsort.GetCharisma, GovernmentView.GetPlayer.GetRuler.GetCharisma ), GovernmentView.GetPlayer.GetRuler.GetCharisma))]" }
 											tooltip = "[GovernmentView.GetCharismaTooltip]"
 										}
-										panelka_center = { #religious
+										icon_and_text = { #religious
 											visible = "[GreaterThanOrEqualTo_int32( GovernmentView.GetPlayer.GetRuler.GetZeal, GovernmentView.GetPlayer.GetCoRuler.GetZeal )]"
 											size = { 80 32 }
 											blockoverride "Icon" { using = icon_religious }
-											blockoverride "TextBox" { text = "[Select_int32( GovernmentView.GetPlayer.UseCoRuler, Select_int32( GreaterThanOrEqualTo_int32( GovernmentView.GetPlayer.GetCoRuler.GetZeal, GovernmentView.GetPlayer.GetRuler.GetZeal ), GovernmentView.GetPlayer.GetCoRuler.GetZeal, GovernmentView.GetPlayer.GetRuler.GetZeal ), Select_int32( GovernmentView.GetPlayer.UseConsort, Select_int32( GreaterThanOrEqualTo_int32( GovernmentView.GetPlayer.GetConsort.GetZeal, GovernmentView.GetPlayer.GetRuler.GetZeal ), GovernmentView.GetPlayer.GetConsort.GetZeal, GovernmentView.GetPlayer.GetRuler.GetZeal ), GovernmentView.GetPlayer.GetRuler.GetZeal))]" }
+											blockoverride "Text" { text = "[Select_int32( GovernmentView.GetPlayer.UseCoRuler, Select_int32( GreaterThanOrEqualTo_int32( GovernmentView.GetPlayer.GetCoRuler.GetZeal, GovernmentView.GetPlayer.GetRuler.GetZeal ), GovernmentView.GetPlayer.GetCoRuler.GetZeal, GovernmentView.GetPlayer.GetRuler.GetZeal ), Select_int32( GovernmentView.GetPlayer.UseConsort, Select_int32( GreaterThanOrEqualTo_int32( GovernmentView.GetPlayer.GetConsort.GetZeal, GovernmentView.GetPlayer.GetRuler.GetZeal ), GovernmentView.GetPlayer.GetConsort.GetZeal, GovernmentView.GetPlayer.GetRuler.GetZeal ), GovernmentView.GetPlayer.GetRuler.GetZeal))]" }
 											tooltip = "[GovernmentView.GetZealTooltip]"
 										}
 									}
@@ -736,28 +736,28 @@ base_window = {
 										spacing = 10
 										margin_top = 15
 										margin_left = 10
-										panelka_center = { #military
+										icon_and_text = { #military
 											size = { 80 32 }
 											blockoverride "Icon" { using = icon_military }
-											blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetSuccession.GetSecondaryHeir.GetMartial]" }
+											blockoverride "Text" { text = "[GovernmentView.GetPlayer.GetSuccession.GetSecondaryHeir.GetMartial]" }
 											tooltip = "[GovernmentView.GetMartialTooltip]"
 										}
-										panelka_center = { #civic
+										icon_and_text = { #civic
 											size = { 80 32 }
 											blockoverride "Icon" { using = icon_civic }
-											blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetSuccession.GetSecondaryHeir.GetFinesse]" }
+											blockoverride "Text" { text = "[GovernmentView.GetPlayer.GetSuccession.GetSecondaryHeir.GetFinesse]" }
 											tooltip = "[GovernmentView.GetFinesseTooltip]"
 										}
-										panelka_center = { #oratory
+										icon_and_text = { #oratory
 											size = { 80 32 }
 											blockoverride "Icon" { using = icon_oratory }
-											blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetSuccession.GetSecondaryHeir.GetCharisma]" }
+											blockoverride "Text" { text = "[GovernmentView.GetPlayer.GetSuccession.GetSecondaryHeir.GetCharisma]" }
 											tooltip = "[GovernmentView.GetCharismaTooltip]"
 										}
-										panelka_center = { #religious
+										icon_and_text = { #religious
 											size = { 80 32 }
 											blockoverride "Icon" { using = icon_religious }
-											blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetSuccession.GetSecondaryHeir.GetZeal]" }
+											blockoverride "Text" { text = "[GovernmentView.GetPlayer.GetSuccession.GetSecondaryHeir.GetZeal]" }
 											tooltip = "[GovernmentView.GetZealTooltip]"
 										}
 									}
@@ -797,28 +797,28 @@ base_window = {
 										spacing = 10
 										margin_top = 15
 										margin_left = 10
-										panelka_center = { #military
+										icon_and_text = { #military
 											size = { 80 32 }
 											blockoverride "Icon" { using = icon_military }
-											blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetConsort.GetMartial]" }
+											blockoverride "Text" { text = "[GovernmentView.GetPlayer.GetConsort.GetMartial]" }
 											#tooltip = "[GovernmentView.GetMartialTooltip]"
 										}
-										panelka_center = { #civic
+										icon_and_text = { #civic
 											size = { 80 32 }
 											blockoverride "Icon" { using = icon_civic }
-											blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetConsort.GetFinesse]" }
+											blockoverride "Text" { text = "[GovernmentView.GetPlayer.GetConsort.GetFinesse]" }
 											#tooltip = "[GovernmentView.GetFinesseTooltip]"
 										}
-										panelka_center = { #oratory
+										icon_and_text = { #oratory
 											size = { 80 32 }
 											blockoverride "Icon" { using = icon_oratory }
-											blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetConsort.GetCharisma]" }
+											blockoverride "Text" { text = "[GovernmentView.GetPlayer.GetConsort.GetCharisma]" }
 											#tooltip = "[GovernmentView.GetCharismaTooltip]"
 										}
-										panelka_center = { #religious
+										icon_and_text = { #religious
 											size = { 80 32 }
 											blockoverride "Icon" { using = icon_religious }
-											blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetConsort.GetZeal]" }
+											blockoverride "Text" { text = "[GovernmentView.GetPlayer.GetConsort.GetZeal]" }
 											#tooltip = "[GovernmentView.GetZealTooltip]"
 										}
 									}
@@ -848,29 +848,29 @@ base_window = {
 									parentanchor = hcenter
 									flowcontainer = {
 										spacing = 10
-										panelka_center = {
+										icon_and_text = {
 											name = "Popularity"
 											size = { 80 32 }
 											blockoverride "Icon" { using = icon_popularity }
-											blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetSuccession.GetSecondaryHeir.GetPopularity|/0]" }
+											blockoverride "Text" { text = "[GovernmentView.GetPlayer.GetSuccession.GetSecondaryHeir.GetPopularity|/0]" }
 											tooltip = "[GovernmentView.GetPlayer.GetSuccession.GetSecondaryHeir.GetPopularityToolTip]"
 										}
-										panelka_center = {
+										icon_and_text = {
 											name = "CoRulerLoyalty"
 											alpha = "[TransparentIfZero(GovernmentView.GetPlayer.GetSuccession.GetSecondaryHeir.GetLoyalty)]"
 											size = { 80 32 }
 											blockoverride "Icon" { using = icon_loyalty }
-											blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetSuccession.GetSecondaryHeir.GetLoyalty|/0]" }
+											blockoverride "Text" { text = "[GovernmentView.GetPlayer.GetSuccession.GetSecondaryHeir.GetLoyalty|/0]" }
 											tooltip = "[GovernmentView.GetPlayer.GetSuccession.GetSecondaryHeir.GetLoyaltyToolTip]"
 										}
 									}
-									panelka_center = {
+									icon_and_text = {
 										name = "Corruption"
 										alpha = "[TransparentIfZero(GovernmentView.GetPlayer.GetSuccession.GetSecondaryHeir.GetCorruption)]"
 										size = { 120 32 }
 										parentanchor = hcenter
 										blockoverride "Icon" { using = icon_corruption }
-										blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetSuccession.GetSecondaryHeir.GetCorruption|/0]" }
+										blockoverride "Text" { text = "[GovernmentView.GetPlayer.GetSuccession.GetSecondaryHeir.GetCorruption|/0]" }
 										tooltip = "[GovernmentView.GetPlayer.GetSuccession.GetSecondaryHeir.GetCorruptionToolTip]"
 									}
 								}
@@ -914,11 +914,11 @@ base_window = {
 												using = Default_FontColor
 											}
 										}
-										panelka_center = {
+										icon_and_text = {
 											size = { 110 32 }
 											parentanchor = hcenter
 											blockoverride "Icon" { using = icon_power_base }
-											blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetSuccession.GetSecondaryHeir.GetPowerBase|/0]" }
+											blockoverride "Text" { text = "[GovernmentView.GetPlayer.GetSuccession.GetSecondaryHeir.GetPowerBase|/0]" }
 											tooltip = "[GovernmentView.GetPlayer.GetSuccession.GetSecondaryHeir.GetPowerBaseInfo]"
 										}
 									}
@@ -938,31 +938,31 @@ base_window = {
 									margin = { 5 5 }
 									spacing = 10
 									parentanchor = hcenter
-									panelka_center = {
+									icon_and_text = {
 										name = "ConsortLoyalty"
 										alpha = "[TransparentIfZero(GovernmentView.GetPlayer.GetConsort.GetLoyalty)]"
 										size = { 120 32 }
 										parentanchor = hcenter
 										blockoverride "Icon" { using = icon_loyalty }
-										blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetConsort.GetLoyalty|/0]" }
+										blockoverride "Text" { text = "[GovernmentView.GetPlayer.GetConsort.GetLoyalty|/0]" }
 										tooltip = "[GovernmentView.GetPlayer.GetConsort.GetLoyaltyToolTip]"
 									}
-									panelka_center = {
+									icon_and_text = {
 										name = "ConsortPowerBase"
 										alpha = "[TransparentIfZero(GovernmentView.GetPlayer.GetConsort.GetLoyalty)]"
 										size = { 120 32 }
 										parentanchor = hcenter
 										blockoverride "Icon" { using = icon_power_base }
-										blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetConsort.GetPowerBase|/0]" }
+										blockoverride "Text" { text = "[GovernmentView.GetPlayer.GetConsort.GetPowerBase|/0]" }
 										tooltip = "[GovernmentView.GetPlayer.GetConsort.GetPowerBaseInfo]"
 									}
-									panelka_center = {
+									icon_and_text = {
 										name = "Corruption"
 										alpha = "[TransparentIfZero(GovernmentView.GetPlayer.GetSuccession.GetSecondaryHeir.GetCorruption)]"
 										size = { 120 32 }
 										parentanchor = hcenter
 										blockoverride "Icon" { using = icon_corruption }
-										blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetSuccession.GetSecondaryHeir.GetCorruption|/0]" }
+										blockoverride "Text" { text = "[GovernmentView.GetPlayer.GetSuccession.GetSecondaryHeir.GetCorruption|/0]" }
 										tooltip = "[GovernmentView.GetPlayer.GetSuccession.GetSecondaryHeir.GetCorruptionToolTip]"
 									}
 								}
@@ -1036,10 +1036,10 @@ base_window = {
 								spacing = 10
 								flowcontainer = {
 									tooltip = "[GovernmentView.GetPlayer.GetCentralizationTooltip]"
-									panelka_center = {
+									icon_and_text = {
 										size = { 150 32 }
 										blockoverride "Icon" { using = icon_centralization }
-										blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetCentralization|2]%" }
+										blockoverride "Text" { text = "[GovernmentView.GetPlayer.GetCentralization|2]%" }
 									}
 									icon = {
 										texture = "gfx/interface/arrows_strip.dds"
@@ -1184,12 +1184,12 @@ base_window = {
 									oversound = "event:/SFX/UI/Generic/sfx_ui_generic_mouse_over"
 								}
 							}
-							panelka_left = { #legitimacy
+							icon_and_text = { #legitimacy
 								parentanchor = vcenter
 								size = { 150 32 }
 								blockoverride "Icon" { using = icon_legitimacy }
-								blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetLegitimacy|0]%" }
-								blockoverride "Tooltip" { tooltip = "[GovernmentView.GetLegitimacyTooltip]" }
+								blockoverride "Text" { text = "[GovernmentView.GetPlayer.GetLegitimacy|0]%" }
+								tooltip = "[GovernmentView.GetLegitimacyTooltip]"
 							}
 						}
 						margin_widget = {
@@ -1370,17 +1370,17 @@ base_window = {
 								margin_top = 10
 								direction = vertical
 								spacing = 24
-								panelka_left = { #legitimacy
+								icon_and_text = { #legitimacy
 									size = { 110 32 }
 									blockoverride "Icon" { using = icon_legitimacy }
-									blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetModifierPureValue('next_ruler_legitimacy')|0]%" }
-									blockoverride "Tooltip" { tooltip = "[GovernmentView.GetPlayer.GetModifierTooltip('next_ruler_legitimacy')]" }
+									blockoverride "Text" { text = "[GovernmentView.GetPlayer.GetModifierPureValue('next_ruler_legitimacy')|0]%" }
+									tooltip = "[GovernmentView.GetPlayer.GetModifierTooltip('next_ruler_legitimacy')]"
 								}
-								panelka_left = { #score
+								icon_and_text = { #score
 									size = { 110 32 }
 									blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/leader.dds" }
-									blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetSuccession.GetPrimaryHeir.GetSuccessionScore|0]" }
-									blockoverride "Tooltip" { tooltip = "[GovernmentView.GetPlayer.GetSuccession.GetPrimaryHeir.GetSuccessionScoreInfo]" }
+									blockoverride "Text" { text = "[GovernmentView.GetPlayer.GetSuccession.GetPrimaryHeir.GetSuccessionScore|0]" }
+									tooltip = "[GovernmentView.GetPlayer.GetSuccession.GetPrimaryHeir.GetSuccessionScoreInfo]"
 								}
 							}
 						}
@@ -1613,10 +1613,10 @@ base_window = {
 											}
 											flowcontainer = {
 												margin_left = 10
-												panelka = {
+												only_text = {
 													size = { 315 32 }
 													tooltip = "[PartyItemGlue.GetParty.GetAgenda.GetDescription]"
-													blockoverride "TextBox" { text = "[PartyItemGlue.GetParty.GetAgenda.GetName]" }
+													blockoverride "Text" { text = "[PartyItemGlue.GetParty.GetAgenda.GetName]" }
 												}
 												icon_button_square = {
 													size = { 40 40 }
@@ -1706,12 +1706,12 @@ base_window = {
 						size = { 920 32 } 
 						blockoverride "Title_text" { text = "CLAN_CHIEFS" }
 					}
-					panelka_right = { #clan chiefs
+					icon_and_text = { #clan chiefs
 						parentanchor = right
 						size = { 140 32 }
 						blockoverride "Icon" { using = icon_clan_chiefs }
-						blockoverride "TextBox" { text = "[GovernmentView.GetPlayer.GetModifierPureValue('num_of_clan_chiefs')|0]" }
-						blockoverride "Tooltip" { tooltip = "[GovernmentView.GetPlayer.GetModifierTooltip('num_of_clan_chiefs')]" }
+						blockoverride "Text" { text = "[GovernmentView.GetPlayer.GetModifierPureValue('num_of_clan_chiefs')|0]" }
+						tooltip = "[GovernmentView.GetPlayer.GetModifierTooltip('num_of_clan_chiefs')]"
 					}
 					flowcontainer = {
 						parentanchor = hcenter

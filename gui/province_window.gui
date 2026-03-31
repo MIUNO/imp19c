@@ -1262,13 +1262,13 @@ window = {
 										text = "[ProvinceWindow.GetProvince.GetModifierValue('local_output_modifier')]"
 									}
 								}
-								panelka_center = {
+								icon_and_text = {
 									size = { 140 32 }
 									blockoverride "Icon"
 									{
 										texture = "gfx/interface/icons/new_icons/color/shipping.dds"
 									}
-									blockoverride "TextBox"
+									blockoverride "Text"
 									{
 										text = "[GuiScope.SetRoot( ProvinceWindow.GetProvince.MakeScope ).ScriptValue('SHIPPING_province_power')|0]"
 									}
@@ -4172,25 +4172,19 @@ window = {
 							spacing = 5
 							parentanchor = hcenter
 							margin_bottom = 10
-							panelka_center = {
+							icon_and_text = {
 								size = { 130 32 }
 								tooltipwidget = {
 									total_governorship_wealth_tt = { }
 								}
 								blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/treasury.dds" }
-								blockoverride "TextBox" {
-									max_width = 115
-									text = "[GuiScope.SetRoot( ProvinceWindow.GetState.GetGovernorship.MakeScope ).ScriptValue('WEALTH_governorship_total')|2]"
-								}
+								blockoverride "Text" { text = "[GuiScope.SetRoot( ProvinceWindow.GetState.GetGovernorship.MakeScope ).ScriptValue('WEALTH_governorship_total')|2]" }
 							}
-							panelka_center = {
+							icon_and_text = {
 								size = { 130 32 }
 								tooltip = "[ProvinceWindow.GetProvince.GetPopulationCapacityInfo]"
 								blockoverride "Icon" { texture = "gfx/interface/icons/new_icons/color/state.dds" }
-								blockoverride "TextBox" {
-									max_width = 115
-									text = "[ProvinceWindow.GetProvince.GetPopulation('total')]/[ProvinceWindow.GetProvince.GetPopulationCapacityValue]"
-								}
+								blockoverride "Text" {text = "[ProvinceWindow.GetProvince.GetPopulation('total')]/[ProvinceWindow.GetProvince.GetPopulationCapacityValue]" }
 							}
 						}
 						flowcontainer = {
@@ -4638,9 +4632,11 @@ window = {
 					flowcontainer = {
 						direction = vertical
 						spacing = 10
+						ignoreinvisible = yes
 						flowcontainer = {
 							#parentanchor = hcenter
 							spacing = 100
+							visible = no
 							text_button_square_highlighted = {
 								size = { 180 28 }
 								blockoverride "Center_text" { text = "view_diplomatic_plays" }
@@ -4666,21 +4662,21 @@ window = {
 							spacing = 10
 							direction = horizontal
 							sub_header_v = {
-								size = { 470 520 }
+								size = { 480 520 }
 								enabled = yes
 								blockoverride "Title_text" { text = "province_diplomatic_play_list" }
-								button = {
-									using = editor_button
-									text = "[Player.Custom('DIPLO_toggle_start_diplomatic_play_button')]"
-									size = { 200 32 }
-									tooltip = "[Player.Custom('DIPLO_toggle_start_diplomatic_play_button_tt')]"
-
-									onclick = "[GetScriptedGui('DIPLO_begin_or_end_play').Execute( GuiScope.SetRoot( ProvinceWindow.GetProvince.MakeScope ).AddScope('player', Player.MakeScope ).End )]"
-									
-									onclick = "[GetScriptedGui('DIPLO_make_local_diplomatic_play_list').Execute( GuiScope.SetRoot( ProvinceWindow.GetProvince.MakeScope ).AddScope('player', Player.MakeScope ).End )]"
-
+								text_button_square = { #Update Button
+									size = { 200 28 }
+									position = { 0 2 }
 									parentanchor = right
 									enabled = "[GetScriptedGui('DIPLO_begin_or_end_play').IsValid( GuiScope.SetRoot( ProvinceWindow.GetProvince.MakeScope ).AddScope('player', Player.MakeScope ).End )]"
+									
+									blockoverride "Center_text" { text = "[Player.Custom('DIPLO_toggle_start_diplomatic_play_button')]" }
+									tooltip = "[Player.Custom('DIPLO_toggle_start_diplomatic_play_button_tt')]"
+									blockoverride "On_click" {
+										onclick = "[GetScriptedGui('DIPLO_begin_or_end_play').Execute( GuiScope.SetRoot( ProvinceWindow.GetProvince.MakeScope ).AddScope('player', Player.MakeScope ).End )]"
+										onclick = "[GetScriptedGui('DIPLO_make_local_diplomatic_play_list').Execute( GuiScope.SetRoot( ProvinceWindow.GetProvince.MakeScope ).AddScope('player', Player.MakeScope ).End )]"
+									}
 								}
 								scrollarea = {
 									size = { 100% 582 }

@@ -83,21 +83,21 @@ base_window = {
 							align = center|nobaseline
 						}
 					}
-					panelka_center = {
+					icon_and_text = {
 						size = { 190 32 } 
 						blockoverride "Icon" { using = icon_religious }
-						blockoverride "TextBox" { text = "[BarbarianProvinceView.GetProvince.GetReligion.GetName]" }
+						blockoverride "Text" { text = "[BarbarianProvinceView.GetProvince.GetReligion.GetName]" }
 					}
-					panelka_center = {
+					icon_and_text = {
 						size = { 190 32 } 
 						blockoverride "Icon" { using = icon_culture }
-						blockoverride "TextBox" { text = "[BarbarianProvinceView.GetProvince.GetCulture.GetName]" }
+						blockoverride "Text" { text = "[BarbarianProvinceView.GetProvince.GetCulture.GetName]" }
 					}
 				}
 				flowcontainer = {
 					direction = vertical
 					spacing = 10
-					panelka_center = {
+					icon_and_text = {
 						name = "province_combat_width"
 						size = { 100 32 }
 						tooltip = "[BarbarianProvinceView.GetProvince.GetCombatWidthTooltip]"
@@ -105,27 +105,27 @@ base_window = {
 						{
 							texture = "gfx/interface/icons/diplomatic_status/war.dds"
 						}
-						blockoverride "TextBox"
+						blockoverride "Text"
 						{
 							text = "[BarbarianProvinceView.GetProvince.GetCombatWidth]"
 						}
 					}
-					panelka_center = {
+					icon_and_text = {
 						size = { 100 32 }
 						blockoverride "Icon" { using = icon_civilization }
-						blockoverride "TextBox" { text = "[FixedPointToInt(BarbarianProvinceView.GetProvince.GetCivilizationValue)]" }
+						blockoverride "Text" { text = "[FixedPointToInt(BarbarianProvinceView.GetProvince.GetCivilizationValue)]" }
 						tooltip = "[BarbarianProvinceView.GetProvince.GetCivilizationTooltip]"
 					}
-					panelka_center = {
+					icon_and_text = {
 						size = { 100 32 }
 						blockoverride "Icon" { texture = "gfx/interface/province/barbarian_power.dds" }
-						blockoverride "TextBox" { text = "[BarbarianProvinceView.GetProvince.GetBarbarianPower|2]" }
+						blockoverride "Text" { text = "[BarbarianProvinceView.GetProvince.GetBarbarianPower|2]" }
 						tooltip = "[BarbarianProvinceView.GetProvince.GetBarbarianPowerTooltip]"
 					}
-					panelka_center = {
+					icon_and_text = {
 						size = { 100 32 }
 						blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/supply_limit.dds" }
-						blockoverride "TextBox" { text = "[BarbarianProvinceView.GetSupplyLimit|2]" }
+						blockoverride "Text" { text = "[BarbarianProvinceView.GetSupplyLimit|2]" }
 						tooltip = "[BarbarianProvinceView.GetSupplyLimitDescription]"
 					}
 				}

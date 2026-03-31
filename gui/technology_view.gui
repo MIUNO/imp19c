@@ -163,15 +163,15 @@ base_window = {
 			position = { 10 60 }
 			flowcontainer = {
 				spacing = 20
-				panelka_center = {
+				icon_and_text = {
 					size = { 125 32 }
-					blockoverride "TextBox" { text = "[TechnologyView.GetResearchPointsInfo]" }
+					blockoverride "Text" { text = "[TechnologyView.GetResearchPointsInfo]" }
 					blockoverride "Icon" { using = icon_research }
 					tooltip = "[TechnologyView.GetMonthlyResearchDesc]"
 				}
-				panelka_center = {
+				icon_and_text = {
 					size = { 125 32 }
-					blockoverride "TextBox" { text = "[TechnologyView.GetResearchEfficiency|%2]" }
+					blockoverride "Text" { text = "[TechnologyView.GetResearchEfficiency|%2]" }
 					blockoverride "Icon" { texture = "gfx/interface/icons/modifiers/research_user.dds" }
 					tooltip = "[TechnologyView.GetResearchEfficiencyDesc]"
 				}
@@ -824,7 +824,7 @@ base_window = {
 								}
 							}
 
-							panelka_center = {
+							icon_and_text = {
 								size = { 110 32 }
 								position = { 120 90 }
 								blockoverride "Icon" {
@@ -832,23 +832,16 @@ base_window = {
 									framesize = { 50 50 }
 									frame = "[TechOfficeItem.GetIconFrame]"
 								}
-								blockoverride "TextBox" {
-									text = "[TechOfficeItem.GetSpeedModifier|0+%=]"
-								}
+								blockoverride "Text" { text = "[TechOfficeItem.GetSpeedModifier|0+%=]" }
 								tooltip = "[TechOfficeItem.GetSpeedInfo]"
 
 							}
 
-							panelka = {
-								parentanchor = top|left
-								using = BaseFontM
+							only_text = {
 								size = { 220 32 }
-								using = Default_FontColor
-								blockoverride "TextBox" { text = "[TechOfficeItem.GetCharacter.GetNameWithNoTooltip]" }
-								elide = right
-								autoresize = yes
-								align = left
 								position = { 10 0 }
+								parentanchor = top|left
+								blockoverride "Text" { text = "[TechOfficeItem.GetCharacter.GetNameWithNoTooltip]" }
 							}
 
 							tag = {
@@ -918,17 +911,11 @@ base_window = {
 				name = "innovations"
 				size = { 110 40 }
 				using = background_widget
-				panelka_center = {
+				icon_and_text = {
 					parentanchor = center
 					size = { 100 32 }
-					blockoverride "TextBox"
-					{
-						text = "[Player.GetNumInnovations|0]"
-					}
-					blockoverride "Icon"
-					{
-						texture = "gfx/interface/icons/modifiers/innovations.dds"
-					}
+					blockoverride "Text" { text = "[Player.GetNumInnovations|0]" }
+					blockoverride "Icon" { texture = "gfx/interface/icons/modifiers/innovations.dds" }
 					tooltip = "INNOVATIONS_TOOLTIP"
 				}
 			}
