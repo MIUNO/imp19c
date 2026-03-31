@@ -448,6 +448,7 @@ AI_begin_diplomatic_play = {
 		}
 		set_variable = is_diplomatic_play
 		save_scope_as = diplomatic_play
+		set_variable = $play_type$_play
 
 		set_variable = {
 			name = diplomatic_play_progression
@@ -630,7 +631,7 @@ AI_begin_diplomatic_play = {
 		if = {
 			limit = {
 				NOT = {
-					has_variable = play_target_country
+					has_variable = manual_play
 				}
 			}
 			ordered_in_list = {
@@ -900,6 +901,15 @@ AI_remove_diplomatic_play = {
 	remove_variable = play_goal
 	remove_variable = diplomatic_play_progression
 	remove_variable = diplomatic_play_success
+	if = {
+		limit = {
+			has_variable = automatic_play
+		}
+		remove_variable = automatic_play
+	}
+	else = {
+		remove_variable = manual_play
+	}
 	clear_variable_list = play_observers_support_instigator
 	clear_variable_list = play_observers_support_target
 	clear_variable_list = play_observers_undecided
@@ -952,6 +962,7 @@ AI_debug_test_begin_diplomatic_play_all = {
 				play_target_area = scope:target_area
 				play_target_country = scope:AI_root # No specific country
 				play_goal = flag:get_territory
+				play_type = automatic
 			}
 		}
 	}
