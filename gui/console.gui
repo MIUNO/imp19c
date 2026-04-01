@@ -34,14 +34,16 @@ textbox = {
 
 window = {
 	name = "console_window"
-	alwaystransparent = no
-	allow_outside = yes
-	size = { 400 100% }
+	alwaystransparent = yes
+	size = { 460 100% }
 
 	vbox = {
 		margin = { 5 5 }
+		position = { -27 0 }
 		margin_widget = {
 			margin = { 5 5 }
+			size = { 404 0 }
+			alwaystransparent = no
 			using = ev
 			background = {
 				using = ConsoleBackground
@@ -71,6 +73,7 @@ window = {
 		margin_widget = {
 			size = { 404 40 }
 			margin = { 5 0 }
+			alwaystransparent = no
 			background = {
 				using = ConsoleBackground
 				shaderfile = "gfx/FX/pdxgui_default.shader"
@@ -83,10 +86,10 @@ window = {
 				using = FontNormal
 			}
 		}
-
 		margin_widget = {
 			size = { 404 90 }
 			margin = { 5 5 }
+			alwaystransparent = no
 			background = {
 				texture = "gfx/editor_gui/editor_layout_window_content.png"
 				spriteType = CorneredStretched
@@ -216,10 +219,10 @@ window = {
 		}
 	}
 	flowcontainer = {
-		position = { 63 -5 }
+		position = { 406 -5 }
 		margin = { 5 5 }
 		margin_bottom = 6
-		parentanchor = bottom|right
+		parentanchor = bottom
 		alwaystransparent = no
 		direction = vertical
 		spacing = 2
@@ -271,7 +274,6 @@ window = {
 		text = "M"
 		visible = no
 	}
-
 	container = {
 		name = menu
 		visible = [ConsoleWindow.IsMenuShown]
