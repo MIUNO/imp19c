@@ -21401,13 +21401,16 @@
 }
 
 12620={ #PROV12620
-   terrain=""
-   culture="0"
-   religion="0"
-   trade_goods="0"
-   civilization_value=0
+   terrain="farmland"
+   culture="occitan"
+   religion="catholic"
+   trade_goods="temperate_fruit"
+   civilization_value=12
    barbarian_power=0
    province_rank="settlement"
+   lower_strata={
+      amount=5
+   }
 }
 
 12619={ #PROV12619
