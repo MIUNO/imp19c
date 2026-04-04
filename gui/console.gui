@@ -91,7 +91,7 @@ window = {
 			margin = { 5 5 }
 			alwaystransparent = no
 			background = {
-				texture = "gfx/editor_gui/editor_layout_window_content.png"
+				texture = "gfx/editor_gui/editor_layout_window_content.dds"
 				spriteType = CorneredStretched
 				spriteborder = { 5 5 }
 				shaderfile = "gfx/FX/pdxgui_default.shader"
@@ -227,7 +227,7 @@ window = {
 		direction = vertical
 		spacing = 2
 		background = {
-			texture = "gfx/editor_gui/editor_layout_window_content.png"
+			texture = "gfx/editor_gui/editor_layout_window_content.dds"
 			spriteType = CorneredStretched
 			spriteborder = { 5 5 }
 
