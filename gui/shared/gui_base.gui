@@ -10332,13 +10332,7 @@ types Base_GUI_Types
 		button = {
 			name = "shiner"
 			size = { 100% 100% }
-			#block "ButtonTexture" { texture = "gfx/interface/base_parts/outliner_highlight.dds" }
 			using = red_background
-			modify_texture = {
-				name = "Alpha"
-				blend_mode = alphamultiply
-				texture = "gfx/interface/base_parts/top_bar_alpha_x120bd_full.dds"
-			}
 			position = { 8 0 }
 			block "UpAlpha" { alpha = 0 }
 			spritetype = corneredstretched
@@ -10383,13 +10377,13 @@ types Base_GUI_Types
 		
 		textbox = {
 			size = { 100% 100% }  
-			max_width = 200
+			max_width = 210
 			elide = right
 			block "Text" { text = "BUTTON TEXT HERE" }
 			using = BaseFontS
 			fontcolor = { 1 1 1 1 }
 			align = left
-			position = { 14 -3 }
+			position = { 14 -2 }
 			fontsize_min = 12
 		}
 	}
