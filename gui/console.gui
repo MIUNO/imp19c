@@ -14,6 +14,12 @@ types ConsoleTypes {
 		#	scale = 0.7
 		#}
 	}
+
+	type pe_editor_button = tooloptions_button {
+		size = { 200 40 }
+		fontsize = 14
+		fontcolor = { 1 1 1 1 }
+	}
 }
 
 template ConsoleBackground
@@ -198,6 +204,7 @@ window = {
 					console_button = {
 						text = "Imperatrix Mod Menu"
 						size = { 394 32 }
+						fontsize = 14
 						onclick = "[ExecuteConsoleCommand('gui.CreateDockable gui/debug_menus.gui imp19c')]"
 						tooltip = "Open Imperatrix mod menu"
 					}
@@ -263,6 +270,14 @@ window = {
 			toolbox_icon = {
 				size = { 32 32 }
 				texture = "gfx/interface/icons/shared_icons/completed_mission_task.dds"
+			}
+		}
+		console_button = {
+			onclick = "[ExecuteConsoleCommand('pe')]"
+			tooltip = "Portrait Editor"
+			toolbox_icon = {
+				size = { 32 32 }
+				texture = "gfx/interface/icons/shared_icons/clan_chiefs.dds"
 			}
 		}
 	}
