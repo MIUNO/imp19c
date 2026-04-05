@@ -514,7 +514,7 @@ window = {
 				visible = "[Not(GetVariableSystem.Exists('show_females'))]"
 				flowcontainer = {
 					name = portraits_container_female
-					visible = "[Not(GetVariableSystem.Exists('pe_female_popout'))]"
+					visible = "[GetVariableSystem.Exists('pe_female_popout')]"
 					spacing = 5
 					
 					button = {
@@ -580,7 +580,7 @@ window = {
 				}
 				flowcontainer = {
 					name = portraits_container_female_no_pop
-					visible = "[GetVariableSystem.Exists('pe_female_popout')]"
+					visible = "[Not(GetVariableSystem.Exists('pe_female_popout'))]"
 					spacing = 5
 					
 					button = {
@@ -658,13 +658,21 @@ window = {
 				}
 			}
 		}
-		@left_box_x_position = 10
+		@left_box_x_position = 15
 		@left_box_y_position = 25
 		widget = {
 			position = { @left_box_x_position @left_box_y_position }
 			size = { 300 860 }
 			visible = yes
-			
+			background = {
+				shaderfile = "gfx/FX/pdxgui_default.shader"
+				texture = "gfx/editor_gui/editor_frame.dds"
+				spriteType = CorneredStretched
+				spriteborder = { 5 5 }
+				margin = { 5 15 }
+				margin_top = -10
+				margin_right = 10
+			}
 			textbox = {
 				position = { 0 10 }
 				size = { 150 25 }
@@ -1466,7 +1474,7 @@ window = {
 				}
 				scrollarea = {
 					size = { 300 50 }
-					maximumsize = { 300 475 }
+					maximumsize = { 300 465 }
 					autoresizescrollarea = yes
 					scrollbarpolicy_horizontal = always_off
 					alwaystransparent = no
