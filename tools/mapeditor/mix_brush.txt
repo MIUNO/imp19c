@@ -509,6 +509,42 @@
 			}
 		}
 
+		Sample={
+			Name="Sample from 2093, 1640"
+			Materials={
+				Material={
+					MaterialId="marshlands_europe"
+					Value=206
+				}
+
+				Material={
+					MaterialId="beach"
+					Value=23
+				}
+
+				Material={
+					MaterialId="grass_yellow"
+					Value=9
+				}
+
+				Material={
+					MaterialId="grass_plain"
+					Value=8
+				}
+
+				Material={
+					MaterialId="farmlands"
+					Value=8
+				}
+
+				Material={
+					MaterialId="hills_india"
+					Value=1
+				}
+
+			}
+		}
+
 	}
 }
 
