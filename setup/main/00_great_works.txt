@@ -26,6 +26,9 @@ provinces = {
 	3468 = { # Moai
 		great_work=9
 	}
+	7503 = { # Church of resurrection of Lazarus, Kizhi island
+		great_work=10
+	}
 }
 
 great_work_manager={	
@@ -45,7 +48,6 @@ great_work_manager={
 					great_work_module="wonder_eifel"
 				}
 			}
-		
 			great_work_effect_selections={
 				{
 					great_work_effect="gw_effect_omen_doctrine"
@@ -68,7 +70,6 @@ great_work_manager={
 					great_work_module="wonder_kaaba"
 				}
 			}
-
 			great_work_effect_selections={
 				{
 					great_work_effect="gw_effect_omen_doctrine"
@@ -91,7 +92,6 @@ great_work_manager={
 					great_work_module="wonder_kaning_fort"
 				}
 			}
-
 			great_work_effect_selections={
 				{
 					great_work_effect="gw_effect_omen_doctrine"
@@ -114,7 +114,6 @@ great_work_manager={
 					great_work_module="wonder_royalcastle"
 				}
 			}
-
 			great_work_effect_selections={
 				{
 					great_work_effect="gw_effect_omen_doctrine"
@@ -139,7 +138,6 @@ great_work_manager={
 					great_work_module="wonder_sev_fort"
 				}
 			}
-
 			great_work_effect_selections={
 				{
 					great_work_effect="gw_effect_omen_doctrine"
@@ -162,7 +160,6 @@ great_work_manager={
 					great_work_module="wonder_spb_fort"
 				}
 			}
-
 			great_work_effect_selections={
 				{
 					great_work_effect="gw_effect_omen_doctrine"
@@ -185,7 +182,6 @@ great_work_manager={
 					great_work_module="wonder_whitehouse"
 				}
 			}
-
 			great_work_effect_selections={
 				{
 					great_work_effect="gw_effect_omen_doctrine"
@@ -208,7 +204,6 @@ great_work_manager={
 					great_work_module="wonder_giza"
 				}
 			}
-
 			great_work_effect_selections={
 				{
 					great_work_effect="gw_effect_omen_doctrine"
@@ -231,11 +226,32 @@ great_work_manager={
 					great_work_module="wonder_moai"
 				}
 			}
-
 			great_work_effect_selections={
 				{
 					great_work_effect="gw_effect_omen_doctrine"
 					great_work_effect_tier = "gw_effect_tier_4"
+				}
+			}
+		}
+		10={
+			ancient_wonder = yes
+			key="wonder_church_kizhi"
+			great_work_category="column"
+			great_work_state=great_work_state_completed
+			finished_date=1391.1.1
+
+			great_work_name={
+				name="wonder_church_kizhi"
+			}
+			great_work_components={
+				{
+					great_work_module="wonder_church_kizhi"
+				}
+			}
+			great_work_effect_selections={
+				{
+					great_work_effect="gw_effect_omen_doctrine"
+					great_work_effect_tier = "gw_effect_tier_1"
 				}
 			}
 		}
