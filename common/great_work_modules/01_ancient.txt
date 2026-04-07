@@ -53,3 +53,8 @@ wonder_church_kizhi={
 	great_work_category="gw_category_ancient"
 	great_work_category_slot=0
 }
+wonder_vanha_kirkko={
+	entity_name={"wonder_vanha_kirkko_entity"}
+	great_work_category="gw_category_ancient"
+	great_work_category_slot=0
+}
