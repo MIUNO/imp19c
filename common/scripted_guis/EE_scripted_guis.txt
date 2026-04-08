@@ -1287,6 +1287,10 @@ DIPLO_begin_or_end_play = {
 
     is_valid = {
         NOT = { scope:player = scope:player.var:selected_province.owner }
+        scope:player = {
+            political_influence > 0
+            stability > 10
+        }
     }
 
     effect = {
