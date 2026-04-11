@@ -1,10 +1,20 @@
 ﻿object={
+	name="field_01"
+	clamp_to_water_level=no
+	render_under_water=yes
+	generated_content=no
+	layer="tree_layer"
+	pdxmesh="field_01_mesh"
+	count=1
+	transform="4019.865479 0.000000 3270.120605 0.000000 0.000000 0.000000 1.000000 1.000000 1.000000 1.000000
+"}
+object={
 	name="western_windmill"
 	clamp_to_water_level=no
 	render_under_water=yes
 	generated_content=no
 	layer="monument_layer"
-	entity="imp19_western_windmill_entity"
+	entity="western_windmill_entity"
 	count=29
 	transform="4088.124023 0.000000 3021.254150 0.000000 0.000000 0.000000 1.000000 1.000000 1.000000 1.000000
 4186.003906 0.000000 3282.409180 0.000000 -0.999883 0.000000 0.015315 1.000000 1.000000 1.000000

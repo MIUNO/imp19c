@@ -1,6 +1,6 @@
 pdxmesh = {
-	name = "imp19_western_windmill_mesh"
-	file = "imp19_western_windmill.mesh"
+	name = "western_windmill_mesh"
+	file = "western_windmill.mesh"
 
 	animation = { id = "idle" 			type = "western_windmill_idle.anim" }
 
@@ -28,8 +28,8 @@ pdxmesh = {
 }
 
 entity = {
-	name = "imp19_western_windmill_entity"
-	pdxmesh = "imp19_western_windmill_mesh"
+	name = "western_windmill_entity"
+	pdxmesh = "western_windmill_mesh"
 	
 	default_state = "idle"
 	state = {

@@ -1,0 +1,65 @@
+pdxmesh = {
+	name = "field_01_mesh"
+	file = "field_01.mesh"
+
+	#lod_percentages = {
+	#	lod = { index = 1 percent = 5.0 }
+	#	lod = { index = 2 percent = 2.5 }
+	#	lod = { index = 3 percent = 1.3 }
+	#}
+
+	meshsettings = {
+		name = "field_01"
+		index = 0
+		texture_diffuse = "field_01_diffuse.dds"
+		texture_normal = "nonormal.dds"
+		texture_specular = "nospec.dds"
+		shader = "tree_alpha_to_coverage"
+		shader_file = "gfx/FX/tree.shader"
+	}
+
+	#meshsettings = {
+	#	name = "tree_pine_01_LOD_0_tree_pine_01_pShape"
+	#	index = 0
+	#	texture_diffuse = "tree_pine_diffuse.dds"
+	#	texture_normal = "tree_pine_normal.dds"
+	#	texture_specular = "nospec.dds"
+	#	shader = "tree"
+	#	shader_file = "gfx/FX/tree.shader"
+	#}
+
+	#meshsettings = {
+	#	name = "tree_pine_01_LOD_1_tree_pine_01_pShape"
+	#	index = 0
+	#	texture_diffuse = "tree_pine_diffuse.dds"
+	#	texture_normal = "tree_pine_normal.dds"
+	#	texture_specular = "nospec.dds"
+	#	shader = "tree"
+	#	shader_file = "gfx/FX/tree.shader"
+	#}
+
+	#meshsettings = {
+	#	name = "tree_pine_01_LOD_2_tree_pine_01_pShape"
+	#	index = 0
+	#	texture_diffuse = "tree_pine_diffuse.dds"
+	#	texture_normal = "tree_pine_normal.dds"
+	#	texture_specular = "nospec.dds"
+	#	shader = "tree"
+	#	shader_file = "gfx/FX/tree.shader"
+	#}
+
+	#meshsettings = {
+	#	name = "tree_pine_01_LOD_3_tree_pine_01_pShape"
+	#	index = 0
+	#	texture_diffuse = "tree_pine_diffuse.dds"
+	#	texture_normal = "tree_pine_normal.dds"
+	#	texture_specular = "nospec.dds"
+	#	shader = "tree"
+	#	shader_file = "gfx/FX/tree.shader"
+	#}
+}
+
+entity = {
+	name = "field_01_entity"
+	pdxmesh = "field_01_mesh"
+}
