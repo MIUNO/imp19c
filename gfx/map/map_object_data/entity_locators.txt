@@ -1,14 +1,4 @@
 ﻿object={
-	name="field_01"
-	clamp_to_water_level=no
-	render_under_water=yes
-	generated_content=no
-	layer="tree_layer"
-	pdxmesh="field_01_mesh"
-	count=1
-	transform="4019.865479 0.000000 3270.120605 0.000000 0.000000 0.000000 1.000000 1.000000 1.000000 1.000000
-"}
-object={
 	name="western_windmill"
 	clamp_to_water_level=no
 	render_under_water=yes
