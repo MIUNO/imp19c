@@ -1034,7 +1034,7 @@ window = {
 								}
 							}
 							flowcontainer = {
-								margin = { 5 5 }
+								margin = { 0 5 }
 								spacing = 5
 								flowcontainer = {
 									using = background_widget
@@ -1042,7 +1042,7 @@ window = {
 									flowcontainer = {
 										margin = { 5 5 }
 										direction = vertical
-										spacing = 5
+										spacing = 10
 										ignoreinvisible = yes
 										icon_and_text = {
 											visible = "[Not( ProvinceWindow.GetProvince.GetCountryCulture.IsIntegrated )]"
@@ -1121,7 +1121,7 @@ window = {
 												visible = "[Not(IsDataModelEmpty(ProvinceWindow.GetModifiers))]"
 												datamodel = "[ProvinceWindow.GetModifiers]"
 												position = { 4 5 }
-												size = { 200 36 }
+												size = { 205 36 }
 												spacing = 2
 												parentanchor = vcenter|left
 												widgetanchor = vcenter|left
@@ -1169,7 +1169,7 @@ window = {
 											tooltip = "[ProvinceWindow.GetProvince.GetLocalCivilizationCapTooltip]"
 										}
 										widget = {
-											size = { 290 50 }
+											size = { 295 50 }
 											textbox = {
 												using = SubHeaderFont
 												using = Default_FontColor
