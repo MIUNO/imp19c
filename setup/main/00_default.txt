@@ -39105,6 +39105,7 @@ country = {
 				537 4943 10675
 				8264 3496 4665 4214	9603 3026
 				2071 10083 6446 10069 12075 11018 11914 13168 11732 11408
+				10678 12520 13079 12522 12210
 			}
 				
 				#professional_soldiers = yes
@@ -45214,7 +45215,7 @@ country = {
 			#is_antagonist = yes
 		
 			own_control_core = 	{
-				5892 6877
+				5892 6877 12531 13072
 			}
 				
 				#professional_soldiers = yes
