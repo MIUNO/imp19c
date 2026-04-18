@@ -997,6 +997,9 @@
 	civilization_value=0
 	barbarian_power=0
 	province_rank="settlement"
+	tribesmen={
+		amount=1
+	}
 }
 
 11936={ #Tazrouk
@@ -1020,6 +1023,9 @@
 	civilization_value=0
 	barbarian_power=0
 	province_rank="settlement"
+	tribesmen={
+		amount=1
+	}
 }
 
 12549={ #In Amguel
@@ -1030,9 +1036,6 @@
 	civilization_value=0
 	barbarian_power=0
 	province_rank="settlement"
-	tribesmen={
-		amount=1
-	}
 }
 
 12766={ #PROV12766
@@ -1083,6 +1086,9 @@
 	civilization_value=0
 	barbarian_power=0
 	province_rank="settlement"
+	tribesmen={
+		amount=1
+	}
 }
 
 13078={ #PROV13078
@@ -1103,6 +1109,9 @@
 	civilization_value=0
 	barbarian_power=0
 	province_rank="settlement"
+	tribesmen={
+		amount=1
+	}
 }
 
 13084={ #Pacific
