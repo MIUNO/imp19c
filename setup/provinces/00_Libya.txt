@@ -870,6 +870,9 @@
 	civilization_value=0
 	barbarian_power=0
 	province_rank="settlement"
+	tribesmen={
+		amount=1
+	}
 }
 
 12783={ #PROV12783
@@ -890,6 +893,9 @@
 	civilization_value=0
 	barbarian_power=0
 	province_rank="settlement"
+	tribesmen={
+		amount=1
+	}
 }
 
 13082={ #PROV13082
