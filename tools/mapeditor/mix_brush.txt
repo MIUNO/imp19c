@@ -545,6 +545,73 @@
 			}
 		}
 
+		Sample={
+			Name="Sample from 2218, 1899"
+			Materials={
+				Material={
+					MaterialId="grass_hills"
+					Value=156
+				}
+
+				Material={
+					MaterialId="rock_european"
+					Value=58
+				}
+
+				Material={
+					MaterialId="boulders_european"
+					Value=26
+				}
+
+				Material={
+					MaterialId="woodlands"
+					Value=7
+				}
+
+				Material={
+					MaterialId="mountains"
+					Value=7
+				}
+
+				Material={
+					MaterialId="grass_yellow"
+					Value=1
+				}
+
+			}
+		}
+
+		Sample={
+			Name="Sample from 2211, 1884"
+			Materials={
+				Material={
+					MaterialId="woodlands"
+					Value=161
+				}
+
+				Material={
+					MaterialId="grass_hills"
+					Value=30
+				}
+
+				Material={
+					MaterialId="rock_european"
+					Value=29
+				}
+
+				Material={
+					MaterialId="boulders_european"
+					Value=29
+				}
+
+				Material={
+					MaterialId="grass_plain"
+					Value=6
+				}
+
+			}
+		}
+
 	}
 }
 
