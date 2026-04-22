@@ -23816,9 +23816,9 @@
 
 12493={ #Vatnajokull
 	terrain="low_mountain"
-	culture=""
-	religion=""
-	trade_goods=""
+	culture="icelandic"
+	religion="lutheran"
+	trade_goods="stone"
 	civilization_value=0
 	barbarian_power=0
 	province_rank="settlement"
@@ -24915,13 +24915,16 @@
 }
 
 12627={ #PROV12627
-	terrain="ocean"
-	culture=""
-	religion=""
-	trade_goods=""
+	terrain="extreme_mountain"
+	culture="samoyed"
+	religion="orthodox"
+	trade_goods="wood"
 	civilization_value=0
 	barbarian_power=0
 	province_rank="settlement"
+	tribesmen={
+		amount=1
+	}
 }
 
 12628={ #PROV12628
@@ -24975,10 +24978,10 @@
 }
 
 12633={ #PROV12633
-	terrain="ocean"
-	culture=""
-	religion=""
-	trade_goods=""
+	terrain="extreme_mountain"
+	culture="samoyed"
+	religion="orthodox"
+	trade_goods="wood"
 	civilization_value=0
 	barbarian_power=0
 	province_rank="settlement"
@@ -25035,43 +25038,49 @@
 }
 
 12641={ #PROV12641
-	terrain="ocean"
-	culture=""
-	religion=""
-	trade_goods=""
+	terrain="extreme_mountain"
+	culture="samoyed"
+	religion="orthodox"
+	trade_goods="wood"
 	civilization_value=0
 	barbarian_power=0
 	province_rank="settlement"
 }
 
 12642={ #PROV12642
-	terrain="ocean"
-	culture=""
-	religion=""
-	trade_goods=""
+	terrain="extreme_mountain"
+	culture="samoyed"
+	religion="orthodox"
+	trade_goods="wood"
 	civilization_value=0
 	barbarian_power=0
 	province_rank="settlement"
 }
 
 12644={ #PROV12644
-	terrain="ocean"
-	culture=""
-	religion=""
-	trade_goods=""
+	terrain="extreme_mountain"
+	culture="samoyed"
+	religion="orthodox"
+	trade_goods="wood"
 	civilization_value=0
 	barbarian_power=0
 	province_rank="settlement"
+	tribesmen={
+		amount=1
+	}
 }
 
 12645={ #PROV12645
-	terrain="ocean"
-	culture=""
-	religion=""
-	trade_goods=""
+	terrain="extreme_mountain"
+	culture="samoyed"
+	religion="orthodox"
+	trade_goods="wood"
 	civilization_value=0
 	barbarian_power=0
 	province_rank="settlement"
+	tribesmen={
+		amount=1
+	}
 }
 
 12646={ #PROV12646
