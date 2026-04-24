@@ -2772,7 +2772,7 @@
 
 12499={ #PROV12499
 	terrain="tundra"
-	culture="yakut"
+	culture="dolgan"
 	religion="tengri"
 	trade_goods="wood"
 	civilization_value=0
@@ -2812,7 +2812,7 @@
 
 12535={ #PROV12535
 	terrain="tundra"
-	culture="yakut"
+	culture="dolgan"
 	religion="tengri"
 	trade_goods="wood"
 	civilization_value=0

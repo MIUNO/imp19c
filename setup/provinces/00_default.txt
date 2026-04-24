@@ -25114,10 +25114,10 @@
 }
 
 12650={ #PROV12650
-	terrain="ocean"
-	culture=""
-	religion=""
-	trade_goods=""
+	terrain="tundra"
+	culture="dolgan"
+	religion="tengri"
+	trade_goods="wood"
 	civilization_value=0
 	barbarian_power=0
 	province_rank="settlement"
@@ -28321,6 +28321,9 @@
 	civilization_value=0
 	barbarian_power=0
 	province_rank="settlement"
+	tribesmen={
+		amount=1
+	}
 }
 
 13014={ #PROV13014
@@ -28975,7 +28978,7 @@
 
 13099={ #PROV13099
 	terrain="tundra"
-	culture="yakut"
+	culture="dolgan"
 	religion="tengri"
 	trade_goods="wood"
 	civilization_value=0
