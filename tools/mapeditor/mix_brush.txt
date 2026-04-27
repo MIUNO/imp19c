@@ -612,6 +612,43 @@
 			}
 		}
 
+		Sample={
+			Name="Sample from 2708, 1626"
+			Materials={
+				Material={
+					MaterialId="grass_dry"
+					Value=164
+				}
+
+				Material={
+					MaterialId="grass_plain"
+					Value=88
+				}
+
+				Material={
+					MaterialId="hills_india"
+					Value=3
+				}
+
+			}
+		}
+
+		Sample={
+			Name="Sample from 3602, 1454"
+			Materials={
+				Material={
+					MaterialId="seafloor"
+					Value=253
+				}
+
+				Material={
+					MaterialId="hills_india"
+					Value=2
+				}
+
+			}
+		}
+
 	}
 }
 
