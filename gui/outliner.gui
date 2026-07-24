@@ -920,5 +920,5 @@ vbox = {
 	        visible = "[GetVariableSystem.HasValue( 'alternative_peace_window', 'open' )]"
 	    }
 	}
-	#new_element_test_window = { } #hide
+	new_element_test_window = { } #hide
 }

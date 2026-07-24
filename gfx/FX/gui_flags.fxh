@@ -4,7 +4,7 @@ PixelShader =
 	[[
 		float CreateWave( float2 UV, float Time ) {
 			// https://www.shadertoy.com/view/flsXRM
-			float Wave =  UV.x * 12.0 - 1.5 * Time + UV.y * 3.0;
+			float Wave = UV.x * 12.0 - 1.5 * Time + UV.y * 3.0;
 			return Wave;
 		}
 		float2 CreateWaveUV( float2 UV, float Wave ) {

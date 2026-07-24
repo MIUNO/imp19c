@@ -3912,33 +3912,34 @@ window = {
 						}
 						# Flowcontainer 2: wealth information
 						margin_widget = {
-							size = { 475 220 }
-							margin_top = 20
+							size = { 480 280 }
+							margin = { 5 5 }
+							using = background_widget_inner
 							scrollarea = {
 								size = { 100% 100% }
 								scrollbarpolicy_horizontal = always_off
-								using = VerticalScrollAreaCutOff
-								
+								scrollbarpolicy_vertical = always_on
 								scrollbar_vertical = {
 									using = VerticalScrollBar
 								}
-								
 								scrollwidget = {
 									flowcontainer = {
 										name = "provinces_in_state_list"
-										margin_top = 5
+										#margin = { 5 5 }
 										direction = vertical
 										spacing = 4
 										datamodel = "[ProvinceWindow.GetProvinceList]"
-										
 										item = {
 											button = {
-												size = { 460 40 }
-												using = list_item
-												#list_button = { 
-												#	size = { 100% 100% }
-												#	onclick = "[SelectProvinceItem.OnClick]"
-												#}
+												size = { 455 40 }
+												using = background_widget
+												onclick = "[SelectProvinceItem.OnClick]"
+												button = { 
+													size = { 100% 100% }
+													onclick = "[SelectProvinceItem.OnClick]"
+													using = beige_background
+													alpha = 0.15
+												}
 												flowcontainer = {
 													spacing = 5
 													parentanchor = vcenter
@@ -3984,7 +3985,7 @@ window = {
 													textbox = {
 														parentanchor = vcenter
 														align = vcenter
-														size = { 270 40 }
+														size = { 265 40 }
 														using = BaseFontM
 														using = Default_FontColor
 														text = "[SelectProvinceItem.GetProvince.GetName]"

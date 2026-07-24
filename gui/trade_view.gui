@@ -2846,27 +2846,32 @@ base_window = {
 								datamodel = "[Player.MakeScope.GetList('trade_zones_list')]"
 								item = {
 									widget = {
-										size = { 880 90 }
-										using = list_item
+										size = { 880 80 }
+										using = background_widget
 										flowcontainer = {
 											datacontext = "[Scope.Province]"
-											spacing = 30
 											textbox = {
-												size = { 310 90 }
+												size = { 310 80 }
 												background = {
 													shaderfile = "gfx/FX/pdxgui_default.shader"
 													using = beige_background
 													alpha = 0.15
-													margin = { -3 -3 }
+													margin = { 0 -2 }
 												}
 												align = hcenter
 												using = BaseFontM
 												using = Default_FontColor
 												text = "[Province.Custom('state_trade_zone_loc')]" #TradeZone name
 											}
+											icon = {
+												size = { 2 80 }
+												using = beige_background
+												alpha = 0.3
+											}
 											flowcontainer = {
 												parentanchor = vcenter
 												spacing = 5
+												margin = { 30 0 }
 												new_country_flag = {
 													datacontext = "[Province.MakeScope.GetVariable('DIPLOMACY_power_n1').GetCountry]"
 													blockoverride "Size" { size = { 32 32 } }
@@ -2946,13 +2951,18 @@ base_window = {
 													tooltip = "[Country.GetName]: Number 4 power"
 												}
 											}
+											icon = {
+												size = { 2 80 }
+												using = beige_background
+												alpha = 0.3
+											}
 											widget = {
-												size = { 190 90 }
+												size = { 220 80 }
 												background = {
 													shaderfile = "gfx/FX/pdxgui_default.shader"
 													using = beige_background
 													alpha = 0.15
-													margin = { -3 -3 }
+													margin = { 0 -2 }
 												}
 												icon_and_text = {
 													size = { 170 34 }
@@ -2962,34 +2972,22 @@ base_window = {
 													tooltip = "#T Actual convoys passing through #! / #Y Capacity for convoys"
 												}
 											}
+											icon = {
+												size = { 2 80 }
+												using = beige_background
+												alpha = 0.3
+											}
 											widget = {
-												size = { 120 90 }
-												CustomPiechart = {
-													blockoverride "piechart_size_and_pos" {
-														size = { 80 80 }
-														parentanchor = vcenter
-													}
-													blockoverride "datamodel" {
-														datamodel = "[Scope.GetProvince.MakeScope.GetList('shipping_power_list')]"
-													}
-													blockoverride "slice_tooltip" {
-														tooltip = "[Scope.GetProvince.MakeScope.GetVariable('tracking_TZ_shipping_for_tag').GetCountry.GetName] controls #G [GuiScope.SetRoot( Scope.GetProvince.MakeScope ).ScriptValue('SHIPPING_percentage_in_TZ')|%]#! of shipping here (capacity of #G [Scope.GetProvince.MakeScope.GetVariable('shipping_power_total').GetValue|0]#! convoys every quarter)."
-													}
-													blockoverride "slice_size" {
-														value = "[FixedPointToFloat( Scope.GetProvince.MakeScope.GetVariable('shipping_power_total').GetValue )]"
-													}
-													blockoverride "slice_color" {
-														color = "[Scope.GetProvince.MakeScope.GetVariable('tracking_TZ_shipping_for_tag').GetCountry.GetMapColor]"
-													}
-													blockoverride "alpha" {
-														alpha = 1
-													}
-													blockoverride "tag_text" {
-														text = ""
-													}
+												size = { 145 80 }
+												style_icon_pie = {
+													parentanchor = center
+													blockoverride "Datamodel" { datamodel = "[Scope.GetProvince.MakeScope.GetList('shipping_power_list')]" }
+													blockoverride "SliceTooltip" { tooltip = "[Scope.GetProvince.MakeScope.GetVariable('tracking_TZ_shipping_for_tag').GetCountry.GetName] controls #G [GuiScope.SetRoot( Scope.GetProvince.MakeScope ).ScriptValue('SHIPPING_percentage_in_TZ')|%]#! of shipping here (capacity of #G [Scope.GetProvince.MakeScope.GetVariable('shipping_power_total').GetValue|0]#! convoys every quarter)." }
+													blockoverride "SliceValue" { value = "[FixedPointToFloat( Scope.GetProvince.MakeScope.GetVariable('shipping_power_total').GetValue )]" }
+													blockoverride "SliceColor" { color = "[Scope.GetProvince.MakeScope.GetVariable('tracking_TZ_shipping_for_tag').GetCountry.GetMapColor]" }
+													blockoverride "Icon" { visible = no }
 												}
 												tradezone_penetration_info = { 
-													#blockoverride "dataconext" { "[Scope.Province]" }
 													parentanchor = center
 												}
 											}

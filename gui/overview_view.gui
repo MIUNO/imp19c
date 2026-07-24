@@ -319,194 +319,68 @@ base_window = {
 			}
 			flowcontainer = {
 				name = "ideas and pie charts"
+				spacing = 20
 				flowcontainer = {
-					direction = vertical
+					spacing = 20
+					margin_left = 20
 					flowcontainer = {
-						widget = {
-							size = { 106 100 }
-							flowcontainer = {
-								direction = vertical
-								parentanchor = hcenter
-								icon_pie = {
-									size = { 64 64 }
-									parentanchor = hcenter
-									datamodel = "[OverviewView.GetPopCultures]"
-									
-									###Slices and Icon
-									blockoverride "SliceTooltip" { tooltip = "[PopCultureItem.GetTooltip]" }
-									blockoverride "SliceValue" { value = "[PopCultureItem.GetSize]" }
-									blockoverride "SliceColor" { color = "[PopCultureItem.GetColor]" }
-									blockoverride "Icon" { 
-										using = icon_culture
-										position = { 0 1 }
-									}
-								}
-
-								tag = {
-									size = { 106 20 }
-									max_width = 106
-									fontsize_min = 14
-									parentanchor = hcenter
-									using = BaseFontS
-									using = Default_FontColor
-									text = "[OverviewView.GetPlayer.GetPrimaryCulture.GetName]"
-									align = center
-								}
-							}
+						direction = vertical
+						style_text_icon_pie = {
+							blockoverride "Datamodel" { datamodel = "[OverviewView.GetPopCultures]" }
+							blockoverride "SliceTooltip" { tooltip = "[PopCultureItem.GetTooltip]" }
+							blockoverride "SliceValue" { value = "[PopCultureItem.GetSize]" }
+							blockoverride "SliceColor" { color = "[PopCultureItem.GetColor]" }
+							blockoverride "Icon" { using = icon_culture }
+							blockoverride "Text" { text = "[OverviewView.GetPlayer.GetPrimaryCulture.GetName]" }
 						}
-						widget = {
-							size = { 106 100 }
-							flowcontainer = {
-								parentanchor = hcenter
-								direction = vertical
-								icon_pie = {
-									size = { 64 64 }
-									parentanchor = hcenter
-									datamodel = "[OverviewView.GetPopReligions]"
-									
-									###Slices and Icon
-									blockoverride "SliceTooltip" { tooltip = "[PopReligionItem.GetName]" }
-									blockoverride "SliceValue" { value = "[PopReligionItem.GetSize]" }
-									blockoverride "SliceColor" { color = "[PopReligionItem.GetColor]" }
-									blockoverride "Icon" { 
-										using = icon_religious
-										position = { 1 0 }
-									}
-								}
-
-								tag = {
-									size = { 106 20 }
-									max_width = 106
-									parentanchor = hcenter
-									fontsize_min = 14
-									using = BaseFontS
-									using = Default_FontColor
-									text = "[OverviewView.GetPlayer.GetReligion.GetName]"
-									#tooltip = "[OverviewView.GetPlayer.GetReligion.GetTooltip]"
-									align = center
-								}
-							}
-						}
-						widget = {
-							size = { 106 100 }
-							CustomPiechart = {
-								blockoverride "widget_size_and_pos" {
-									size = { 106 88 }
-								}
-								blockoverride "datamodel" {
-									#datamodel = "[OverviewView.GetPlayer.MakeScope.GetList('list_of_wealth_distribution')]"
-								}
-								blockoverride "slice_tooltip" {
-									#tooltip = "custom_piechart_loc"
-								}
-								blockoverride "slice_size" {
-									#value = "[FixedPointToFloat( Scope.GetProvince.MakeScope.GetVariable('WEALTH_national_data_value').GetValue )]"
-								}
-								blockoverride "piechart_size_and_pos" {
-									size = { 64 64 }
-									parentanchor = hcenter
-								}
-								blockoverride "tag_size_and_pos" {
-									size = { 106 20 }
-									position = { 0 64 }
-									parentanchor = hcenter
-								}
-								blockoverride "tag_text" {
-									text = "none"
-								}
+						style_text_icon_pie = {
+							blockoverride "Datamodel" { datamodel = "[OverviewView.GetPopTypes]" }
+							blockoverride "SliceTooltip" { tooltip = "[PopTypeItem.GetName]" }
+							blockoverride "SliceValue" { value = "[PopTypeItem.GetSize]" }
+							blockoverride "SliceColor" { color = "[PopTypeItem.GetColor]" }
+							blockoverride "Icon" { using = icon_poptype }
+							blockoverride "Text" {
+								text = "[OverviewView.GetPlayer.GetTotalPopulation]"
+								tooltip = "[OverviewView.GetPlayer.BuildTotalPopulationToolTip]"
 							}
 						}
 					}
 					flowcontainer = {
-						widget = {
-							size = { 106 120 }
-							flowcontainer = {
-								parentanchor = hcenter
-								direction = vertical
-								icon_pie = {
-									size = { 64 64 }
-									parentanchor = hcenter
-									datamodel = "[OverviewView.GetPopTypes]"
-									
-									###Slices and Icon
-									blockoverride "SliceTooltip" { tooltip = "[PopTypeItem.GetName]" }
-									blockoverride "SliceValue" { value = "[PopTypeItem.GetSize]" }
-									blockoverride "SliceColor" { color = "[PopTypeItem.GetColor]" }
-									blockoverride "Icon" { 
-										using = icon_poptype
-									}
-								}
-
-								tag = {
-									size = { 106 20 }
-									parentanchor = hcenter
-									max_width = 106
-									fontsize_min = 14
-									using = BaseFontS
-									using = Default_FontColor
-									text = "[OverviewView.GetPlayer.GetTotalPopulation]"
-									tooltip = "[OverviewView.GetPlayer.BuildTotalPopulationToolTip]"
-									align = center
-								}
-							}
+						direction = vertical
+						style_text_icon_pie = {
+							blockoverride "Datamodel" { datamodel = "[OverviewView.GetPopReligions]" }
+							blockoverride "SliceTooltip" { tooltip = "[PopReligionItem.GetName]" }
+							blockoverride "SliceValue" { value = "[PopReligionItem.GetSize]" }
+							blockoverride "SliceColor" { color = "[PopReligionItem.GetColor]" }
+							blockoverride "Icon" { using = icon_religious }
+							blockoverride "Text" { text = "[OverviewView.GetPlayer.GetReligion.GetName]" }
 						}
-						widget = {
-							size = { 106 120 }
-							CustomPiechart = {
-								blockoverride "widget_size_and_pos" {
-									size = { 106 106 }
-								}
-								blockoverride "datamodel" {
-									datamodel = "[OverviewView.GetPlayer.MakeScope.GetList('education_piechart_list')]"
-								}
-								blockoverride "slice_tooltip" {
-									tooltip = "[Localize(Scope.GetProvince.MakeScope.GetVariable('slice_tooltip').GetFlagName)] [Scope.GetProvince.MakeScope.GetVariable('education_piechart_slice_size').GetValue|%]"
-								}
-								blockoverride "slice_size" {
-									value = "[FixedPointToFloat( Scope.GetProvince.MakeScope.GetVariable('education_piechart_slice_size').GetValue )]"
-								}
-								blockoverride "piechart_size_and_pos" {
-									size = { 64 64 }
-									parentanchor = hcenter
-								}
-								blockoverride "tag_size_and_pos" {
-									size = { 106 20 }
-									position = { 0 64 }
-									parentanchor = hcenter
-								}
-								blockoverride "tag_text" {
-									text = "Education"
-								}
-							}
+						style_text_icon_pie = {
+							blockoverride "Datamodel" { datamodel = "[OverviewView.GetPlayer.MakeScope.GetList('education_piechart_list')]" }
+							blockoverride "SliceTooltip" { tooltip = "[Localize(Scope.GetProvince.MakeScope.GetVariable('slice_tooltip').GetFlagName)] [Scope.GetProvince.MakeScope.GetVariable('education_piechart_slice_size').GetValue|%]" }
+							blockoverride "SliceValue" { value = "[FixedPointToFloat( Scope.GetProvince.MakeScope.GetVariable('education_piechart_slice_size').GetValue )]" }
+							blockoverride "SliceColor" { color = "[Scope.GetProvince.MakeScope.GetVariable('derived_colour').CultureGroup.GetColor]" }
+							blockoverride "Icon" { using = icon_poptype }
+							blockoverride "Text" { text = "Education" }
 						}
-						widget = {
-							size = { 106 100 }
-							CustomPiechart = {
-								blockoverride "widget_size_and_pos" {
-									size = { 106 88 }
-								}
-								blockoverride "datamodel" {
-									#datamodel = "[OverviewView.GetPlayer.MakeScope.GetList('list_of_wealth_distribution')]"
-								}
-								blockoverride "slice_tooltip" {
-									#tooltip = "custom_piechart_loc"
-								}
-								blockoverride "slice_size" {
-									#value = "[FixedPointToFloat( Scope.GetProvince.MakeScope.GetVariable('WEALTH_national_data_value').GetValue )]"
-								}
-								blockoverride "piechart_size_and_pos" {
-									size = { 64 64 }
-									parentanchor = hcenter
-								}
-								blockoverride "tag_size_and_pos" {
-									size = { 106 20 }
-									position = { 0 64 }
-									parentanchor = hcenter
-								}
-								blockoverride "tag_text" {
-									text = "none"
-								}
-							}
+					}
+					flowcontainer = {
+						direction = vertical
+						style_text_icon_pie = {
+							blockoverride "Datamodel" { }
+							blockoverride "SliceTooltip" { }
+							blockoverride "SliceValue" { }
+							blockoverride "SliceColor" { }
+							blockoverride "Icon" { }
+							blockoverride "Text" { text = "none" }
+						}
+						style_text_icon_pie = {
+							blockoverride "Datamodel" { }
+							blockoverride "SliceTooltip" { }
+							blockoverride "SliceValue" { }
+							blockoverride "SliceColor" { }
+							blockoverride "Icon" { }
+							blockoverride "Text" { text = "none" }
 						}
 					}
 				}

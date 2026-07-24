@@ -9,145 +9,454 @@ types TEST_ELEMENTS {
 			using = black_background
 		}
 		flowcontainer = {
-			margin = { 20 0 }
+			margin = { 20 20 }
 			spacing = 10
-			direction = vertical
-			parentanchor = center
 			flowcontainer = {
+				direction = vertical
 				spacing = 10
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-			}
-			flowcontainer = {
-				spacing = 10
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-			}
-			flowcontainer = {
-				spacing = 10
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-			}
-			flowcontainer = {
-				spacing = 10
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-			}
-			flowcontainer = {
-				spacing = 10
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-			}
-			flowcontainer = {
-				spacing = 10
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-			}	
-			flowcontainer = {
-				spacing = 10
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
-				new_country_flag = { datacontext = "[GetCountry('FRA')]" }
+				widget = {
+					size = { 376 44 }
+					state = {
+						name = _mouse_hierarchy_enter
+						on_start = "[PdxGuiWidget.FindChild('shiner').InterruptAnimation('pseudo_show')]"
+						on_start = "[PdxGuiWidget.FindChild('shiner').InterruptAnimation('pseudo_hide')]"
+
+						on_start = "[PdxGuiWidget.FindChild('shiner').TriggerAnimation('pseudo_show')]"
+
+						on_start = "[PdxGuiWidget.FindChild('left_deco').InterruptAnimation('pseudo_show')]"
+						on_start = "[PdxGuiWidget.FindChild('left_deco').InterruptAnimation('pseudo_hide')]"
+						on_start = "[PdxGuiWidget.FindChild('right_deco').InterruptAnimation('pseudo_show')]"
+						on_start = "[PdxGuiWidget.FindChild('right_deco').InterruptAnimation('pseudo_hide')]"
+						on_start = "[PdxGuiWidget.FindChild('left_deco_item').InterruptAnimation('pseudo_show')]"
+						on_start = "[PdxGuiWidget.FindChild('left_deco_item').InterruptAnimation('pseudo_hide')]"
+						on_start = "[PdxGuiWidget.FindChild('right_deco_item').InterruptAnimation('pseudo_show')]"
+						on_start = "[PdxGuiWidget.FindChild('right_deco_item').InterruptAnimation('pseudo_hide')]"
+
+						on_start = "[PdxGuiWidget.FindChild('left_deco').TriggerAnimation('pseudo_show')]"
+						on_start = "[PdxGuiWidget.FindChild('right_deco').TriggerAnimation('pseudo_show')]"
+						on_start = "[PdxGuiWidget.FindChild('left_deco_item').TriggerAnimation('pseudo_show')]"
+						on_start = "[PdxGuiWidget.FindChild('right_deco_item').TriggerAnimation('pseudo_show')]"
+					}
+					
+					state = {
+						name = _mouse_hierarchy_leave
+						on_start = "[PdxGuiWidget.FindChild('shiner').InterruptAnimation('pseudo_hide')]"
+						on_start = "[PdxGuiWidget.FindChild('shiner').InterruptAnimation('pseudo_show')]"
+
+						on_start = "[PdxGuiWidget.FindChild('shiner').TriggerAnimation('pseudo_hide')]"
+
+						on_start = "[PdxGuiWidget.FindChild('left_deco').InterruptAnimation('pseudo_show')]"
+						on_start = "[PdxGuiWidget.FindChild('left_deco').InterruptAnimation('pseudo_hide')]"
+						on_start = "[PdxGuiWidget.FindChild('right_deco').InterruptAnimation('pseudo_show')]"
+						on_start = "[PdxGuiWidget.FindChild('right_deco').InterruptAnimation('pseudo_hide')]"
+						on_start = "[PdxGuiWidget.FindChild('left_deco_item').InterruptAnimation('pseudo_show')]"
+						on_start = "[PdxGuiWidget.FindChild('left_deco_item').InterruptAnimation('pseudo_hide')]"
+						on_start = "[PdxGuiWidget.FindChild('right_deco_item').InterruptAnimation('pseudo_show')]"
+						on_start = "[PdxGuiWidget.FindChild('right_deco_item').InterruptAnimation('pseudo_hide')]"
+
+						on_start = "[PdxGuiWidget.FindChild('left_deco').TriggerAnimation('pseudo_hide')]"
+						on_start = "[PdxGuiWidget.FindChild('right_deco').TriggerAnimation('pseudo_hide')]"
+						on_start = "[PdxGuiWidget.FindChild('left_deco_item').TriggerAnimation('pseudo_hide')]"
+						on_start = "[PdxGuiWidget.FindChild('right_deco_item').TriggerAnimation('pseudo_hide')]"
+					}
+					
+					button = {
+						name = "shiner"
+						size = { 100% 100% }
+						alpha = 0
+						using = red_background
+						modify_texture = {
+							texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black_double.dds"
+							blend_mode = alphamultiply
+						}		
+						state = {
+							name = pseudo_show
+							animation = { alpha = 0.9 }
+							duration = 0.15
+						}
+						state = {
+							name = pseudo_hide
+							animation = { alpha = 0 }
+							duration = 0.15
+						}
+						parentanchor = center
+						block "On_click" {}
+						
+						#Fontend buttons?
+						block "ClickSound"
+						{
+							clicksound = "event:/SFX/UI/Generic/2.0/sfx_ui_button_primary"
+							oversound = "event:/SFX/UI/Generic/2.0/sfx_ui_button_oversound"
+						}
+					}
+					
+					textbox = {
+						autoresize = yes
+						block "Text" { text = "Button Text" }
+						using = Default_FontColor
+						using = HeaderFont
+						parentanchor = center
+						fontsize = 26
+						widget = {
+							size = { 100% 100% }
+							parentanchor = vcenter
+							widget = {
+								name = "left_deco"
+								size = { 44 24 }
+								position = { -50 0 }
+								state = {
+									name = pseudo_show
+									position = { -58 0 }
+									duration = 0.15
+								}
+								state = {
+									name = pseudo_hide
+									position = { -50 0 }
+									duration = 0.15
+								}
+								icon = {
+									size = { 44 24 }
+									using = beige_background
+									alpha = 0.2
+									modify_texture = {
+										texture = "gfx/interface/images/elements/side_pattern.dds"
+										blend_mode = alphamultiply
+										framesize = { 44 24 }
+										frame = 1
+									}
+								}
+								icon = {
+									name = "left_deco_item"
+									size = { 44 24 }
+									using = gold_background
+									alpha = 0
+									state = {
+										name = pseudo_show
+										alpha = 0.9
+										duration = 0.15
+									}
+									state = {
+										name = pseudo_hide
+										alpha = 0
+										duration = 0.15
+									}
+									modify_texture = {
+										texture = "gfx/interface/images/elements/side_pattern.dds"
+										blend_mode = alphamultiply
+										framesize = { 44 24 }
+										frame = 1
+									}
+								}
+							}
+							widget = {
+								name = "right_deco"
+								size = { 44 24 }
+								parentanchor = right
+								position = { 50 0 }
+								state = {
+									name = pseudo_show
+									position = { 58 0 }
+									duration = 0.15
+								}
+								state = {
+									name = pseudo_hide
+									position = { 50 0 }
+									duration = 0.15
+								}
+								icon = {
+									size = { 44 24 }
+									using = beige_background
+									alpha = 0.2
+									modify_texture = {
+										texture = "gfx/interface/images/elements/side_pattern.dds"
+										blend_mode = alphamultiply
+										framesize = { 44 24 }
+										frame = 2
+									}
+								}
+								icon = {
+									name = "right_deco_item"
+									size = { 44 24 }
+									using = gold_background
+									alpha = 0
+									state = {
+										name = pseudo_show
+										alpha = 0.9
+										duration = 0.15
+									}
+									state = {
+										name = pseudo_hide
+										alpha = 0
+										duration = 0.15
+									}
+									modify_texture = {
+										texture = "gfx/interface/images/elements/side_pattern.dds"
+										blend_mode = alphamultiply
+										framesize = { 44 24 }
+										frame = 2
+									}
+								}
+							}
+						}
+						widget = {
+							visible = no
+							size = { 100% 24 }
+							parentanchor = center
+							background = {
+								shaderfile = "gfx/FX/pdxgui_default.shader"
+								using = beige_background
+								margin = { 50 0 }
+								alpha = 0.2
+								modify_texture = {
+									texture = "gfx/interface/images/elements/side_pattern.dds"
+									blend_mode = alphamultiply
+									spriteType = corneredtiled
+									spriteborder = { 44 24 }
+								}
+							}
+						}
+						widget = {
+							visible = no
+							#name = "shiner2"
+							size = { 100% 24 }
+							parentanchor = center
+							alpha = 0.0
+							state = {
+								name = pseudo_show
+								animation = {
+									alpha = 0.9
+								}
+								duration = 0.15
+							}
+							state = {
+								name = pseudo_hide
+								animation = {
+									alpha = 0.0
+								}
+								duration = 0.15
+							}
+							background = {
+								shaderfile = "gfx/FX/pdxgui_default.shader"
+								using = gold_background
+								margin = { 50 0 }
+								modify_texture = {
+									texture = "gfx/interface/images/elements/side_pattern.dds"
+									blend_mode = alphamultiply
+									spriteType = corneredtiled
+									spriteborder = { 44 24 }
+								}
+							}
+						}
+					}
+				}
+				margin_widget = {
+					size = { 320 36 }
+					margin = { 0 2 }
+					widget = {
+						size = { 100% 100% }
+						using = background_widget
+					}
+					button = {
+						size = { 100% 100% }
+						block "Visible_close" { visible = "[Not(GetVariableSystem.HasValue( 'test_tab_button', 'true' ))]" }
+						block "On_click_open" { onclick = "[GetVariableSystem.Set( 'test_tab_button', 'true' )]" }
+						using = beige_background
+						alpha = 0.15
+					}
+					button = {
+						size = { 100% 100% }
+						block "Visible_open" { visible = "[GetVariableSystem.HasValue( 'test_tab_button', 'true' )]" }
+						block "On_click_close" { onclick = "[GetVariableSystem.Set( 'test_tab_button', 'false' )]" }
+						using = beige_background
+						alpha = 0.15
+					}
+					widget = {
+						size = { 100% 100% }
+						alpha = 0.9
+						icon = {
+							size = { 8 11 }
+							position = { 8 0 }
+							parentanchor = vcenter
+							using = gold_background
+							block "Visible_open" { visible = "[GetVariableSystem.HasValue( 'test_tab_button', 'true' )]" }
+							modify_texture = {
+								texture = "gfx/interface/base_parts/arrow_right.dds"
+								blend_mode = alphamultiply
+							}
+						}
+						icon = {
+							size = { 11 8 }
+							position = { 8 0 }
+							parentanchor = vcenter
+							using = gold_background
+							block "Visible_close" { visible = "[Not(GetVariableSystem.HasValue( 'test_tab_button', 'true' ))]" }
+							modify_texture = {
+								texture = "gfx/interface/base_parts/arrow.dds"
+								blend_mode = alphamultiply
+							}
+						}
+						textbox = {
+							position = { 24 0 }
+							parentanchor = vcenter				
+							autoresize = yes
+							using = BaseFontS
+							using = Highlight_FontColor
+							block "Title_text" { text = "Test tab button" }
+							max_width = 230
+							fontsize_min = 11
+							elide = right
+						}
+						margin_widget = {
+							size = { 100% 1 }
+							margin = { 5 0 }
+							position = { 0 -3 }
+							parentanchor = bottom
+							icon = {
+								size = { 100% 100% }
+								using = gold_background
+							}
+						}
+					}
+				}
+				flowcontainer = {
+					ignoreinvisible = yes
+					direction = vertical
+					style_cool_button_inner = {
+						visible = yes
+						size = { 200 30 }
+						blockoverride "Decoration" {
+							margin_widget = {
+								size = { 100% 100% }
+								margin = { 3 3 }
+								progressbar = {
+									size = { 17 16 }
+									parentanchor = bottom
+									gfxtype = framedprogressbargfx
+									texture = "gfx/interface/base_parts/gear.dds"
+									framesize = { 17 16 }
+									loopinterval = 0.5
+									max=0
+									modify_texture = {
+										spriteborder = { 16 16 }
+										spriteType = Corneredtiled
+										texture = "gfx/interface/base_parts/button_g.dds"
+										blend_mode = add
+									}
+								}
+								progressbar = {
+									size = { 17 16 }
+									parentanchor = right
+									gfxtype = framedprogressbargfx
+									texture = "gfx/interface/base_parts/gear_top.dds"
+									framesize = { 17 16 }
+									loopinterval = 0.5
+									max=0
+									modify_texture = {
+										spriteborder = { 16 16 }
+										spriteType = Corneredtiled
+										texture = "gfx/interface/base_parts/button_g.dds"
+										blend_mode = add
+									}
+								}
+							}
+						}
+						blockoverride "Text" {
+							using = Highlight_FontColor
+							text = "CURRENT_DATE"
+						}
+					}
+					style_cool_button_inner = {
+						visible = no
+						size = { 200 30 }
+						blockoverride "Text" { text = "Actions" }
+					}
+				}
+				style_cool_button_inner = {
+					visible = yes
+					size = { 225 50 }
+					blockoverride "Border" { texture = "gfx/interface/base_parts/new_elements/test1_2.png" }
+					blockoverride "BorderShadow" { texture = "gfx/interface/base_parts/new_elements/test1_2_shadow.png" }
+					blockoverride "BorderSideDeco" { texture = "gfx/interface/base_parts/new_elements/test2_2.png" }
+					blockoverride "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/test3_2.png" }
+					blockoverride "BaseNormal" { texture = "gfx/interface/base_parts/new_elements/test4_2.png" }
+					blockoverride "Decoration" {
+						margin_widget = {
+							size = { 100% 100% }
+							margin = { 3 3 }
+							icon = {
+								size = { 100% 50% }
+								parentanchor = bottom
+								shaderfile = "gfx/FX/pdxgui_scroll.shader"
+								effectname = "test_PixelShader"
+								using = gold_background
+								modify_texture = {
+									texture = "gfx/interface/base_parts/new_elements/test7.png"
+									blend_mode = alphamultiply
+								}
+							}
+							widget = {
+								name = ship
+								size = { 60 60 }
+								parentanchor = hcenter
+								position = { 0 -10 }
+								icon = {
+									size = { 100% 100% }
+									shaderfile = "gfx/FX/pdxgui_scroll.shader"
+									effectname = "test3_PixelShader"
+									using = shadow_background
+									alpha = 0.25
+									modify_texture = {
+										texture = "gfx/interface/base_parts/new_elements/ship_shadow.png"
+										blend_mode = alphamultiply
+									}
+								}
+								icon = {
+									size = { 100% 100% }
+									shaderfile = "gfx/FX/pdxgui_scroll.shader"
+									effectname = "test3_PixelShader"
+									using = gold_background
+									modify_texture = {
+										texture = "gfx/interface/base_parts/new_elements/ship.png"
+										blend_mode = alphamultiply
+									}
+								}
+							}
+							widget = {
+								name = front_waves
+								size = { 100% 50% }
+								parentanchor = bottom
+								icon = {
+									size = { 100% 100% }
+									shaderfile = "gfx/FX/pdxgui_scroll.shader"
+									effectname = "test2_PixelShader"
+									using = shadow_background
+									alpha = 0.25
+									modify_texture = {
+										texture = "gfx/interface/base_parts/new_elements/test7_shadow.png"
+										blend_mode = alphamultiply
+									}
+								}
+								icon = {
+									size = { 100% 100% }
+									shaderfile = "gfx/FX/pdxgui_scroll.shader"
+									effectname = "test2_PixelShader"
+									using = gold_background
+									modify_texture = {
+										texture = "gfx/interface/base_parts/new_elements/test7.png"
+										blend_mode = alphamultiply
+									}
+								}
+							}
+						}
+					}
+					blockoverride "Text" { visible = no }
+				}
+				style_cool_button_inner = {
+					visible = no
+					size = { 30 30 }
+					blockoverride "Text" { text = "Actions" }
+				}
 			}
 		}
-		#widget = {
-		#	size = { 100% 100% }
-		#	filter_mouse = left|wheel|right
-		#}
-		#384 - 150
-		#256 - 100
-		#192 - 75
-		#128 - 50
-
-		#upper_strata
-		#middle_strata
-		#lower_strata
-		#proletariat
-		#indentured
-		#tribesmen
-		#slaves
 	}
 }

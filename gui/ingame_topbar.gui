@@ -965,24 +965,16 @@ vbox = {
 									enabled = "[CanChangeGameSpeed]" 
 								}
 								
-								### TODO Art needs unique button
-								button = {
-									minimumsize = { 140 28 }
-									maximumsize = { 140 28 }
-									using = red_background
-									onclick = "[OnPause]"
+								style_cool_button_inner = {
+									size = { 140 28 }
+									visible = "[Not(IsGamePaused)]"
+									blockoverride "On_click" { onclick = "[OnPause]" }
+									blockoverride "Text" { text = "CURRENT_DATE" }
 									tooltip = "CURRENT_DATE_TOOLTIP"
 									using = tooltip_se
-									margin_widget = {
-										margin = { 2 2 }
-										size = { 100% 100% }
-										margin_widget = {
+									blockoverride "Decoration" {
+										widget = {
 											size = { 100% 100% }
-											background = {
-												shaderfile = "gfx/FX/pdxgui_default.shader"
-												using = black_background
-												using = portrait_x32y32bd_alpha
-											}
 											progressbar = {
 												size = { 17 16 }
 												parentanchor = bottom
@@ -994,7 +986,7 @@ vbox = {
 												modify_texture = {
 													spriteborder = { 16 16 }
 													spriteType = Corneredtiled
-													texture = "gfx/interface/base_parts/button_s.dds"
+													texture = "gfx/interface/base_parts/button_g.dds"
 													blend_mode = add
 												}
 											}
@@ -1009,28 +1001,13 @@ vbox = {
 												modify_texture = {
 													spriteborder = { 16 16 }
 													spriteType = Corneredtiled
-													texture = "gfx/interface/base_parts/button_s.dds"
+													texture = "gfx/interface/base_parts/button_g.dds"
 													blend_mode = add
 												}
 											}
-											textbox = {
-												name = "Text"
-												position = { 0 -2}
-												widgetanchor = center
-												parentanchor = center				
-												using = BaseFontS
-												autoresize = yes
-												align = center
-												elide = right
-												fontsize_min = 12
-												text = "CURRENT_DATE"
-												using = Default_FontColor
-											}
 										}
 									}
-									visible = "[Not(IsGamePaused)]"
 								}
-
 								### TODO Art needs unique button
 
 								text_button_square_highlighted = {
@@ -1058,7 +1035,6 @@ vbox = {
 								}
 								
 								button_plus = { 
-									
 									blockoverride "On_click"
 									{
 										onclick = "[OnIncreaseGameSpeed]"

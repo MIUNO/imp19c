@@ -1,7 +1,7 @@
 types Imp19c_GUI_Types
 {
 	type tradezone_penetration_info = widget {
-		size = { 30 16 }
+		size = { 30 30 }
 		textbox = {
 			size = { 100% 100% }
 			using = BaseFontM

@@ -1149,23 +1149,14 @@ types NEW_GUI {
 
 	type action_button = margin_widget {
 		block "Visible" { }
-		size = { 320 34 }
+		size = { 330 34 }
 		margin = { 0 2 }
-		diplomacy_action_button = { 
-			size = { 100% 100% }
-			parentanchor = hcenter
+		style_dip_button = {
+			size = { 315 30 }
+			blockoverride "Size" { size = { 220 30 } }
 			visible = "[Or( DiplomaticActionItem.RequireAcceptance, DiplomaticActionItem.HasPrice )]"
-			layoutpolicy_horizontal = expanding
 			blockoverride "On_click" { block "Click" { onclick = "[DiplomaticActionItem.OnClick]" } }
-			blockoverride "Button_text" 
-			{ 
-				text = "[DiplomaticActionItem.GetTitle]"
-			}
-			blockoverride "Left_text"
-			{
-				margin_left = 28
-				text = "[DiplomaticActionItem.GetTitle]"
-			}
+			blockoverride "Text" { text = "[DiplomaticActionItem.GetTitle]" }
 			blockoverride "Right_text"
 			{
 				text = "[DiplomaticActionItem.GetPrice]"
@@ -1184,16 +1175,11 @@ types NEW_GUI {
 			enabled = "[DiplomaticActionItem.IsEnabled]"
 			tooltip = "[DiplomaticActionItem.GetTooltip]"
 		}
-		text_button_square = {
-			size = { 100% 100% }
+		style_base_button = {
+			blockoverride "Size" { size = { 315 30 } }
 			visible = "[Not( Or( DiplomaticActionItem.RequireAcceptance, DiplomaticActionItem.HasPrice) )]"
-			parentanchor = hcenter
-			layoutpolicy_horizontal = expanding
 			blockoverride "On_click" { block "Click" { onclick = "[DiplomaticActionItem.OnClick]" } }
-			blockoverride "Center_text" 
-			{ 
-				text = "[DiplomaticActionItem.GetTitle]"
-			}
+			blockoverride "Text" { text = "[DiplomaticActionItem.GetTitle]" }
 			enabled = "[DiplomaticActionItem.IsEnabled]"
 			tooltip = "[DiplomaticActionItem.GetTooltip]"
 		}
@@ -1207,74 +1193,9 @@ types NEW_GUI {
 			}
 		}
 	}
-	type dip_tab_button = margin_widget {
-		size = { 320 36 }
-		margin = { 0 2 }
-		widget = {
-			size = { 100% 100% }
-			using = background_widget
-		}
-		button = {
-			size = { 100% 100% }
-			block "Visible_close" { visible = no }
-			block "On_click_open" { }
-			using = beige_background
-			alpha = 0.15
-		}
-		button = {
-			size = { 100% 100% }
-			block "Visible_open" { visible = yes }
-			block "On_click_close" { }
-			using = beige_background
-			alpha = 0.15
-		}
-		widget = {
-			size = { 100% 100% }
-			alpha = 0.9
-			icon = {
-				size = { 8 11 }
-				position = { 8 0 }
-				parentanchor = vcenter
-				using = gold_background
-				block "Visible_open" { visible = no }
-				modify_texture = {
-					texture = "gfx/interface/base_parts/arrow_right.dds"
-					blend_mode = alphamultiply
-				}
-			}
-			icon = {
-				size = { 11 8 }
-				position = { 8 0 }
-				parentanchor = vcenter
-				using = gold_background
-				block "Visible_close" { visible = yes }
-				modify_texture = {
-					texture = "gfx/interface/base_parts/arrow.dds"
-					blend_mode = alphamultiply
-				}
-			}
-			textbox = {
-				position = { 24 0 }
-				parentanchor = vcenter				
-				autoresize = yes
-				using = BaseFontS
-				using = Highlight_FontColor
-				block "Title_text" { text = "none" }
-				max_width = 230
-				fontsize_min = 11
-				elide = right
-			}
-			margin_widget = {
-				size = { 100% 1 }
-				margin = { 5 0 }
-				position = { 0 -3 }
-				parentanchor = bottom
-				icon = {
-					size = { 100% 100% }
-					using = gold_background
-				}
-			}
-		}
+	type dip_tab_button = widget {
+		size = { 330 36 }
+		style_base_tab = { size = { 315 36 } }
 	}
 	type action_tab_custom = flowcontainer {
 		direction = vertical
@@ -1305,7 +1226,7 @@ types NEW_GUI {
 						blockoverride "On_click_close" { onclick = "[DiplomaticActionCategory.OnClick]" }
 						blockoverride "Visible_close" { visible = "[Not(DiplomaticActionCategory.IsExpanded)]" }
 						blockoverride "On_click_open" { onclick = "[DiplomaticActionCategory.OnClick]" }
-						blockoverride "Title_text" { text = "[DiplomaticActionCategory.GetName]" }
+						blockoverride "Text" { text = "[DiplomaticActionCategory.GetName]" }
 					}
 					flowcontainer = {
 						direction = vertical
@@ -1594,7 +1515,7 @@ types NEW_GUI {
 									parentanchor = vcenter
 									margin = { 5 5 }
 									spacing = 5
-									using = background_widget
+									using = background_widget_inner
 									button_radial = {
 										enabled = "[And( LawItem.CanEnact, LawItem.IsAllowed )]"
 										parentanchor = vcenter
