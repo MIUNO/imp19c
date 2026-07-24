@@ -322,8 +322,9 @@ types TEST_ELEMENTS {
 					ignoreinvisible = yes
 					direction = vertical
 					style_cool_button_inner = {
-						visible = yes
+						visible = "[GetVariableSystem.HasValue( 'test_button_1', 'open' )]"
 						size = { 200 30 }
+						blockoverride "On_click" { onclick = "[GetVariableSystem.Set( 'test_button_1', 'close' )]" }
 						blockoverride "Decoration" {
 							margin_widget = {
 								size = { 100% 100% }
@@ -365,20 +366,21 @@ types TEST_ELEMENTS {
 							text = "CURRENT_DATE"
 						}
 					}
-					style_cool_button_inner = {
-						visible = no
+					style_cool_button = {
+						visible = "[Not(GetVariableSystem.HasValue( 'test_button_1', 'open' ))]"
 						size = { 200 30 }
-						blockoverride "Text" { text = "Actions" }
+						blockoverride "On_click" { onclick = "[GetVariableSystem.Set( 'test_button_1', 'open' )]" }
+						blockoverride "Text" { text = "CURRENT_DATE" }
 					}
 				}
 				style_cool_button_inner = {
-					visible = yes
+					enabled = "[Not(GetVariableSystem.HasValue( 'test_button_1', 'open' ))]"
 					size = { 225 50 }
-					blockoverride "Border" { texture = "gfx/interface/base_parts/new_elements/test1_2.png" }
-					blockoverride "BorderShadow" { texture = "gfx/interface/base_parts/new_elements/test1_2_shadow.png" }
-					blockoverride "BorderSideDeco" { texture = "gfx/interface/base_parts/new_elements/test2_2.png" }
-					blockoverride "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/test3_2.png" }
-					blockoverride "BaseNormal" { texture = "gfx/interface/base_parts/new_elements/test4_2.png" }
+					blockoverride "Border" { texture = "gfx/interface/base_parts/new_elements/border_2.dds" }
+					blockoverride "BorderShadow" { texture = "gfx/interface/base_parts/new_elements/border_2_shadow.dds" }
+					blockoverride "BorderSideDeco" { texture = "gfx/interface/base_parts/new_elements/border_2_deco.dds" }
+					blockoverride "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_2_small_base.dds" }
+					blockoverride "BaseNormal" { texture = "gfx/interface/base_parts/new_elements/border_2_normal_base.dds" }
 					blockoverride "Decoration" {
 						margin_widget = {
 							size = { 100% 100% }
@@ -390,7 +392,7 @@ types TEST_ELEMENTS {
 								effectname = "test_PixelShader"
 								using = gold_background
 								modify_texture = {
-									texture = "gfx/interface/base_parts/new_elements/test7.png"
+									texture = "gfx/interface/base_parts/new_elements/plate_1.dds"
 									blend_mode = alphamultiply
 								}
 							}
@@ -406,7 +408,7 @@ types TEST_ELEMENTS {
 									using = shadow_background
 									alpha = 0.25
 									modify_texture = {
-										texture = "gfx/interface/base_parts/new_elements/ship_shadow.png"
+										texture = "gfx/interface/base_parts/new_elements/ship_shadow.dds"
 										blend_mode = alphamultiply
 									}
 								}
@@ -416,7 +418,7 @@ types TEST_ELEMENTS {
 									effectname = "test3_PixelShader"
 									using = gold_background
 									modify_texture = {
-										texture = "gfx/interface/base_parts/new_elements/ship.png"
+										texture = "gfx/interface/base_parts/new_elements/ship.dds"
 										blend_mode = alphamultiply
 									}
 								}
@@ -432,7 +434,7 @@ types TEST_ELEMENTS {
 									using = shadow_background
 									alpha = 0.25
 									modify_texture = {
-										texture = "gfx/interface/base_parts/new_elements/test7_shadow.png"
+										texture = "gfx/interface/base_parts/new_elements/plate_1_shadow.dds"
 										blend_mode = alphamultiply
 									}
 								}
@@ -442,14 +444,18 @@ types TEST_ELEMENTS {
 									effectname = "test2_PixelShader"
 									using = gold_background
 									modify_texture = {
-										texture = "gfx/interface/base_parts/new_elements/test7.png"
+										texture = "gfx/interface/base_parts/new_elements/plate_1.dds"
 										blend_mode = alphamultiply
 									}
 								}
 							}
 						}
 					}
-					blockoverride "Text" { visible = no }
+					blockoverride "Text" {
+						visible = "[GetVariableSystem.HasValue( 'test_button_1', 'open' )]"
+						using = HeaderFont
+						text = "province_need_port"
+					}
 				}
 				style_cool_button_inner = {
 					visible = no

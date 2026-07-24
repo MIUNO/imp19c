@@ -1363,6 +1363,93 @@ window = {
 									}
 								}
 							}
+							#style_cool_button_inner = {
+							#	name = "recruit navies"
+							#	visible = "[ProvinceCanHavePort(ProvinceWindow.GetProvince)]"
+							#	enabled = "[ProvinceWindow.CanBuildShips]"
+							#	size = { 225 50 }
+							#	blockoverride "Border" { texture = "gfx/interface/base_parts/new_elements/border_2.dds" }
+							#	blockoverride "BorderShadow" { texture = "gfx/interface/base_parts/new_elements/border_2_shadow.dds" }
+							#	blockoverride "BorderSideDeco" { texture = "gfx/interface/base_parts/new_elements/border_2_deco.dds" }
+							#	blockoverride "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_2_small_base.dds" }
+							#	blockoverride "BaseNormal" { texture = "gfx/interface/base_parts/new_elements/border_2_normal_base.dds" }
+							#	blockoverride "Decoration" {
+							#		margin_widget = {
+							#			size = { 100% 100% }
+							#			margin = { 3 3 }
+							#			icon = {
+							#				size = { 100% 50% }
+							#				parentanchor = bottom
+							#				shaderfile = "gfx/FX/pdxgui_scroll.shader"
+							#				effectname = "test_PixelShader"
+							#				using = gold_background
+							#				modify_texture = {
+							#					texture = "gfx/interface/base_parts/new_elements/plate_1.dds"
+							#					blend_mode = alphamultiply
+							#				}
+							#			}
+							#			widget = {
+							#				name = ship
+							#				size = { 60 60 }
+							#				parentanchor = hcenter
+							#				position = { 0 -10 }
+							#				icon = {
+							#					size = { 100% 100% }
+							#					shaderfile = "gfx/FX/pdxgui_scroll.shader"
+							#					effectname = "test3_PixelShader"
+							#					using = shadow_background
+							#					alpha = 0.25
+							#					modify_texture = {
+							#						texture = "gfx/interface/base_parts/new_elements/ship_shadow.dds"
+							#						blend_mode = alphamultiply
+							#					}
+							#				}
+							#				icon = {
+							#					size = { 100% 100% }
+							#					shaderfile = "gfx/FX/pdxgui_scroll.shader"
+							#					effectname = "test3_PixelShader"
+							#					using = gold_background
+							#					modify_texture = {
+							#						texture = "gfx/interface/base_parts/new_elements/ship.dds"
+							#						blend_mode = alphamultiply
+							#					}
+							#				}
+							#			}
+							#			widget = {
+							#				name = front_waves
+							#				size = { 100% 50% }
+							#				parentanchor = bottom
+							#				icon = {
+							#					size = { 100% 100% }
+							#					shaderfile = "gfx/FX/pdxgui_scroll.shader"
+							#					effectname = "test2_PixelShader"
+							#					using = shadow_background
+							#					alpha = 0.25
+							#					modify_texture = {
+							#						texture = "gfx/interface/base_parts/new_elements/plate_1_shadow.dds"
+							#						blend_mode = alphamultiply
+							#					}
+							#				}
+							#				icon = {
+							#					size = { 100% 100% }
+							#					shaderfile = "gfx/FX/pdxgui_scroll.shader"
+							#					effectname = "test2_PixelShader"
+							#					using = gold_background
+							#					modify_texture = {
+							#						texture = "gfx/interface/base_parts/new_elements/plate_1.dds"
+							#						blend_mode = alphamultiply
+							#					}
+							#				}
+							#			}
+							#		}
+							#	}
+							#	blockoverride "Text" {
+							#		visible = "[Not(ProvinceWindow.CanBuildShips)]"
+							#		using = HeaderFont
+							#		text = "province_need_port"
+							#	}
+							#	tooltip = "BUILD_NAVIES_TT"
+							#}
 							icon_button_square = {
 								name = "recruit navies"
 								size = { 225 50 }

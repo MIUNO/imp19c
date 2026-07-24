@@ -52,9 +52,11 @@ PixelShader =
 			{
 				float2 UV = Input.UV0;
 				float4 OutColor = SampleImageSprite( Texture, UV );
+
 				#if defined( SCROLL )
 					float WaveSize = 20.0;
 					float WaveSpeed = 0.1;
+
 					#if defined( SCROLL_1 )
 						WaveSize = 17.5;
 						WaveSpeed = -0.05;
@@ -75,7 +77,6 @@ PixelShader =
 
 				#if defined( ROTATE_1 )
 				    UV = rotateUV( UV, sin((UV.x + GlobalTime * 20.0) * 0.1) * 0.1);
-				    // UV.y = UV.y + 0.5;
 					OutColor = SampleImageSprite( Texture, UV );
 				#endif
 
@@ -88,8 +89,12 @@ PixelShader =
 					OutColor.rgb *= float3(0.9, 0.9, 0.9);
 				#endif
 
+				// #ifdef DISABLED
+				// 	OutColor.rgb = DisableColor( OutColor.rgb );
+				// #endif
+
 				#ifdef DISABLED
-					OutColor.rgb = DisableColor( OutColor.rgb );
+					OutColor.a = 0.0;
 				#endif
 
 			    return OutColor;
