@@ -964,76 +964,64 @@ vbox = {
 									using = tooltip_se
 									enabled = "[CanChangeGameSpeed]" 
 								}
-								
-								style_cool_button_inner = {
-									size = { 140 28 }
-									visible = "[Not(IsGamePaused)]"
-									blockoverride "On_click" { onclick = "[OnPause]" }
-									blockoverride "Text" { text = "CURRENT_DATE" }
-									tooltip = "CURRENT_DATE_TOOLTIP"
-									using = tooltip_se
-									blockoverride "Decoration" {
-										widget = {
-											size = { 100% 100% }
-											progressbar = {
-												size = { 17 16 }
-												parentanchor = bottom
-												gfxtype = framedprogressbargfx
-												texture = "gfx/interface/base_parts/gear.dds"
-												framesize = { 17 16 }
-												loopinterval = 0.5
-												max=0
-												modify_texture = {
-													spriteborder = { 16 16 }
-													spriteType = Corneredtiled
-													texture = "gfx/interface/base_parts/button_g.dds"
-													blend_mode = add
+								flowcontainer = {
+									ignoreinvisible = yes
+									text_button_square_highlighted_inner = {
+										visible = "[Not(IsGamePaused)]"
+										size = { 140 30 }
+										tooltip = "CURRENT_DATE_TOOLTIP"
+										using = tooltip_se
+										blockoverride "On_click" { onclick = "[OnPause]" }
+										blockoverride "Decoration" {
+											margin_widget = {
+												size = { 100% 100% }
+												margin = { 3 3 }
+												progressbar = {
+													size = { 17 16 }
+													parentanchor = bottom
+													gfxtype = framedprogressbargfx
+													texture = "gfx/interface/base_parts/gear.dds"
+													framesize = { 17 16 }
+													loopinterval = 0.5
+													max=0
+													modify_texture = {
+														spriteborder = { 16 16 }
+														spriteType = Corneredtiled
+														texture = "gfx/interface/base_parts/button_g.dds"
+														blend_mode = add
+													}
 												}
-											}
-											progressbar = {
-												size = { 17 16 }
-												parentanchor = right
-												gfxtype = framedprogressbargfx
-												texture = "gfx/interface/base_parts/gear_top.dds"
-												framesize = { 17 16 }
-												loopinterval = 0.5
-												max=0
-												modify_texture = {
-													spriteborder = { 16 16 }
-													spriteType = Corneredtiled
-													texture = "gfx/interface/base_parts/button_g.dds"
-													blend_mode = add
+												progressbar = {
+													size = { 17 16 }
+													parentanchor = right
+													gfxtype = framedprogressbargfx
+													texture = "gfx/interface/base_parts/gear_top.dds"
+													framesize = { 17 16 }
+													loopinterval = 0.5
+													max=0
+													modify_texture = {
+														spriteborder = { 16 16 }
+														spriteType = Corneredtiled
+														texture = "gfx/interface/base_parts/button_g.dds"
+														blend_mode = add
+													}
 												}
 											}
 										}
+										blockoverride "Center_text" {
+											using = Highlight_FontColor
+											text = "CURRENT_DATE"
+										}
+									}
+									text_button_square_highlighted = {
+										visible = "[IsGamePaused]"
+										size = { 140 30 }
+										tooltip = "CURRENT_DATE_TOOLTIP"
+										using = tooltip_se
+										blockoverride "On_click" { onclick = "[OnPause]" }
+										blockoverride "Center_text" { text = "CURRENT_DATE" }
 									}
 								}
-								### TODO Art needs unique button
-
-								text_button_square_highlighted = {
-									name = "filled"
-									layoutpolicy_horizontal = expanding
-									blockoverride "MinimumSize" 
-									{
-										minimumsize = { 140 28 }
-										maximumsize = { 140 28 }
-									}
-									tooltip = "CURRENT_DATE_TOOLTIP"
-									using = tooltip_se
-									blockoverride "Center_text"
-									{
-										text = "CURRENT_DATE"
-									}
-									
-									blockoverride "On_click"
-									{
-										onclick = "[OnPause]"
-									}
-									
-									visible = "[IsGamePaused]"
-									
-								}
-								
 								button_plus = { 
 									blockoverride "On_click"
 									{
@@ -1191,7 +1179,6 @@ vbox = {
 				}
 				blockoverride "Icon"
 				{
-					size = { 28 28 }
 					using = white_background
 					modify_texture = {
 						texture = "gfx/interface/base_parts/topbar_icons/wiki.dds"
@@ -1210,7 +1197,6 @@ vbox = {
 				}
 				blockoverride "Icon"
 				{
-					size = { 28 28 }
 					using = white_background
 					modify_texture = {
 						texture = "gfx/interface/base_parts/topbar_icons/wiki.dds"
@@ -1228,7 +1214,6 @@ vbox = {
 				}
 				blockoverride "Icon"
 				{
-					size = { 28 28 }
 					using = white_background
 					modify_texture = {
 						texture = "gfx/interface/base_parts/topbar_icons/ledger.dds"
@@ -1246,7 +1231,6 @@ vbox = {
 				}
 				blockoverride "Icon"
 				{
-					size = { 28 28 }
 					using = white_background
 					modify_texture = {
 						texture = "gfx/interface/base_parts/topbar_icons/score.dds"
@@ -1264,7 +1248,6 @@ vbox = {
 				}
 				blockoverride "Icon"
 				{
-					size = { 28 28 }
 					using = white_background
 					modify_texture = {
 						texture = "gfx/interface/base_parts/topbar_icons/log.dds"
@@ -1285,6 +1268,7 @@ vbox = {
 				blockoverride "Icon"
 				{
 					size = { 26 26 }
+					parentanchor = center
 					using = white_background
 					modify_texture = {
 						texture = "gfx/interface/base_parts/topbar_icons/menu.dds"

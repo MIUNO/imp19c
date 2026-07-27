@@ -321,7 +321,7 @@ types TEST_ELEMENTS {
 				flowcontainer = {
 					ignoreinvisible = yes
 					direction = vertical
-					style_cool_button_inner = {
+					text_button_square_highlighted_inner = {
 						visible = "[GetVariableSystem.HasValue( 'test_button_1', 'open' )]"
 						size = { 200 30 }
 						blockoverride "On_click" { onclick = "[GetVariableSystem.Set( 'test_button_1', 'close' )]" }
@@ -361,19 +361,19 @@ types TEST_ELEMENTS {
 								}
 							}
 						}
-						blockoverride "Text" {
+						blockoverride "Center_text" {
 							using = Highlight_FontColor
 							text = "CURRENT_DATE"
 						}
 					}
-					style_cool_button = {
+					text_button_square_highlighted = {
 						visible = "[Not(GetVariableSystem.HasValue( 'test_button_1', 'open' ))]"
 						size = { 200 30 }
 						blockoverride "On_click" { onclick = "[GetVariableSystem.Set( 'test_button_1', 'open' )]" }
-						blockoverride "Text" { text = "CURRENT_DATE" }
+						blockoverride "Center_text" { text = "CURRENT_DATE" }
 					}
 				}
-				style_cool_button_inner = {
+				text_button_square_highlighted_inner = {
 					enabled = "[Not(GetVariableSystem.HasValue( 'test_button_1', 'open' ))]"
 					size = { 225 50 }
 					blockoverride "Border" { texture = "gfx/interface/base_parts/new_elements/border_2.dds" }
@@ -451,16 +451,20 @@ types TEST_ELEMENTS {
 							}
 						}
 					}
-					blockoverride "Text" {
+					blockoverride "Center_text" {
 						visible = "[GetVariableSystem.HasValue( 'test_button_1', 'open' )]"
 						using = HeaderFont
 						text = "province_need_port"
 					}
 				}
-				style_cool_button_inner = {
+				text_button_square_highlighted_inner = {
 					visible = no
 					size = { 30 30 }
-					blockoverride "Text" { text = "Actions" }
+					blockoverride "Center_text" { text = "Actions" }
+				}
+				text_button_square = {
+					size = { 200 30 }
+					blockoverride "Center_text" { text = "Textxtt" }
 				}
 			}
 		}

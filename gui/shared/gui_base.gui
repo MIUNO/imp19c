@@ -50,7 +50,7 @@
 @fade_in_duration = 0.2
 @SideBarButtonSize = 36
 @SideBarButtonSizeEnlarged = 44
-@Minimum_button_size = 28
+@Minimum_button_size = 30
 
 @Icon_button_size_S = 36
 
@@ -754,7 +754,7 @@ template top_window_header
 {
 	margin_widget = {
 		size = { 100% 100% }
-		margin = { 9 1 }
+		margin = { 5 1 }
 		alpha = 0.75
 		widget = {
 			size = { 100% 100% }
@@ -1247,8 +1247,9 @@ types Base_GUI_Types
 			using = shadow_background
 			block "Drop_shadow" { visible = yes }	
 			alpha = 0.5
+			margin = { 3 3 }
 			modify_texture = {
-				texture = "gfx/interface/base_parts/shadows/background_x60bd_shadow_two_corner.dds"
+				texture = "gfx/interface/base_parts/new_elements/background_two_corner_shadow.dds"
 				blend_mode = alphamultiply
 				spriteType = Corneredtiled
 				spriteborder = { 60 60 }
@@ -1259,7 +1260,7 @@ types Base_GUI_Types
 			using = black_background
 			block "WindowAlpha" { alpha = 0.95 }
 			modify_texture = {
-				texture = "gfx/interface/base_parts/background_x60bd_alpha_two_corner.dds"
+				texture = "gfx/interface/base_parts/new_elements/background_two_corner_alpha.dds"
 				blend_mode = alphamultiply
 				spriteType = Corneredtiled
 				spriteborder = { 60 60 }
@@ -1269,7 +1270,7 @@ types Base_GUI_Types
 			shaderfile = "gfx/FX/pdxgui_default.shader"
 			using = pattern_black_background_layer_01
 			modify_texture = {
-				texture = "gfx/interface/base_parts/background_x60bd_alpha_two_corner.dds"
+				texture = "gfx/interface/base_parts/new_elements/background_two_corner_inner_alpha.dds"
 				blend_mode = alphamultiply
 				spriteType = Corneredtiled
 				spriteborder = { 60 60 }
@@ -1279,7 +1280,30 @@ types Base_GUI_Types
 			shaderfile = "gfx/FX/pdxgui_default.shader"
 			using = pattern_black_background_layer_02
 			modify_texture = {
-				texture = "gfx/interface/base_parts/background_x60bd_alpha_two_corner.dds"
+				texture = "gfx/interface/base_parts/new_elements/background_two_corner_inner_alpha.dds"
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 60 60 }
+			}
+		}
+		background = {
+			shaderfile = "gfx/FX/pdxgui_default.shader"
+			using = shadow_background
+			alpha = 0.5
+			modify_texture = {
+				texture = "gfx/interface/base_parts/new_elements/background_border_two_corner_window.dds"
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 60 60 }
+			}	
+		}
+		background = {
+			shaderfile = "gfx/FX/pdxgui_default.shader"
+			texture = "gfx/interface/base_parts/base_color.dds"
+			spriteType = Corneredtiled
+			alpha = 0.08
+			modify_texture = {
+				texture = "gfx/interface/base_parts/new_elements/background_border_two_corner_alpha.dds"
 				blend_mode = alphamultiply
 				spriteType = Corneredtiled
 				spriteborder = { 60 60 }
@@ -1296,7 +1320,7 @@ types Base_GUI_Types
 				blend_mode = alphamultiply
 			}
 			modify_texture = {
-				texture = "gfx/interface/base_parts/background_x60bd_alpha_two_corner.dds"
+				texture = "gfx/interface/base_parts/new_elements/background_two_corner_alpha.dds"
 				blend_mode = alphamultiply
 				spriteType = Corneredtiled
 				spriteborder = { 60 60 }
@@ -1314,7 +1338,7 @@ types Base_GUI_Types
 				spriteborder = { 80 40 }
 			}
 			modify_texture = {
-				texture = "gfx/interface/base_parts/background_x60bd_alpha_two_corner.dds"
+				texture = "gfx/interface/base_parts/new_elements/background_two_corner_inner_alpha.dds"
 				blend_mode = alphamultiply
 				spriteType = Corneredtiled
 				spriteborder = { 60 60 }
@@ -1332,7 +1356,7 @@ types Base_GUI_Types
 				blend_mode = alphamultiply
 			}
 			modify_texture = {
-				texture = "gfx/interface/base_parts/background_x60bd_alpha_two_corner.dds"
+				texture = "gfx/interface/base_parts/new_elements/background_two_corner_alpha.dds"
 				blend_mode = alphamultiply
 				spriteType = Corneredtiled
 				spriteborder = { 60 60 }
@@ -3312,74 +3336,6 @@ types Base_GUI_Types
 		}
 	}
 
-
-	# Icon Button
-	type icon_button_square = widget {
-		size = { @Icon_button_size_M @Icon_button_size_M }
-		
-		background = {
-			shaderfile = "gfx/FX/pdxgui_default.shader"
-			using = shadow_background
-			margin = { 4 4 }
-			alpha = 0.5
-			modify_texture = {
-				texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
-				blend_mode = alphamultiply
-				spriteType = corneredtiled
-				spriteborder = { 8 8 }
-			}
-		}
-		button = {
-			name = "button teal border"
-			using = red_background
-			gfxtype = buttongfx
-			size = { 100% 100% }
-			alpha = 0.5
-			block "On_click" { }
-			background = {
-				shaderfile = "gfx/FX/pdxgui_default.shader"
-				using = portrait_x32y32bd_alpha
-				using = beige_background
-				modify_texture = {
-					texture = "gfx/interface/base_parts/button_vignette.dds"
-					blend_mode = alphamultiply
-					spriteType = corneredtiled
-					spriteborder = { 20 20 }
-				}
-			}
-			margin_widget = {
-				size = { 100% 100% }
-				margin = { 3 3 }
-				button = {
-					gfxtype = buttongfx
-					size = { 100% 100% }
-					using = red_background
-					using = portrait_x32y32bd_alpha
-					alpha = 2.0
-					block "On_click" { }
-					background = {
-						shaderfile = "gfx/FX/pdxgui_default.shader"
-						using = portrait_x32y32bd_alpha
-						texture = "gfx/interface/base_parts/background_noninteractable_texture.dds"
-						alpha = 0.15
-						modify_texture = {
-							texture = "gfx/interface/base_parts/gradient_black_flip.dds"
-							blend_mode = alphamultiply
-						}
-					}
-				}
-			}
-		}
-		icon = {
-			parentanchor = center
-			block "IconSize" { size = { 38 38 } }
-			block "Icon" 
-			{
-				texture = "gfx/interface/icons/temp_icon.dds"
-			}	
-		}
-	}
-	
 	type tab_button_square = widget {
 		size = { 38 38 }
 		
@@ -3717,76 +3673,172 @@ types Base_GUI_Types
 
 	####### PRIMARY BUTTON 
 	type text_button_square = widget {
+		size = { @Icon_button_size_M @Icon_button_size_M }
 		block "MinimumSize" { minimumsize = { 0 @Minimum_button_size } }
 		background = {
 			shaderfile = "gfx/FX/pdxgui_default.shader"
 			using = shadow_background
-			margin = { 4 4 }
+			margin = { 3 3 }
 			alpha = 0.5
 			modify_texture = {
-				texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
+				block "BorderShadow" { texture = "gfx/interface/base_parts/new_elements/border_1_normal_base_shadow.dds" }
 				blend_mode = alphamultiply
 				spriteType = corneredtiled
-				spriteborder = { 8 8 }
+				spriteborder = { 15 15 }
 			}
 		}
-	
 		button = {
-			name = "Button_Outline"
-			using = red_background
-			gfxtype = buttongfx
 			size = { 100% 100% }
-			alpha = 0.5
-			block "On_click" { }
-			block "Shortcut" { }
-			background = {
-				shaderfile = "gfx/FX/pdxgui_default.shader"
-				using = portrait_x32y32bd_alpha
-				texture = "gfx/interface/base_parts/background_noninteractable_texture.dds"
-				modify_texture = {
-					texture = "gfx/interface/base_parts/button_vignette.dds"
-					blend_mode = alphamultiply
-					spriteType = corneredtiled
-					spriteborder = { 20 20 }
-				}
+			state = {
+				name = _mouse_hierarchy_enter
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_highlight').Show]"
 			}
-			margin_widget = {
-				size = { 100% 100% }
-				margin = { 3 3 }
-				button = {
-					gfxtype = buttongfx
-					size = { 100% 100% }
-					using = red_background
-					using = portrait_x32y32bd_alpha
-					alpha = 2.0
-					block "On_click" { }
-					background = {
-						shaderfile = "gfx/FX/pdxgui_default.shader"
-						using = beige_background
-						using = portrait_x32y32bd_alpha
-						alpha = 0.15
-						modify_texture = {
-							texture = "gfx/interface/base_parts/gradient_black_flip.dds"
-							blend_mode = alphamultiply
-						}
-					}
-				}
+			state = {
+				name = _mouse_hierarchy_leave
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_highlight').Hide]"
+			}
+		    state = {
+		        name = _mouse_press
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_down').Show]"
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_base_down').Hide]"
+		    }
+		    state = {
+		        name = _mouse_release
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_down').Hide]"
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_base_down').Show]"
+		    }
+		    block "On_click" { }
+		    block "Shortcut" { }
+		}
+		icon = {
+			size = { 100% 100% }
+			using = red_background
+			modify_texture = {
+				block "Border" { texture = "gfx/interface/base_parts/new_elements/border_1_normal_base.dds" }
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 15 15 }
+			}
+		}
+		icon = {
+			size = { 100% 100% }
+			using = shadow_background
+			alpha = 0.25
+			modify_texture = {
+				block "BorderOutlineShadow" { texture = "gfx/interface/base_parts/new_elements/border_11_shadow.dds" }
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 15 15 }
+			}
+		}
+		icon = {
+			size = { 100% 100% }
+			using = brighten_red_background
+			modify_texture = {
+				block "BorderOutline" { texture = "gfx/interface/base_parts/new_elements/border_11.dds" }
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 15 15 }
 			}
 		}
 		widget = {
 			size = { 100% 100% }
-			textbox = {
-				name = "Text"
-				position = { 0 -1 }
-				widgetanchor = center
-				parentanchor = center				
-				using = BaseFontS
-				using = Default_FontColor
-				autoresize = yes
-				align = center
-				block "Center_text"
-				{
-					text = "Button Text"
+			alpha = 0.1
+			icon = {
+				size = { 100% 100% }
+				using = shadow_background
+				modify_texture = {
+					block "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_1_small_base.dds" }
+					blend_mode = alphamultiply
+				}
+				modify_texture = {
+					texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black_double.dds"
+					blend_mode = alphamultiply
+				}
+				modify_texture = {
+					texture = "gfx/interface/base_parts/gradient_black.dds"
+					blend_mode = alphamultiply
+				}
+			}
+			icon = {
+				size = { 100% 100% }
+				using = shadow_background
+				modify_texture = {
+					block "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_1_small_base.dds" }
+					blend_mode = alphamultiply
+				}
+				modify_texture = {
+					texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black_double.dds"
+					blend_mode = alphamultiply
+				}
+				modify_texture = {
+					texture = "gfx/interface/base_parts/gradient_black_flip.dds"
+					blend_mode = alphamultiply
+				}
+			}
+		}
+		widget = {
+			name = button_highlight
+			size = { 100% 100% }
+			alpha = 0.2
+			visible = no
+			icon = {
+				size = { 100% 100% }
+				using = beige_background
+				modify_texture = {
+					block "BorderShadow" { texture = "gfx/interface/base_parts/new_elements/border_11_shadow.dds" }
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
+				}
+			}
+			icon = {
+				size = { 100% 100% }
+				using = gold_background
+				modify_texture = {
+					block "Border" { texture = "gfx/interface/base_parts/new_elements/border_11.dds" }
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
+				}
+			}
+		}
+	    icon = {
+	    	name = button_down
+	    	size = { 100% 100% }
+	    	visible = no
+			using = shadow_background
+			alpha = 0.2
+			modify_texture = {
+				block "BaseNormal" { texture = "gfx/interface/base_parts/new_elements/border_1_normal_base.dds" }
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 15 15 }
+			}
+	    }
+		textbox = {
+			parentanchor = center				
+			using = BaseFontS
+			using = Default_FontColor
+			autoresize = yes
+			align = center
+			block "Center_text" { text = "Button Text" }
+		}
+		block "Additionally" { }
+	}
+
+	# Icon Button
+	type icon_button_square = text_button_square {
+		size = { @Icon_button_size_M @Icon_button_size_M }
+		block "MinimumSize" { minimumsize = { 0 @Minimum_button_size } }
+		blockoverride "Center_text" { visible = no }
+		blockoverride "Additionally" {
+			margin_widget = {
+				size = { 100% 100% }
+				margin = { 6 6 }
+				icon = {
+					size = { 100% 100% }
+					block "Icon" { texture = "gfx/interface/icons/temp_icon.dds" }
 				}
 			}
 		}
@@ -4416,96 +4468,365 @@ types Base_GUI_Types
 	}
 	
 	type text_button_square_highlighted = widget {
+		size = { @Icon_button_size_M @Icon_button_size_M }
 		block "MinimumSize" { minimumsize = { 0 @Minimum_button_size } }
-		button = {
-			name = "Button_Outline"
-			using = darken_red_background
-			gfxtype = buttongfx
-			size = { 100% 30 }
-			block "On_click" { }
-			clicksound = "event:/SFX/UI/Generic/2.0/sfx_ui_button_primary"
+		background = {
+			shaderfile = "gfx/FX/pdxgui_default.shader"
+			using = shadow_background
+			margin = { 4 4 }
 			alpha = 0.5
-			background = {
-				shaderfile = "gfx/FX/pdxgui_default.shader"
-				using = portrait_x32y32bd_alpha
-				texture = "gfx/interface/base_parts/background_noninteractable_texture.dds"
+			modify_texture = {
+				texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 8 8 }
+			}
+		}
+		button = {
+			size = { 100% 100% }
+			state = {
+				name = _mouse_hierarchy_enter
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_highlight').Show]"
+			}
+			state = {
+				name = _mouse_hierarchy_leave
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_highlight').Hide]"
+			}
+		    state = {
+		        name = _mouse_press
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_down').Show]"
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_base_down').Hide]"
+		    }
+		    state = {
+		        name = _mouse_release
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_down').Hide]"
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_base_down').Show]"
+		    }
+		    block "On_click" { }
+		}
+		icon = {
+			size = { 100% 100% }
+			using = red_background
+			alpha = 0.5
+		}
+		block "Decoration" { }
+		icon = {
+			size = { 100% 100% }
+			using = shadow_background
+			alpha = 0.5
+			modify_texture = {
+				block "BorderShadow" { texture = "gfx/interface/base_parts/new_elements/border_1_shadow.dds" }
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 15 15 }
+			}
+		}
+		icon = {
+			size = { 100% 100% }
+			using = red_background
+			modify_texture = {
+				block "Border" { texture = "gfx/interface/base_parts/new_elements/border_1.dds" }
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 15 15 }
+			}
+		}
+		margin_widget = {
+			size = { 100% 100% }
+			margin = { 2 2 }
+			icon = {
+				size = { 100% 100% }
+				using = red_background
 				modify_texture = {
-					texture = "gfx/interface/base_parts/button_vignette.dds"
+					block "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_1_small_base.dds" }
 					blend_mode = alphamultiply
 					spriteType = corneredtiled
-					spriteborder = { 20 20 }
+					spriteborder = { 12 12 }
 				}
 			}
-			margin_widget = {
-				size = { 100% 100% }
-				margin = { 3 3 }
-				button = {
-					gfxtype = buttongfx
-					size = { 100% 100% }
-					using = red_background
-					using = portrait_x32y32bd_alpha
-					alpha = 2.0
-					block "On_click" { }
-					background = {
-						shaderfile = "gfx/FX/pdxgui_default.shader"
-						using = beige_background
-						using = portrait_x32y32bd_alpha
-						alpha = 0.15
-						modify_texture = {
-							texture = "gfx/interface/base_parts/gradient_black_flip.dds"
-							blend_mode = alphamultiply
-						}
-					}
-				}
+		}
+		icon = {
+			name = button_base_down
+			size = { 100% 100% }
+			using = shadow_background
+			alpha = 0.25
+			modify_texture = {
+				block "BaseSmallShadow" { texture = "gfx/interface/base_parts/new_elements/border_1_base_shadow.dds" }
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 15 15 }
 			}
-			widget = {
-				name = "Decorations"
+		}
+		margin_widget = {
+			size = { 100% 100% }
+			margin = { 4 4 }
+			icon = {
 				size = { 100% 100% }
-				background = {
-					shaderfile = "gfx/FX/pdxgui_default.shader"
-					using = beige_background
-					using = portrait_x32y32bd_alpha
-					alpha = 0.3
-					margin = { -2 -2 }
-					modify_texture = {
-						texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black_double.dds"
-						blend_mode = alphamultiply
-					}
-				}
-				margin_widget = {
-					margin = { 4 4 }
-					size = { 100% 100% }
-					button = {
-						size = { 4 100% }
-						gfxtype = buttongfx
-						using = gold_background
-					}
-					button = {
-						size = { 4 100% }
-						gfxtype = buttongfx
-						using = gold_background
-						parentanchor = right
-					}
+				using = red_background
+				modify_texture = {
+					block "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_1_small_base.dds" }
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 12 12 }
 				}
 			}
 		}
 		widget = {
 			size = { 100% 100% }
-			textbox = {
-				name = "Text"
-				widgetanchor = center
-				parentanchor = center				
-				using = BaseFontS
-				fontcolor = { 1 0.84 0.42 0.85 }
-				autoresize = yes
-				align = center
-				elide = right
-				fontsize_min = 12
-				block "Center_text"
-				{
-					text = "Button Text"
+			alpha = 0.1
+			icon = {
+				size = { 100% 100% }
+				using = shadow_background
+				modify_texture = {
+					block "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_1_small_base.dds" }
+					blend_mode = alphamultiply
+				}
+				modify_texture = {
+					texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black_double.dds"
+					blend_mode = alphamultiply
+				}
+				modify_texture = {
+					texture = "gfx/interface/base_parts/gradient_black.dds"
+					blend_mode = alphamultiply
 				}
 			}
+			icon = {
+				size = { 100% 100% }
+				using = shadow_background
+				modify_texture = {
+					block "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_1_small_base.dds" }
+					blend_mode = alphamultiply
+				}
+				modify_texture = {
+					texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black_double.dds"
+					blend_mode = alphamultiply
+				}
+				modify_texture = {
+					texture = "gfx/interface/base_parts/gradient_black_flip.dds"
+					blend_mode = alphamultiply
+				}
+			}
+		}
+		widget = {
+			name = button_highlight
+			size = { 100% 100% }
+			visible = no
+			alpha = 0.2
+			icon = {
+				size = { 100% 100% }
+				using = beige_background
+				modify_texture = {
+					block "BorderShadow" { texture = "gfx/interface/base_parts/new_elements/border_1_shadow.dds" }
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
+				}
+			}
+			icon = {
+				size = { 100% 100% }
+				using = gold_background
+				modify_texture = {
+					block "Border" { texture = "gfx/interface/base_parts/new_elements/border_1.dds" }
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
+				}
+			}
+		}
+		icon = {
+			size = { 100% 100% }
+			using = gold_background
+			modify_texture = {
+				block "BorderSideDeco" { texture = "gfx/interface/base_parts/new_elements/border_1_deco.dds" }
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 15 15 }
+			}
+		}
+	    icon = {
+	    	name = button_down
+	    	size = { 100% 100% }
+	    	visible = no
+			using = shadow_background
+			alpha = 0.2
+			modify_texture = {
+				block "BaseNormal" { texture = "gfx/interface/base_parts/new_elements/border_1_normal_base.dds" }
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 15 15 }
+			}
+	    }
+		textbox = {
+			parentanchor = center				
+			using = BaseFontS
+			using = Default_FontColor
+			autoresize = yes
+			align = center
+			block "Center_text" { text = "Button Text" }
+		}
+	}
+
+	type text_button_square_highlighted_inner = widget {
+		size = { @Icon_button_size_M @Icon_button_size_M }
+		block "MinimumSize" { minimumsize = { 0 @Minimum_button_size } }
+		background = {
+			shaderfile = "gfx/FX/pdxgui_default.shader"
+			using = shadow_background
+			margin = { 4 4 }
+			alpha = 0.5
+			modify_texture = {
+				texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 8 8 }
+			}
+		}
+		button = {
+			size = { 100% 100% }
+			state = {
+				name = _mouse_hierarchy_enter
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_highlight').Show]"
+			}
+			state = {
+				name = _mouse_hierarchy_leave
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_highlight').Hide]"
+			}
+		    state = {
+		        name = _mouse_press
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_down').Show]"
+		    }
+		    state = {
+		        name = _mouse_release
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_down').Hide]"
+		    }
+		    block "On_click" { }
+		}
+		icon = {
+			size = { 100% 100% }
+			using = red_background
+			alpha = 0.5
+		}
+		margin_widget = {
+			size = { 100% 100% }
+			margin = { 2 2 }
+			icon = {
+				size = { 100% 100% }
+				using = red_background
+				alpha = 0.5
+				modify_texture = {
+					block "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_1_small_base.dds" }
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 12 12 }
+				}
+			}
+		}
+		widget = {
+			size = { 100% 100% }
+			alpha = 0.1
+			icon = {
+				size = { 100% 100% }
+				using = shadow_background
+				modify_texture = {
+					texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black_double.dds"
+					blend_mode = alphamultiply
+				}
+				modify_texture = {
+					texture = "gfx/interface/base_parts/gradient_black.dds"
+					blend_mode = alphamultiply
+				}
+			}
+			icon = {
+				size = { 100% 100% }
+				using = shadow_background
+				modify_texture = {
+					texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black_double.dds"
+					blend_mode = alphamultiply
+				}
+				modify_texture = {
+					texture = "gfx/interface/base_parts/gradient_black_flip.dds"
+					blend_mode = alphamultiply
+				}
+			}
+		}
+		block "Decoration" { }
+		icon = {
+			size = { 100% 100% }
+			using = shadow_background
+			alpha = 0.5
+			modify_texture = {
+				block "BorderShadow" { texture = "gfx/interface/base_parts/new_elements/border_1_shadow.dds" }
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 15 15 }
+			}
+		}
+		icon = {
+			size = { 100% 100% }
+			using = red_background
+			modify_texture = {
+				block "Border" { texture = "gfx/interface/base_parts/new_elements/border_1.dds" }
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 15 15 }
+			}
+		}
+		widget = {
+			name = button_highlight
+			size = { 100% 100% }
+			visible = no
+			alpha = 0.2
+			icon = {
+				size = { 100% 100% }
+				using = beige_background
+				modify_texture = {
+					block "BorderShadow" { texture = "gfx/interface/base_parts/new_elements/border_1_shadow.dds" }
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
+				}
+			}
+			icon = {
+				size = { 100% 100% }
+				using = gold_background
+				modify_texture = {
+					block "Border" { texture = "gfx/interface/base_parts/new_elements/border_1.dds" }
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
+				}
+			}
+		}
+		icon = {
+			size = { 100% 100% }
+			using = gold_background
+			modify_texture = {
+				block "BorderSideDeco" { texture = "gfx/interface/base_parts/new_elements/border_1_deco.dds" }
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 15 15 }
+			}
+		}
+	    icon = {
+	    	name = button_down
+	    	size = { 100% 100% }
+	    	visible = no
+			using = shadow_background
+			alpha = 0.2
+			modify_texture = {
+				block "BaseNormal" { texture = "gfx/interface/base_parts/new_elements/border_1_normal_base.dds" }
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 15 15 }
+			}
+	    }
+		textbox = {
+			parentanchor = center				
+			using = BaseFontS
+			using = Default_FontColor
+			autoresize = yes
+			align = center
+			block "Center_text" { text = "Button Text" }
 		}
 	}
 
@@ -7018,8 +7339,8 @@ types Base_GUI_Types
 		{
 			margin_widget = {
 				size = { 100% 100% }
-				position = { 2 42 }
-				margin_right = 6
+				position = { 0 42 }
+				#margin_right = 6
 				icon = {
 					name = "Line"
 					using = brighten_red_background
@@ -11187,650 +11508,6 @@ types CooltipBase
 			block "Text" { }
 		}
 	}
-	#type style_base_button = widget {
-	#	block "Size" { size = { 200 30 } }
-	#	background = {
-	#		shaderfile = "gfx/FX/pdxgui_default.shader"
-	#		using = shadow_background
-	#		margin = { 4 4 }
-	#		alpha = 0.5
-	#		modify_texture = {
-	#			texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
-	#			blend_mode = alphamultiply
-	#			spriteType = corneredtiled
-	#			spriteborder = { 8 8 }
-	#		}
-	#	}
-	#	widget = {
-	#		parentanchor = center
-	#		button = {
-	#			size = { 100% 100% }
-	#			using = beige_background
-	#			alpha = 0.15
-	#			state = {
-	#				name = _mouse_hierarchy_enter
-	#				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_highlight').Show]"
-	#			}
-	#			state = {
-	#				name = _mouse_hierarchy_leave
-	#				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_highlight').Hide]"
-	#			}
-	#		    state = {
-	#		        name = _mouse_press
-	#		    	on_start = "[PdxGuiWidget.AccessParent.FindChild('button_size_x').Show]"
-	#		    	on_start = "[PdxGuiWidget.AccessParent.FindChild('button_size_y').Show]"
-	#				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_color').Show]"
-	#		    }
-	#		    state = {
-	#		        name = _mouse_release
-	#		    	on_start = "[PdxGuiWidget.AccessParent.FindChild('button_size_x').Hide]"
-	#		    	on_start = "[PdxGuiWidget.AccessParent.FindChild('button_size_y').Hide]"
-	#				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_color').Hide]"
-	#		    }
-	#		    block "On_click" { }
-	#		}
-	#		icon = {
-	#			size = { 100% 100% }
-	#			using = red_background
-	#			alpha = 0.5
-	#		}
-	#		icon = {
-	#			size = { 100% 100% }
-	#			using = beige_background
-	#			alpha = 0.5
-	#			modify_texture = {
-	#				texture = "gfx/interface/base_parts/button_vignette.dds"
-	#				blend_mode = alphamultiply
-	#				spriteType = corneredtiled
-	#				spriteborder = { 20 20 }
-	#			}
-	#		}
-	#		icon = {
-	#			name = button_highlight
-	#			size = { 100% 100% }
-	#			visible = no
-	#			using = gold_background
-	#			alpha = 0.3
-	#			modify_texture = {
-	#				texture = "gfx/interface/base_parts/button_vignette.dds"
-	#				blend_mode = alphamultiply
-	#				spriteType = corneredtiled
-	#				spriteborder = { 20 20 }
-	#			}
-	#		}
-	#		margin_widget = {
-	#			size = { 100% 100% }
-	#			margin = { 3 3 }
-	#			background = {
-	#				shaderfile = "gfx/FX/pdxgui_default.shader"
-	#				using = shadow_background
-	#				margin = { 2 2 }
-	#				alpha = 0.5
-	#				modify_texture = {
-	#					texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
-	#					blend_mode = alphamultiply
-	#					spriteType = corneredtiled
-	#					spriteborder = { 8 8 }
-	#				}
-	#			}
-	#			icon = {
-	#				size = { 100% 100% }
-	#				using = red_background
-	#				alpha = 0.8
-	#			}
-	#			icon = {
-	#				size = { 100% 100% }
-	#				using = beige_background
-	#				alpha = 0.15
-	#				modify_texture = {
-	#					texture = "gfx/interface/base_parts/gradient_black_flip.dds"
-	#					blend_mode = alphamultiply
-	#				}
-	#			}
-	#		}
-	#	    icon = {
-	#	    	name = button_color
-	#	    	size = { 100% 100% }
-	#	    	visible = no
-	#			using = black_background
-	#			alpha = 0.1
-	#	    }
-	#		flowcontainer = {
-	#			resizeparent = yes
-	#			ignoreinvisible = yes
-	#			flowcontainer = {
-	#				direction = vertical
-	#				ignoreinvisible = yes
-	#				widget = {
-	#					block "Size" { size = { 200 30 } }
-	#				}
-	#				widget = {
-	#					name = button_size_y
-	#					size = { 100% 2 }
-	#					visible = no
-	#				}
-	#			}
-	#			widget = {
-	#				name = button_size_x
-	#				size = { 2 100% }
-	#				visible = no
-	#			}
-	#		}
-	#		textbox = {
-	#			parentanchor = center				
-	#			using = BaseFontS
-	#			using = Default_FontColor
-	#			autoresize = yes
-	#			align = center
-	#			block "Text" { text = "Button Text" }
-	#		}
-	#		block "Additionally" { }
-	#	}
-	#}
-	type style_base_button = widget {
-
-	}
-	type style_text_base_button = style_base_button {
-		blockoverride "Text" { visible = no }
-		blockoverride "Additionally" {
-			margin_widget = {
-				block "Size" { size = { 200 30 } }
-				margin = { 5 5 }
-				parentanchor = center
-				icon = {
-					size = { 100% 100% }
-					block "Icon" { texture = "gfx/interface/icons/temp_icon.dds" }
-				}
-			}
-		}
-	}
-	type style_cool_button = widget {
-		background = {
-			shaderfile = "gfx/FX/pdxgui_default.shader"
-			using = shadow_background
-			margin = { 4 4 }
-			alpha = 0.5
-			modify_texture = {
-				texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
-				blend_mode = alphamultiply
-				spriteType = corneredtiled
-				spriteborder = { 8 8 }
-			}
-		}
-		button = {
-			size = { 100% 100% }
-			state = {
-				name = _mouse_hierarchy_enter
-				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_highlight').Show]"
-			}
-			state = {
-				name = _mouse_hierarchy_leave
-				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_highlight').Hide]"
-			}
-		    state = {
-		        name = _mouse_press
-				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_down').Show]"
-				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_base_down').Hide]"
-		    }
-		    state = {
-		        name = _mouse_release
-				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_down').Hide]"
-				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_base_down').Show]"
-		    }
-		    block "On_click" { }
-		}
-		icon = {
-			size = { 100% 100% }
-			using = red_background
-			alpha = 0.5
-		}
-		widget = {
-			size = { 100% 100% }
-			alpha = 0.1
-			icon = {
-				size = { 100% 100% }
-				using = shadow_background
-				modify_texture = {
-					texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black_double.dds"
-					blend_mode = alphamultiply
-				}
-				modify_texture = {
-					texture = "gfx/interface/base_parts/gradient_black.dds"
-					blend_mode = alphamultiply
-				}
-			}
-			icon = {
-				size = { 100% 100% }
-				using = shadow_background
-				modify_texture = {
-					texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black_double.dds"
-					blend_mode = alphamultiply
-				}
-				modify_texture = {
-					texture = "gfx/interface/base_parts/gradient_black_flip.dds"
-					blend_mode = alphamultiply
-				}
-			}
-		}
-		block "Decoration" { }
-		icon = {
-			size = { 100% 100% }
-			using = shadow_background
-			alpha = 0.5
-			modify_texture = {
-				block "BorderShadow" { texture = "gfx/interface/base_parts/new_elements/border_1_shadow.dds" }
-				blend_mode = alphamultiply
-				spriteType = corneredtiled
-				spriteborder = { 15 15 }
-			}
-		}
-		icon = {
-			size = { 100% 100% }
-			using = red_background
-			modify_texture = {
-				block "Border" { texture = "gfx/interface/base_parts/new_elements/border_1.dds" }
-				blend_mode = alphamultiply
-				spriteType = corneredtiled
-				spriteborder = { 15 15 }
-			}
-		}
-		margin_widget = {
-			size = { 100% 100% }
-			margin = { 2 2 }
-			icon = {
-				size = { 100% 100% }
-				using = red_background
-				modify_texture = {
-					block "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_1_small_base.dds" }
-					blend_mode = alphamultiply
-					spriteType = corneredtiled
-					spriteborder = { 12 12 }
-				}
-			}
-		}
-		icon = {
-			name = button_base_down
-			size = { 100% 100% }
-			using = shadow_background
-			alpha = 0.25
-			modify_texture = {
-				block "BaseSmallShadow" { texture = "gfx/interface/base_parts/new_elements/border_1_base_shadow.dds" }
-				blend_mode = alphamultiply
-				spriteType = corneredtiled
-				spriteborder = { 15 15 }
-			}
-		}
-		margin_widget = {
-			size = { 100% 100% }
-			margin = { 4 4 }
-			icon = {
-				size = { 100% 100% }
-				using = red_background
-				modify_texture = {
-					block "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_1_small_base.dds" }
-					blend_mode = alphamultiply
-					spriteType = corneredtiled
-					spriteborder = { 12 12 }
-				}
-			}
-		}
-		widget = {
-			name = button_highlight
-			size = { 100% 100% }
-			visible = no
-			icon = {
-				size = { 100% 100% }
-				using = beige_background
-				alpha = 0.2
-				modify_texture = {
-					block "BorderShadow" { texture = "gfx/interface/base_parts/new_elements/border_1_shadow.dds" }
-					blend_mode = alphamultiply
-					spriteType = corneredtiled
-					spriteborder = { 15 15 }
-				}
-			}
-			icon = {
-				size = { 100% 100% }
-				using = gold_background
-				alpha = 0.2
-				modify_texture = {
-					block "Border" { texture = "gfx/interface/base_parts/new_elements/border_1.dds" }
-					blend_mode = alphamultiply
-					spriteType = corneredtiled
-					spriteborder = { 15 15 }
-				}
-			}
-		}
-		icon = {
-			size = { 100% 100% }
-			using = gold_background
-			modify_texture = {
-				block "BorderSideDeco" { texture = "gfx/interface/base_parts/new_elements/border_1_deco.dds" }
-				blend_mode = alphamultiply
-				spriteType = corneredtiled
-				spriteborder = { 15 15 }
-			}
-		}
-	    icon = {
-	    	name = button_down
-	    	size = { 100% 100% }
-	    	visible = no
-			using = shadow_background
-			alpha = 0.2
-			modify_texture = {
-				block "BaseNormal" { texture = "gfx/interface/base_parts/new_elements/border_1_normal_base.dds" }
-				blend_mode = alphamultiply
-				spriteType = corneredtiled
-				spriteborder = { 15 15 }
-			}
-	    }
-		textbox = {
-			parentanchor = center				
-			using = BaseFontS
-			using = Default_FontColor
-			autoresize = yes
-			align = center
-			block "Text" { text = "Button Text" }
-		}
-	}
-	type style_cool_button_inner = widget {
-		background = {
-			shaderfile = "gfx/FX/pdxgui_default.shader"
-			using = shadow_background
-			margin = { 4 4 }
-			alpha = 0.5
-			modify_texture = {
-				texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
-				blend_mode = alphamultiply
-				spriteType = corneredtiled
-				spriteborder = { 8 8 }
-			}
-		}
-		button = {
-			size = { 100% 100% }
-			state = {
-				name = _mouse_hierarchy_enter
-				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_highlight').Show]"
-			}
-			state = {
-				name = _mouse_hierarchy_leave
-				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_highlight').Hide]"
-			}
-		    state = {
-		        name = _mouse_press
-				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_down').Show]"
-		    }
-		    state = {
-		        name = _mouse_release
-				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_down').Hide]"
-		    }
-		    block "On_click" { }
-		}
-		icon = {
-			size = { 100% 100% }
-			using = red_background
-			alpha = 0.5
-		}
-		margin_widget = {
-			size = { 100% 100% }
-			margin = { 2 2 }
-			icon = {
-				size = { 100% 100% }
-				using = red_background
-				alpha = 0.5
-				modify_texture = {
-					block "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_1_small_base.dds" }
-					blend_mode = alphamultiply
-					spriteType = corneredtiled
-					spriteborder = { 12 12 }
-				}
-			}
-		}
-		widget = {
-			size = { 100% 100% }
-			alpha = 0.1
-			icon = {
-				size = { 100% 100% }
-				using = shadow_background
-				modify_texture = {
-					texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black_double.dds"
-					blend_mode = alphamultiply
-				}
-				modify_texture = {
-					texture = "gfx/interface/base_parts/gradient_black.dds"
-					blend_mode = alphamultiply
-				}
-			}
-			icon = {
-				size = { 100% 100% }
-				using = shadow_background
-				modify_texture = {
-					texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black_double.dds"
-					blend_mode = alphamultiply
-				}
-				modify_texture = {
-					texture = "gfx/interface/base_parts/gradient_black_flip.dds"
-					blend_mode = alphamultiply
-				}
-			}
-		}
-		block "Decoration" { }
-		icon = {
-			size = { 100% 100% }
-			using = shadow_background
-			alpha = 0.5
-			modify_texture = {
-				block "BorderShadow" { texture = "gfx/interface/base_parts/new_elements/border_1_shadow.dds" }
-				blend_mode = alphamultiply
-				spriteType = corneredtiled
-				spriteborder = { 15 15 }
-			}
-		}
-		icon = {
-			size = { 100% 100% }
-			using = red_background
-			modify_texture = {
-				block "Border" { texture = "gfx/interface/base_parts/new_elements/border_1.dds" }
-				blend_mode = alphamultiply
-				spriteType = corneredtiled
-				spriteborder = { 15 15 }
-			}
-		}
-		widget = {
-			name = button_highlight
-			size = { 100% 100% }
-			visible = no
-			icon = {
-				size = { 100% 100% }
-				using = beige_background
-				alpha = 0.2
-				modify_texture = {
-					block "BorderShadow" { texture = "gfx/interface/base_parts/new_elements/border_1_shadow.dds" }
-					blend_mode = alphamultiply
-					spriteType = corneredtiled
-					spriteborder = { 15 15 }
-				}
-			}
-			icon = {
-				size = { 100% 100% }
-				using = gold_background
-				alpha = 0.2
-				modify_texture = {
-					block "Border" { texture = "gfx/interface/base_parts/new_elements/border_1.dds" }
-					blend_mode = alphamultiply
-					spriteType = corneredtiled
-					spriteborder = { 15 15 }
-				}
-			}
-		}
-		icon = {
-			size = { 100% 100% }
-			using = gold_background
-			modify_texture = {
-				block "BorderSideDeco" { texture = "gfx/interface/base_parts/new_elements/border_1_deco.dds" }
-				blend_mode = alphamultiply
-				spriteType = corneredtiled
-				spriteborder = { 15 15 }
-			}
-		}
-	    icon = {
-	    	name = button_down
-	    	size = { 100% 100% }
-	    	visible = no
-			using = shadow_background
-			alpha = 0.2
-			modify_texture = {
-				block "BaseNormal" { texture = "gfx/interface/base_parts/new_elements/border_1_normal_base.dds" }
-				blend_mode = alphamultiply
-				spriteType = corneredtiled
-				spriteborder = { 15 15 }
-			}
-	    }
-		textbox = {
-			parentanchor = center				
-			using = BaseFontS
-			using = Default_FontColor
-			autoresize = yes
-			align = center
-			block "Text" { text = "Button Text" }
-		}
-	}
-	#type style_cool_button_inner = widget {
-	#	background = {
-	#		shaderfile = "gfx/FX/pdxgui_default.shader"
-	#		using = shadow_background
-	#		margin = { 4 4 }
-	#		alpha = 0.5
-	#		modify_texture = {
-	#			texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
-	#			blend_mode = alphamultiply
-	#			spriteType = corneredtiled
-	#			spriteborder = { 8 8 }
-	#		}
-	#	}
-	#	button = {
-	#		size = { 100% 100% }
-	#		using = beige_background
-	#		alpha = 0.15
-	#		state = {
-	#			name = _mouse_hierarchy_enter
-	#			on_start = "[PdxGuiWidget.AccessParent.FindChild('button_highlight').Show]"
-	#		}
-	#		state = {
-	#			name = _mouse_hierarchy_leave
-	#			on_start = "[PdxGuiWidget.AccessParent.FindChild('button_highlight').Hide]"
-	#		}
-	#	    state = {
-	#	        name = _mouse_press
-	#			on_start = "[PdxGuiWidget.AccessParent.FindChild('button_color').Show]"
-	#	    }
-	#	    state = {
-	#	        name = _mouse_release
-	#			on_start = "[PdxGuiWidget.AccessParent.FindChild('button_color').Hide]"
-	#	    }
-	#	    block "On_click" { }
-	#	}
-	#	icon = {
-	#		size = { 100% 100% }
-	#		using = red_background
-	#		alpha = 0.75
-	#	}
-	#	icon = {
-	#		name = button_highlight
-	#		size = { 100% 100% }
-	#		visible = no
-	#		using = gold_background
-	#		alpha = 0.3
-	#		modify_texture = {
-	#			texture = "gfx/interface/base_parts/button_vignette.dds"
-	#			blend_mode = alphamultiply
-	#			spriteType = corneredtiled
-	#			spriteborder = { 20 20 }
-	#		}
-	#	}
-	#	icon = {
-	#		size = { 100% 100% }
-	#		using = beige_background
-	#		alpha = 0.25
-	#		modify_texture = {
-	#			texture = "gfx/interface/base_parts/button_vignette.dds"
-	#			blend_mode = alphamultiply
-	#			spriteType = corneredtiled
-	#			spriteborder = { 20 20 }
-	#		}
-	#	}
-	#	margin_widget = {
-	#		size = { 100% 100% }
-	#		margin = { 3 3 }
-	#		icon = {
-	#			size = { 100% 100% }
-	#			using = beige_background
-	#			alpha = 0.4
-	#		}
-	#		icon = {
-	#			size = { 100% 100% }
-	#			using = beige_background
-	#			alpha = 0.15
-	#			modify_texture = {
-	#				texture = "gfx/interface/base_parts/gradient_black_flip.dds"
-	#				blend_mode = alphamultiply
-	#			}
-	#		}
-	#		block "Decoration" { }
-	#		icon = {
-	#			size = { 100% 100% }
-	#			using = shadow_background
-	#			alpha = 0.5
-	#			modify_texture = {
-	#				texture = "gfx/interface/base_parts/button_vignette.dds"
-	#				blend_mode = alphamultiply
-	#				spriteType = corneredtiled
-	#				spriteborder = { 20 20 }
-	#			}
-	#		}
-	#		icon = {
-	#			size = { 100% 100% }
-	#			using = shadow_background
-	#			alpha = 0.25
-	#			modify_texture = {
-	#				texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black_double.dds"
-	#				blend_mode = alphamultiply
-	#			}
-	#			modify_texture = {
-	#				texture = "gfx/interface/base_parts/gradient_black.dds"
-	#				blend_mode = alphamultiply
-	#			}
-	#		}
-	#		icon = {
-	#			size = { 100% 100% }
-	#			using = shadow_background
-	#			alpha = 0.25
-	#			modify_texture = {
-	#				texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black_double.dds"
-	#				blend_mode = alphamultiply
-	#			}
-	#			modify_texture = {
-	#				texture = "gfx/interface/base_parts/gradient_black_flip.dds"
-	#				blend_mode = alphamultiply
-	#			}
-	#		}
-	#	}
-	#    icon = {
-	#    	name = button_color
-	#    	size = { 100% 100% }
-	#    	visible = no
-	#		using = black_background
-	#		alpha = 0.1
-	#    }
-	#	textbox = {
-	#		parentanchor = center				
-	#		using = BaseFontS
-	#		using = Default_FontColor
-	#		autoresize = yes
-	#		align = center
-	#		block "Text" { text = "Button Text" }
-	#	}
-	#}
 	type style_dip_button = widget {
 		hbox = {
 			style_base_button = { }
@@ -12281,8 +11958,8 @@ template main_window_template
 template MainWindowHeaderBox
 {
 	hbox = {
-		margin_top = 8
-		margin_right = -1
+		#margin_top = 8
+		#margin_right = -1
 		layoutpolicy_horizontal = expanding 
 		top_window_header_for_layout = {  
 			layoutpolicy_horizontal = expanding

@@ -1086,8 +1086,8 @@ base_window = {
 									}
 									flowcontainer = {
 										ignoreinvisible = yes
-										style_text_base_button = {
-											blockoverride "Size" { size = { 42 42 } }
+										icon_button_square = {
+											size = { 42 42 }
 											visible = "[Not(DiplomaticView.IsShowStances)]"
 											blockoverride "Icon" { texture = "[GetDiplomaticStanceIcon(DiplomaticView.GetPlayer.GetDiplomaticStance)]" }
 											blockoverride "On_click"
@@ -1095,8 +1095,8 @@ base_window = {
 												onclick = "[DiplomaticView.ShowStances]"
 											}
 										} 
-										style_text_base_button = {
-											blockoverride "Size" { size = { 42 42 } }
+										icon_button_square = {
+											size = { 42 42 }
 											visible = "[DiplomaticView.IsShowStances]"
 											blockoverride "Icon" { texture = "[GetDiplomaticStanceIcon(DiplomaticView.GetPlayer.GetDiplomaticStance)]" }
 											blockoverride "On_click"
@@ -1122,15 +1122,15 @@ base_window = {
 									}
 									flowcontainer = {
 										ignoreinvisible = yes
-										style_text_base_button = {
-											blockoverride "Size" { size = { 42 42 } }
+										icon_button_square = {
+											size = { 42 42 }
 											visible = "[GetVariableSystem.HasValue( 'diplomatic_windows', 'clear' )]"
 											blockoverride "Icon" { texture = "gfx/interface/icons/diplomatic_status/truce.dds" }
 											blockoverride "On_click" { onclick = "[GetVariableSystem.Set( 'diplomatic_windows', 'opinions' )]" }
 											tooltip = "opinionsTT"
 										} 
-										style_text_base_button = {
-											blockoverride "Size" { size = { 42 42 } }
+										icon_button_square = {
+											size = { 42 42 }
 											visible = "[GetVariableSystem.HasValue( 'diplomatic_windows', 'opinions' )]"
 											blockoverride "Icon" { texture = "gfx/interface/icons/diplomatic_status/truce.dds" }
 											blockoverride "On_click" { onclick = "[GetVariableSystem.Set( 'diplomatic_windows', 'clear' )]" } 
@@ -1163,7 +1163,7 @@ base_window = {
 						}
 					}
 					margin_widget = {
-						size = { 340 505 }
+						size = { 340 496 }
 						margin = { 5 5 }
 						using = background_widget_inner
 						flowcontainer = {
@@ -1235,7 +1235,7 @@ base_window = {
 								}
 							}
 							scrollarea = {
-								size = { 330 408 }
+								size = { 330 396 }
 								scrollbarpolicy_horizontal = always_off
 								scrollbarpolicy_vertical = always_on
 								scrollbar_vertical = {
