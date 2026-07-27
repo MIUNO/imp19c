@@ -1168,8 +1168,8 @@ vbox = {
 			spacing = 4
 			parentanchor = right
 			ignoreinvisible = yes
-			icon_button_square = {
-				size = { 32 32 }
+			icon_button_square_left_corner = {
+				size = { 35 40 }
 				visible = "[Not(GetVariableSystem.HasValue( 'wiki_ui', 'open' ))]"
 				blockoverride "On_click" 
 				{ 
@@ -1179,6 +1179,8 @@ vbox = {
 				}
 				blockoverride "Icon"
 				{
+					size = { 24 24 }
+					parentanchor = center
 					using = white_background
 					modify_texture = {
 						texture = "gfx/interface/base_parts/topbar_icons/wiki.dds"
@@ -1186,8 +1188,8 @@ vbox = {
 					}
 				}
 			}
-			icon_button_square = {
-				size = { 32 32 }
+			icon_button_square_left_corner = {
+				size = { 35 40 }
 				visible = "[GetVariableSystem.HasValue( 'wiki_ui', 'open' )]"
 				blockoverride "On_click" 
 				{ 
@@ -1197,6 +1199,8 @@ vbox = {
 				}
 				blockoverride "Icon"
 				{
+					size = { 24 24 }
+					parentanchor = center
 					using = white_background
 					modify_texture = {
 						texture = "gfx/interface/base_parts/topbar_icons/wiki.dds"
@@ -1204,8 +1208,8 @@ vbox = {
 					}
 				}
 			}
-			icon_button_square = {
-				size = { 32 32 }
+			icon_button_square_hard_corner = {
+				size = { 35 40 }
 				blockoverride "On_click" 
 				{ 
 					onclick = "[InGameTopbar.OpenView('ledger')]"
@@ -1214,6 +1218,8 @@ vbox = {
 				}
 				blockoverride "Icon"
 				{
+					size = { 24 24 }
+					parentanchor = center
 					using = white_background
 					modify_texture = {
 						texture = "gfx/interface/base_parts/topbar_icons/ledger.dds"
@@ -1221,8 +1227,8 @@ vbox = {
 					}
 				}
 			}
-			icon_button_square = {
-				size = { 32 32 }
+			icon_button_square_hard_corner = {
+				size = { 35 40 }
 				blockoverride "On_click" 
 				{ 
 					onclick = "[InGameTopbar.OpenView('view_score')]"
@@ -1231,6 +1237,8 @@ vbox = {
 				}
 				blockoverride "Icon"
 				{
+					size = { 24 24 }
+					parentanchor = center
 					using = white_background
 					modify_texture = {
 						texture = "gfx/interface/base_parts/topbar_icons/score.dds"
@@ -1238,8 +1246,8 @@ vbox = {
 					}
 				}
 			}
-			icon_button_square = {
-				size = { 32 32 }
+			icon_button_square_right_corner = {
+				size = { 35 40 }
 				blockoverride "On_click" 
 				{ 
 					onclick = "[ToggleMessageLog]"
@@ -1248,6 +1256,8 @@ vbox = {
 				}
 				blockoverride "Icon"
 				{
+					size = { 24 24 }
+					parentanchor = center
 					using = white_background
 					modify_texture = {
 						texture = "gfx/interface/base_parts/topbar_icons/log.dds"

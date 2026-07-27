@@ -17,7 +17,7 @@ types TEST_ELEMENTS {
 				widget = {
 					size = { 376 44 }
 					state = {
-						name = _mouse_hierarchy_enter
+						name = _mouse_enter
 						on_start = "[PdxGuiWidget.FindChild('shiner').InterruptAnimation('pseudo_show')]"
 						on_start = "[PdxGuiWidget.FindChild('shiner').InterruptAnimation('pseudo_hide')]"
 
@@ -39,7 +39,7 @@ types TEST_ELEMENTS {
 					}
 					
 					state = {
-						name = _mouse_hierarchy_leave
+						name = _mouse_enter
 						on_start = "[PdxGuiWidget.FindChild('shiner').InterruptAnimation('pseudo_hide')]"
 						on_start = "[PdxGuiWidget.FindChild('shiner').InterruptAnimation('pseudo_show')]"
 
@@ -317,154 +317,6 @@ types TEST_ELEMENTS {
 							}
 						}
 					}
-				}
-				flowcontainer = {
-					ignoreinvisible = yes
-					direction = vertical
-					text_button_square_highlighted_inner = {
-						visible = "[GetVariableSystem.HasValue( 'test_button_1', 'open' )]"
-						size = { 200 30 }
-						blockoverride "On_click" { onclick = "[GetVariableSystem.Set( 'test_button_1', 'close' )]" }
-						blockoverride "Decoration" {
-							margin_widget = {
-								size = { 100% 100% }
-								margin = { 3 3 }
-								progressbar = {
-									size = { 17 16 }
-									parentanchor = bottom
-									gfxtype = framedprogressbargfx
-									texture = "gfx/interface/base_parts/gear.dds"
-									framesize = { 17 16 }
-									loopinterval = 0.5
-									max=0
-									modify_texture = {
-										spriteborder = { 16 16 }
-										spriteType = Corneredtiled
-										texture = "gfx/interface/base_parts/button_g.dds"
-										blend_mode = add
-									}
-								}
-								progressbar = {
-									size = { 17 16 }
-									parentanchor = right
-									gfxtype = framedprogressbargfx
-									texture = "gfx/interface/base_parts/gear_top.dds"
-									framesize = { 17 16 }
-									loopinterval = 0.5
-									max=0
-									modify_texture = {
-										spriteborder = { 16 16 }
-										spriteType = Corneredtiled
-										texture = "gfx/interface/base_parts/button_g.dds"
-										blend_mode = add
-									}
-								}
-							}
-						}
-						blockoverride "Center_text" {
-							using = Highlight_FontColor
-							text = "CURRENT_DATE"
-						}
-					}
-					text_button_square_highlighted = {
-						visible = "[Not(GetVariableSystem.HasValue( 'test_button_1', 'open' ))]"
-						size = { 200 30 }
-						blockoverride "On_click" { onclick = "[GetVariableSystem.Set( 'test_button_1', 'open' )]" }
-						blockoverride "Center_text" { text = "CURRENT_DATE" }
-					}
-				}
-				text_button_square_highlighted_inner = {
-					enabled = "[Not(GetVariableSystem.HasValue( 'test_button_1', 'open' ))]"
-					size = { 225 50 }
-					blockoverride "Border" { texture = "gfx/interface/base_parts/new_elements/border_2.dds" }
-					blockoverride "BorderShadow" { texture = "gfx/interface/base_parts/new_elements/border_2_shadow.dds" }
-					blockoverride "BorderSideDeco" { texture = "gfx/interface/base_parts/new_elements/border_2_deco.dds" }
-					blockoverride "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_2_small_base.dds" }
-					blockoverride "BaseNormal" { texture = "gfx/interface/base_parts/new_elements/border_2_normal_base.dds" }
-					blockoverride "Decoration" {
-						margin_widget = {
-							size = { 100% 100% }
-							margin = { 3 3 }
-							icon = {
-								size = { 100% 50% }
-								parentanchor = bottom
-								shaderfile = "gfx/FX/pdxgui_scroll.shader"
-								effectname = "test_PixelShader"
-								using = gold_background
-								modify_texture = {
-									texture = "gfx/interface/base_parts/new_elements/plate_1.dds"
-									blend_mode = alphamultiply
-								}
-							}
-							widget = {
-								name = ship
-								size = { 60 60 }
-								parentanchor = hcenter
-								position = { 0 -10 }
-								icon = {
-									size = { 100% 100% }
-									shaderfile = "gfx/FX/pdxgui_scroll.shader"
-									effectname = "test3_PixelShader"
-									using = shadow_background
-									alpha = 0.25
-									modify_texture = {
-										texture = "gfx/interface/base_parts/new_elements/ship_shadow.dds"
-										blend_mode = alphamultiply
-									}
-								}
-								icon = {
-									size = { 100% 100% }
-									shaderfile = "gfx/FX/pdxgui_scroll.shader"
-									effectname = "test3_PixelShader"
-									using = gold_background
-									modify_texture = {
-										texture = "gfx/interface/base_parts/new_elements/ship.dds"
-										blend_mode = alphamultiply
-									}
-								}
-							}
-							widget = {
-								name = front_waves
-								size = { 100% 50% }
-								parentanchor = bottom
-								icon = {
-									size = { 100% 100% }
-									shaderfile = "gfx/FX/pdxgui_scroll.shader"
-									effectname = "test2_PixelShader"
-									using = shadow_background
-									alpha = 0.25
-									modify_texture = {
-										texture = "gfx/interface/base_parts/new_elements/plate_1_shadow.dds"
-										blend_mode = alphamultiply
-									}
-								}
-								icon = {
-									size = { 100% 100% }
-									shaderfile = "gfx/FX/pdxgui_scroll.shader"
-									effectname = "test2_PixelShader"
-									using = gold_background
-									modify_texture = {
-										texture = "gfx/interface/base_parts/new_elements/plate_1.dds"
-										blend_mode = alphamultiply
-									}
-								}
-							}
-						}
-					}
-					blockoverride "Center_text" {
-						visible = "[GetVariableSystem.HasValue( 'test_button_1', 'open' )]"
-						using = HeaderFont
-						text = "province_need_port"
-					}
-				}
-				text_button_square_highlighted_inner = {
-					visible = no
-					size = { 30 30 }
-					blockoverride "Center_text" { text = "Actions" }
-				}
-				text_button_square = {
-					size = { 200 30 }
-					blockoverride "Center_text" { text = "Textxtt" }
 				}
 			}
 		}

@@ -52,40 +52,45 @@ PixelShader =
 			{
 				float2 UV = Input.UV0;
 				float4 OutColor = SampleImageSprite( Texture, UV );
+				float Time = GlobalTime;
 
-				#if defined( SCROLL )
+				#ifdef STOP
+					Time = 3.0;
+				#endif
+
+				#ifdef SCROLL
 					float WaveSize = 20.0;
 					float WaveSpeed = 0.1;
 
-					#if defined( SCROLL_1 )
+					#ifdef SCROLL_1
 						WaveSize = 17.5;
 						WaveSpeed = -0.05;
 					#endif
-					#if defined( SCROLL_2 )
+					#ifdef SCROLL_2
 						WaveSpeed = -0.1;
 					#endif
-				    float Wave = sin((UV.x + GlobalTime * WaveSpeed) * WaveSize) * 0.1;
-					#if defined( SCROLL_1 )
+				    float Wave = sin((UV.x + Time * WaveSpeed) * WaveSize) * 0.1;
+					#ifdef SCROLL_1
 						UV.y -= 0.1;
 					#endif
-					#if defined( SCROLL_2 )
+					#ifdef SCROLL_2
 						UV.y -= 0.3;
 					#endif
 
 				    OutColor = SampleImageSprite( Texture, float2(UV.x, UV.y+Wave) );
 				#endif
 
-				#if defined( ROTATE_1 )
-				    UV = rotateUV( UV, sin((UV.x + GlobalTime * 20.0) * 0.1) * 0.1);
+				#ifdef ROTATE_1
+				    UV = rotateUV( UV, sin((UV.x + Time * 20.0) * 0.1) * 0.1);
 					OutColor = SampleImageSprite( Texture, UV );
 				#endif
 
 				OutColor *= Input.Color;
 
-				#if defined( SCROLL_1 )
+				#ifdef SCROLL_1
 					OutColor.rgb *= float3(0.8, 0.8, 0.8);
 				#endif
-				#if defined( ROTATE_1 )
+				#ifdef ROTATE_1
 					OutColor.rgb *= float3(0.9, 0.9, 0.9);
 				#endif
 
@@ -142,45 +147,88 @@ Effect PdxGuiDefaultDisabled
 	Defines = { "SCROLL" "DISABLED" }
 }
 
-Effect test_PixelShader
+Effect scroll_1
 {
 	VertexShader = "VertexShader"
 	PixelShader = "PixelShader"
 
 	Defines = { "SCROLL" "SCROLL_1" }
 }
-Effect test_PixelShaderDisabled
+Effect scroll_1Disabled
 {
 	VertexShader = "VertexShader"
 	PixelShader = "PixelShader"
 	
 	Defines = { "SCROLL" "SCROLL_1" "DISABLED" }
 }
-Effect test2_PixelShader
+Effect scroll_2
 {
 	VertexShader = "VertexShader"
 	PixelShader = "PixelShader"
 
 	Defines = { "SCROLL" "SCROLL_2" }
 }
-Effect test2_PixelShaderDisabled
+Effect scroll_2Disabled
 {
 	VertexShader = "VertexShader"
 	PixelShader = "PixelShader"
 	
 	Defines = { "SCROLL_2" "DISABLED" }
 }
-Effect test3_PixelShader
+Effect rotate_1
 {
 	VertexShader = "VertexShader"
 	PixelShader = "PixelShader"
 
 	Defines = { "ROTATE_1" }
 }
-Effect test3_PixelShaderDisabled
+Effect rotate_1Disabled
 {
 	VertexShader = "VertexShader"
 	PixelShader = "PixelShader"
 	
 	Defines = { "ROTATE_1" "DISABLED" }
+}
+
+Effect scroll_1_stop
+{
+	VertexShader = "VertexShader"
+	PixelShader = "PixelShader"
+
+	Defines = { "SCROLL" "SCROLL_1" "STOP" }
+}
+Effect scroll_1_stopDisabled
+{
+	VertexShader = "VertexShader"
+	PixelShader = "PixelShader"
+	
+	Defines = { "SCROLL" "SCROLL_1" "STOP" "DISABLED" }
+}
+Effect scroll_2_stop
+{
+	VertexShader = "VertexShader"
+	PixelShader = "PixelShader"
+
+	Defines = { "SCROLL" "SCROLL_2" "STOP" }
+}
+Effect scroll_2_stopDisabled
+{
+	VertexShader = "VertexShader"
+	PixelShader = "PixelShader"
+	
+	Defines = { "SCROLL_2" "STOP" "DISABLED" }
+}
+Effect rotate_1_stop
+{
+	VertexShader = "VertexShader"
+	PixelShader = "PixelShader"
+
+	Defines = { "ROTATE_1" "STOP" }
+}
+Effect rotate_1_stopDisabled
+{
+	VertexShader = "VertexShader"
+	PixelShader = "PixelShader"
+	
+	Defines = { "ROTATE_1" "STOP" "DISABLED" }
 }

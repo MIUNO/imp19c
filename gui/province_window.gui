@@ -540,7 +540,7 @@ window = {
 							flowcontainer = {
 								ignoreinvisible = yes
 								spacing = 4
-								icon_button_square = {
+								icon_button_square_left_corner = {
 									size = { 40 40 }
 									visible = "[Not( ProvinceWindow.IsPlayerProvince )]" 
 									
@@ -561,7 +561,7 @@ window = {
 									}
 									tooltip = "CANNOT_CHANGE_GOV_HERE"
 								}
-								icon_button_square = {
+								icon_button_square_left_corner = {
 									size = { 40 40 }
 									visible = "[ProvinceWindow.IsPlayerProvince]" 
 
@@ -583,7 +583,7 @@ window = {
 									enabled = "[ProvinceWindow.CanChangeGovernor]"
 									tooltip = "[ProvinceWindow.GetChangeGovernorTooltip]"
 								}
-								icon_button_square = {
+								icon_button_square_right_corner = {
 									size = { 40 40 }
 									enabled = "[ProvinceWindow.CanChangePolicy]"
 									tooltip = "[GetChangeGovernorPoliciesTooltip(ProvinceWindow.GetState)]"
@@ -601,7 +601,6 @@ window = {
 								}
 							}
 							flowcontainer = {
-								size = { 84 42 }
 								tooltip = "DIPLOMACY_STATE_FOREIGN_INFLUENCE_TT"
 								visible = "[GetScriptedGui('DIPLOMACY_state_has_influence').IsShown( GuiScope.SetRoot( ProvinceWindow.GetState.MakeScope ).End )]"
 								new_country_flag = {
@@ -1368,15 +1367,24 @@ window = {
 								blockoverride "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_2_small_base.dds" }
 								blockoverride "BaseNormal" { texture = "gfx/interface/base_parts/new_elements/border_2_normal_base.dds" }
 								blockoverride "On_click" { onclick = "[ProvinceWindow.ShowBuildNavies]" }
+								blockoverride "mouse_hierarchy_enter" {
+									on_start = "[PdxGuiWidget.AccessParent.FindChild('deco_animation_stop').Hide]"
+									on_start = "[PdxGuiWidget.AccessParent.FindChild('deco_animation').Show]"
+								}
+								blockoverride "mouse_hierarchy_leave" {
+									on_start = "[PdxGuiWidget.AccessParent.FindChild('deco_animation').Hide]"
+									on_start = "[PdxGuiWidget.AccessParent.FindChild('deco_animation_stop').Show]"
+								}
 								blockoverride "Decoration" {
 									margin_widget = {
+										name = deco_animation_stop
 										size = { 100% 100% }
 										margin = { 3 3 }
 										icon = {
-											size = { 100% 50% }
+											size = { 100% 25 }
 											parentanchor = bottom
 											shaderfile = "gfx/FX/pdxgui_scroll.shader"
-											effectname = "test_PixelShader"
+											effectname = "scroll_1_stop"
 											using = gold_background
 											modify_texture = {
 												texture = "gfx/interface/base_parts/new_elements/plate_1.dds"
@@ -1391,7 +1399,7 @@ window = {
 											icon = {
 												size = { 100% 100% }
 												shaderfile = "gfx/FX/pdxgui_scroll.shader"
-												effectname = "test3_PixelShader"
+												effectname = "rotate_1_stop"
 												using = shadow_background
 												alpha = 0.25
 												modify_texture = {
@@ -1402,7 +1410,7 @@ window = {
 											icon = {
 												size = { 100% 100% }
 												shaderfile = "gfx/FX/pdxgui_scroll.shader"
-												effectname = "test3_PixelShader"
+												effectname = "rotate_1_stop"
 												using = gold_background
 												modify_texture = {
 													texture = "gfx/interface/base_parts/new_elements/ship.dds"
@@ -1412,12 +1420,12 @@ window = {
 										}
 										widget = {
 											name = front_waves
-											size = { 100% 50% }
+											size = { 100% 25 }
 											parentanchor = bottom
 											icon = {
 												size = { 100% 100% }
 												shaderfile = "gfx/FX/pdxgui_scroll.shader"
-												effectname = "test2_PixelShader"
+												effectname = "scroll_2_stop"
 												using = shadow_background
 												alpha = 0.25
 												modify_texture = {
@@ -1428,7 +1436,77 @@ window = {
 											icon = {
 												size = { 100% 100% }
 												shaderfile = "gfx/FX/pdxgui_scroll.shader"
-												effectname = "test2_PixelShader"
+												effectname = "scroll_2_stop"
+												using = gold_background
+												modify_texture = {
+													texture = "gfx/interface/base_parts/new_elements/plate_1.dds"
+													blend_mode = alphamultiply
+												}
+											}
+										}
+									}
+									margin_widget = {
+										name = deco_animation
+										size = { 100% 100% }
+										margin = { 3 3 }
+										visible = no
+										icon = {
+											size = { 100% 25 }
+											parentanchor = bottom
+											shaderfile = "gfx/FX/pdxgui_scroll.shader"
+											effectname = "scroll_1"
+											using = gold_background
+											modify_texture = {
+												texture = "gfx/interface/base_parts/new_elements/plate_1.dds"
+												blend_mode = alphamultiply
+											}
+										}
+										widget = {
+											name = ship
+											size = { 60 60 }
+											parentanchor = hcenter
+											position = { 0 -10 }
+											icon = {
+												size = { 100% 100% }
+												shaderfile = "gfx/FX/pdxgui_scroll.shader"
+												effectname = "rotate_1"
+												using = shadow_background
+												alpha = 0.25
+												modify_texture = {
+													texture = "gfx/interface/base_parts/new_elements/ship_shadow.dds"
+													blend_mode = alphamultiply
+												}
+											}
+											icon = {
+												size = { 100% 100% }
+												shaderfile = "gfx/FX/pdxgui_scroll.shader"
+												effectname = "rotate_1"
+												using = gold_background
+												modify_texture = {
+													texture = "gfx/interface/base_parts/new_elements/ship.dds"
+													blend_mode = alphamultiply
+												}
+											}
+										}
+										widget = {
+											name = front_waves
+											size = { 100% 25 }
+											parentanchor = bottom
+											icon = {
+												size = { 100% 100% }
+												shaderfile = "gfx/FX/pdxgui_scroll.shader"
+												effectname = "scroll_2"
+												using = shadow_background
+												alpha = 0.25
+												modify_texture = {
+													texture = "gfx/interface/base_parts/new_elements/plate_1_shadow.dds"
+													blend_mode = alphamultiply
+												}
+											}
+											icon = {
+												size = { 100% 100% }
+												shaderfile = "gfx/FX/pdxgui_scroll.shader"
+												effectname = "scroll_2"
 												using = gold_background
 												modify_texture = {
 													texture = "gfx/interface/base_parts/new_elements/plate_1.dds"

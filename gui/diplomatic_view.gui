@@ -1311,7 +1311,7 @@ base_window = {
 											blockoverride "Text" { text = "Trade Actions"  }
 											blockoverride "Content" {
 												visible = "[And(GetVariableSystem.HasValue( 'trade_actions', 'open' ), And(Not(DiplomaticView.GetTargetCountry.IsBarbarian), Not(EqualTo_int32( DiplomaticView.GetTargetCountry.GetId, Player.GetId ))))]"
-												visible = "[GetVariableSystem.HasValue( 'trade_actions', 'open' )]"
+												#visible = "[GetVariableSystem.HasValue( 'trade_actions', 'open' )]"
 												# Trade agreement - all
 												diplomacy_action_button = {
 													size = { 315 32 }
