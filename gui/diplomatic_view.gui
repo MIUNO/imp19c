@@ -1267,9 +1267,9 @@ base_window = {
 										}
 										### ???? ###
 										vbox = {
-											solo_action_button = { blockoverride "Visible" { visible = "[EqualTo_string(DiplomaticActionItem.GetTitle, Localize('WARTITLE'))]" }
+											solo_action_button_highlighted = { blockoverride "Visible" { visible = "[EqualTo_string(DiplomaticActionItem.GetTitle, Localize('WARTITLE'))]" }
 											}
-											solo_action_button = {
+											solo_action_button_highlighted = {
 												blockoverride "Visible" { visible = "[EqualTo_string(DiplomaticActionItem.GetTitle, Localize('PEACETITLE'))]" }
 												blockoverride "Click" {
 													datacontext = "[GetScriptedGui('imp19c_diplo_peace_button')]"

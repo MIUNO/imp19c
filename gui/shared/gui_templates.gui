@@ -1100,12 +1100,33 @@ types NEW_GUI {
 			tooltip = "[DiplomaticActionItem.GetTooltip]"
 		}
 	}
+	type action_button_highlighted = margin_widget {
+		block "Visible" { }
+		size = { 330 34 }
+		margin = { 0 2 }
+		text_button_square_highlighted = {
+			size = { 315 30 }
+			blockoverride "On_click" { block "Click" { onclick = "[DiplomaticActionItem.OnClick]" } }
+			blockoverride "Center_text" { text = "[DiplomaticActionItem.GetTitle]" }
+			enabled = "[DiplomaticActionItem.IsEnabled]"
+			tooltip = "[DiplomaticActionItem.GetTooltip]"
+		}
+	}
 	type solo_action_button = vbox {
 		datacontext = "[DiplomaticView.GetDefaultActionCategory]"
 		vbox = {
 			datamodel = "[DiplomaticActionCategory.GetActions]"
 			item = {
 				action_button = { }
+			}
+		}
+	}
+	type solo_action_button_highlighted = vbox {
+		datacontext = "[DiplomaticView.GetDefaultActionCategory]"
+		vbox = {
+			datamodel = "[DiplomaticActionCategory.GetActions]"
+			item = {
+				action_button_highlighted = { }
 			}
 		}
 	}

@@ -241,7 +241,7 @@ window = {
 	
 	sharp_base_window = {
 		size = { 675 400 }
-		position = { 495 0 }
+		position = { 500 0 }
 		movable = no
 		parentanchor = bottom
 		layer = top
@@ -1518,7 +1518,6 @@ window = {
 								}
 								blockoverride "Center_text" {
 									visible = "[Not(ProvinceWindow.CanBuildShips)]"
-									using = HeaderFont
 									text = "province_need_port"
 								}
 								tooltip = "BUILD_NAVIES_TT"

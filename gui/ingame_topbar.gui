@@ -945,7 +945,7 @@ vbox = {
 					size = { 260 45 }
 					widget = { 
 						name = "speed_control_and_date"
-						size = { 200 52 }
+						size = { 210 52 }
 						vbox = {
 							layoutpolicy_horizontal = expanding
 							layoutpolicy_vertical = expanding
@@ -1050,9 +1050,8 @@ vbox = {
 						}
 					}
 					widget = {
-						size = { 200 46 }
+						size = { 210 46 }
 						icon_time_indicator = {
-							position = { 0 3 }
 							parentanchor = hcenter
 							frame = "[GetCurrentGameSpeed]"
 							modify_texture = {
@@ -1260,7 +1259,7 @@ vbox = {
 					}
 				}
 			}
-			icon_button_square_right_corner = {
+			icon_button_square_hard_corner = {
 				size = { 35 40 }
 				blockoverride "On_click" 
 				{ 
@@ -1279,7 +1278,7 @@ vbox = {
 					}
 				}
 			}
-			icon_button_square = {
+			icon_button_square_lb_corner = {
 				size = { 40 50 }
 				name = "ingame_menu_button"
 				blockoverride "On_click" 

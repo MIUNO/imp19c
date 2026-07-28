@@ -1240,70 +1240,73 @@ types Base_GUI_Types
 {
 	# Basic Window Background
 	type base_window = window {
+		size = { 80 80 }
 		block "Layer" { layer = middle_top }
 		# Size needed
-		background = {
-			shaderfile = "gfx/FX/pdxgui_default.shader"
-			using = shadow_background
-			block "Drop_shadow" { visible = yes }	
-			alpha = 0.5
-			margin = { 3 3 }
-			modify_texture = {
-				texture = "gfx/interface/base_parts/new_elements/background_two_corner_shadow.dds"
-				blend_mode = alphamultiply
-				spriteType = Corneredtiled
-				spriteborder = { 40 40 }
-			}	
+		block "Shadow" {
+			background = {
+				shaderfile = "gfx/FX/pdxgui_default.shader"
+				using = shadow_background
+				block "Drop_shadow" { visible = yes }	
+				margin = { 3 3 }
+				alpha = 0.5
+				modify_texture = {
+					texture = "gfx/interface/base_parts/new_elements/background_two_corner_shadow.dds"
+					blend_mode = alphamultiply
+					spriteType = Corneredtiled
+					spriteborder = { 40 40 }
+				}
+			}
 		}
-		background = {
-			shaderfile = "gfx/FX/pdxgui_default.shader"
+		icon = {
+			size = { 100% 100% }
 			using = black_background
 			block "WindowAlpha" { alpha = 0.95 }
 			modify_texture = {
-				texture = "gfx/interface/base_parts/new_elements/background_two_corner_alpha.dds"
+				block "WindowBase" { texture = "gfx/interface/base_parts/new_elements/background_two_corner_alpha.dds" }
 				blend_mode = alphamultiply
 				spriteType = Corneredtiled
 				spriteborder = { 40 40 }
 			}
 		}
-		background = {
-			shaderfile = "gfx/FX/pdxgui_default.shader"
+		icon = {
+			size = { 100% 100% }
 			using = pattern_black_background_layer_01
 			modify_texture = {
-				texture = "gfx/interface/base_parts/new_elements/background_two_corner_inner_alpha.dds"
+				block "WindowBaseInner" { texture = "gfx/interface/base_parts/new_elements/background_two_corner_inner_alpha.dds" }
 				blend_mode = alphamultiply
 				spriteType = Corneredtiled
 				spriteborder = { 40 40 }
 			}
 		}
-		background = {
-			shaderfile = "gfx/FX/pdxgui_default.shader"
+		icon = {
+			size = { 100% 100% }
 			using = pattern_black_background_layer_02
 			modify_texture = {
-				texture = "gfx/interface/base_parts/new_elements/background_two_corner_inner_alpha.dds"
+				block "WindowBaseInner" { texture = "gfx/interface/base_parts/new_elements/background_two_corner_inner_alpha.dds" }
 				blend_mode = alphamultiply
 				spriteType = Corneredtiled
 				spriteborder = { 40 40 }
 			}
 		}
-		background = {
-			shaderfile = "gfx/FX/pdxgui_default.shader"
+		icon = {
+			size = { 100% 100% }
 			using = shadow_background
 			alpha = 0.5
 			modify_texture = {
-				texture = "gfx/interface/base_parts/new_elements/background_border_two_corner_shadow.dds"
+				block "WindowBorderShadow" { texture = "gfx/interface/base_parts/new_elements/background_border_two_corner_shadow.dds" }
 				blend_mode = alphamultiply
 				spriteType = Corneredtiled
 				spriteborder = { 40 40 }
 			}	
 		}
-		background = {
-			shaderfile = "gfx/FX/pdxgui_default.shader"
+		icon = {
+			size = { 100% 100% }
 			texture = "gfx/interface/base_parts/base_color.dds"
 			spriteType = Corneredtiled
 			alpha = 0.08
 			modify_texture = {
-				texture = "gfx/interface/base_parts/new_elements/background_border_two_corner_alpha.dds"
+				block "WindowBorder" { texture = "gfx/interface/base_parts/new_elements/background_border_two_corner_alpha.dds" }
 				blend_mode = alphamultiply
 				spriteType = Corneredtiled
 				spriteborder = { 40 40 }
@@ -1319,7 +1322,7 @@ types Base_GUI_Types
 				blend_mode = alphamultiply
 			}
 			modify_texture = {
-				texture = "gfx/interface/base_parts/new_elements/background_two_corner_alpha.dds"
+				block "WindowBase" { texture = "gfx/interface/base_parts/new_elements/background_two_corner_alpha.dds" }
 				blend_mode = alphamultiply
 				spriteType = Corneredtiled
 				spriteborder = { 40 40 }
@@ -1334,7 +1337,7 @@ types Base_GUI_Types
 				blend_mode = alphamultiply
 			}
 			modify_texture = {
-				texture = "gfx/interface/base_parts/new_elements/background_two_corner_alpha.dds"
+				block "WindowBase" { texture = "gfx/interface/base_parts/new_elements/background_two_corner_alpha.dds" }
 				blend_mode = alphamultiply
 				spriteType = Corneredtiled
 				spriteborder = { 40 40 }
@@ -1351,7 +1354,7 @@ types Base_GUI_Types
 				blend_mode = alphamultiply
 			}
 			modify_texture = {
-				texture = "gfx/interface/base_parts/new_elements/background_two_corner_alpha.dds"
+				block "WindowBase" { texture = "gfx/interface/base_parts/new_elements/background_two_corner_alpha.dds" }
 				blend_mode = alphamultiply
 				spriteType = Corneredtiled
 				spriteborder = { 40 40 }
@@ -1359,124 +1362,27 @@ types Base_GUI_Types
 		}
 	}
 	
-	type sharp_base_window = window {
-		block "Layer" { layer = middle_top }
+	type sharp_base_window = base_window {
 		# Size needed
-		background = {
-			shaderfile = "gfx/FX/pdxgui_default.shader"
-			using = shadow_background
-			block "Drop_shadow" { visible = yes }	
-			alpha = 0.5
-			margin = { 3 3 }
-			modify_texture = {
-				texture = "gfx/interface/base_parts/new_elements/background_hard_corner_shadow.dds"
-				blend_mode = alphamultiply
-				spriteType = Corneredtiled
-				spriteborder = { 40 40 }
-			}	
-		}
-		background = {
-			shaderfile = "gfx/FX/pdxgui_default.shader"
-			using = black_background
-			block "WindowAlpha" { alpha = 0.95 }
-			modify_texture = {
-				texture = "gfx/interface/base_parts/new_elements/background_hard_corner_alpha.dds"
-				blend_mode = alphamultiply
-				spriteType = Corneredtiled
-				spriteborder = { 40 40 }
+		blockoverride "Shadow" {
+			background = {
+				shaderfile = "gfx/FX/pdxgui_default.shader"
+				using = shadow_background
+				block "Drop_shadow" { visible = yes }	
+				margin = { 3 3 }
+				alpha = 0.5
+				modify_texture = {
+					texture = "gfx/interface/base_parts/new_elements/background_hard_corner_shadow.dds"
+					blend_mode = alphamultiply
+					spriteType = Corneredtiled
+					spriteborder = { 40 40 }
+				}
 			}
 		}
-		background = {
-			shaderfile = "gfx/FX/pdxgui_default.shader"
-			using = pattern_black_background_layer_01
-			modify_texture = {
-				texture = "gfx/interface/base_parts/new_elements/background_hard_corner_inner_alpha.dds"
-				blend_mode = alphamultiply
-				spriteType = Corneredtiled
-				spriteborder = { 40 40 }
-			}
-		}
-		background = {
-			shaderfile = "gfx/FX/pdxgui_default.shader"
-			using = pattern_black_background_layer_02
-			modify_texture = {
-				texture = "gfx/interface/base_parts/new_elements/background_hard_corner_inner_alpha.dds"
-				blend_mode = alphamultiply
-				spriteType = Corneredtiled
-				spriteborder = { 40 40 }
-			}
-		}
-		background = {
-			shaderfile = "gfx/FX/pdxgui_default.shader"
-			using = shadow_background
-			alpha = 0.5
-			modify_texture = {
-				texture = "gfx/interface/base_parts/new_elements/background_border_hard_corner_shadow.dds"
-				blend_mode = alphamultiply
-				spriteType = Corneredtiled
-				spriteborder = { 40 40 }
-			}	
-		}
-		background = {
-			shaderfile = "gfx/FX/pdxgui_default.shader"
-			texture = "gfx/interface/base_parts/base_color.dds"
-			spriteType = Corneredtiled
-			alpha = 0.08
-			modify_texture = {
-				texture = "gfx/interface/base_parts/new_elements/background_border_hard_corner_alpha.dds"
-				blend_mode = alphamultiply
-				spriteType = Corneredtiled
-				spriteborder = { 40 40 }
-			}
-		}
-		icon = {
-			using = beige_background
-			size = { 100% 200 }
-			block "GradientAlpha" { alpha = 0.55 }
-			block "BackgroundGradient" { visible = yes }
-			modify_texture = {
-				texture = "gfx/interface/base_parts/gradient_black.dds"
-				blend_mode = alphamultiply
-			}
-			modify_texture = {
-				texture = "gfx/interface/base_parts/new_elements/background_hard_corner_alpha.dds"
-				blend_mode = alphamultiply
-				spriteType = Corneredtiled
-				spriteborder = { 40 40 }
-			}
-		}
-		icon = {
-			using = shadow_background
-			size = { 100% 100% }
-			alpha = 0.2
-			modify_texture = {
-				texture = "gfx/interface/base_parts/horizontal_gradient_stretch_sides_black.dds"
-				blend_mode = alphamultiply
-			}
-			modify_texture = {
-				texture = "gfx/interface/base_parts/new_elements/background_hard_corner_alpha.dds"
-				blend_mode = alphamultiply
-				spriteType = Corneredtiled
-				spriteborder = { 40 40 }
-			}
-		}
-		icon = {
-			using = shadow_background
-			size = { 100% 100 }
-			parentanchor = bottom
-			block "GradientAlpha" { alpha = 0.4 }
-			block "BackgroundGradient" { visible = yes }
-			modify_texture = {
-				texture = "gfx/interface/base_parts/gradient_black_flip.dds"
-				blend_mode = alphamultiply
-			}
-			modify_texture = {
-				texture = "gfx/interface/base_parts/new_elements/background_hard_corner_alpha.dds"
-				blend_mode = alphamultiply
-				spriteType = Corneredtiled
-				spriteborder = { 40 40 }
-			}
-		}
+		blockoverride "WindowBase" { texture = "gfx/interface/base_parts/new_elements/background_hard_corner_alpha.dds" }
+		blockoverride "WindowBaseInner" { texture = "gfx/interface/base_parts/new_elements/background_hard_corner_inner_alpha.dds" }
+		blockoverride "WindowBorderShadow" { texture = "gfx/interface/base_parts/new_elements/background_border_hard_corner_shadow.dds" }
+		blockoverride "WindowBorder" { texture = "gfx/interface/base_parts/new_elements/background_border_hard_corner_alpha.dds" }
 	}
 
 	# Basic Window Background
@@ -4007,6 +3913,86 @@ types Base_GUI_Types
 		blockoverride "BorderOutline" { texture = "gfx/interface/base_parts/new_elements/border_5.dds" }
 		blockoverride "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_5_small_base.dds" }
 	}
+	type text_button_square_lt_corner = text_button_square {
+		blockoverride "Shadow" {
+			background = {
+				shaderfile = "gfx/FX/pdxgui_default.shader"
+				using = shadow_background
+				margin = { 3 3 }
+				alpha = 0.5
+				modify_texture = {
+					texture = "gfx/interface/base_parts/new_elements/border_6_normal_base_shadow.dds"
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
+				}
+			}
+		}
+		blockoverride "Border" { texture = "gfx/interface/base_parts/new_elements/border_6_normal_base.dds" }
+		blockoverride "BorderOutlineShadow" { texture = "gfx/interface/base_parts/new_elements/border_6_shadow.dds" }
+		blockoverride "BorderOutline" { texture = "gfx/interface/base_parts/new_elements/border_6.dds" }
+		blockoverride "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_6_small_base.dds" }
+	}
+	type text_button_square_rt_corner = text_button_square {
+		blockoverride "Shadow" {
+			background = {
+				shaderfile = "gfx/FX/pdxgui_default.shader"
+				using = shadow_background
+				margin = { 3 3 }
+				alpha = 0.5
+				modify_texture = {
+					texture = "gfx/interface/base_parts/new_elements/border_7_normal_base_shadow.dds"
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
+				}
+			}
+		}
+		blockoverride "Border" { texture = "gfx/interface/base_parts/new_elements/border_7_normal_base.dds" }
+		blockoverride "BorderOutlineShadow" { texture = "gfx/interface/base_parts/new_elements/border_7_shadow.dds" }
+		blockoverride "BorderOutline" { texture = "gfx/interface/base_parts/new_elements/border_7.dds" }
+		blockoverride "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_7_small_base.dds" }
+	}
+	type text_button_square_lb_corner = text_button_square {
+		blockoverride "Shadow" {
+			background = {
+				shaderfile = "gfx/FX/pdxgui_default.shader"
+				using = shadow_background
+				margin = { 3 3 }
+				alpha = 0.5
+				modify_texture = {
+					texture = "gfx/interface/base_parts/new_elements/border_8_normal_base_shadow.dds"
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
+				}
+			}
+		}
+		blockoverride "Border" { texture = "gfx/interface/base_parts/new_elements/border_8_normal_base.dds" }
+		blockoverride "BorderOutlineShadow" { texture = "gfx/interface/base_parts/new_elements/border_8_shadow.dds" }
+		blockoverride "BorderOutline" { texture = "gfx/interface/base_parts/new_elements/border_8.dds" }
+		blockoverride "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_8_small_base.dds" }
+	}
+	type text_button_square_rb_corner = text_button_square {
+		blockoverride "Shadow" {
+			background = {
+				shaderfile = "gfx/FX/pdxgui_default.shader"
+				using = shadow_background
+				margin = { 3 3 }
+				alpha = 0.5
+				modify_texture = {
+					texture = "gfx/interface/base_parts/new_elements/border_9_normal_base_shadow.dds"
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
+				}
+			}
+		}
+		blockoverride "Border" { texture = "gfx/interface/base_parts/new_elements/border_9_normal_base.dds" }
+		blockoverride "BorderOutlineShadow" { texture = "gfx/interface/base_parts/new_elements/border_9_shadow.dds" }
+		blockoverride "BorderOutline" { texture = "gfx/interface/base_parts/new_elements/border_9.dds" }
+		blockoverride "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_9_small_base.dds" }
+	}
 
 	# Icon Button
 	type icon_button_square = text_button_square {
@@ -4081,6 +4067,86 @@ types Base_GUI_Types
 		blockoverride "BorderOutlineShadow" { texture = "gfx/interface/base_parts/new_elements/border_5_shadow.dds" }
 		blockoverride "BorderOutline" { texture = "gfx/interface/base_parts/new_elements/border_5.dds" }
 		blockoverride "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_5_small_base.dds" }
+	}
+	type icon_button_square_lt_corner = icon_button_square {
+		blockoverride "Shadow" {
+			background = {
+				shaderfile = "gfx/FX/pdxgui_default.shader"
+				using = shadow_background
+				margin = { 3 3 }
+				alpha = 0.5
+				modify_texture = {
+					texture = "gfx/interface/base_parts/new_elements/border_6_normal_base_shadow.dds"
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
+				}
+			}
+		}
+		blockoverride "Border" { texture = "gfx/interface/base_parts/new_elements/border_6_normal_base.dds" }
+		blockoverride "BorderOutlineShadow" { texture = "gfx/interface/base_parts/new_elements/border_6_shadow.dds" }
+		blockoverride "BorderOutline" { texture = "gfx/interface/base_parts/new_elements/border_6.dds" }
+		blockoverride "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_6_small_base.dds" }
+	}
+	type icon_button_square_rt_corner = icon_button_square {
+		blockoverride "Shadow" {
+			background = {
+				shaderfile = "gfx/FX/pdxgui_default.shader"
+				using = shadow_background
+				margin = { 3 3 }
+				alpha = 0.5
+				modify_texture = {
+					texture = "gfx/interface/base_parts/new_elements/border_7_normal_base_shadow.dds"
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
+				}
+			}
+		}
+		blockoverride "Border" { texture = "gfx/interface/base_parts/new_elements/border_7_normal_base.dds" }
+		blockoverride "BorderOutlineShadow" { texture = "gfx/interface/base_parts/new_elements/border_7_shadow.dds" }
+		blockoverride "BorderOutline" { texture = "gfx/interface/base_parts/new_elements/border_7.dds" }
+		blockoverride "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_7_small_base.dds" }
+	}
+	type icon_button_square_lb_corner = icon_button_square {
+		blockoverride "Shadow" {
+			background = {
+				shaderfile = "gfx/FX/pdxgui_default.shader"
+				using = shadow_background
+				margin = { 3 3 }
+				alpha = 0.5
+				modify_texture = {
+					texture = "gfx/interface/base_parts/new_elements/border_8_normal_base_shadow.dds"
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
+				}
+			}
+		}
+		blockoverride "Border" { texture = "gfx/interface/base_parts/new_elements/border_8_normal_base.dds" }
+		blockoverride "BorderOutlineShadow" { texture = "gfx/interface/base_parts/new_elements/border_8_shadow.dds" }
+		blockoverride "BorderOutline" { texture = "gfx/interface/base_parts/new_elements/border_8.dds" }
+		blockoverride "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_8_small_base.dds" }
+	}
+	type icon_button_square_rb_corner = icon_button_square {
+		blockoverride "Shadow" {
+			background = {
+				shaderfile = "gfx/FX/pdxgui_default.shader"
+				using = shadow_background
+				margin = { 3 3 }
+				alpha = 0.5
+				modify_texture = {
+					texture = "gfx/interface/base_parts/new_elements/border_9_normal_base_shadow.dds"
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
+				}
+			}
+		}
+		blockoverride "Border" { texture = "gfx/interface/base_parts/new_elements/border_9_normal_base.dds" }
+		blockoverride "BorderOutlineShadow" { texture = "gfx/interface/base_parts/new_elements/border_9_shadow.dds" }
+		blockoverride "BorderOutline" { texture = "gfx/interface/base_parts/new_elements/border_9.dds" }
+		blockoverride "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_9_small_base.dds" }
 	}
 	type icon_button_circle = widget {
 		size = { @Minimum_button_size @Minimum_button_size }
@@ -4853,6 +4919,20 @@ types Base_GUI_Types
 	type text_button_square_highlighted = widget {
 		size = { @Minimum_button_size @Minimum_button_size }
 		block "MinimumSize" { minimumsize = { 0 @Minimum_button_size } }
+		block "Shadow" {
+			background = {
+				shaderfile = "gfx/FX/pdxgui_default.shader"
+				using = shadow_background
+				margin = { 3 3 }
+				alpha = 0.5
+				modify_texture = {
+					texture = "gfx/interface/base_parts/new_elements/border_5_normal_base_shadow.dds"
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
+				}
+			}
+		}
 		background = {
 			shaderfile = "gfx/FX/pdxgui_default.shader"
 			using = shadow_background
@@ -5052,16 +5132,18 @@ types Base_GUI_Types
 	type text_button_square_highlighted_inner = widget {
 		size = { @Minimum_button_size @Minimum_button_size }
 		block "MinimumSize" { minimumsize = { 0 @Minimum_button_size } }
-		background = {
-			shaderfile = "gfx/FX/pdxgui_default.shader"
-			using = shadow_background
-			margin = { 4 4 }
-			alpha = 0.5
-			modify_texture = {
-				texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
-				blend_mode = alphamultiply
-				spriteType = corneredtiled
-				spriteborder = { 8 8 }
+		block "Shadow" {
+			background = {
+				shaderfile = "gfx/FX/pdxgui_default.shader"
+				using = shadow_background
+				margin = { 3 3 }
+				alpha = 0.5
+				modify_texture = {
+					texture = "gfx/interface/base_parts/new_elements/border_5_normal_base_shadow.dds"
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
+				}
 			}
 		}
 		button = {
@@ -9218,157 +9300,72 @@ types Base_GUI_Types
 	}
 	
 	type category_button_open = widget {
-		
 		button = {
-			name = "Button_Outline"
-			using = brighten_red_background
-			#using = beige_dark_background
-			spriteType = Corneredtiled
-			spriteborder = { 200 200 }
-			gfxtype = framedbuttongfx
 			size = { 100% 100% }
-
-			framesize = { 200 200 }
-			upframe = 1
-			overframe = 2
-			downframe = 3
-			disableframe = 4
-			#using = border_slightly_torn_alpha
-			
-			block "On_click" { }
-			
-			# ToDo: Add Sound.//primary button or increment
-			clicksound = "event:/SFX/UI/Generic/2.0/sfx_ui_button_increment"
-			# oversound = " ToDo "
-			
+		}
+		icon = {
+			size = { 100% 100% }
+			using = brighten_red_background
 			modify_texture = {
-				name = "Alpha"
-				texture = "gfx/interface/base_parts/button2_outer_nobottom_alpha.dds"
+				block "Border" { texture = "gfx/interface/base_parts/new_elements/tab_left_border.dds" }
 				blend_mode = alphamultiply
-				spriteType = Corneredtiled
-				spriteborder = { 6 6 }
+				spriteType = corneredtiled
+				spriteborder = { 15 15 }
 			}
-
-			background = {
-				shaderfile = "gfx/FX/pdxgui_default.shader"
-				using = shadow_background
-				alpha = 0.5
-				modify_texture = {
-					texture = "gfx/interface/base_parts/gradient_black_short.dds"
-					blend_mode = alphamultiply
-					spriteType = Corneredtiled
-					spriteborder = { 30 0 }
-				}
+		}
+		icon = {
+			size = { 100% 100% }
+			using = shadow_background
+			alpha = 0.5
+			modify_texture = {
+				block "Gradient" { texture = "gfx/interface/base_parts/gradient_black.dds" }
+				blend_mode = alphamultiply
 			}
-			
-			hbox = {	
-				name = "button_content_box"
-				
-				widget = {
-					name = "Spacing_Widget_1"
-					size = { 3 3 }
-				}
-				
-				button = {
-					alwaystransparent = yes
-					spriteborder = { 200 200 }
-					size = { 20 20 }
-					layoutpolicy_vertical = fixed
-					layoutpolicy_horizontal = expanding
-					gfxtype = buttongfx
-
-					# Button with centered text and an icon to the left of the text.
-					hbox = {
-						name = "Center_text_and_icon"
-						widgetanchor = center
-						parentanchor = center
-						position = { 0 -2 }
-						
-						block "Center_text_and_icon"
-						{
-							visible = no
-						}
-			
-						widget = {
-							name = "Spacing_Widget_1"
-							size = { 4 2 }
-							layoutpolicy_horizontal = expanding
-							layoutpolicy_vertical = fixed
-						}
-			
-						icon = {
-							framesize = { 50 50 }
-							block "IconSize2" { size = { 40 40 } }
-							
-							block "Icon"
-							{
-								texture = "gfx/interface/icons/shared_icons/leader.dds"
-							}
-						}
-			
-						widget = {
-							name = "Spacing_Widget_2"
-							size = { 2 5 }
-							layoutpolicy_horizontal = fixed
-							layoutpolicy_vertical = fixed
-						}
-						
-						textbox = {
-							name = "Text"
-							using = BaseFontS
-							using = Default_FontColor 
-							autoresize = yes
-							layoutpolicy_horizontal = fixed
-							layoutpolicy_vertical = fixed
-							
-							block "Button_text"
-							{
-								text = "Button Text"
-								fontcolor = { 0.96 0.96 0.96 1 }
-							}
-							
-						}
-						
-						widget = {
-							name = "Spacing_Widget_3"
-							size = { 4 5 }
-							layoutpolicy_horizontal = expanding
-							layoutpolicy_vertical = fixed
-						}
-					}
-					
-					# Button with centered text.
-					textbox = {
-						name = "Text"
-						position = { 0 -2 }
-						using = BaseFontS
-						using = Default_FontColor 
-						widgetanchor = center
-						parentanchor = center
-						align = center
-			
-						block "Button_text"
-						{
-							text = "Button Text"
-							fontcolor = { 0.96 0.96 0.96 1 }
-						}
-						
-						block "Center_text" 
-						{
-							visible = no
-							
-						}
-					}
-				}
-				
-				widget = {
-					name = "Spacing_Widget_2"
-					size = { 3 3 }
-				}
+			modify_texture = {
+				block "Base" { texture = "gfx/interface/base_parts/new_elements/tab_left_base.dds" }
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 15 15 }
 			}
-		} 
+		}
+		textbox = {
+			position = { 0 -2 }
+			parentanchor = center
+			using = BaseFontS
+			using = Default_FontColor
+			autoresize = yes
+			align = center
+			block "Center_text" { text = "Button Text" }
+		}
+		icon = {
+			parentanchor = center
+			block "IconSize" { size = { 40 40 } }
+			block "Icon" {
+				visible = no
+				texture = "gfx/interface/icons/shared_icons/leader.dds"
+			}
+		}
 	}	
-	
+	type category_button_open_left = category_button_open {
+		blockoverride "Border" { texture = "gfx/interface/base_parts/new_elements/tab_left_border.dds" }
+		blockoverride "Base" { texture = "gfx/interface/base_parts/new_elements/tab_left_base.dds" }
+	}
+	type category_button_open_right = category_button_open {
+		blockoverride "Border" { texture = "gfx/interface/base_parts/new_elements/tab_right_border.dds" }
+		blockoverride "Base" { texture = "gfx/interface/base_parts/new_elements/tab_right_base.dds" }
+	}
+	type category_button_open_center_horizontal = widget {
+
+	}
+	type category_button_open_top = widget {
+
+	}
+	type category_button_open_bottom = widget {
+
+	}
+	type category_button_open_center_vertical = widget {
+
+	}
 	type category_button_open_vertical = widget {
 		
 		button = {
@@ -9730,36 +9727,53 @@ types Base_GUI_Types
 
 	type category_tab = container {
 		ignoreinvisible = yes
-		tab_button = {
-			block "MinSize"
-			{
-				size = { @mincategorybuttonwidth @mincategorybuttonheight }
-			}
-			visible = no
-			block "MinVisible"
-			{
-				visible = yes
-			} 
-			blockoverride "On_click" 
-			{
-				block "ClickFunction"
-				{
-				}
-			}
-			block "SmallButtonClick"
-			{
+		icon = {
+			position = { 0 0 }
+			using = brighten_red_background
+			size = { 100% 2 }
+			parentanchor = bottom
+			block "MinVisible" { visible = yes }
+		}
+	}
+	type category_tab_left = category_tab {
+		margin_widget = {
+			block "MinSize" { size = { 42 42 } }
+			margin_bottom = 4
+			text_button_square_lt_corner = {
+				size = { 100% 100% }
+				block "MinVisible" { visible = yes }
 			}
 		}
-		category_button_maximized = { 
-			block "MaxSize"
-			{
-				size = { @maxcategorybuttonwidth @maxcategorybuttonheight }
-			}
-			block "MaxVisible"
-			{
-				visible = no
+		category_button_open_left = {
+			block "MaxSize" { size = { 42 42 } }
+			block "MaxVisible" { visible = no }
+		}
+	}
+	type category_tab_right = category_tab {
+		margin_widget = {
+			block "MinSize" { size = { 42 42 } }
+			margin_bottom = 4
+			text_button_square_rt_corner = {
+				size = { 100% 100% }
+				block "MinVisible" { visible = yes }
 			}
 		}
+		category_button_open_right = {
+			block "MaxSize" { size = { 42 42 } }
+			block "MaxVisible" { visible = no }
+		}
+	}
+	type category_tab_center_horizontal = category_tab {
+
+	}
+	type category_tab_top = category_tab {
+
+	}
+	type category_tab_bottom = category_tab {
+
+	}
+	type category_tab_center_vertical = category_tab {
+
 	}
 
 	type category_tab_vertical = container {

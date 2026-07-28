@@ -102,6 +102,10 @@ PixelShader =
 				// #endif
 
 				#ifdef DISABLED
+				 	OutColor.rgb = DisableColor( OutColor.rgb );
+				#endif
+
+				#ifdef DISABLED_ANIMATION
 					OutColor.a = 0.0;
 				#endif
 
@@ -205,7 +209,7 @@ Effect scroll_1Disabled
 	VertexShader = "VertexShader"
 	PixelShader = "PixelShader"
 	
-	Defines = { "SCROLL" "SCROLL_1" "DARK_2" "DISABLED" }
+	Defines = { "SCROLL" "SCROLL_1" "DARK_2" "DISABLED_ANIMATION" }
 }
 Effect scroll_2
 {
@@ -219,7 +223,7 @@ Effect scroll_2Disabled
 	VertexShader = "VertexShader"
 	PixelShader = "PixelShader"
 	
-	Defines = { "SCROLL_2" "DISABLED" }
+	Defines = { "SCROLL_2" "DISABLED_ANIMATION" }
 }
 Effect rotate_1
 {
@@ -233,7 +237,7 @@ Effect rotate_1Disabled
 	VertexShader = "VertexShader"
 	PixelShader = "PixelShader"
 	
-	Defines = { "ROTATE_1" "DARK_1" "DISABLED" }
+	Defines = { "ROTATE_1" "DARK_1" "DISABLED_ANIMATION" }
 }
 
 Effect scroll_1_stop
@@ -248,7 +252,7 @@ Effect scroll_1_stopDisabled
 	VertexShader = "VertexShader"
 	PixelShader = "PixelShader"
 	
-	Defines = { "SCROLL" "SCROLL_1" "DARK_2" "STOP" "DISABLED" }
+	Defines = { "SCROLL" "SCROLL_1" "DARK_2" "STOP" "DISABLED_ANIMATION" }
 }
 Effect scroll_2_stop
 {
@@ -262,7 +266,7 @@ Effect scroll_2_stopDisabled
 	VertexShader = "VertexShader"
 	PixelShader = "PixelShader"
 	
-	Defines = { "SCROLL_2" "STOP" "DISABLED" }
+	Defines = { "SCROLL_2" "STOP" "DISABLED_ANIMATION" }
 }
 Effect rotate_1_stop
 {
@@ -276,5 +280,5 @@ Effect rotate_1_stopDisabled
 	VertexShader = "VertexShader"
 	PixelShader = "PixelShader"
 	
-	Defines = { "ROTATE_1" "DARK_1" "STOP" "DISABLED" }
+	Defines = { "ROTATE_1" "DARK_1" "STOP" "DISABLED_ANIMATION" }
 }
