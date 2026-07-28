@@ -87,10 +87,13 @@ PixelShader =
 
 				OutColor *= Input.Color;
 
-				#ifdef SCROLL_1
+				#ifdef DARK_3
+					OutColor.rgb *= float3(0.7, 0.7, 0.7);
+				#endif
+				#ifdef DARK_2
 					OutColor.rgb *= float3(0.8, 0.8, 0.8);
 				#endif
-				#ifdef ROTATE_1
+				#ifdef DARK_1
 					OutColor.rgb *= float3(0.9, 0.9, 0.9);
 				#endif
 
@@ -147,19 +150,62 @@ Effect PdxGuiDefaultDisabled
 	Defines = { "SCROLL" "DISABLED" }
 }
 
+Effect dark_1
+{
+	VertexShader = "VertexShader"
+	PixelShader = "PixelShader"
+
+	Defines = { "DARK_1" }
+}
+Effect dark_1Disabled
+{
+	VertexShader = "VertexShader"
+	PixelShader = "PixelShader"
+	
+	Defines = { "DARK_1" "DISABLED" }
+}
+Effect dark_2
+{
+	VertexShader = "VertexShader"
+	PixelShader = "PixelShader"
+
+	Defines = { "DARK_2" }
+}
+Effect dark_2Disabled
+{
+	VertexShader = "VertexShader"
+	PixelShader = "PixelShader"
+	
+	Defines = { "DARK_2" "DISABLED" }
+}
+Effect dark_3
+{
+	VertexShader = "VertexShader"
+	PixelShader = "PixelShader"
+
+	Defines = { "DARK_3" }
+}
+Effect dark_3Disabled
+{
+	VertexShader = "VertexShader"
+	PixelShader = "PixelShader"
+	
+	Defines = { "DARK_3" "DISABLED" }
+}
+
 Effect scroll_1
 {
 	VertexShader = "VertexShader"
 	PixelShader = "PixelShader"
 
-	Defines = { "SCROLL" "SCROLL_1" }
+	Defines = { "SCROLL" "SCROLL_1" "DARK_2" }
 }
 Effect scroll_1Disabled
 {
 	VertexShader = "VertexShader"
 	PixelShader = "PixelShader"
 	
-	Defines = { "SCROLL" "SCROLL_1" "DISABLED" }
+	Defines = { "SCROLL" "SCROLL_1" "DARK_2" "DISABLED" }
 }
 Effect scroll_2
 {
@@ -180,14 +226,14 @@ Effect rotate_1
 	VertexShader = "VertexShader"
 	PixelShader = "PixelShader"
 
-	Defines = { "ROTATE_1" }
+	Defines = { "ROTATE_1" "DARK_1" }
 }
 Effect rotate_1Disabled
 {
 	VertexShader = "VertexShader"
 	PixelShader = "PixelShader"
 	
-	Defines = { "ROTATE_1" "DISABLED" }
+	Defines = { "ROTATE_1" "DARK_1" "DISABLED" }
 }
 
 Effect scroll_1_stop
@@ -195,14 +241,14 @@ Effect scroll_1_stop
 	VertexShader = "VertexShader"
 	PixelShader = "PixelShader"
 
-	Defines = { "SCROLL" "SCROLL_1" "STOP" }
+	Defines = { "SCROLL" "SCROLL_1" "DARK_2" "STOP" }
 }
 Effect scroll_1_stopDisabled
 {
 	VertexShader = "VertexShader"
 	PixelShader = "PixelShader"
 	
-	Defines = { "SCROLL" "SCROLL_1" "STOP" "DISABLED" }
+	Defines = { "SCROLL" "SCROLL_1" "DARK_2" "STOP" "DISABLED" }
 }
 Effect scroll_2_stop
 {
@@ -223,12 +269,12 @@ Effect rotate_1_stop
 	VertexShader = "VertexShader"
 	PixelShader = "PixelShader"
 
-	Defines = { "ROTATE_1" "STOP" }
+	Defines = { "ROTATE_1" "DARK_1" "STOP" }
 }
 Effect rotate_1_stopDisabled
 {
 	VertexShader = "VertexShader"
 	PixelShader = "PixelShader"
 	
-	Defines = { "ROTATE_1" "STOP" "DISABLED" }
+	Defines = { "ROTATE_1" "DARK_1" "STOP" "DISABLED" }
 }

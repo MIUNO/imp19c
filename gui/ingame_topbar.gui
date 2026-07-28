@@ -953,12 +953,19 @@ vbox = {
 								layoutpolicy_horizontal = expanding
 								layoutpolicy_vertical = expanding
 								minimumsize = { 0 26 }
-								spacing = 2
-								button_minus = {
-									blockoverride "On_click"
-									{
+								spacing = 5
+								icon_button_circle = {
+									size = { 30 30 }
+									blockoverride "On_click" {
 										onclick = "[OnDecreaseGameSpeed]"
 										shortcut = "decrease_speed"
+									}
+									blockoverride "Icon" {
+										using = white_background
+										modify_texture = {
+											texture = "gfx/interface/base_parts/minus.dds"
+											blend_mode = alphamultiply                  
+										}
 									}
 									tooltip = "DECREASE_GAME_SPEED"
 									using = tooltip_se
@@ -1022,12 +1029,19 @@ vbox = {
 										blockoverride "Center_text" { text = "CURRENT_DATE" }
 									}
 								}
-								button_plus = { 
-									blockoverride "On_click"
-									{
+								icon_button_circle = { 
+									size = { 30 30 }
+									blockoverride "On_click" {
 										onclick = "[OnIncreaseGameSpeed]"
 										shortcut = "increase_speed"
 									} 
+									blockoverride "Icon" {
+										using = white_background
+										modify_texture = {
+											texture = "gfx/interface/base_parts/plus.dds"
+											blend_mode = alphamultiply                  
+										}
+									}
 									tooltip = "INCREASE_GAME_SPEED"
 									enabled = "[CanChangeGameSpeed]" 
 									using = tooltip_se

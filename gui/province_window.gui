@@ -1367,11 +1367,11 @@ window = {
 								blockoverride "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_2_small_base.dds" }
 								blockoverride "BaseNormal" { texture = "gfx/interface/base_parts/new_elements/border_2_normal_base.dds" }
 								blockoverride "On_click" { onclick = "[ProvinceWindow.ShowBuildNavies]" }
-								blockoverride "mouse_hierarchy_enter" {
+								blockoverride "mouse_enter" {
 									on_start = "[PdxGuiWidget.AccessParent.FindChild('deco_animation_stop').Hide]"
 									on_start = "[PdxGuiWidget.AccessParent.FindChild('deco_animation').Show]"
 								}
-								blockoverride "mouse_hierarchy_leave" {
+								blockoverride "mouse_leave" {
 									on_start = "[PdxGuiWidget.AccessParent.FindChild('deco_animation').Hide]"
 									on_start = "[PdxGuiWidget.AccessParent.FindChild('deco_animation_stop').Show]"
 								}
@@ -1387,7 +1387,7 @@ window = {
 											effectname = "scroll_1_stop"
 											using = gold_background
 											modify_texture = {
-												texture = "gfx/interface/base_parts/new_elements/plate_1.dds"
+												texture = "gfx/interface/base_parts/new_elements/icons/plate_1.dds"
 												blend_mode = alphamultiply
 											}
 										}
@@ -1403,7 +1403,7 @@ window = {
 												using = shadow_background
 												alpha = 0.25
 												modify_texture = {
-													texture = "gfx/interface/base_parts/new_elements/ship_shadow.dds"
+													texture = "gfx/interface/base_parts/new_elements/icons/ship_shadow.dds"
 													blend_mode = alphamultiply
 												}
 											}
@@ -1413,7 +1413,7 @@ window = {
 												effectname = "rotate_1_stop"
 												using = gold_background
 												modify_texture = {
-													texture = "gfx/interface/base_parts/new_elements/ship.dds"
+													texture = "gfx/interface/base_parts/new_elements/icons/ship.dds"
 													blend_mode = alphamultiply
 												}
 											}
@@ -1429,7 +1429,7 @@ window = {
 												using = shadow_background
 												alpha = 0.25
 												modify_texture = {
-													texture = "gfx/interface/base_parts/new_elements/plate_1_shadow.dds"
+													texture = "gfx/interface/base_parts/new_elements/icons/plate_1_shadow.dds"
 													blend_mode = alphamultiply
 												}
 											}
@@ -1439,7 +1439,7 @@ window = {
 												effectname = "scroll_2_stop"
 												using = gold_background
 												modify_texture = {
-													texture = "gfx/interface/base_parts/new_elements/plate_1.dds"
+													texture = "gfx/interface/base_parts/new_elements/icons/plate_1.dds"
 													blend_mode = alphamultiply
 												}
 											}
@@ -1457,7 +1457,7 @@ window = {
 											effectname = "scroll_1"
 											using = gold_background
 											modify_texture = {
-												texture = "gfx/interface/base_parts/new_elements/plate_1.dds"
+												texture = "gfx/interface/base_parts/new_elements/icons/plate_1.dds"
 												blend_mode = alphamultiply
 											}
 										}
@@ -1473,7 +1473,7 @@ window = {
 												using = shadow_background
 												alpha = 0.25
 												modify_texture = {
-													texture = "gfx/interface/base_parts/new_elements/ship_shadow.dds"
+													texture = "gfx/interface/base_parts/new_elements/icons/ship_shadow.dds"
 													blend_mode = alphamultiply
 												}
 											}
@@ -1483,7 +1483,7 @@ window = {
 												effectname = "rotate_1"
 												using = gold_background
 												modify_texture = {
-													texture = "gfx/interface/base_parts/new_elements/ship.dds"
+													texture = "gfx/interface/base_parts/new_elements/icons/ship.dds"
 													blend_mode = alphamultiply
 												}
 											}
@@ -1499,7 +1499,7 @@ window = {
 												using = shadow_background
 												alpha = 0.25
 												modify_texture = {
-													texture = "gfx/interface/base_parts/new_elements/plate_1_shadow.dds"
+													texture = "gfx/interface/base_parts/new_elements/icons/plate_1_shadow.dds"
 													blend_mode = alphamultiply
 												}
 											}
@@ -1509,7 +1509,7 @@ window = {
 												effectname = "scroll_2"
 												using = gold_background
 												modify_texture = {
-													texture = "gfx/interface/base_parts/new_elements/plate_1.dds"
+													texture = "gfx/interface/base_parts/new_elements/icons/plate_1.dds"
 													blend_mode = alphamultiply
 												}
 											}
@@ -4170,7 +4170,7 @@ window = {
 					}
 				}
 				margin_widget = {
-					size = { 500 500 }
+					size = { 500 550 }
 					margin = { 10 0 }
 					visible = "[And(GetVariableSystem.HasValue('state_up_tabs', 'province_building'), ProvinceWindow.HasState)]"
 					flowcontainer = {
@@ -4226,9 +4226,10 @@ window = {
 								}
 							}
 							margin_widget = {
-								size = { 460 38 }
+								size = { 460 50 }
 								scrollarea = {
-									size = { 300 38 }
+									size = { 250 38 }
+									parentanchor = vcenter
 									scrollbarpolicy_horizontal = always_off
 									parentanchor = top
 									scissor = yes
@@ -4267,17 +4268,224 @@ window = {
 										}
 									}
 								}
-								text_button_square_highlighted = {
+								text_button_square_highlighted_inner = {
 									visible = "[HasDlc('Heirs of Alexander')]"
+									enabled = "[ProvinceWindow.CanBuildGreatWork]"
+									size = { 200 50 }
 									parentanchor = right|vcenter
-									size = { 150 30 }
-									blockoverride "Center_text" { text = "OPEN_GREAT_WORKS" }
-									blockoverride "On_click" 
-									{
-										onclick = "[ProvinceWindow.OpenGreatWorkWindowBuild]" 
-										enabled = "[ProvinceWindow.CanBuildGreatWork]"
-										tooltip = "[ProvinceWindow.CanBuildGreatWorkTooltip]"
+									blockoverride "Border" { texture = "gfx/interface/base_parts/new_elements/border_2.dds" }
+									blockoverride "BorderShadow" { texture = "gfx/interface/base_parts/new_elements/border_2_shadow.dds" }
+									blockoverride "BorderSideDeco" { texture = "gfx/interface/base_parts/new_elements/border_2_deco.dds" }
+									blockoverride "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_2_small_base.dds" }
+									blockoverride "BaseNormal" { texture = "gfx/interface/base_parts/new_elements/border_2_normal_base.dds" }
+									blockoverride "On_click" { onclick = "[ProvinceWindow.OpenGreatWorkWindowBuild]" }
+									blockoverride "mouse_enter" {
+										on_start = "[PdxGuiWidget.AccessParent.FindChild('statue_of_liberty').TriggerAnimation('show')]"
+										on_start = "[PdxGuiWidget.AccessParent.FindChild('great_sphinx_of_giza').TriggerAnimation('show')]"
+										on_start = "[PdxGuiWidget.AccessParent.FindChild('tower_eiffel').TriggerAnimation('show')]"
+										on_start = "[PdxGuiWidget.AccessParent.FindChild('mayan_pyramid').TriggerAnimation('show')]"
 									}
+									blockoverride "mouse_leave" {
+										on_start = "[PdxGuiWidget.AccessParent.FindChild('statue_of_liberty').TriggerAnimation('hide')]"
+										on_start = "[PdxGuiWidget.AccessParent.FindChild('great_sphinx_of_giza').TriggerAnimation('hide')]"
+										on_start = "[PdxGuiWidget.AccessParent.FindChild('tower_eiffel').TriggerAnimation('hide')]"
+										on_start = "[PdxGuiWidget.AccessParent.FindChild('mayan_pyramid').TriggerAnimation('hide')]"
+									}
+									blockoverride "Decoration" {
+										#textbox = {
+										#	parentanchor = center
+										#	position = { 0 -10 }
+										#	using = HeaderFont
+										#	using = Default_FontColor
+										#	autoresize = yes
+										#	align = center
+										#	text = "OPEN_GREAT_WORKS"
+										#}
+										margin_widget = {
+											name = deco
+											size = { 100% 100% }
+											margin = { 3 3 }
+											icon = {
+												size = { 100% 12 }
+												parentanchor = bottom
+												shaderfile = "gfx/FX/pdxgui_scroll.shader"
+												effectname = "dark_2"
+												using = gold_background
+												modify_texture = {
+													texture = "gfx/interface/base_parts/new_elements/icons/plate_1.dds"
+													blend_mode = alphamultiply
+												}
+											}
+											widget = {
+												size = { 100% 40 }
+												parentanchor = bottom
+												widget = {
+													name = statue_of_liberty
+													size = { 40 40 }
+													parentanchor = hcenter
+													position = { -35 0 }
+													state = {
+														name = show
+														position = { -45 0 }
+														duration = 0.1
+													}
+													state = {
+														name = hide
+														position = { -35 0 }
+														duration = 0.1
+													}
+													icon = {
+														size = { 100% 100% }
+														using = shadow_background
+														alpha = 0.25
+														modify_texture = {
+															texture = "gfx/interface/base_parts/new_elements/icons/statue_of_liberty_shadow.dds"
+															blend_mode = alphamultiply
+														}
+													}
+													icon = {
+														size = { 100% 100% }
+														shaderfile = "gfx/FX/pdxgui_scroll.shader"
+														effectname = "dark_1"
+														using = gold_background
+														modify_texture = {
+															texture = "gfx/interface/base_parts/new_elements/icons/statue_of_liberty.dds"
+															blend_mode = alphamultiply
+														}
+													}
+												}
+												widget = {
+													name = great_sphinx_of_giza
+													size = { 40 40 }
+													parentanchor = hcenter
+													position = { -70 0 }
+													state = {
+														name = show
+														position = { -75 0 }
+														duration = 0.1
+													}
+													state = {
+														name = hide
+														position = { -70 0 }
+														duration = 0.1
+													}
+													icon = {
+														size = { 100% 100% }
+														using = shadow_background
+														alpha = 0.25
+														modify_texture = {
+															texture = "gfx/interface/base_parts/new_elements/icons/great_sphinx_of_giza_shadow.dds"
+															blend_mode = alphamultiply
+														}
+													}
+													icon = {
+														size = { 100% 100% }
+														shaderfile = "gfx/FX/pdxgui_scroll.shader"
+														effectname = "dark_1"
+														using = gold_background
+														modify_texture = {
+															texture = "gfx/interface/base_parts/new_elements/icons/great_sphinx_of_giza.dds"
+															blend_mode = alphamultiply
+														}
+													}
+												}
+												widget = {
+													name = tower_eiffel
+													size = { 40 40 }
+													parentanchor = hcenter
+													position = { 35 3 }
+													state = {
+														name = show
+														position = { 45 3 }
+														duration = 0.1
+													}
+													state = {
+														name = hide
+														position = { 35 3 }
+														duration = 0.1
+													}
+													icon = {
+														size = { 100% 100% }
+														using = shadow_background
+														alpha = 0.25
+														modify_texture = {
+															texture = "gfx/interface/base_parts/new_elements/icons/tower_eiffel_shadow.dds"
+															blend_mode = alphamultiply
+														}
+													}
+													icon = {
+														size = { 100% 100% }
+														shaderfile = "gfx/FX/pdxgui_scroll.shader"
+														effectname = "dark_1"
+														using = gold_background
+														modify_texture = {
+															texture = "gfx/interface/base_parts/new_elements/icons/tower_eiffel.dds"
+															blend_mode = alphamultiply
+														}
+													}
+												}
+												widget = {
+													name = mayan_pyramid
+													size = { 40 40 }
+													parentanchor = hcenter
+													position = { 70 3 }
+													state = {
+														name = show
+														position = { 75 3 }
+														duration = 0.1
+													}
+													state = {
+														name = hide
+														position = { 70 3 }
+														duration = 0.1
+													}
+													icon = {
+														size = { 100% 100% }
+														using = shadow_background
+														alpha = 0.25
+														modify_texture = {
+															texture = "gfx/interface/base_parts/new_elements/icons/mayan_pyramid_shadow.dds"
+															blend_mode = alphamultiply
+														}
+													}
+													icon = {
+														size = { 100% 100% }
+														shaderfile = "gfx/FX/pdxgui_scroll.shader"
+														effectname = "dark_1"
+														using = gold_background
+														modify_texture = {
+															texture = "gfx/interface/base_parts/new_elements/icons/mayan_pyramid.dds"
+															blend_mode = alphamultiply
+														}
+													}
+												}
+											}
+											widget = {
+												name = front_waves
+												size = { 100% 5 }
+												parentanchor = bottom
+												icon = {
+													size = { 100% 100% }
+													using = shadow_background
+													alpha = 0.25
+													modify_texture = {
+														texture = "gfx/interface/base_parts/new_elements/icons/plate_1_shadow.dds"
+														blend_mode = alphamultiply
+													}
+												}
+												icon = {
+													size = { 100% 100% }
+													using = gold_background
+													modify_texture = {
+														texture = "gfx/interface/base_parts/new_elements/icons/plate_1.dds"
+														blend_mode = alphamultiply
+													}
+												}
+											}
+										}
+									}
+									blockoverride "Center_text" { visible = no }
+									tooltip = "[ProvinceWindow.CanBuildGreatWorkTooltip]"
 								}
 							}
 						}

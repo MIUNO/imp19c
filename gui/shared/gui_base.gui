@@ -3788,7 +3788,7 @@ types Base_GUI_Types
 
 	####### PRIMARY BUTTON 
 	type text_button_square = widget {
-		size = { @Icon_button_size_M @Icon_button_size_M }
+		size = { @Minimum_button_size @Minimum_button_size }
 		block "MinimumSize" { minimumsize = { 0 @Minimum_button_size } }
 		block "Shadow" {
 			background = {
@@ -3867,6 +3867,8 @@ types Base_GUI_Types
 				modify_texture = {
 					block "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_1_small_base.dds" }
 					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
 				}
 				modify_texture = {
 					texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black_double.dds"
@@ -3883,6 +3885,8 @@ types Base_GUI_Types
 				modify_texture = {
 					block "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_1_small_base.dds" }
 					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
 				}
 				modify_texture = {
 					texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black_double.dds"
@@ -4078,6 +4082,151 @@ types Base_GUI_Types
 		blockoverride "BorderOutline" { texture = "gfx/interface/base_parts/new_elements/border_5.dds" }
 		blockoverride "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_5_small_base.dds" }
 	}
+	type icon_button_circle = widget {
+		size = { @Minimum_button_size @Minimum_button_size }
+		block "MinimumSize" { minimumsize = { 0 @Minimum_button_size } }
+		block "Shadow" {
+			background = {
+				shaderfile = "gfx/FX/pdxgui_default.shader"
+				using = shadow_background
+				margin = { 3 3 }
+				alpha = 0.5
+				modify_texture = {
+					texture = "gfx/interface/base_parts/new_elements/border_1_normal_base_shadow.dds"
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
+				}
+			}
+		}
+		button = {
+			size = { 100% 100% }
+			state = {
+				name = _mouse_enter
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_highlight').Show]"
+			}
+			state = {
+				name = _mouse_leave
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_highlight').Hide]"
+			}
+		    state = {
+		        name = _mouse_press
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_down').Show]"
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_base_down').Hide]"
+		    }
+		    state = {
+		        name = _mouse_release
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_down').Hide]"
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_base_down').Show]"
+		    }
+		    block "On_click" { }
+		    block "Shortcut" { }
+		}
+		icon = {
+			size = { 100% 100% }
+			using = red_background
+			modify_texture = {
+				block "Border" { texture = "gfx/interface/base_parts/new_elements/border_circle_30_normal_base.dds" }
+				blend_mode = alphamultiply
+			}
+		}
+		icon = {
+			size = { 100% 100% }
+			using = shadow_background
+			alpha = 0.25
+			modify_texture = {
+				block "BorderOutlineShadow" { texture = "gfx/interface/base_parts/new_elements/border_circle_30_shadow.dds" }
+				blend_mode = alphamultiply
+			}
+		}
+		icon = {
+			size = { 100% 100% }
+			using = brighten_red_background
+			modify_texture = {
+				block "BorderOutline" { texture = "gfx/interface/base_parts/new_elements/border_circle_30.dds" }
+				blend_mode = alphamultiply
+			}
+		}
+		widget = {
+			size = { 100% 100% }
+			alpha = 0.1
+			icon = {
+				size = { 100% 100% }
+				using = shadow_background
+				modify_texture = {
+					block "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_circle_30_small_base.dds" }
+					blend_mode = alphamultiply
+				}
+				modify_texture = {
+					texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black_double.dds"
+					blend_mode = alphamultiply
+				}
+				modify_texture = {
+					texture = "gfx/interface/base_parts/gradient_black.dds"
+					blend_mode = alphamultiply
+				}
+			}
+			icon = {
+				size = { 100% 100% }
+				using = shadow_background
+				modify_texture = {
+					block "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_circle_30_small_base.dds" }
+					blend_mode = alphamultiply
+				}
+				modify_texture = {
+					texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black_double.dds"
+					blend_mode = alphamultiply
+				}
+				modify_texture = {
+					texture = "gfx/interface/base_parts/gradient_black_flip.dds"
+					blend_mode = alphamultiply
+				}
+			}
+		}
+		widget = {
+			name = button_highlight
+			size = { 100% 100% }
+			alpha = 0.2
+			visible = no
+			icon = {
+				size = { 100% 100% }
+				using = beige_background
+				modify_texture = {
+					block "BorderOutlineShadow" { texture = "gfx/interface/base_parts/new_elements/border_circle_30_shadow.dds" }
+					blend_mode = alphamultiply
+				}
+			}
+			icon = {
+				size = { 100% 100% }
+				using = gold_background
+				modify_texture = {
+					block "BorderOutline" { texture = "gfx/interface/base_parts/new_elements/border_circle_30.dds" }
+					blend_mode = alphamultiply
+				}
+			}
+		}
+	    icon = {
+	    	name = button_down
+	    	size = { 100% 100% }
+	    	visible = no
+			using = shadow_background
+			alpha = 0.2
+			modify_texture = {
+				block "Border" { texture = "gfx/interface/base_parts/new_elements/border_circle_30_normal_base.dds" }
+				blend_mode = alphamultiply
+			}
+	    }
+		margin_widget = {
+			size = { 100% 100% }
+			margin = { 6 6 }
+			icon = {
+				size = { 100% 100% }
+				block "Icon" { texture = "gfx/interface/icons/temp_icon.dds" }
+			}
+		}
+	}
+
+
 	### TAB BUTTON (CLOSED, DEFAULT)
 	type tab_button = widget {
 		minimumsize = { 0 34 }
@@ -4702,7 +4851,7 @@ types Base_GUI_Types
 	}
 	
 	type text_button_square_highlighted = widget {
-		size = { @Icon_button_size_M @Icon_button_size_M }
+		size = { @Minimum_button_size @Minimum_button_size }
 		block "MinimumSize" { minimumsize = { 0 @Minimum_button_size } }
 		background = {
 			shaderfile = "gfx/FX/pdxgui_default.shader"
@@ -4901,7 +5050,7 @@ types Base_GUI_Types
 	}
 
 	type text_button_square_highlighted_inner = widget {
-		size = { @Icon_button_size_M @Icon_button_size_M }
+		size = { @Minimum_button_size @Minimum_button_size }
 		block "MinimumSize" { minimumsize = { 0 @Minimum_button_size } }
 		background = {
 			shaderfile = "gfx/FX/pdxgui_default.shader"
@@ -4918,14 +5067,14 @@ types Base_GUI_Types
 		button = {
 			size = { 100% 100% }
 			state = {
-				name = _mouse_hierarchy_enter
+				name = _mouse_enter
 				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_highlight').Show]"
-				block "mouse_hierarchy_enter" { }
+				block "mouse_enter" { }
 			}
 			state = {
-				name = _mouse_hierarchy_leave
+				name = _mouse_leave
 				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_highlight').Hide]"
-				block "mouse_hierarchy_leave" { }
+				block "mouse_leave" { }
 			}
 		    state = {
 		        name = _mouse_press
@@ -5057,7 +5206,7 @@ types Base_GUI_Types
 			}
 	    }
 		textbox = {
-			parentanchor = center				
+			parentanchor = center
 			using = BaseFontS
 			using = Default_FontColor
 			autoresize = yes
