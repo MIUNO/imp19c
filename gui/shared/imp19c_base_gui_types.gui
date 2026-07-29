@@ -566,70 +566,62 @@ types Imp19c_GUI_Types
 	type industrial_goods_widget = margin_widget {
 		size = { 160 70 }
 		margin = { 2 2 }
-		widget = {
+		margin_widget = {
 			size = { 100% 100% }
-			using = background_widget
-			blockoverride "Margin" { margin = { 2 2 } }
-		}
-		widget = {
-			size = { 100% 33 }
-			background = {
-				shaderfile = "gfx/FX/pdxgui_default.shader"
-				using = red_color
-				using = portrait_x32y32bd_alpha
-				alpha = 0.25
-				margin = { -2 -2 }
-			}
-			textbox = {
-				# Amount of income or expenses from exporting/importing this tradegood
-				autoresize = yes
-				parentanchor = right
-				position = { -4 8 }
-				using = BaseFontM
-				using = Default_FontColor
-				fontsize = 16
-				block "CashBalanceText" {
-					text = "£x.xxx"
-				}
-				block "CashBalanceTooltip" {
-					tooltip = "Cashbalancetooltip"
-				}
-			}
-		}
-		textbox = {
-			# Number of factories in this governorship
-			position = { 95 45 }
-			fontsize = 22
-			using = BaseFontM
-			using = Default_FontColor
-			block "VisibleTrigger" {
-				visible = no # Has variable factories_assigned_INDUSTRY
-			}
-			block "AssignedText" {
-				text = "X"
-			}
-		}
-		
-		list_button = {
-			size = { 60 60 }
-			oversound = "event:/SFX/UI/Generic/sfx_ui_generic_mouse_over"
-			clicksound = "event:/SFX/UI/Character/Unique/sfx_ui_character_loan_request"
-			parentanchor = vcenter
-			#block "On_click" { }
-			block "On_rightclick" { }
-			block "ButtonTooltip" { tooltip = "Button tooltip" }
-			margin_widget = {
-				margin = { 2 2 }
+			margin = { 3 3 }
+			widget = {
 				size = { 100% 100% }
-				alpha = 2.0
+				using = background_widget
+			}
+			widget = {
+				size = { 105 30 }
+				parentanchor = right
+				icon = {
+					size = { 100% 100% }
+					using = beige_background
+					alpha = 0.5
+				}
+				textbox = {
+					# Number of factories in this governorship
+					position = { 10 0 }
+					parentanchor = vcenter
+					fontsize = 22
+					using = BaseFontM
+					using = Default_FontColor
+					block "VisibleTrigger" {
+						visible = no # Has variable factories_assigned_INDUSTRY
+					}
+					block "AssignedText" {
+						text = "X"
+					}
+				}
+				textbox = {
+					# Amount of income or expenses from exporting/importing this tradegood
+					autoresize = yes
+					parentanchor = right
+					position = { -5 8 }
+					using = BaseFontM
+					using = Default_FontColor
+					fontsize = 16
+					block "CashBalanceText" {
+						text = "£x.xxx"
+					}
+					block "CashBalanceTooltip" {
+						tooltip = "Cashbalancetooltip"
+					}
+				}
+			}
+			widget = {
+				size = { 95 20 }
+				parentanchor = bottom|right
+				position = { -4 -4 }
+				using = background_widget_inner
 				flowcontainer = {
-					position = { 5 35}
+					margin = { 4 2 }
 					direction = horizontal
 					textbox = {
 						block "StockpileText" { text = "XXX" }
 						autoresize = yes
-						parentanchor = bottom|left
-						position = { 5 0 }
 						fontsize = 16
 						using = BaseFontM
 						using = Default_FontColor
@@ -641,8 +633,6 @@ types Imp19c_GUI_Types
 					textbox = {
 						block "BalanceText" { text = "+-X" }
 						autoresize = yes
-						parentanchor = bottom|left
-						position = { 0 0 }
 						using = BaseFontM
 						fontsize = 16
 						using = Default_FontColor
@@ -652,16 +642,122 @@ types Imp19c_GUI_Types
 						}
 					}
 				}
-				icon = {
-					size = { 36 36 }
-					block "Icon" 
-					{ 
-						texture = "gfx/interface/icons/_default.dds"
-						parentanchor = vcenter|top 
-						position = { 6 -3 }
-					}
-					parentanchor = top|hcenter
+			}
+		}
+		widget = {
+			size = { 50 50 }
+			background = {
+				shaderfile = "gfx/FX/pdxgui_default.shader"
+				using = shadow_background
+				margin = { 3 3 }
+				alpha = 0.5
+				modify_texture = {
+					texture = "gfx/interface/base_parts/new_elements/border_9_normal_base_shadow.dds"
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
 				}
+			}
+			button = {
+				size = { 100% 100% }
+				oversound = "event:/SFX/UI/Generic/sfx_ui_generic_mouse_over"
+				clicksound = "event:/SFX/UI/Character/Unique/sfx_ui_character_loan_request"
+				state = {
+					name = _mouse_enter
+					on_start = "[PdxGuiWidget.AccessParent.FindChild('button_highlight').Show]"
+				}
+				state = {
+					name = _mouse_leave
+					on_start = "[PdxGuiWidget.AccessParent.FindChild('button_highlight').Hide]"
+				}
+			    state = {
+			        name = _mouse_press
+					on_start = "[PdxGuiWidget.AccessParent.FindChild('button_down').Show]"
+					on_start = "[PdxGuiWidget.AccessParent.FindChild('button_base_down').Hide]"
+			    }
+			    state = {
+			        name = _mouse_release
+					on_start = "[PdxGuiWidget.AccessParent.FindChild('button_down').Hide]"
+					on_start = "[PdxGuiWidget.AccessParent.FindChild('button_base_down').Show]"
+			    }
+				#block "On_click" { }
+				#block "On_rightclick" { }
+				block "ButtonTooltip" { tooltip = "Button tooltip" }
+			}
+			icon = {
+				size = { 100% 100% }
+				using = red_background
+				modify_texture = {
+					texture = "gfx/interface/base_parts/new_elements/border_9_normal_base.dds"
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
+				}
+			}
+			icon = {
+				size = { 100% 100% }
+				using = black_background
+				alpha = 0.5
+				modify_texture = {
+					texture = "gfx/interface/base_parts/new_elements/border_9_small_base.dds"
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
+				}
+			}
+			icon = {
+				size = { 100% 100% }
+				using = brighten_red_background
+				modify_texture = {
+					texture = "gfx/interface/base_parts/new_elements/border_9.dds"
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
+				}
+			}
+			widget = {
+				name = button_highlight
+				size = { 100% 100% }
+				alpha = 0.2
+				visible = no
+				icon = {
+					size = { 100% 100% }
+					using = beige_background
+					modify_texture = {
+						texture = "gfx/interface/base_parts/new_elements/border_9_shadow.dds"
+						blend_mode = alphamultiply
+						spriteType = corneredtiled
+						spriteborder = { 15 15 }
+					}
+				}
+				icon = {
+					size = { 100% 100% }
+					using = gold_background
+					modify_texture = {
+						texture = "gfx/interface/base_parts/new_elements/border_9.dds"
+						blend_mode = alphamultiply
+						spriteType = corneredtiled
+						spriteborder = { 15 15 }
+					}
+				}
+			}
+		    icon = {
+		    	name = button_down
+		    	size = { 100% 100% }
+		    	visible = no
+				using = shadow_background
+				alpha = 0.2
+				modify_texture = {
+					texture = "gfx/interface/base_parts/new_elements/border_9_normal_base.dds"
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
+				}
+		    }
+			icon = {
+				size = { 36 36 }
+				block "Icon" { texture = "gfx/interface/icons/_default.dds" }
+				parentanchor = center
 			}
 		}
 	}

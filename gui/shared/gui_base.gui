@@ -754,65 +754,76 @@ template top_window_header
 {
 	margin_widget = {
 		size = { 100% 100% }
-		margin = { 5 1 }
+		margin = { 5 0 }
+		margin_bottom = 3
 		alpha = 0.75
 		widget = {
 			size = { 100% 100% }
-			background = {
-				shaderfile = "gfx/FX/pdxgui_default.shader"
-				using = shadow_background
-				margin = { 5 5 }
-				alpha = 0.5
-				modify_texture = {
-					texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
-					blend_mode = alphamultiply
-					spriteType = corneredtiled
-					spriteborder = { 8 8 }
+			block "Shadow" {
+				background = {
+					shaderfile = "gfx/FX/pdxgui_default.shader"
+					using = shadow_background
+					margin = { 3 3 }
+					alpha = 0.5
+					modify_texture = {
+						texture = "gfx/interface/base_parts/new_elements/border_5_normal_base_shadow.dds"
+						blend_mode = alphamultiply
+						spriteType = corneredtiled
+						spriteborder = { 15 15 }
+					}
 				}
 			}
-			background = {
-				shaderfile = "gfx/FX/pdxgui_default.shader"
-				block "Color" { using = red_background }
+		}
+		icon = {
+			size = { 100% 100% }
+			using = red_background
+			modify_texture = {
+				block "Border" { texture = "gfx/interface/base_parts/new_elements/border_5_normal_base.dds" }
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 15 15 }
 			}
-			background = {
-				shaderfile = "gfx/FX/pdxgui_default.shader"
-				using = portrait_x32y32bd_alpha
-				texture = "gfx/interface/base_parts/background_noninteractable_texture.dds"
-				alpha = 0.25
-				modify_texture = {
-					texture = "gfx/interface/base_parts/button_vignette.dds"
-					blend_mode = alphamultiply
-					spriteType = corneredtiled
-					spriteborder = { 20 20 }
-				}
+		}
+		icon = {
+			size = { 100% 100% }
+			using = red_background
+			modify_texture = {
+				block "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_5_small_base.dds" }
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 15 15 }
 			}
-			background = {
-				shaderfile = "gfx/FX/pdxgui_default.shader"
-				block "Color" { using = red_background }
-				using = top_bar_alpha_x120bd_full
-				margin = { -3 -3 }
+		}
+		icon = {
+			size = { 100% 100% }
+			using = header_ornament
+			modify_texture = {
+				texture = "gfx/interface/base_parts/header_s_pattern.dds"
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
 			}
-			background = {
-				shaderfile = "gfx/FX/pdxgui_default.shader"
-				using = header_ornament
-				using = top_bar_alpha_x120bd_full
-				margin = { -3 -6 }
-				modify_texture = {
-					texture = "gfx/interface/base_parts/header_s_pattern_x104bd_right_cut3.dds"
-					blend_mode = alphamultiply
-					spriteType = Corneredtiled
-				}
-				modify_texture = {
-					texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black_double.dds"
-					blend_mode = alphamultiply
-					spriteType = corneredtiled
-					spriteborder = { 40 40 }
-				}
-				modify_texture = {
-					texture = "gfx/interface/base_parts/demanded_filth.dds"
-					blend_mode = alphamultiply
-					spriteType = Corneredtiled
-				}
+			modify_texture = {
+				texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black_double.dds"
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 40 40 }
+			}
+			modify_texture = {
+				block "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_5_small_base.dds" }
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 15 15 }
+			}
+		}
+		icon = {
+			size = { 100% 100% }
+			using = brighten_red_background
+			alpha = 0.5
+			modify_texture = {
+				block "BorderOutline" { texture = "gfx/interface/base_parts/new_elements/border_5.dds" }
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 15 15 }
 			}
 		}
 	}
@@ -1361,8 +1372,153 @@ types Base_GUI_Types
 			}
 		}
 	}
-	
 	type sharp_base_window = base_window {
+		# Size needed
+		blockoverride "Shadow" {
+			background = {
+				shaderfile = "gfx/FX/pdxgui_default.shader"
+				using = shadow_background
+				block "Drop_shadow" { visible = yes }	
+				margin = { 3 3 }
+				alpha = 0.5
+				modify_texture = {
+					texture = "gfx/interface/base_parts/new_elements/background_hard_corner_shadow.dds"
+					blend_mode = alphamultiply
+					spriteType = Corneredtiled
+					spriteborder = { 40 40 }
+				}
+			}
+		}
+		blockoverride "WindowBase" { texture = "gfx/interface/base_parts/new_elements/background_hard_corner_alpha.dds" }
+		blockoverride "WindowBaseInner" { texture = "gfx/interface/base_parts/new_elements/background_hard_corner_inner_alpha.dds" }
+		blockoverride "WindowBorderShadow" { texture = "gfx/interface/base_parts/new_elements/background_border_hard_corner_shadow.dds" }
+		blockoverride "WindowBorder" { texture = "gfx/interface/base_parts/new_elements/background_border_hard_corner_alpha.dds" }
+	}
+
+	type base_window_widget = widget {
+		size = { 80 80 }
+		block "Layer" { layer = middle_top }
+		alwaystransparent = no
+		# Size needed
+		block "Shadow" {
+			background = {
+				shaderfile = "gfx/FX/pdxgui_default.shader"
+				using = shadow_background
+				block "Drop_shadow" { visible = yes }	
+				margin = { 3 3 }
+				alpha = 0.5
+				modify_texture = {
+					texture = "gfx/interface/base_parts/new_elements/background_two_corner_shadow.dds"
+					blend_mode = alphamultiply
+					spriteType = Corneredtiled
+					spriteborder = { 40 40 }
+				}
+			}
+		}
+		icon = {
+			size = { 100% 100% }
+			using = black_background
+			block "WindowAlpha" { alpha = 0.95 }
+			modify_texture = {
+				block "WindowBase" { texture = "gfx/interface/base_parts/new_elements/background_two_corner_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 40 40 }
+			}
+		}
+		icon = {
+			size = { 100% 100% }
+			using = pattern_black_background_layer_01
+			modify_texture = {
+				block "WindowBaseInner" { texture = "gfx/interface/base_parts/new_elements/background_two_corner_inner_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 40 40 }
+			}
+		}
+		icon = {
+			size = { 100% 100% }
+			using = pattern_black_background_layer_02
+			modify_texture = {
+				block "WindowBaseInner" { texture = "gfx/interface/base_parts/new_elements/background_two_corner_inner_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 40 40 }
+			}
+		}
+		icon = {
+			size = { 100% 100% }
+			using = shadow_background
+			alpha = 0.5
+			modify_texture = {
+				block "WindowBorderShadow" { texture = "gfx/interface/base_parts/new_elements/background_border_two_corner_shadow.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 40 40 }
+			}	
+		}
+		icon = {
+			size = { 100% 100% }
+			texture = "gfx/interface/base_parts/base_color.dds"
+			spriteType = Corneredtiled
+			alpha = 0.08
+			modify_texture = {
+				block "WindowBorder" { texture = "gfx/interface/base_parts/new_elements/background_border_two_corner_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 40 40 }
+			}
+		}
+		icon = {
+			using = beige_background
+			size = { 100% 200 }
+			block "GradientAlpha" { alpha = 0.55 }
+			block "BackgroundGradient" { visible = yes }
+			modify_texture = {
+				texture = "gfx/interface/base_parts/gradient_black.dds"
+				blend_mode = alphamultiply
+			}
+			modify_texture = {
+				block "WindowBase" { texture = "gfx/interface/base_parts/new_elements/background_two_corner_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 40 40 }
+			}
+		}
+		icon = {
+			using = shadow_background
+			size = { 100% 100% }
+			alpha = 0.2
+			modify_texture = {
+				texture = "gfx/interface/base_parts/horizontal_gradient_stretch_sides_black.dds"
+				blend_mode = alphamultiply
+			}
+			modify_texture = {
+				block "WindowBase" { texture = "gfx/interface/base_parts/new_elements/background_two_corner_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 40 40 }
+			}
+		}
+		icon = {
+			using = shadow_background
+			size = { 100% 100 }
+			parentanchor = bottom
+			block "GradientAlpha" { alpha = 0.4 }
+			block "BackgroundGradient" { visible = yes }
+			modify_texture = {
+				texture = "gfx/interface/base_parts/gradient_black_flip.dds"
+				blend_mode = alphamultiply
+			}
+			modify_texture = {
+				block "WindowBase" { texture = "gfx/interface/base_parts/new_elements/background_two_corner_alpha.dds" }
+				blend_mode = alphamultiply
+				spriteType = Corneredtiled
+				spriteborder = { 40 40 }
+			}
+		}
+	}
+	type sharp_base_window_widget = base_window_widget {
 		# Size needed
 		blockoverride "Shadow" {
 			background = {
@@ -7805,14 +7961,12 @@ types Base_GUI_Types
 		block "LineVisibility"
 		{
 			margin_widget = {
-				size = { 100% 100% }
-				position = { 0 42 }
-				#margin_right = 6
+				size = { 100% 2 }
+				position = { 0 1 }
+				parentanchor = bottom
 				icon = {
-					name = "Line"
+					size = { 100% 100% }
 					using = brighten_red_background
-					spriteType = Corneredtiled
-					size = { 100% 2 }
 				}
 			}	
 		}
@@ -7880,8 +8034,7 @@ types Base_GUI_Types
 		size = { 0 8 }	
 		margin_widget = {
 			size = { 100% 100% }
-			margin = { 9 1 }
-			alpha = 0.75
+			margin = { 5 1 }
 			widget = {
 				size = { 100% 100% }
 				background = {
@@ -7898,7 +8051,8 @@ types Base_GUI_Types
 				}
 				background = {
 					shaderfile = "gfx/FX/pdxgui_default.shader"
-					block "Color" { using = red_background }
+					#alpha = 0.5
+					block "Color" { using = darken_red_background }
 				}
 			}
 		}
@@ -9307,7 +9461,7 @@ types Base_GUI_Types
 			size = { 100% 100% }
 			using = brighten_red_background
 			modify_texture = {
-				block "Border" { texture = "gfx/interface/base_parts/new_elements/tab_left_border.dds" }
+				block "Border" { texture = "gfx/interface/base_parts/new_elements/tab_center_border_horizontal.dds" }
 				blend_mode = alphamultiply
 				spriteType = corneredtiled
 				spriteborder = { 15 15 }
@@ -9322,14 +9476,14 @@ types Base_GUI_Types
 				blend_mode = alphamultiply
 			}
 			modify_texture = {
-				block "Base" { texture = "gfx/interface/base_parts/new_elements/tab_left_base.dds" }
+				block "Base" { texture = "gfx/interface/base_parts/new_elements/tab_center_base_horizontal.dds" }
 				blend_mode = alphamultiply
 				spriteType = corneredtiled
 				spriteborder = { 15 15 }
 			}
 		}
 		textbox = {
-			position = { 0 -2 }
+			#position = { 0 -2 }
 			parentanchor = center
 			using = BaseFontS
 			using = Default_FontColor
@@ -9354,17 +9508,38 @@ types Base_GUI_Types
 		blockoverride "Border" { texture = "gfx/interface/base_parts/new_elements/tab_right_border.dds" }
 		blockoverride "Base" { texture = "gfx/interface/base_parts/new_elements/tab_right_base.dds" }
 	}
-	type category_button_open_center_horizontal = widget {
-
+	type category_button_open_center_horizontal = category_button_open {
+		blockoverride "Border" { texture = "gfx/interface/base_parts/new_elements/tab_center_border_horizontal.dds" }
+		blockoverride "Base" { texture = "gfx/interface/base_parts/new_elements/tab_center_base_horizontal.dds" }
 	}
-	type category_button_open_top = widget {
-
+	type category_button_open_top_horizontal = category_button_open {
+		blockoverride "Border" { texture = "gfx/interface/base_parts/new_elements/tab_top_border_horizontal.dds" }
+		blockoverride "Base" { texture = "gfx/interface/base_parts/new_elements/tab_top_base_horizontal.dds" }
+		blockoverride "Center_text" { visible = no }
 	}
-	type category_button_open_bottom = widget {
-
+	type category_button_open_top = category_button_open {
+		blockoverride "Border" { texture = "gfx/interface/base_parts/new_elements/tab_top_border.dds" }
+		blockoverride "Base" { texture = "gfx/interface/base_parts/new_elements/tab_top_base.dds" }
+		blockoverride "Gradient" { texture = "gfx/interface/base_parts/horizontal_gradient_stretch_inverted.dds" }
+		blockoverride "Center_text" { visible = no }
 	}
-	type category_button_open_center_vertical = widget {
-
+	type category_button_open_bottom = category_button_open {
+		blockoverride "Border" { texture = "gfx/interface/base_parts/new_elements/tab_bottom_border.dds" }
+		blockoverride "Base" { texture = "gfx/interface/base_parts/new_elements/tab_bottom_base.dds" }
+		blockoverride "Gradient" { texture = "gfx/interface/base_parts/horizontal_gradient_stretch_inverted.dds" }
+		blockoverride "Center_text" { visible = no }
+	}
+	type category_button_open_center_vertical = category_button_open {
+		blockoverride "Border" { texture = "gfx/interface/base_parts/new_elements/tab_center_border_vertical.dds" }
+		blockoverride "Base" { texture = "gfx/interface/base_parts/new_elements/tab_center_base_vertical.dds" }
+		blockoverride "Gradient" { texture = "gfx/interface/base_parts/horizontal_gradient_stretch_inverted.dds" }
+		blockoverride "Center_text" { visible = no }
+	}
+	type category_button_open_right_vertical = category_button_open {
+		blockoverride "Border" { texture = "gfx/interface/base_parts/new_elements/tab_right_border_vertical.dds" }
+		blockoverride "Base" { texture = "gfx/interface/base_parts/new_elements/tab_right_base_vertical.dds" }
+		blockoverride "Gradient" { texture = "gfx/interface/base_parts/horizontal_gradient_stretch_inverted.dds" }
+		blockoverride "Center_text" { visible = no }
 	}
 	type category_button_open_vertical = widget {
 		
@@ -9726,16 +9901,25 @@ types Base_GUI_Types
 	}
 
 	type category_tab = container {
+	}
+	type category_tab_horizontal = container {
 		ignoreinvisible = yes
 		icon = {
-			position = { 0 0 }
 			using = brighten_red_background
 			size = { 100% 2 }
 			parentanchor = bottom
 			block "MinVisible" { visible = yes }
 		}
 	}
-	type category_tab_left = category_tab {
+	type category_tab_vertical = container {
+		ignoreinvisible = yes
+		icon = {
+			using = brighten_red_background
+			size = { 2 100% }
+			block "MinVisible" { visible = yes }
+		}
+	}
+	type category_tab_left = category_tab_horizontal {
 		margin_widget = {
 			block "MinSize" { size = { 42 42 } }
 			margin_bottom = 4
@@ -9749,7 +9933,7 @@ types Base_GUI_Types
 			block "MaxVisible" { visible = no }
 		}
 	}
-	type category_tab_right = category_tab {
+	type category_tab_right = category_tab_horizontal {
 		margin_widget = {
 			block "MinSize" { size = { 42 42 } }
 			margin_bottom = 4
@@ -9763,51 +9947,114 @@ types Base_GUI_Types
 			block "MaxVisible" { visible = no }
 		}
 	}
-	type category_tab_center_horizontal = category_tab {
-
-	}
-	type category_tab_top = category_tab {
-
-	}
-	type category_tab_bottom = category_tab {
-
-	}
-	type category_tab_center_vertical = category_tab {
-
-	}
-
-	type category_tab_vertical = container {
-		ignoreinvisible = yes
-		tab_button_vertical_2 = {
-			block "MinSize"
-			{
-				size = { @mincategorybuttonwidth @mincategorybuttonheight }
+	type category_tab_center_horizontal = category_tab_horizontal {
+		margin_widget = {
+			block "MinSize" { size = { 42 42 } }
+			margin_bottom = 4
+			text_button_square_hard_corner = {
+				size = { 100% 100% }
+				block "MinVisible" { visible = yes }
 			}
-			visible = no
-			block "MinVisible"
-			{
-				visible = yes
-			} 
-			blockoverride "On_click" 
-			{
-				block "ClickFunction"
-				{
+		}
+		category_button_open_center_horizontal = {
+			block "MaxSize" { size = { 42 42 } }
+			block "MaxVisible" { visible = no }
+		}
+	}
+	type category_tab_top_horizontal = category_tab_horizontal {
+		allow_outside = yes
+		widget = {
+			block "MinSize" { size = { 42 42 } }
+			allow_outside = yes
+			margin_widget = {
+				size = { 100% 48 }
+				icon_button_square = {
+					size = { 100% 100% }
+					block "MinVisible" { visible = yes }
 				}
 			}
-			block "SmallButtonClick"
-			{
+		}
+		#margin_widget = {
+		#	block "MinSize" { size = { 42 42 } }
+		#	margin = { 1 0 }
+		#	margin_bottom = 4
+		#	widget = {
+		#		size = { 100% 50 }
+		#		icon_button_square = {
+		#			size = { 100% 100% }
+		#			block "MinVisible" { visible = yes }
+		#		}
+		#	}
+		#}
+		category_button_open_top_horizontal = {
+			block "MaxSize" { size = { 42 42 } }
+			block "MaxVisible" { visible = no }
+		}
+	}
+	type category_tab_top = category_tab_vertical {
+		margin_widget = {
+			block "MinSize" { size = { 42 42 } }
+			margin_left = 4
+			icon_button_square_rt_corner = {
+				size = { 100% 100% }
+				block "MinVisible" { visible = yes }
 			}
 		}
-		category_button_open_vertical = { 
-			block "MaxSize"
-			{
-				size = { @maxcategorybuttonwidth @maxcategorybuttonheight }
-			}
-			block "MaxVisible"
-			{
-				visible = no
+		category_button_open_top = {
+			block "MaxSize" { size = { 42 42 } }
+			block "MaxVisible" { visible = no }
+		}
+	}
+	type category_tab_bottom = category_tab_vertical {
+		margin_widget = {
+			block "MinSize" { size = { 42 42 } }
+			margin_left = 4
+			icon_button_square_rb_corner = {
+				size = { 100% 100% }
+				block "MinVisible" { visible = yes }
 			}
 		}
+		category_button_open_bottom = {
+			block "MaxSize" { size = { 42 42 } }
+			block "MaxVisible" { visible = no }
+		}
+	}
+	type category_tab_center_vertical = category_tab_vertical {
+		margin_widget = {
+			block "MinSize" { size = { 42 42 } }
+			margin_left = 4
+			icon_button_square_hard_corner = {
+				size = { 100% 100% }
+				block "MinVisible" { visible = yes }
+			}
+		}
+		category_button_open_center_vertical = {
+			block "MaxSize" { size = { 42 42 } }
+			block "MaxVisible" { visible = no }
+		}
+	}
+	type category_tab_right_vertical = category_tab_vertical {
+		margin_widget = {
+			block "MinSize" { size = { 42 42 } }
+			margin_left = 4
+			icon_button_square_right_corner = {
+				size = { 100% 100% }
+				block "MinVisible" { visible = yes }
+			}
+		}
+		category_button_open_right_vertical = {
+			block "MaxSize" { size = { 42 42 } }
+			block "MaxVisible" { visible = no }
+		}
+	}
+	type category_spacer_horizontal = icon {
+		size = { 2 2 }
+		parentanchor = bottom
+		using = brighten_red_background
+	}
+	type category_spacer_vertical = icon {
+		size = { 2 2 }
+		using = brighten_red_background
 	}
 	
 	type TopBarWindowButton = container {
@@ -12359,8 +12606,6 @@ template main_window_template
 template MainWindowHeaderBox
 {
 	hbox = {
-		#margin_top = 8
-		#margin_right = -1
 		layoutpolicy_horizontal = expanding 
 		top_window_header_for_layout = {  
 			layoutpolicy_horizontal = expanding
@@ -12371,13 +12616,12 @@ template MainWindowHeaderBox
 template MainWindowHeaderContentLeft
 {
 	layoutpolicy_horizontal = expanding
-	margin_top = -6
 	using = MainWindowHeaderBox
 	blockoverride "LineVisibility" {
 		margin_widget = {
 			size = { 100% 2 }
-			position = { 0 42 }
-			margin = { 2 0 }
+			position = { 0 1 }
+			parentanchor = bottom
 			icon = {
 				size = { 100% 100% }
 				using = brighten_red_background
@@ -12385,19 +12629,37 @@ template MainWindowHeaderContentLeft
 		}
 	}
 	blockoverride "White_buttons" { visible = no }
+	blockoverride "Shadow" {
+		background = {
+			shaderfile = "gfx/FX/pdxgui_default.shader"
+			using = shadow_background
+			margin = { 3 3 }
+			alpha = 0.5
+			modify_texture = {
+				texture = "gfx/interface/base_parts/new_elements/border_7_normal_base_shadow.dds"
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 15 15 }
+			}
+		}
+	}
+	blockoverride "Border" { texture = "gfx/interface/base_parts/new_elements/border_7_normal_base.dds" }
+	blockoverride "BorderOutlineShadow" { texture = "gfx/interface/base_parts/new_elements/border_7_shadow.dds" }
+	blockoverride "BorderOutline" { texture = "gfx/interface/base_parts/new_elements/border_7.dds" }
+	blockoverride "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_7_small_base.dds" }
 }
 
 template MainWindowHeaderContentRight
 {
 	size = { 90 48 }
-	margin_top = -6
 	using = MainWindowHeaderBox
 	blockoverride "LineVisibility" {
 		block "LineVisibilityContent" {
 			margin_widget = {
 				size = { 100% 2 }
-				position = { 0 42 }
-				margin = { 4 0 }
+				position = { 0 1 }
+				parentanchor = bottom
+				#margin = { 4 0 }
 				icon = {
 					size = { 100% 100% }
 					using = brighten_red_background
@@ -12407,6 +12669,24 @@ template MainWindowHeaderContentRight
 	}
 	blockoverride "Title_text" { visible = no }
 	blockoverride "FlagOrIcon" { visible = no }
+	blockoverride "Shadow" {
+		background = {
+			shaderfile = "gfx/FX/pdxgui_default.shader"
+			using = shadow_background
+			margin = { 3 3 }
+			alpha = 0.5
+			modify_texture = {
+				texture = "gfx/interface/base_parts/new_elements/border_6_normal_base_shadow.dds"
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 15 15 }
+			}
+		}
+	}
+	blockoverride "Border" { texture = "gfx/interface/base_parts/new_elements/border_6_normal_base.dds" }
+	blockoverride "BorderOutlineShadow" { texture = "gfx/interface/base_parts/new_elements/border_6_shadow.dds" }
+	blockoverride "BorderOutline" { texture = "gfx/interface/base_parts/new_elements/border_6.dds" }
+	blockoverride "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_6_small_base.dds" }
 }
 
 template MainWindowHeaderLine

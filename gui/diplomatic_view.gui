@@ -1,7 +1,7 @@
-@mincategorybuttonwidth = 120
-@maxcategorybuttonwidth = 120
-@mincategorybuttonheight = 28 
-@maxcategorybuttonheight = 34
+@mincategorybuttonwidth = 160
+@maxcategorybuttonwidth = 160
+@mincategorybuttonheight = 42
+@maxcategorybuttonheight = 42
 @window_width = 700
 @window_height = 910
 
@@ -33,37 +33,79 @@ base_window = {
 	flowcontainer = {
 		direction = vertical
 		widget = {
-			size = { @window_width 48 }
-			using = MainWindowHeaderBox
-			blockoverride "Title_text" { text = "DIPLOMACY_MENU_HEADER" }
-			blockoverride "FlagOrIcon"
-			{
-				icon = {
-					texture = "gfx/interface/base_parts/yellow_button_color_200fs.dds"
-					framesize = { 100 100 }
-					frame = 6
-					position = { -2 -2 }
-					size = { 32 32 }
-					modify_texture = {
-						texture = "gfx/interface/icons/menu_buttons/menu_diplomacy.dds"
-						blend_mode = alphamultiply
+			size = { @window_width 10 }
+			using = MainWindowHeaderLine
+		}
+		margin_widget = {
+			size = { @window_width 58 }
+			layoutpolicy_horizontal = expanding
+			hbox = { 
+				layoutpolicy_vertical = preferred
+				layoutpolicy_horizontal = expanding
+				spacing = -2
+				margin_widget = {
+					using = MainWindowHeaderContentLeft
+					blockoverride "Title_text" { text = "DIPLOMACY_MENU_HEADER" }
+					blockoverride "FlagOrIcon"
+					{
+						icon = {
+							using = gold_background
+							size = { 32 32 }
+							modify_texture = {
+								texture = "gfx/interface/icons/menu_buttons/menu_diplomacy.dds"
+								blend_mode = alphamultiply
+							}
+						}
 					}
 				}
-			}
-			blockoverride "White_buttons" 
-			{
-				button_back = { 
-					shortcut = "previous_window"
-					onclick = "[DiplomaticView.OnPrevious]"
-					tooltip = "PREVIOUS_DIPLOMATIC_VIEW"
+				flowcontainer = {
+					category_tab_left = {
+						blockoverride "MinSize" { size = { @mincategorybuttonwidth @mincategorybuttonheight } }
+						blockoverride "MaxSize" { size = { @maxcategorybuttonwidth @maxcategorybuttonheight } }
+						blockoverride "MinVisible" { visible = "[And( Not( GetVariableSystem.HasValue('diplomatic_tabs', 'diplomatic')), GetVariableSystem.Exists('diplomatic_tabs'))]" }
+						blockoverride "MaxVisible" { visible = "[Or( GetVariableSystem.HasValue('diplomatic_tabs', 'diplomatic'), Not( GetVariableSystem.Exists('diplomatic_tabs') ) )]" }
+						######## Shared Overrides
+						blockoverride "Center_text" { text = "DIPLOMATIC" }
+						######## Small Button Overrides
+						blockoverride "On_click" {
+							onclick = "[GetVariableSystem.Set('diplomatic_tabs', 'diplomatic')]"
+							onclick = "[PdxGuiTriggerAllAnimations('on_subject_hidden')]"
+						}
+					}  
+					category_spacer_horizontal = { }
+					category_tab_right = {
+						enabled = "[Not(And( Not( EqualTo_int32( DiplomaticView.GetTargetCountry.GetId, Player.GetId ) ), Not(DiplomaticView.GetTargetCountry.IsBarbarian) ))]"
+						blockoverride "MinSize" { size = { @mincategorybuttonwidth @mincategorybuttonheight } }
+						blockoverride "MaxSize" { size = { @maxcategorybuttonwidth @maxcategorybuttonheight } }
+						blockoverride "MinVisible" { visible = "[Not( GetVariableSystem.HasValue('diplomatic_tabs', 'subjects'))]" }
+						blockoverride "MaxVisible" { visible = "[GetVariableSystem.HasValue('diplomatic_tabs', 'subjects')]" }
+						######## Shared Overrides
+						blockoverride "Center_text" { text = "SUBJECTS" }
+						######## Small Button Overrides
+						blockoverride "On_click" {
+							onclick = "[GetVariableSystem.Set('diplomatic_tabs', 'subjects')]"
+							onclick = "[GetScriptedGui('show_player_subjects_button').Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
+						}
+					}
 				}
-				
-				button_close = {
-					onclick = "[DiplomaticView.OnClose]"
-					onclick = "[GetVariableSystem.Set( 'diplomatic_tabs', 'diplomatic' )]"
-					onclick = "[GetScriptedGui('remove_player_subjects_variables_button').Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
-					tooltip = "CLOSE"
-					shortcut = "close_window"
+				margin_widget = {
+					using = MainWindowHeaderContentRight
+					blockoverride "White_buttons" 
+					{
+						button_back = { 
+							shortcut = "previous_window"
+							onclick = "[DiplomaticView.OnPrevious]"
+							tooltip = "PREVIOUS_DIPLOMATIC_VIEW"
+						}
+						
+						button_close = {
+							onclick = "[DiplomaticView.OnClose]"
+							onclick = "[GetVariableSystem.Set( 'diplomatic_tabs', 'diplomatic' )]"
+							onclick = "[GetScriptedGui('remove_player_subjects_variables_button').Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
+							tooltip = "CLOSE"
+							shortcut = "close_window"
+						}
+					}
 				}
 			}
 		}
@@ -270,69 +312,7 @@ base_window = {
 			}
 		}
 		margin_widget = {
-			size = { @window_width 48 }
-			icon = {
-				position = { 2 42 }
-				using = brighten_red_background
-				size = { 446 2 }
-			}
-			icon = {
-				position = { 688 42 }
-				using = brighten_red_background
-				size = { 9 2 }
-			}
-			hbox = { 
-				spacing = 2
-				margin = { 10 0 }
-				margin_top = 4
-				margin_widget = {
-					layoutpolicy_horizontal = expanding
-					sub_header = {
-						position = { 0 3 }
-						visible = "[GetVariableSystem.HasValue('diplomatic_tabs', 'diplomatic')]"
-						blockoverride "Title_text" { text = "diplomatic_view" }
-						blockoverride "Max_text_width" { max_width = 230 }
-					}
-					sub_header = {
-						position = { 0 3 }
-						visible = "[GetVariableSystem.HasValue('diplomatic_tabs', 'subjects')]"
-						blockoverride "Title_text" { text = "subject_view" }
-						blockoverride "Max_text_width" { max_width = 230 }
-					}
-				}
-				category_tab = {
-					blockoverride "MinSize" { size = { @mincategorybuttonwidth @mincategorybuttonheight } }
-					blockoverride "MaxSize" { size = { @maxcategorybuttonwidth @maxcategorybuttonheight } }
-					blockoverride "MinVisible" { visible = "[And( Not( GetVariableSystem.HasValue('diplomatic_tabs', 'diplomatic')), GetVariableSystem.Exists('diplomatic_tabs'))]" }
-					blockoverride "MaxVisible" { visible = "[Or( GetVariableSystem.HasValue('diplomatic_tabs', 'diplomatic'), Not( GetVariableSystem.Exists('diplomatic_tabs') ) )]" }
-					######## Shared Overrides
-					blockoverride "Center_text" { text = "DIPLOMATIC" }
-					blockoverride "Icon" { visible = no }
-					######## Small Button Overrides
-					blockoverride "ClickFunction"
-					{
-						onclick = "[GetVariableSystem.Set('diplomatic_tabs', 'diplomatic')]"
-						onclick = "[PdxGuiTriggerAllAnimations('on_subject_hidden')]"
-					}
-				}  
-
-				category_tab = {
-					blockoverride "Enabled" { enabled = "[Not(And( Not( EqualTo_int32( DiplomaticView.GetTargetCountry.GetId, Player.GetId ) ), Not(DiplomaticView.GetTargetCountry.IsBarbarian) ))]" }
-					blockoverride "MinSize" { size = { @mincategorybuttonwidth @mincategorybuttonheight } }
-					blockoverride "MaxSize" { size = { @maxcategorybuttonwidth @maxcategorybuttonheight } }
-					blockoverride "MinVisible" { visible = "[Not( GetVariableSystem.HasValue('diplomatic_tabs', 'subjects'))]" }
-					blockoverride "MaxVisible" { visible = "[GetVariableSystem.HasValue('diplomatic_tabs', 'subjects')]" }
-					######## Shared Overrides
-					blockoverride "Center_text" { text = "SUBJECTS" }
-					blockoverride "Icon" { visible = no }
-					######## Small Button Overrides
-					blockoverride "ClickFunction"
-					{
-						onclick = "[GetVariableSystem.Set('diplomatic_tabs', 'subjects')]"
-						onclick = "[GetScriptedGui('show_player_subjects_button').Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
-					}
-				}
-			}
+			size = { @window_width 16 }
 		}
 		flowcontainer = {
 			direction = vertical

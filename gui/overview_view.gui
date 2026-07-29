@@ -1,5 +1,5 @@
-@mincategorybuttonwidth = 161
-@maxcategorybuttonwidth = 161
+@mincategorybuttonwidth = 160
+@maxcategorybuttonwidth = 160
 @mincategorybuttonheight = 42
 @maxcategorybuttonheight = 42
 @window_width = 724
@@ -50,7 +50,7 @@ base_window = {
 		direction = vertical
 		ignoreinvisible = yes
 		widget = {
-			size = { @window_width 12 }
+			size = { @window_width 10 }
 			using = MainWindowHeaderLine
 		}
 		margin_widget = {
@@ -76,8 +76,7 @@ base_window = {
 					}
 				}
 				flowcontainer = {
-					spacing = 2
-					category_tab = {
+					category_tab_left = {
 						name = "decisions_tab"
 						blockoverride "MinSize" { size = { @mincategorybuttonwidth @mincategorybuttonheight } }
 						blockoverride "MaxSize" { size = { @maxcategorybuttonwidth @maxcategorybuttonheight } }
@@ -86,14 +85,14 @@ base_window = {
 						######## Shared Overrides
 						blockoverride "Center_text" { text = "OVERVIEW" }
 						######## Small Button Overrides
-						blockoverride "ClickFunction"
-						{
+						blockoverride "On_click" {
 							onclick = "[GetVariableSystem.Toggle('decisions_tab_open')]"
 							onclick = "[GetVariableSystem.Clear('governorships_tab_open')]"
 							onclick = "[GetVariableSystem.Clear('provinces_tab_open')]"
 						}
 					}
-					category_tab = {
+					category_spacer_horizontal = { }
+					category_tab_center_horizontal = {
 						name = "governorships_tab"
 						blockoverride "MinSize" { size = { @mincategorybuttonwidth @mincategorybuttonheight } }
 						blockoverride "MaxSize" { size = { @maxcategorybuttonwidth @maxcategorybuttonheight } }
@@ -102,14 +101,14 @@ base_window = {
 						######## Shared Overrides
 						blockoverride "Center_text" { text = "GOVERNORSHIPS" }
 						######## Small Button Overrides
-						blockoverride "ClickFunction"
-						{
+						blockoverride "On_click" {
 							onclick = "[GetVariableSystem.Toggle('governorships_tab_open')]"
 							onclick = "[GetVariableSystem.Clear('decisions_tab_open')]"
 							onclick = "[GetVariableSystem.Clear('provinces_tab_open')]"
 						}
 					}
-					category_tab = {
+					category_spacer_horizontal = { }
+					category_tab_right = {
 						name = "provinces_tab"
 						blockoverride "MinSize" { size = { @mincategorybuttonwidth @mincategorybuttonheight } }
 						blockoverride "MaxSize" { size = { @maxcategorybuttonwidth @maxcategorybuttonheight } }
@@ -118,8 +117,7 @@ base_window = {
 						######## Shared Overrides
 						blockoverride "Center_text" { text = "PROVINCES" }
 						######## Small Button Overrides
-						blockoverride "ClickFunction"
-						{
+						blockoverride "On_click" {
 							onclick = "[GetVariableSystem.Toggle('provinces_tab_open')]"
 							onclick = "[GetVariableSystem.Clear('decisions_tab_open')]"
 							onclick = "[GetVariableSystem.Clear('governorships_tab_open')]"

@@ -1,5 +1,5 @@
-@mincategorybuttonwidth = 161
-@maxcategorybuttonwidth = 161
+@mincategorybuttonwidth = 160
+@maxcategorybuttonwidth = 160
 @mincategorybuttonheight = 42
 @maxcategorybuttonheight = 42
 @window_width = 940
@@ -31,7 +31,7 @@ base_window = {
 	flowcontainer = {
 		direction = vertical
 		widget = {
-			size = { @window_width 12 }
+			size = { @window_width 10 }
 			using = MainWindowHeaderLine
 		}
 		margin_widget = {
@@ -57,8 +57,7 @@ base_window = {
 					}
 				}
 				flowcontainer = {
-					spacing = 2
-					category_tab = {
+					category_tab_left = {
 						blockoverride "MinSize" { size = { @mincategorybuttonwidth @mincategorybuttonheight } }
 						blockoverride "MaxSize" { size = { @maxcategorybuttonwidth @maxcategorybuttonheight } }
 						blockoverride "MinVisible" { visible = "[Not( GetVariableSystem.HasValue('trade_tabs', 'trade_tab_open'))]" }
@@ -67,12 +66,10 @@ base_window = {
 						blockoverride "Center_text" { text = "trade_tab_trade" }
 						blockoverride "Icon" { visible = no }
 						######## Small Button Overrides
-						blockoverride "ClickFunction"
-						{
-							onclick = "[GetVariableSystem.Set('trade_tabs', 'trade_tab_open')]"
-						}
+						blockoverride "On_click" { onclick = "[GetVariableSystem.Set('trade_tabs', 'trade_tab_open')]" }
 					}
-					category_tab = {
+					category_spacer_horizontal = { }
+					category_tab_center_horizontal = {
 						blockoverride "MinSize" { size = { @mincategorybuttonwidth @mincategorybuttonheight } }
 						blockoverride "MaxSize" { size = { @maxcategorybuttonwidth @maxcategorybuttonheight } }
 						blockoverride "MinVisible" { visible = "[Not( GetVariableSystem.HasValue('trade_tabs', 'goods_tab_open'))]" }
@@ -81,12 +78,10 @@ base_window = {
 						blockoverride "Center_text" { text = "trade_tab_trade_goods" }
 						blockoverride "Icon" { visible = no }
 						######## Small Button Overrides
-						blockoverride "ClickFunction"
-						{
-							onclick = "[GetVariableSystem.Set('trade_tabs', 'goods_tab_open')]"
-						}
+						blockoverride "On_click" { onclick = "[GetVariableSystem.Set('trade_tabs', 'goods_tab_open')]" }
 					}
-					category_tab = {
+					category_spacer_horizontal = { }
+					category_tab_center_horizontal = {
 						blockoverride "MinSize" { size = { @mincategorybuttonwidth @mincategorybuttonheight } }
 						blockoverride "MaxSize" { size = { @maxcategorybuttonwidth @maxcategorybuttonheight } }
 						blockoverride "MinVisible" { visible = "[Not( GetVariableSystem.HasValue('trade_tabs', 'trade_zone_view_open'))]" }
@@ -96,13 +91,13 @@ base_window = {
 						blockoverride "Icon" { visible = no }
 						######## Small Button Overrides
 						datacontext = "[GetScriptedGui('show_trade_zones_button')]"
-						blockoverride "ClickFunction"
-						{
+						blockoverride "On_click" {
 							onclick = "[GetVariableSystem.Set('trade_tabs', 'trade_zone_view_open')]"
 							onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
 						}
 					}
-					category_tab = {
+					category_spacer_horizontal = { }
+					category_tab_right = {
 						blockoverride "MinSize" { size = { @mincategorybuttonwidth @mincategorybuttonheight } }
 						blockoverride "MaxSize" { size = { @maxcategorybuttonwidth @maxcategorybuttonheight } }
 						blockoverride "MinVisible" { visible = "[Not( GetVariableSystem.HasValue('trade_tabs', 'industry_tab_open'))]" }
@@ -111,10 +106,7 @@ base_window = {
 						blockoverride "Center_text" { text = "trade_tab_industry" }
 						blockoverride "Icon" { visible = no }
 						######## Small Button Overrides
-						blockoverride "ClickFunction"
-						{
-							onclick = "[GetVariableSystem.Set('trade_tabs', 'industry_tab_open')]"
-						}
+						blockoverride "On_click" { onclick = "[GetVariableSystem.Set('trade_tabs', 'industry_tab_open')]" }
 					}
 				}
 				margin_widget = {
