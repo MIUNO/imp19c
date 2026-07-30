@@ -64,7 +64,7 @@ base_window = {
 						######## Shared Overrides
 						blockoverride "Center_text" { text = "GOVERNMENT" }
 						######## Small Button Overrides
-						blockoverride "ClickFunction" { onclick = "[GovernmentView.ShowGovernment]" }
+						blockoverride "On_click" { onclick = "[GovernmentView.ShowGovernment]" }
 					}
 					category_spacer_horizontal = { }
 					category_tab_center_horizontal = {

@@ -15,6 +15,7 @@ base_window = {
 		on_start = "[GetVariableSystem.Set( 'diplomatic_tabs', 'diplomatic' )]"
 		on_start = "[GetVariableSystem.Set( 'relation_subjects', 'close' )]"
 		on_start = "[GetScriptedGui('save_selected_tag').Execute( GuiScope.SetRoot( DiplomaticView.GetTargetCountry.MakeScope ).AddScope('player', Player.MakeScope ).End )]"
+		on_start = "[GetScriptedGui('player_subjects').Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
 		start_sound = {
 			soundeffect = "event:/SFX/UI/Generic/2.0/sfx_ui_window_tab_close"
 		}
@@ -27,7 +28,7 @@ base_window = {
 			soundeffect = "event:/SFX/UI/Generic/2.0/sfx_ui_window_tab_close"
 		}
 		on_start = "[GetVariableSystem.Set( 'diplomatic_tabs', 'diplomatic' )]"
-		on_start = "[GetScriptedGui('remove_player_subjects_variables_button').Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
+		on_start = "[GetScriptedGui('remove_player_subjects').Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
 
 	}
 	flowcontainer = {
@@ -69,12 +70,12 @@ base_window = {
 						######## Small Button Overrides
 						blockoverride "On_click" {
 							onclick = "[GetVariableSystem.Set('diplomatic_tabs', 'diplomatic')]"
-							onclick = "[PdxGuiTriggerAllAnimations('on_subject_hidden')]"
+							#onclick = "[PdxGuiTriggerAllAnimations('on_subject_hidden')]"
 						}
 					}  
 					category_spacer_horizontal = { }
 					category_tab_right = {
-						enabled = "[Not(And( Not( EqualTo_int32( DiplomaticView.GetTargetCountry.GetId, Player.GetId ) ), Not(DiplomaticView.GetTargetCountry.IsBarbarian) ))]"
+						blockoverride "Enabled" { enabled = "[Not(And( Not( EqualTo_int32( DiplomaticView.GetTargetCountry.GetId, Player.GetId ) ), Not(DiplomaticView.GetTargetCountry.IsBarbarian) ))]" }
 						blockoverride "MinSize" { size = { @mincategorybuttonwidth @mincategorybuttonheight } }
 						blockoverride "MaxSize" { size = { @maxcategorybuttonwidth @maxcategorybuttonheight } }
 						blockoverride "MinVisible" { visible = "[Not( GetVariableSystem.HasValue('diplomatic_tabs', 'subjects'))]" }
@@ -84,7 +85,7 @@ base_window = {
 						######## Small Button Overrides
 						blockoverride "On_click" {
 							onclick = "[GetVariableSystem.Set('diplomatic_tabs', 'subjects')]"
-							onclick = "[GetScriptedGui('show_player_subjects_button').Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
+							#onclick = "[GetScriptedGui('show_player_subjects_button').Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
 						}
 					}
 				}
@@ -101,7 +102,7 @@ base_window = {
 						button_close = {
 							onclick = "[DiplomaticView.OnClose]"
 							onclick = "[GetVariableSystem.Set( 'diplomatic_tabs', 'diplomatic' )]"
-							onclick = "[GetScriptedGui('remove_player_subjects_variables_button').Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
+							#onclick = "[GetScriptedGui('remove_player_subjects_variables_button').Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
 							tooltip = "CLOSE"
 							shortcut = "close_window"
 						}
@@ -109,7 +110,124 @@ base_window = {
 				}
 			}
 		}
+		flowcontainer = {
+			margin = { 10 0 }
+			direction = vertical
+			spacing = 5
+			scrollarea = {
+				size = { 500 50 }
+				scrollbarpolicy_horizontal = always_off
+				scrollbar_vertical = {
+					using = VerticalScrollBar
+				}
+				scrollwidget = {
+					flowcontainer = {
+						spacing = 5
+						datamodel = "[Player.MakeScope.GetList('player_subjects')]"
+						item = {
+							new_country_flag = {
+								datacontext = "[Scope.GetCountry]"
+								tooltip = "COUNTRY_SHORTHAND_INFO"
+								blockoverride "Flag" {
+									texture = "[Country.AccessCoatOfArms.GetTexture('(int32)56','(int32)56')]"
+									frame = "[Country.AccessCoatOfArms.GetFrame('(int32)56','(int32)56')]"
+									framesize = { 56 56 }
+								}
+								blockoverride "FlagOverlord" {
+									texture = "[Country.GetOverlord.AccessCoatOfArms.GetTexture('(int32)56','(int32)56')]"
+									frame = "[Country.GetOverlord.AccessCoatOfArms.GetFrame('(int32)56','(int32)56')]"
+									framesize = { 56 56 }
+								}
+								blockoverride "Size"
+								{
+									size = { 48 48 }
+								}
+								blockoverride "On_click"
+								{
+									#onclick = "[OpenDiplomacy(Country.GetCountry)]" #change this
+								}
+							}
+						}
+					}
+				}
+			}
+			scrollarea = {
+				size = { 500 50 }
+				scrollbarpolicy_horizontal = always_off
+				scrollbar_vertical = {
+					using = VerticalScrollBar
+				}
+				scrollwidget = {
+					flowcontainer = {
+						spacing = 5
+						datamodel = "[Player.MakeScope.GetList('player_alliance')]"
+						item = {
+							new_country_flag = {
+								datacontext = "[Scope.GetCountry]"
+								tooltip = "COUNTRY_SHORTHAND_INFO"
+								blockoverride "Flag" {
+									texture = "[Country.AccessCoatOfArms.GetTexture('(int32)56','(int32)56')]"
+									frame = "[Country.AccessCoatOfArms.GetFrame('(int32)56','(int32)56')]"
+									framesize = { 56 56 }
+								}
+								blockoverride "FlagOverlord" {
+									texture = "[Country.GetOverlord.AccessCoatOfArms.GetTexture('(int32)56','(int32)56')]"
+									frame = "[Country.GetOverlord.AccessCoatOfArms.GetFrame('(int32)56','(int32)56')]"
+									framesize = { 56 56 }
+								}
+								blockoverride "Size"
+								{
+									size = { 48 48 }
+								}
+								blockoverride "On_click"
+								{
+									#onclick = "[OpenDiplomacy(Country.GetCountry)]" #change this
+								}
+							}
+						}
+					}
+				}
+			}
+			scrollarea = {
+				size = { 500 50 }
+				scrollbarpolicy_horizontal = always_off
+				scrollbar_vertical = {
+					using = VerticalScrollBar
+				}
+				scrollwidget = {
+					flowcontainer = {
+						spacing = 5
+						datamodel = "[Player.MakeScope.GetList('player_wars')]"
+						item = {
+							new_country_flag = {
+								datacontext = "[Scope.GetCountry]"
+								tooltip = "COUNTRY_SHORTHAND_INFO"
+								blockoverride "Flag" {
+									texture = "[Country.AccessCoatOfArms.GetTexture('(int32)56','(int32)56')]"
+									frame = "[Country.AccessCoatOfArms.GetFrame('(int32)56','(int32)56')]"
+									framesize = { 56 56 }
+								}
+								blockoverride "FlagOverlord" {
+									texture = "[Country.GetOverlord.AccessCoatOfArms.GetTexture('(int32)56','(int32)56')]"
+									frame = "[Country.GetOverlord.AccessCoatOfArms.GetFrame('(int32)56','(int32)56')]"
+									framesize = { 56 56 }
+								}
+								blockoverride "Size"
+								{
+									size = { 48 48 }
+								}
+								blockoverride "On_click"
+								{
+									#onclick = "[OpenDiplomacy(Country.GetCountry)]" #change this
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 		margin_widget = {
+			visible = no
 			size = { @window_width 158 }
 			icon = {
 				size = { @window_width 182 }
@@ -311,10 +429,8 @@ base_window = {
 				}
 			}
 		}
-		margin_widget = {
-			size = { @window_width 16 }
-		}
 		flowcontainer = {
+			visible = no
 			direction = vertical
 			margin = { 10 10 }
 			ignoreinvisible = yes
@@ -1070,8 +1186,7 @@ base_window = {
 											size = { 42 42 }
 											visible = "[Not(DiplomaticView.IsShowStances)]"
 											blockoverride "Icon" { texture = "[GetDiplomaticStanceIcon(DiplomaticView.GetPlayer.GetDiplomaticStance)]" }
-											blockoverride "On_click"
-											{
+											blockoverride "On_click" {
 												onclick = "[DiplomaticView.ShowStances]"
 											}
 										} 
@@ -1079,8 +1194,7 @@ base_window = {
 											size = { 42 42 }
 											visible = "[DiplomaticView.IsShowStances]"
 											blockoverride "Icon" { texture = "[GetDiplomaticStanceIcon(DiplomaticView.GetPlayer.GetDiplomaticStance)]" }
-											blockoverride "On_click"
-											{
+											blockoverride "On_click" {
 												onclick = "[DiplomaticView.HideStances]" 
 											}
 										}

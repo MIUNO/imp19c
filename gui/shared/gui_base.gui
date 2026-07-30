@@ -9940,6 +9940,7 @@ types Base_GUI_Types
 			text_button_square_rt_corner = {
 				size = { 100% 100% }
 				block "MinVisible" { visible = yes }
+				block "Enabled" { }
 			}
 		}
 		category_button_open_right = {
@@ -9974,18 +9975,6 @@ types Base_GUI_Types
 				}
 			}
 		}
-		#margin_widget = {
-		#	block "MinSize" { size = { 42 42 } }
-		#	margin = { 1 0 }
-		#	margin_bottom = 4
-		#	widget = {
-		#		size = { 100% 50 }
-		#		icon_button_square = {
-		#			size = { 100% 100% }
-		#			block "MinVisible" { visible = yes }
-		#		}
-		#	}
-		#}
 		category_button_open_top_horizontal = {
 			block "MaxSize" { size = { 42 42 } }
 			block "MaxVisible" { visible = no }
@@ -11183,7 +11172,8 @@ types Base_GUI_Types
 		parentanchor = bottom|hcenter
 		
 		state = {
-			name = _mouse_enter
+			#name = _mouse_enter
+			name = _mouse_hierarchy_enter
 			#on_start = "[PdxGuiWidget.FindChild('shiner').InterruptAnimation('pseudo_show')]"
 			#on_start = "[PdxGuiWidget.FindChild('shiner').InterruptAnimation('pseudo_hide')]"
 
@@ -11205,7 +11195,8 @@ types Base_GUI_Types
 		}
 		
 		state = {
-			name = _mouse_enter
+			#name = _mouse_enter
+			name = _mouse_hierarchy_leave
 			#on_start = "[PdxGuiWidget.FindChild('shiner').InterruptAnimation('pseudo_hide')]"
 			#on_start = "[PdxGuiWidget.FindChild('shiner').InterruptAnimation('pseudo_show')]"
 

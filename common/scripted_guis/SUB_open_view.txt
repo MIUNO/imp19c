@@ -1,9 +1,10 @@
-﻿show_player_subjects_button = {
+﻿player_subjects = {
 	scope = country
 	ai_is_valid = {
 		always = no
 	}
 	effect = {
+		# subject
 		every_subject = {
 			root = {
 				add_to_variable_list = {
@@ -12,10 +13,39 @@
 				}
 			}
 		}
+		# allied
+		every_allied_country = {
+			root = {
+				add_to_variable_list = {
+					name = player_alliance
+					target = prev
+				}
+			}
+		}
+		# war
+		every_countries_at_war_with = {
+			root = {
+				add_to_variable_list = {
+					name = player_wars
+					target = prev
+				}
+			}
+		}
+        #if = {
+	    #	limit = {
+	    		
+	    #	}
+	    #	root = {
+		#    	add_to_variable_list = {
+		#			name = player_alliance
+		#			target = prev
+		#		}
+		#	}
+        #}
 	}
 }
 
-remove_player_subjects_variables_button = {
+remove_player_subjects = {
 	scope = country
 	effect = {
         every_in_list = {
@@ -23,6 +53,24 @@ remove_player_subjects_variables_button = {
             root = {
 	            remove_list_variable = {
 	                name = player_subjects
+	                target = prev
+	            }
+	        }
+        }
+        every_in_list = {
+            variable = player_alliance
+            root = {
+	            remove_list_variable = {
+	                name = player_alliance
+	                target = prev
+	            }
+	        }
+        }
+        every_in_list = {
+            variable = player_wars
+            root = {
+	            remove_list_variable = {
+	                name = player_wars
 	                target = prev
 	            }
 	        }
