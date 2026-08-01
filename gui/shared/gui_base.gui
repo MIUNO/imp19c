@@ -842,10 +842,10 @@ template brown_underline
 }
 template macro_divider
 {
-	using = black_background
-	alpha = 0.5
+	using = beige_background
+	#alpha = 0.75
 	modify_texture = {
-		texture = "gfx/interface/base_parts/macro_divider.dds"
+		texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black_double.dds"
 		blend_mode = alphamultiply
 	}
 }
@@ -2686,23 +2686,37 @@ types Base_GUI_Types
 	# Alert
 	type alert = widget {
 		size = { 60 90 }
-		widget = {
+		button = {
 			size = { 100% 100% }
-			position = { 0 0 }
-			onmousehierarchyenter = "[PdxGuiWidget.TriggerAnimation('down_anim')]"
-			onmousehierarchyleave = "[PdxGuiWidget.TriggerAnimation('up_anim')]"
+			state = {
+				name = _mouse_enter
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('alert').TriggerAnimation('down_anim')]"
+			}
+			state = {
+				name = _mouse_leave
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('alert').TriggerAnimation('up_anim')]"
+			}
+			block "On_click" { }
+		}
+		widget = {
+			name = alert
+			size = { 100% 100% }
 			state = {
 				name = down_anim
 				duration = 0.1
-				position = { 0 10 }
+				animation = {
+					position = { 0 10 }
+				}
 			}
 			state = {
 				name = up_anim
 				duration = 0.1
-				position = { 0 0 }
+				animation = {
+					position = { 0 0 }
+				}
 			}
 			icon = {
-				size = { 60 90 }
+				size = { 100% 100% }
 				using = shadow_background
 				modify_texture = {
 					texture = "gfx/interface/base_parts/shadows/alert_shadow.dds"
@@ -2711,9 +2725,8 @@ types Base_GUI_Types
 					spriteborder = { 27 27 }
 				}
 			}
-			button = {
-				size = { 60 90 }
-				position = { 0 0 }
+			icon = {
+				size = { 100% 100% }
 				using = black_background
 				modify_texture = {
 					texture = "gfx/interface/base_parts/alert_alpha.dds"
@@ -2721,74 +2734,50 @@ types Base_GUI_Types
 					spriteType = Corneredtiled
 					spriteborder = { 27 27 }
 				}
-				#icon = {
-				#	size = { 100% 100% }
-				#	texture = "gfx/interface/base_parts/base_color.dds"
-				#	spriteType = Corneredtiled
-				#	alpha = 0.04
-				#	modify_texture = {
-				#		texture = "gfx/interface/base_parts/alert_alpha.dds"
-				#		blend_mode = alphamultiply
-				#		spriteType = Corneredtiled
-				#		spriteborder = { 27 27 }
-				#	}
-				#}
-				icon = {
-					size = { 100% 100% }
-					block "Color" 
-					{
-						# using = red_color_alert - Red
-						# using = green_color_alert - Green
-						# using = blue_color_alert - Blue
-						# using = yellow_color_alert - Yellow
-					}
+			}
+			icon = {
+				size = { 100% 100% }
+				block "Color" 
+				{
+					# using = red_color_alert - Red
+					# using = green_color_alert - Green
+					# using = blue_color_alert - Blue
+					# using = yellow_color_alert - Yellow
 				}
-				icon = {
-					size = { 100% 100% }
-					using = pattern_black_background_layer_01
-					modify_texture = {
-						texture = "gfx/interface/base_parts/alert_alpha.dds"
-						blend_mode = alphamultiply
-						spriteType = Corneredtiled
-						spriteborder = { 27 27 }
-					}
+			}
+			icon = {
+				size = { 100% 100% }
+				using = pattern_black_background_layer_01
+				modify_texture = {
+					texture = "gfx/interface/base_parts/alert_alpha.dds"
+					blend_mode = alphamultiply
+					spriteType = Corneredtiled
+					spriteborder = { 27 27 }
 				}
-				icon = {
-					size = { 100% 100% }
-					using = pattern_black_background_layer_02
-					modify_texture = {
-						texture = "gfx/interface/base_parts/alert_alpha.dds"
-						blend_mode = alphamultiply
-						spriteType = Corneredtiled
-						spriteborder = { 27 27 }
-					}
+			}
+			icon = {
+				size = { 100% 100% }
+				using = pattern_black_background_layer_02
+				modify_texture = {
+					texture = "gfx/interface/base_parts/alert_alpha.dds"
+					blend_mode = alphamultiply
+					spriteType = Corneredtiled
+					spriteborder = { 27 27 }
 				}
-				icon = {
-					size = { 100% 20% }
-					using = shadow_background
-					alpha = 0.5
-					modify_texture = {
-						texture = "gfx/interface/base_parts/alert_alpha.dds"
-						blend_mode = alphamultiply
-						spriteType = Corneredtiled
-						spriteborder = { 27 27 }
-					}
-					modify_texture = {
-						texture = "gfx/interface/base_parts/gradient_black.dds"
-						blend_mode = alphamultiply
-					}
+			}
+			icon = {
+				size = { 100% 20% }
+				using = shadow_background
+				alpha = 0.5
+				modify_texture = {
+					texture = "gfx/interface/base_parts/alert_alpha.dds"
+					blend_mode = alphamultiply
+					spriteType = Corneredtiled
+					spriteborder = { 27 27 }
 				}
-				#modify_texture = {
-				#	name = "Trash"
-				#	texture = "gfx/interface/base_parts/demanded_filth.dds"
-				#	blend_mode = alphamultiply
-				#	spriteType = Corneredtiled
-				#	alpha = 0.2
-				#}
-				
-				block "On_click"
-				{ 
-				
+				modify_texture = {
+					texture = "gfx/interface/base_parts/gradient_black.dds"
+					blend_mode = alphamultiply
 				}
 			}
 			icon = {
@@ -2803,7 +2792,7 @@ types Base_GUI_Types
 
 				}
 			}
-		}		
+		}	
 	}
 
 	# Diplomatic Alert
@@ -4314,10 +4303,8 @@ types Base_GUI_Types
 				margin = { 3 3 }
 				alpha = 0.5
 				modify_texture = {
-					texture = "gfx/interface/base_parts/new_elements/border_1_normal_base_shadow.dds"
+					texture = "gfx/interface/base_parts/new_elements/border_circle_30_normal_base_shadow.dds"
 					blend_mode = alphamultiply
-					spriteType = corneredtiled
-					spriteborder = { 15 15 }
 				}
 			}
 		}
@@ -4342,6 +4329,7 @@ types Base_GUI_Types
 				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_base_down').Show]"
 		    }
 		    block "On_click" { }
+		    block "On_click_additional" { }
 		    block "Shortcut" { }
 		}
 		icon = {

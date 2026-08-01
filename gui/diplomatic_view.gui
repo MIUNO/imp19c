@@ -183,7 +183,7 @@ base_window = {
 				new_country_banner = {
 					parentanchor = hcenter
 					position = { 0 30 }
-					blockoverride "Size" { size = { 192 192 } }
+					blockoverride "Size" { size = { 180 180 } }
 					#blockoverride "On_click" { onclick = "[PanToCountry(Country.Self)]" }
 					blockoverride "Flag" {
 						texture = "[Country.AccessCoatOfArms.GetTexture('(int32)192','(int32)192')]"
@@ -813,7 +813,7 @@ base_window = {
 				new_country_banner = {
 					parentanchor = hcenter
 					position = { 0 30 }
-					blockoverride "Size" { size = { 192 192 } }
+					blockoverride "Size" { size = { 180 180 } }
 					blockoverride "On_click" { onclick = "[PanToCountry(Country.Self)]" }
 					blockoverride "Flag" {
 						texture = "[Country.AccessCoatOfArms.GetTexture('(int32)192','(int32)192')]"

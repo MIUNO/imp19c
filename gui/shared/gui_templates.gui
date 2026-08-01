@@ -1601,263 +1601,424 @@ types NEW_GUI {
 		}
 	}
 
-	@topbar_left_button_height = 56
+	@topbar_left_button_height = 54
 	type topbar_left_button = widget {
-		size = { 70 @topbar_left_button_height }
+		size = { 65 @topbar_left_button_height }
 		allow_outside = yes
 		tooltip_parentanchor = bottom|right
-		background = {
-			shaderfile = "gfx/FX/pdxgui_default.shader"
-			using = shadow_background
-			modify_texture = {
-				texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black.dds"
-				blend_mode = alphamultiply
-			}
-			modify_texture = {
-				texture = "gfx/interface/base_parts/gradient_black.dds"
-				blend_mode = alphamultiply
-			}
-			modify_texture = {
-				texture = "gfx/interface/base_parts/gradient_black_flip.dds"
-				blend_mode = alphamultiply
-			}
-		}
-		button = {
-			gfxtype = buttongfx
-			size = { 70 @topbar_left_button_height }
-			parentanchor = left
-			allow_outside = yes
-			#onmousehierarchyenter = "[PdxGuiWidget.FindChild('background').TriggerAnimation('open')]"
-			#onmousehierarchyleave = "[PdxGuiWidget.FindChild('background').TriggerAnimation('close')]"
-			onmousehierarchyenter = "[PdxGuiWidget.TriggerAnimation('lp_open')]"
-			onmousehierarchyenter = "[PdxGuiTriggerAllAnimations('lp_close_full')]"
-			onmousehierarchyleave = "[PdxGuiWidget.TriggerAnimation('lp_close')]"
-			block "On_click" { }
-			block "On_click_Sound" { }
-			state = {
-				name = lp_open
-				duration = 0.2
-				delay = 0.001
-				on_start = "[PdxGuiWidget.FindChild('text').TriggerAnimation('lp_open')]"
-				on_start = "[PdxGuiWidget.FindChild('background').TriggerAnimation('lp_open')]"
-				size = { 220 @topbar_left_button_height }
-			}
-			state = {
-				name = lp_close
-				delay = 0.1
-				duration = 0.2
-				on_start = "[PdxGuiWidget.FindChild('text').TriggerAnimation('lp_close')]"
-				on_start = "[PdxGuiWidget.FindChild('background').TriggerAnimation('lp_close')]"
-				on_finish = "[PdxGuiWidget.FindChild('text').TriggerAnimation('lp_close_full')]"
-				on_finish = "[PdxGuiWidget.TriggerAnimation('close_full')]"
-				size = { 70 @topbar_left_button_height }
-			}
-			state = {
-				name = lp_close_full
-				size = { 70 @topbar_left_button_height }
-			}
-			widget = {
-				name = "background"
-				size = { 100% @topbar_left_button_height }
-				parentanchor = left
-				alpha = 0
-				state = {
-					name = lp_open
-					delay = 0.001
-					alpha = 1
-				}
-				state = {
-					name = lp_close
-					duration = 0.1
-					alpha = 0
-				}
-				state = {
-					name = lp_close_full
-					alpha = 0
-				}
+		spacing = 5
+		icon_button_circle = {
+			size = { 44 44 }
+			parentanchor = center
+			blockoverride "Shadow" {
 				background = {
 					shaderfile = "gfx/FX/pdxgui_default.shader"
-					using = black_background
-					modify_texture = {
-						texture = "gfx/interface/base_parts/left_topbar.dds"
-						blend_mode = alphamultiply
-					}
-				}
-				background = {
-					shaderfile = "gfx/FX/pdxgui_default.shader"
-					using = beige_background
-					alpha = 0.25
-					modify_texture = {
-						texture = "gfx/interface/base_parts/left_topbar.dds"
-						blend_mode = alphamultiply
-					}
-					modify_texture = {
-						texture = "gfx/interface/base_parts/gradient_black_flip.dds"
-						blend_mode = alphamultiply
-					}
-				}
-				background = {
-					shaderfile = "gfx/FX/pdxgui_default.shader"
-					using = beige_background
-					margin_right = -75%
-					alpha = 0.25
-					modify_texture = {
-						texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black.dds"
-						blend_mode = alphamultiply
-					}
-				}
-				background = {
-					shaderfile = "gfx/FX/pdxgui_default.shader"
-					using = beige_background
+					using = shadow_background
+					margin = { 3 3 }
 					alpha = 0.5
 					modify_texture = {
-						texture = "gfx/interface/base_parts/left_topbar.dds"
+						texture = "gfx/interface/base_parts/new_elements/border_circle_50_normal_base_shadow.dds"
 						blend_mode = alphamultiply
-					}
-					modify_texture = {
-						texture = "gfx/interface/base_parts/horizontal_lines.dds"
-						blend_mode = alphamultiply
-						spriteType = corneredtiled
-						spriteborder = { 2 3 }
 					}
 				}
-				widget = {
-					name = "text"
-					position = { 80 0 }
-					size = { 0 @topbar_left_button_height }
-					alpha = 0
-					state = {
-						name = lp_open
-						delay = 0.1
-						alpha = 1
-						size = { 120 @topbar_left_button_height }
-					}
-					state = {
-						name = lp_close
-						duration = 0.1
-						alpha = 0
-						size = { 0 @topbar_left_button_height }
-					}
-					state = {
-						name = lp_close_full
-						alpha = 0
-					}
-					textbox = {
-						size = { 100% 100% }
-						elide = right
-						block "Text" { text = "none" }
-						using = SubHeaderFont
-						using = Default_FontColor
-						align = left
-						fontsize_min = 12
+			}
+			blockoverride "Border" { texture = "gfx/interface/base_parts/new_elements/border_circle_50_normal_base.dds" }
+			blockoverride "BorderOutlineShadow" { texture = "gfx/interface/base_parts/new_elements/border_circle_50_shadow.dds" }
+			blockoverride "BorderOutline" { texture = "gfx/interface/base_parts/new_elements/border_circle_50.dds" }
+			blockoverride "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_circle_50_small_base.dds" }
+			block "On_click_Sound" { }
+			blockoverride "On_click_additional" { onclick = "[GetVariableSystem.Set( 'supranational_window', 'close' )]" }
+			block "On_click_additional_1" { }
+			block "On_click_additional_2" { }
+			blockoverride "Icon" {
+				size = { 30 30 }
+				parentanchor = center
+				using = white_background
+				modify_texture = {
+					block "ButtonIcon" { }
+					blend_mode = alphamultiply                  
+				}
+			}
+			widget = {
+				size = { 100% 100% }
+				alpha = 0.5
+				block "Details_toggled" { }
+				icon = {
+					size = { 100% 100% }
+					using = gold_background
+					modify_texture = {
+						texture = "gfx/interface/base_parts/new_elements/border_circle_50.dds"
+						blend_mode = alphamultiply
 					}
 				}
 			}
 			widget = {
-				name = "buttons"
-				size = { 68 @topbar_left_button_height }
-				position = { 4 0 }
-				allow_outside = yes
-				icon = {
-					size = { 54 54 }
-					parentanchor = center
-					using = shadow_background
-					modify_texture = {
-						texture = "gfx/interface/base_parts/round_button_frame_24_shadow.dds"
-						blend_mode = alphamultiply
-					}
-				}
+				size = { 100% 100% }
+				block "Additional" { visible = no }
 				button = {
-					gfxtype = buttongfx
-					size = { 68 @topbar_left_button_height }
-					block "Supranational" { onclick = "[GetVariableSystem.Set( 'supranational_window', 'close' )]" }
-					block "On_click" { }
-					block "On_click_Sound" { }
-					block "On_click_additional_1" { }
+					size = { 100% 100% }
 					block "Details" { }
-					button = {
-						gfxtype = buttongfx
-						size = { 50 50 }
-						alpha = 0.5
-						parentanchor = center
-						using = red_background
-						block "Supranational" { onclick = "[GetVariableSystem.Set( 'supranational_window', 'close' )]" }
-						block "On_click" { }
-						block "On_click_Sound" { }
-						block "On_click_additional_1" { }
-						modify_texture = {
-							texture = "gfx/interface/base_parts/round_button_back_alpha.dds"
-							blend_mode = alphamultiply
-						}
-						icon = {
-							size = { 44 44 }
-							parentanchor = center
-							using = red_background
-							modify_texture = {
-								texture = "gfx/interface/base_parts/round_button_back_alpha.dds"
-								blend_mode = alphamultiply
-							}
-						}
-						icon = {
-							size = { 30 30 }
-							parentanchor = center
-							alpha = 2.0
-							using = white_background
-							modify_texture = {
-								block "Icon" {
-									texture = "gfx/interface/icons/menu_buttons/menu_mission.dds"
-								}
-								blend_mode = alphamultiply
-							}
-						}
-					}
+					block "On_click_additional_1" { }
 				}
 				button = {
-					gfxtype = buttongfx
-					size = { 68 @topbar_left_button_height }
-					block "On_click" { }
-					block "On_click_additional_2" { }
+					size = { 100% 100% }
 					block "Details_toggled" { }
-					button = {
-						gfxtype = buttongfx
-						size = { 50 50 }
-						parentanchor = center
-						alpha = 0.5
-						using = gold_background
-						block "On_click" { }
-						block "On_click_additional_2" { }
-						modify_texture = {
-							texture = "gfx/interface/base_parts/round_button_back_alpha.dds"
-							blend_mode = alphamultiply
-						}
-						icon = {
-							size = { 44 44 }
-							parentanchor = center
-							alpha = 2.0
-							using = red_background
-							modify_texture = {
-								texture = "gfx/interface/base_parts/round_button_back_alpha.dds"
-								blend_mode = alphamultiply
-							}
-						}
-						icon = {
-							size = { 30 30 }
-							parentanchor = center
-							alpha = 2.0
-							using = gold_background
-							modify_texture = {
-								block "Icon" {
-									texture = "gfx/interface/icons/menu_buttons/menu_mission.dds"
-								}
-								blend_mode = alphamultiply
-							}
-						}
-					}
+					block "On_click_additional_2" { }
+				}
+			}
+		}
+		#background = {
+		#	shaderfile = "gfx/FX/pdxgui_default.shader"
+		#	using = shadow_background
+		#	modify_texture = {
+		#		texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black.dds"
+		#		blend_mode = alphamultiply
+		#	}
+		#	modify_texture = {
+		#		texture = "gfx/interface/base_parts/gradient_black.dds"
+		#		blend_mode = alphamultiply
+		#	}
+		#	modify_texture = {
+		#		texture = "gfx/interface/base_parts/gradient_black_flip.dds"
+		#		blend_mode = alphamultiply
+		#	}
+		#}
+		#button = {
+		#	gfxtype = buttongfx
+		#	size = { 70 @topbar_left_button_height }
+		#	parentanchor = left
+		#	allow_outside = yes
+		#	#onmousehierarchyenter = "[PdxGuiWidget.FindChild('background').TriggerAnimation('open')]"
+		#	#onmousehierarchyleave = "[PdxGuiWidget.FindChild('background').TriggerAnimation('close')]"
+		#	onmousehierarchyenter = "[PdxGuiWidget.TriggerAnimation('lp_open')]"
+		#	onmousehierarchyenter = "[PdxGuiTriggerAllAnimations('lp_close_full')]"
+		#	onmousehierarchyleave = "[PdxGuiWidget.TriggerAnimation('lp_close')]"
+		#	block "On_click" { }
+		#	block "On_click_Sound" { }
+		#	state = {
+		#		name = lp_open
+		#		duration = 0.2
+		#		delay = 0.001
+		#		on_start = "[PdxGuiWidget.FindChild('text').TriggerAnimation('lp_open')]"
+		#		on_start = "[PdxGuiWidget.FindChild('background').TriggerAnimation('lp_open')]"
+		#		size = { 220 @topbar_left_button_height }
+		#	}
+		#	state = {
+		#		name = lp_close
+		#		delay = 0.1
+		#		duration = 0.2
+		#		on_start = "[PdxGuiWidget.FindChild('text').TriggerAnimation('lp_close')]"
+		#		on_start = "[PdxGuiWidget.FindChild('background').TriggerAnimation('lp_close')]"
+		#		on_finish = "[PdxGuiWidget.FindChild('text').TriggerAnimation('lp_close_full')]"
+		#		on_finish = "[PdxGuiWidget.TriggerAnimation('close_full')]"
+		#		size = { 70 @topbar_left_button_height }
+		#	}
+		#	state = {
+		#		name = lp_close_full
+		#		size = { 70 @topbar_left_button_height }
+		#	}
+		#	widget = {
+		#		name = "background"
+		#		size = { 100% @topbar_left_button_height }
+		#		parentanchor = left
+		#		alpha = 0
+		#		state = {
+		#			name = lp_open
+		#			delay = 0.001
+		#			alpha = 1
+		#		}
+		#		state = {
+		#			name = lp_close
+		#			duration = 0.1
+		#			alpha = 0
+		#		}
+		#		state = {
+		#			name = lp_close_full
+		#			alpha = 0
+		#		}
+		#		background = {
+		#			shaderfile = "gfx/FX/pdxgui_default.shader"
+		#			using = black_background
+		#			modify_texture = {
+		#				texture = "gfx/interface/base_parts/left_topbar.dds"
+		#				blend_mode = alphamultiply
+		#			}
+		#		}
+		#		background = {
+		#			shaderfile = "gfx/FX/pdxgui_default.shader"
+		#			using = beige_background
+		#			alpha = 0.25
+		#			modify_texture = {
+		#				texture = "gfx/interface/base_parts/left_topbar.dds"
+		#				blend_mode = alphamultiply
+		#			}
+		#			modify_texture = {
+		#				texture = "gfx/interface/base_parts/gradient_black_flip.dds"
+		#				blend_mode = alphamultiply
+		#			}
+		#		}
+		#		background = {
+		#			shaderfile = "gfx/FX/pdxgui_default.shader"
+		#			using = beige_background
+		#			margin_right = -75%
+		#			alpha = 0.25
+		#			modify_texture = {
+		#				texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black.dds"
+		#				blend_mode = alphamultiply
+		#			}
+		#		}
+		#		background = {
+		#			shaderfile = "gfx/FX/pdxgui_default.shader"
+		#			using = beige_background
+		#			alpha = 0.5
+		#			modify_texture = {
+		#				texture = "gfx/interface/base_parts/left_topbar.dds"
+		#				blend_mode = alphamultiply
+		#			}
+		#			modify_texture = {
+		#				texture = "gfx/interface/base_parts/horizontal_lines.dds"
+		#				blend_mode = alphamultiply
+		#				spriteType = corneredtiled
+		#				spriteborder = { 2 3 }
+		#			}
+		#		}
+		#		widget = {
+		#			name = "text"
+		#			position = { 80 0 }
+		#			size = { 0 @topbar_left_button_height }
+		#			alpha = 0
+		#			state = {
+		#				name = lp_open
+		#				delay = 0.1
+		#				alpha = 1
+		#				size = { 120 @topbar_left_button_height }
+		#			}
+		#			state = {
+		#				name = lp_close
+		#				duration = 0.1
+		#				alpha = 0
+		#				size = { 0 @topbar_left_button_height }
+		#			}
+		#			state = {
+		#				name = lp_close_full
+		#				alpha = 0
+		#			}
+		#			textbox = {
+		#				size = { 100% 100% }
+		#				elide = right
+		#				block "Text" { text = "none" }
+		#				using = SubHeaderFont
+		#				using = Default_FontColor
+		#				align = left
+		#				fontsize_min = 12
+		#			}
+		#		}
+		#	}
+		#	widget = {
+		#		name = "buttons"
+		#		size = { 68 @topbar_left_button_height }
+		#		position = { 4 0 }
+		#		allow_outside = yes
+		#		icon = {
+		#			size = { 54 54 }
+		#			parentanchor = center
+		#			using = shadow_background
+		#			modify_texture = {
+		#				texture = "gfx/interface/base_parts/round_button_frame_24_shadow.dds"
+		#				blend_mode = alphamultiply
+		#			}
+		#		}
+		#		button = {
+		#			gfxtype = buttongfx
+		#			size = { 68 @topbar_left_button_height }
+		#			block "Supranational" { onclick = "[GetVariableSystem.Set( 'supranational_window', 'close' )]" }
+		#			block "On_click" { }
+		#			block "On_click_Sound" { }
+		#			block "On_click_additional_1" { }
+		#			block "Details" { }
+		#			button = {
+		#				gfxtype = buttongfx
+		#				size = { 50 50 }
+		#				alpha = 0.5
+		#				parentanchor = center
+		#				using = red_background
+		#				block "Supranational" { onclick = "[GetVariableSystem.Set( 'supranational_window', 'close' )]" }
+		#				block "On_click" { }
+		#				block "On_click_Sound" { }
+		#				block "On_click_additional_1" { }
+		#				modify_texture = {
+		#					texture = "gfx/interface/base_parts/round_button_back_alpha.dds"
+		#					blend_mode = alphamultiply
+		#				}
+		#				icon = {
+		#					size = { 44 44 }
+		#					parentanchor = center
+		#					using = red_background
+		#					modify_texture = {
+		#						texture = "gfx/interface/base_parts/round_button_back_alpha.dds"
+		#						blend_mode = alphamultiply
+		#					}
+		#				}
+		#				icon = {
+		#					size = { 30 30 }
+		#					parentanchor = center
+		#					alpha = 2.0
+		#					using = white_background
+		#					modify_texture = {
+		#						block "Icon" {
+		#							texture = "gfx/interface/icons/menu_buttons/menu_mission.dds"
+		#						}
+		#						blend_mode = alphamultiply
+		#					}
+		#				}
+		#			}
+		#		}
+		#		button = {
+		#			gfxtype = buttongfx
+		#			size = { 68 @topbar_left_button_height }
+		#			block "On_click" { }
+		#			block "On_click_additional_2" { }
+		#			block "Details_toggled" { }
+		#			button = {
+		#				gfxtype = buttongfx
+		#				size = { 50 50 }
+		#				parentanchor = center
+		#				alpha = 0.5
+		#				using = gold_background
+		#				block "On_click" { }
+		#				block "On_click_additional_2" { }
+		#				modify_texture = {
+		#					texture = "gfx/interface/base_parts/round_button_back_alpha.dds"
+		#					blend_mode = alphamultiply
+		#				}
+		#				icon = {
+		#					size = { 44 44 }
+		#					parentanchor = center
+		#					alpha = 2.0
+		#					using = red_background
+		#					modify_texture = {
+		#						texture = "gfx/interface/base_parts/round_button_back_alpha.dds"
+		#						blend_mode = alphamultiply
+		#					}
+		#				}
+		#				icon = {
+		#					size = { 30 30 }
+		#					parentanchor = center
+		#					alpha = 2.0
+		#					using = gold_background
+		#					modify_texture = {
+		#						block "Icon" {
+		#							texture = "gfx/interface/icons/menu_buttons/menu_mission.dds"
+		#						}
+		#						blend_mode = alphamultiply
+		#					}
+		#				}
+		#			}
+		#		}
+		#	}
+		#}
+	}
+	type flag_area_button = widget {
+		size = { 145 33 }
+		button = {
+			size = { 100% 100% }
+			state = {
+				name = _mouse_enter
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_highlight').Show]"
+			}
+			state = {
+				name = _mouse_leave
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_highlight').Hide]"
+			}
+		}
+		icon = {
+			size = { 100% 100% }
+			using = shadow_background
+			alpha = 0.25
+			modify_texture = {
+				block "BorderOutlineShadow" { texture = "gfx/interface/base_parts/new_elements/border_5_shadow.dds" }
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 15 15 }
+			}
+		}
+		icon = {
+			size = { 100% 100% }
+			using = brighten_red_background
+			modify_texture = {
+				block "BorderOutline" { texture = "gfx/interface/base_parts/new_elements/border_5.dds" }
+				blend_mode = alphamultiply
+				spriteType = corneredtiled
+				spriteborder = { 15 15 }
+			}
+		}
+		widget = {
+			size = { 100% 100% }
+			alpha = 0.1
+			icon = {
+				size = { 100% 100% }
+				using = shadow_background
+				modify_texture = {
+					block "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_5_small_base.dds" }
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
+				}
+				modify_texture = {
+					texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black_double.dds"
+					blend_mode = alphamultiply
+				}
+				modify_texture = {
+					texture = "gfx/interface/base_parts/gradient_black.dds"
+					blend_mode = alphamultiply
+				}
+			}
+			icon = {
+				size = { 100% 100% }
+				using = shadow_background
+				modify_texture = {
+					block "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_5_small_base.dds" }
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
+				}
+				modify_texture = {
+					texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black_double.dds"
+					blend_mode = alphamultiply
+				}
+				modify_texture = {
+					texture = "gfx/interface/base_parts/gradient_black_flip.dds"
+					blend_mode = alphamultiply
+				}
+			}
+		}
+		widget = {
+			name = button_highlight
+			size = { 100% 100% }
+			alpha = 0.2
+			visible = no
+			icon = {
+				size = { 100% 100% }
+				using = beige_background
+				modify_texture = {
+					block "BorderOutlineShadow" { texture = "gfx/interface/base_parts/new_elements/border_5_shadow.dds" }
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
+				}
+			}
+			icon = {
+				size = { 100% 100% }
+				using = gold_background
+				modify_texture = {
+					block "BorderOutline" { texture = "gfx/interface/base_parts/new_elements/border_5.dds" }
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
 				}
 			}
 		}
 	}
-
 	type outline_header = margin_widget {
 		size = { 100% 38 }
 		hbox = {
