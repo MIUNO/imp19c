@@ -506,7 +506,7 @@ vbox = {
 			direction = vertical
 			ignoreinvisible = yes
 			allow_outside = yes
-			position = { -5 140 }
+			position = { -5 145 }
 			topbar_left_button = {
 				name = "macro_builder"
 				blockoverride "Text" { text = "MACRO_BUILDER" }
@@ -683,7 +683,6 @@ vbox = {
 				blockoverride "Details_toggled" { visible = "[IsGameViewOpen('technology')]" }
 				blockoverride "ButtonIcon" { texture = "gfx/interface/icons/menu_buttons/menu_technology.dds" }
 			}
-
 			topbar_left_button = {
 				blockoverride "Text" { text = "CHARACTERS" }
 				tooltip = "CHARACTERS_MENU"
@@ -698,7 +697,6 @@ vbox = {
 				blockoverride "Details_toggled" { visible = "[IsGameViewOpen('characters')]" }
 				blockoverride "ButtonIcon" { texture = "gfx/interface/icons/menu_buttons/menu_character.dds" }
 			}
-
 			topbar_left_button = {
 				blockoverride "Text" { text = "MISSIONS" }
 				tooltip = "[SelectLocalization( InGameTopbar.IsTutorialActive, 'TUTORIAL_MISSION_MENU', 'MISSION_MENU' )]"
@@ -717,7 +715,6 @@ vbox = {
 				blockoverride "Details_toggled" { visible = "[IsGameViewOpen('mission')]" }
 				blockoverride "ButtonIcon" { texture = "gfx/interface/icons/menu_buttons/menu_mission.dds" }
 			}
-
 			widget = {
 				size = { 44 10 }
 				parentanchor = hcenter
@@ -727,7 +724,6 @@ vbox = {
 					parentanchor = center
 				}
 			}
-
 			topbar_left_button = {
 				#visible = "[InGameTopbar.GetPlayer.MakeScope.Var('member_of_federation').IsSet]"
 				blockoverride "Text" { text = "SUPRANATIONAL" }

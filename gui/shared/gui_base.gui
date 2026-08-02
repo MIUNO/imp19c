@@ -3124,65 +3124,63 @@ types Base_GUI_Types
 	}
 
 	type icon_and_text_with_change_topbar = margin_widget {
-		size = { 100 45 }
+		size = { 100 46 }
 		using = tooltip_se
+		#widget = {
+		#	size = { 100% 100% }
+		#	using = background_widget_inner
+		#}
 		widget = {
 			size = { 100% 100% }
 			block "Background" { visible = no }
-			widget = {
+			icon = {
 				size = { 100% 100% }
 				block "Plus" { visible = no }
-				background = {
-					shaderfile = "gfx/FX/pdxgui_default.shader"
-					using = green_color
-					alpha = 0.95
-					modify_texture = {
-						texture = "gfx/interface/base_parts/horizontal_gradient_stretch.dds"
-						blend_mode = alphamultiply
-					}
-					modify_texture = {
-						texture = "gfx/interface/base_parts/gradient_black.dds"
-						blend_mode = alphamultiply
-					}
-					modify_texture = {
-						texture = "gfx/interface/base_parts/top_bar_alpha_x120bd.dds"
-						blend_mode = alphamultiply
-						spriteType = Corneredtiled
-						spriteborder = { 60 0 }
-					}
+				using = green_color
+				alpha = 0.95
+				modify_texture = {
+					texture = "gfx/interface/base_parts/horizontal_gradient_stretch.dds"
+					blend_mode = alphamultiply
+				}
+				modify_texture = {
+					texture = "gfx/interface/base_parts/gradient_black.dds"
+					blend_mode = alphamultiply
+				}
+				modify_texture = {
+					texture = "gfx/interface/base_parts/top_bar_alpha_x120bd.dds"
+					blend_mode = alphamultiply
+					spriteType = Corneredtiled
+					spriteborder = { 60 0 }
 				}
 			}
-			widget = {
+			icon = {
 				size = { 100% 100% }
 				block "Minus" { visible = no }
-				background = {
-					shaderfile = "gfx/FX/pdxgui_default.shader"
-					using = red_color
-					alpha = 0.95
-					modify_texture = {
-						texture = "gfx/interface/base_parts/horizontal_gradient_stretch.dds"
-						blend_mode = alphamultiply
-					}
-					modify_texture = {
-						texture = "gfx/interface/base_parts/gradient_black.dds"
-						blend_mode = alphamultiply
-					}
-					modify_texture = {
-						texture = "gfx/interface/base_parts/top_bar_alpha_x120bd.dds"
-						blend_mode = alphamultiply
-						spriteType = Corneredtiled
-						spriteborder = { 60 0 }
-					}
+				using = red_color
+				alpha = 0.95
+				modify_texture = {
+					texture = "gfx/interface/base_parts/horizontal_gradient_stretch.dds"
+					blend_mode = alphamultiply
+				}
+				modify_texture = {
+					texture = "gfx/interface/base_parts/gradient_black.dds"
+					blend_mode = alphamultiply
+				}
+				modify_texture = {
+					texture = "gfx/interface/base_parts/top_bar_alpha_x120bd.dds"
+					blend_mode = alphamultiply
+					spriteType = Corneredtiled
+					spriteborder = { 60 0 }
 				}
 			}
 		}
 		icon = {
-			block "SizeIcon" { size = { 34 34 } }
+			block "SizeIcon" { size = { 30 30 } }
 			parentanchor = vcenter
 			block "Icon" { texture = "gfx/interface/icons/shared_icons/manpower.dds" }
 			icon = {
 				name = "plus"
-				position = { 0 3 }
+				position = { -2 3 }
 				size = { 36 36 }
 				using = icon_plus
 				block "Plus" { visible = no }
@@ -3190,7 +3188,7 @@ types Base_GUI_Types
 			
 			icon = {
 				name = "minus"
-				position = { 0 3 }
+				position = { -2 3 }
 				size = { 36 36 }
 				using = icon_minus
 				block "Minus" { visible = no }
@@ -3205,6 +3203,7 @@ types Base_GUI_Types
 				align = vcenter|right
 				using = BaseFontM
 				using = Default_FontColor
+				fontsize = 16
 				block "Text" { text = "[InGameTopbar.GetPlayer.GetManpower]" }
 			}
 			textbox = {
@@ -3212,6 +3211,7 @@ types Base_GUI_Types
 				parentanchor = bottom
 				align = vcenter|right
 				using = BaseFontXS
+				fontsize = 14
 				block "Change" { text = "[InGameTopbar.GetPlayer.GetManpowerChange]" }
 			}
 		}
