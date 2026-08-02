@@ -849,6 +849,15 @@ template macro_divider
 		blend_mode = alphamultiply
 	}
 }
+template macro_divider_vertical
+{
+	using = beige_background
+	#alpha = 0.75
+	modify_texture = {
+		texture = "gfx/interface/base_parts/vertical_gradient_stretch_black_double.dds"
+		blend_mode = alphamultiply
+	}
+}
 
 #### COLORS ####
 #https://lospec.com/palette-list/duel
@@ -3217,13 +3226,6 @@ types Base_GUI_Types
 		}
 	}
 
-	type separator_topbar = icon {
-		size = { 2 38 }
-		parentanchor = vcenter
-		alpha = 0.5
-		using = darken_red_background
-	}
-
 	type tag = textbox {
 		#Don't use in layoutboxes
 		minimumsize = { 0 29 }
@@ -3880,7 +3882,7 @@ types Base_GUI_Types
 		}
 		icon = {
 			size = { 100% 100% }
-			using = red_background
+			block "Color" { using = red_background }
 			modify_texture = {
 				block "Border" { texture = "gfx/interface/base_parts/new_elements/border_1_normal_base.dds" }
 				blend_mode = alphamultiply
@@ -3901,7 +3903,7 @@ types Base_GUI_Types
 		}
 		icon = {
 			size = { 100% 100% }
-			using = brighten_red_background
+			block "ColorAdditionally" { using = brighten_red_background }
 			modify_texture = {
 				block "BorderOutline" { texture = "gfx/interface/base_parts/new_elements/border_11.dds" }
 				blend_mode = alphamultiply
@@ -4334,7 +4336,7 @@ types Base_GUI_Types
 		}
 		icon = {
 			size = { 100% 100% }
-			using = red_background
+			block "ColorButton" { using = red_background }
 			modify_texture = {
 				block "Border" { texture = "gfx/interface/base_parts/new_elements/border_circle_30_normal_base.dds" }
 				blend_mode = alphamultiply
@@ -12237,6 +12239,24 @@ types CooltipBase
 					using = gold_background
 				}
 			}
+		}
+	}
+	type macro_divider = widget {
+		size = { 44 10 }
+		parentanchor = hcenter
+		icon = {
+			size = { 100% 2 }
+			using = macro_divider
+			parentanchor = center
+		}
+	}
+	type macro_divider_vertical = widget {
+		size = { 2 44 }
+		parentanchor = vcenter
+		icon = {
+			size = { 2 100% }
+			using = macro_divider_vertical
+			parentanchor = center
 		}
 	}
 }
