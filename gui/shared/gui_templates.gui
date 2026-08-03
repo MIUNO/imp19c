@@ -1607,25 +1607,9 @@ types NEW_GUI {
 		allow_outside = yes
 		tooltip_parentanchor = bottom|right
 		spacing = 5
-		icon_button_circle = {
+		icon_button_circle_50 = {
 			size = { 44 44 }
 			parentanchor = center
-			blockoverride "Shadow" {
-				background = {
-					shaderfile = "gfx/FX/pdxgui_default.shader"
-					using = shadow_background
-					margin = { 3 3 }
-					alpha = 0.5
-					modify_texture = {
-						texture = "gfx/interface/base_parts/new_elements/border_circle_50_normal_base_shadow.dds"
-						blend_mode = alphamultiply
-					}
-				}
-			}
-			blockoverride "Border" { texture = "gfx/interface/base_parts/new_elements/border_circle_50_normal_base.dds" }
-			blockoverride "BorderOutlineShadow" { texture = "gfx/interface/base_parts/new_elements/border_circle_50_shadow.dds" }
-			blockoverride "BorderOutline" { texture = "gfx/interface/base_parts/new_elements/border_circle_50.dds" }
-			blockoverride "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_circle_50_small_base.dds" }
 			block "On_click_Sound" { }
 			blockoverride "On_click_additional" { onclick = "[GetVariableSystem.Set( 'supranational_window', 'close' )]" }
 			block "On_click_additional_1" { }
@@ -2255,7 +2239,7 @@ types NEW_GUI {
 			trigger_when = "[Not(OutlinerItem.HasCharacter)]"
 		}
 		text_button_square_left_corner = {
-			size = { 274 36 }
+			size = { 290 36 }
 			parentanchor = vcenter|right
 			visible = "[Not(OutlinerItem.HasCharacter)]"
 			blockoverride "On_click" {
@@ -2264,14 +2248,14 @@ types NEW_GUI {
 			}
 			state = {
 				name = show_outliner
-				animation = { size = { 295 36 } }
+				animation = { size = { 290 36 } }
 				bezier = { 0.44 1.11 0.74 0.91 }
 				trigger_when = "[GetVariableSystem.HasValue('outliner', 'show')]"
 				duration = 0.2
 			}
 			state = {
 				name = hide_outliner
-				animation = { size = { 330 36 } }
+				animation = { size = { 325 36 } }
 				bezier = { 0.44 0.2 0.74 0.91 }
 				trigger_when = "[GetVariableSystem.HasValue('outliner', 'hide')]"
 				duration = 0.2
@@ -2284,7 +2268,7 @@ types NEW_GUI {
 			}
 		}
 		text_button_square_left_corner = {
-			size = { 274 36 }
+			size = { 290 66 }
 			parentanchor = vcenter|right
 			visible = "[OutlinerItem.HasCharacter]"
 			blockoverride "On_click" {
@@ -2293,14 +2277,14 @@ types NEW_GUI {
 			}
 			state = {
 				name = show_outliner
-				animation = { size = { 295 66 } }
+				animation = { size = { 290 66 } }
 				bezier = { 0.44 1.11 0.74 0.91 }
 				trigger_when = "[GetVariableSystem.HasValue('outliner', 'show')]"
 				duration = 0.2
 			}
 			state = {
 				name = hide_outliner
-				animation = { size = { 330 66 } }
+				animation = { size = { 325 66 } }
 				bezier = { 0.44 0.2 0.74 0.91 }
 				trigger_when = "[GetVariableSystem.HasValue('outliner', 'hide')]"
 				duration = 0.2
@@ -2341,8 +2325,9 @@ types NEW_GUI {
 				visible = "[And(OutlinerItem.IsStatusText,Not(OutlinerItem.HasCharacter))]"
 			}
 		}
-		icon_button_circle = {
+		icon_button_circle_50 = {
 			visible = "[Not(OutlinerItem.HasCharacter)]"
+			size = { 34 34 }
 			parentanchor = vcenter
 			position = { 3 0 }
 			blockoverride "On_click" {
@@ -2358,7 +2343,7 @@ types NEW_GUI {
 			}
 			state = {
 				name = hide_outliner
-				animation = { position = { 43 0 } }
+				animation = { position = { 40 0 } }
 				bezier = { 0.44 0.2 0.74 0.91 }
 				trigger_when = "[GetVariableSystem.HasValue('outliner', 'hide')]"
 				duration = 0.2
@@ -2377,14 +2362,14 @@ types NEW_GUI {
 			visible = "[Not( OutlinerItem.HasCharacter )]"
 			state = {
 				name = "show_outliner"
-				animation = { position = { 48 0 } }
+				animation = { position = { 50 0 } }
 				bezier = { 0.44 1.11 0.74 0.91 }
 				trigger_when = "[GetVariableSystem.HasValue('outliner', 'show')]"
 				duration = 0.2
 			}
 			state = {
 				name = "hide_outliner"
-				animation = { position = { 88 0 } }
+				animation = { position = { 90 0 } }
 				bezier = { 0.44 0.2 0.74 0.91 }
 				trigger_when = "[GetVariableSystem.HasValue('outliner', 'hide')]"
 				duration = 0.2

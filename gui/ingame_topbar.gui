@@ -648,16 +648,16 @@ vbox = {
 				size = { 1640 60 }
 			}
 			widget = {
-				size = { 1730 100 }
+				size = { 1730 80 }
 				state = {
 					name = rectangle
 					trigger_when = "[Not(EqualTo_int32(FixedPointToInt(GuiScope.SetRoot( Country.MakeScope ).ScriptValue('DIPLOMACY_flag_shape') ), '(int32)3'))]"
-					size = { 1730 100 }
+					size = { 1730 80 }
 				}
 				state = {
 					name = square
 					trigger_when = "[EqualTo_int32(FixedPointToInt(GuiScope.SetRoot( Country.MakeScope ).ScriptValue('DIPLOMACY_flag_shape') ), '(int32)3')]"
-					size = { 1680 100 }
+					size = { 1680 80 }
 				}
 				icon = {
 					size = { 100% 100% }
@@ -667,7 +667,7 @@ vbox = {
 						texture = "gfx/interface/base_parts/new_elements/top_panel_base_shadow.dds"
 						blend_mode = alphamultiply
 						spriteType = corneredtiled
-						spriteborder = { 180 50 }
+						spriteborder = { 180 40 }
 					}
 				}
 				icon = {
@@ -677,7 +677,7 @@ vbox = {
 						texture = "gfx/interface/base_parts/new_elements/top_panel_base.dds"
 						blend_mode = alphamultiply
 						spriteType = corneredtiled
-						spriteborder = { 180 50 }
+						spriteborder = { 180 40 }
 					}
 				}
 				icon = {
@@ -687,7 +687,7 @@ vbox = {
 						texture = "gfx/interface/base_parts/new_elements/top_panel_base_small.dds"
 						blend_mode = alphamultiply
 						spriteType = corneredtiled
-						spriteborder = { 180 50 }
+						spriteborder = { 180 40 }
 					}
 				}
 				icon = {
@@ -697,7 +697,7 @@ vbox = {
 						texture = "gfx/interface/base_parts/new_elements/top_panel_base_small.dds"
 						blend_mode = alphamultiply
 						spriteType = Corneredtiled
-						spriteborder = { 180 50 }
+						spriteborder = { 180 40 }
 					}
 				}
 				icon = {
@@ -706,8 +706,8 @@ vbox = {
 					modify_texture = {
 						texture = "gfx/interface/base_parts/new_elements/top_panel_base_small.dds"
 						blend_mode = alphamultiply
-						spriteType = Corneredtiled
-						spriteborder = { 180 50 }
+						spriteType = corneredtiled
+						spriteborder = { 180 40 }
 					}
 				}
 				icon = {
@@ -718,7 +718,7 @@ vbox = {
 						texture = "gfx/interface/base_parts/new_elements/top_panel_border_shadow.dds"
 						blend_mode = alphamultiply
 						spriteType = corneredtiled
-						spriteborder = { 180 50 }
+						spriteborder = { 180 40 }
 					}
 				}
 				icon = {
@@ -735,7 +735,7 @@ vbox = {
 						texture = "gfx/interface/base_parts/new_elements/top_panel_base.dds"
 						blend_mode = alphamultiply
 						spriteType = corneredtiled
-						spriteborder = { 180 50 }
+						spriteborder = { 180 40 }
 					}
 				}
 				icon = {
@@ -745,7 +745,7 @@ vbox = {
 						texture = "gfx/interface/base_parts/new_elements/top_panel_border.dds"
 						blend_mode = alphamultiply
 						spriteType = corneredtiled
-						spriteborder = { 180 50 }
+						spriteborder = { 180 40 }
 					}
 				}
 				icon = {
@@ -755,7 +755,7 @@ vbox = {
 						texture = "gfx/interface/base_parts/new_elements/top_panel_border_deco.dds"
 						blend_mode = alphamultiply
 						spriteType = corneredtiled
-						spriteborder = { 180 50 }
+						spriteborder = { 180 40 }
 					}
 				}
 			}
