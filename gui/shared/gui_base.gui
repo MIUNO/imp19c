@@ -2031,69 +2031,84 @@ types Base_GUI_Types
 	# Sub Header
 	type sub_header = widget {
 		size = { 100% 32 }
-		hbox = {
-			background = {
-				shaderfile = "gfx/FX/pdxgui_default.shader"
-				using = shadow_background
-				margin = { 3 3 }
-				alpha = 0.5
-				modify_texture = {
-					texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
-					blend_mode = alphamultiply
-					spriteType = corneredtiled
-					spriteborder = { 8 8 }
+		margin_widget = {
+			size = { 100% 100% }
+			alpha = 0.75
+			widget = {
+				size = { 100% 100% }
+				block "Shadow" {
+					background = {
+						shaderfile = "gfx/FX/pdxgui_default.shader"
+						using = shadow_background
+						margin = { 3 3 }
+						alpha = 0.5
+						modify_texture = {
+							texture = "gfx/interface/base_parts/new_elements/border_5_normal_base_shadow.dds"
+							blend_mode = alphamultiply
+							spriteType = corneredtiled
+							spriteborder = { 15 15 }
+						}
+					}
 				}
 			}
-			background = {
-				shaderfile = "gfx/FX/pdxgui_default.shader"
+			icon = {
+				size = { 100% 100% }
 				using = red_background
-				alpha = 0.5
-			}
-			background = {
-				shaderfile = "gfx/FX/pdxgui_default.shader"
-				using = portrait_x32y32bd_alpha
-				texture = "gfx/interface/base_parts/background_noninteractable_texture.dds"
-				alpha = 0.25
 				modify_texture = {
-					texture = "gfx/interface/base_parts/button_vignette.dds"
+					block "Border" { texture = "gfx/interface/base_parts/new_elements/border_5_normal_base.dds" }
 					blend_mode = alphamultiply
 					spriteType = corneredtiled
-					spriteborder = { 20 20 }
+					spriteborder = { 15 15 }
 				}
 			}
-			background = {
-				shaderfile = "gfx/FX/pdxgui_default.shader"
+			icon = {
+				size = { 100% 100% }
 				using = red_background
-				using = top_bar_alpha_x120bd_full
-				margin = { -2 -2 }
-				alpha = 0.5
+				modify_texture = {
+					block "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_5_small_base.dds" }
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
+				}
 			}
-			background = {
-				shaderfile = "gfx/FX/pdxgui_default.shader"
+			icon = {
+				size = { 100% 100% }
 				using = header_ornament
-				using = top_bar_alpha_x120bd_full
-				margin = { -2 -2 }
-				alpha = 0.5
 				modify_texture = {
-					texture = "gfx/interface/base_parts/header_s_pattern_x104bd_right_cut3.dds"
+					texture = "gfx/interface/base_parts/header_a_pattern.dds"
 					blend_mode = alphamultiply
 					spriteType = Corneredtiled
 				}
 				modify_texture = {
 					texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black_double.dds"
 					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 40 40 }
 				}
 				modify_texture = {
-					texture = "gfx/interface/base_parts/demanded_filth.dds"
+					block "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_5_small_base.dds" }
 					blend_mode = alphamultiply
-					spriteType = Corneredtiled
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
 				}
 			}
+			icon = {
+				size = { 100% 100% }
+				using = brighten_red_background
+				alpha = 0.5
+				modify_texture = {
+					block "BorderOutline" { texture = "gfx/interface/base_parts/new_elements/border_5.dds" }
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
+				}
+			}
+		}
+		hbox = {
 			widget = {
 				name = "Spacing_Widget_1"
 				size = { 8 4 }
 			}		
-			
 			widget = {
 				size = { 40 32 }
 				layoutpolicy_horizontal = fixed
@@ -2114,7 +2129,6 @@ types Base_GUI_Types
 					}
 				}			
 			}
-			
 			textbox = {
 				name = "Title" 
 				autoresize = yes
@@ -2134,20 +2148,19 @@ types Base_GUI_Types
 					max_width = 300
 				}
 			}
-			
 			widget = {
 				name = "Spacing_Widget_2"
 				size = { 4 4 }
 			}
-			
 			icon = {
 				name = "Ornament"
 				size = { 0 32 }
 				layoutpolicy_vertical = fixed
 				layoutpolicy_horizontal = expanding
 			}
-			block "Header_v_buttons" {
-
+			block "Header_v_buttons" { }
+			icon = {
+				size = { 7 32 }
 			}
 		}
 	}
@@ -2182,128 +2195,7 @@ types Base_GUI_Types
 				spriteborder = { 0 50 }
 			}			
 		}
-		widget = {
-			size = { 100% 32 }
-			hbox = {
-				background = {
-					shaderfile = "gfx/FX/pdxgui_default.shader"
-					using = shadow_background
-					margin = { 3 3 }
-					alpha = 0.5
-					modify_texture = {
-						texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
-						blend_mode = alphamultiply
-						spriteType = corneredtiled
-						spriteborder = { 8 8 }
-					}
-				}
-				background = {
-					shaderfile = "gfx/FX/pdxgui_default.shader"
-					using = red_background
-					alpha = 0.5
-				}
-				background = {
-					shaderfile = "gfx/FX/pdxgui_default.shader"
-					using = portrait_x32y32bd_alpha
-					texture = "gfx/interface/base_parts/background_noninteractable_texture.dds"
-					alpha = 0.25
-					modify_texture = {
-						texture = "gfx/interface/base_parts/button_vignette.dds"
-						blend_mode = alphamultiply
-						spriteType = corneredtiled
-						spriteborder = { 20 20 }
-					}
-				}
-				background = {
-					shaderfile = "gfx/FX/pdxgui_default.shader"
-					using = red_background
-					using = top_bar_alpha_x120bd_full
-					margin = { -2 -2 }
-					alpha = 0.5
-				}
-				background = {
-					shaderfile = "gfx/FX/pdxgui_default.shader"
-					using = header_ornament
-					using = top_bar_alpha_x120bd_full
-					margin = { -2 -2 }
-					alpha = 0.5
-					modify_texture = {
-						texture = "gfx/interface/base_parts/header_s_pattern_x104bd_right_cut3.dds"
-						blend_mode = alphamultiply
-						spriteType = Corneredtiled
-					}
-					modify_texture = {
-						texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black_double.dds"
-						blend_mode = alphamultiply
-					}
-					modify_texture = {
-						texture = "gfx/interface/base_parts/demanded_filth.dds"
-						blend_mode = alphamultiply
-						spriteType = Corneredtiled
-					}
-				}
-				widget = {
-					name = "Spacing_Widget_1"
-					size = { 8 4 }
-				}		
-				
-				widget = {
-					size = { 40 32 }
-					layoutpolicy_horizontal = fixed
-					
-					block "Icon_visible"
-					{
-						visible = no
-					}
-					
-					icon = {
-						parentanchor = vcenter
-						framesize = { 50 50 }
-						size = { 38 38 }
-						
-						block "Icon"
-						{
-							texture = "gfx/interface/icons/shared_icons/leader.dds"
-						}
-					}			
-				}
-				
-				textbox = {
-					name = "Title" 
-					autoresize = yes
-					elide = right
-					using = SubHeaderFont
-					using = Sub_Header_FontColor
-					margin_top = 2
-					align = top
-					block "Title_text" 
-					{
-						text = "Test Title"
-					}
-					block "Max_text_width" 
-					{
-						# Set this too sub_header Size X - 10.
-						# If there is an Icon set this to Size X - 50.
-						max_width = 300
-					}
-				}
-				
-				widget = {
-					name = "Spacing_Widget_2"
-					size = { 4 4 }
-				}
-				
-				icon = {
-					name = "Ornament"
-					size = { 0 32 }
-					layoutpolicy_vertical = fixed
-					layoutpolicy_horizontal = expanding
-				}
-				block "Header_v_buttons" {
-
-				}
-			}
-		}
+		sub_header = { }
 	}
 
 	type main_menu_header = widget {

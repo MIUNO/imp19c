@@ -2003,144 +2003,70 @@ types NEW_GUI {
 			}
 		}
 	}
-	type outline_header = margin_widget {
+	type outline_header = sub_header {
 		size = { 100% 38 }
-		hbox = {
+		blockoverride "Shadow" {
 			background = {
 				shaderfile = "gfx/FX/pdxgui_default.shader"
 				using = shadow_background
-				margin = { 27 -1 }
+				margin = { 3 3 }
 				alpha = 0.5
 				modify_texture = {
-					texture = "gfx/interface/base_parts/shadows/round_button_right_alpha_x2_shadow.dds"
+					texture = "gfx/interface/base_parts/new_elements/border_3_normal_base_shadow.dds"
 					blend_mode = alphamultiply
 					spriteType = corneredtiled
-					spriteborder = { 18 17 }
+					spriteborder = { 15 15 }
 				}
-			}
-			background = {
-				shaderfile = "gfx/FX/pdxgui_default.shader"
-				using = red_background
-				margin = { 26 -2 }
-				alpha = 0.5
-				modify_texture = {
-					texture = "gfx/interface/base_parts/round_button_right_alpha_x2.dds"
-					blend_mode = alphamultiply
-					spriteType = corneredtiled
-					spriteborder = { 18 17 }
-				}
-			}
-			background = {
-				shaderfile = "gfx/FX/pdxgui_default.shader"
-				using = portrait_x32y32bd_alpha
-				texture = "gfx/interface/base_parts/background_noninteractable_texture.dds"
-				margin = { 26 -2 }
-				alpha = 0.25
-				modify_texture = {
-					texture = "gfx/interface/base_parts/round_button_right_alpha_x2.dds"
-					blend_mode = alphamultiply
-					spriteType = corneredtiled
-					spriteborder = { 18 17 }
-				}
-				modify_texture = {
-					texture = "gfx/interface/base_parts/button_vignette.dds"
-					blend_mode = alphamultiply
-					spriteType = corneredtiled
-					spriteborder = { 20 32 }
-				}
-			}
-			background = {
-				shaderfile = "gfx/FX/pdxgui_default.shader"
-				using = red_background
-				using = top_bar_alpha_x120bd_full
-				margin = { 25 -4 }
-				alpha = 0.5
-				modify_texture = {
-					texture = "gfx/interface/base_parts/round_button_right_alpha_x25.dds"
-					blend_mode = alphamultiply
-					spriteType = corneredtiled
-					spriteborder = { 16 15 }
-				}
-			}
-			background = {
-				shaderfile = "gfx/FX/pdxgui_default.shader"
-				using = header_ornament
-				using = top_bar_alpha_x120bd_full
-				margin = { 25 -4 }
-				alpha = 0.5
-				modify_texture = {
-					texture = "gfx/interface/base_parts/round_button_right_alpha_x25.dds"
-					blend_mode = alphamultiply
-					spriteType = corneredtiled
-					spriteborder = { 16 15 }
-				}
-				modify_texture = {
-					texture = "gfx/interface/base_parts/header_s_pattern_x104bd_right_cut3.dds"
-					blend_mode = alphamultiply
-					spriteType = Corneredtiled
-				}
-				modify_texture = {
-					texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black_double.dds"
-					blend_mode = alphamultiply
-					spriteType = corneredtiled
-					spriteborder = { 40 40 }
-				}
-				modify_texture = {
-					texture = "gfx/interface/base_parts/demanded_filth.dds"
-					blend_mode = alphamultiply
-					spriteType = Corneredtiled
-				}
-			}
-			widget = {
-				name = "Spacing_Widget_1"
-				size = { 4 4 }
-			}		
-			block "TextTitle" {
-				textbox = {
-					name = "Title" 
-					autoresize = yes
-					elide = right
-					using = SubHeaderFont
-					using = Sub_Header_FontColor
-					margin_top = 2
-					margin_left = 10
-					align = top
-					block "Title_text" 
-					{
-						text = "Test Title"
-					}
-					block "Max_text_width" 
-					{
-						# Set this too sub_header Size X - 10.
-						# If there is an Icon set this to Size X - 50.
-						max_width = 300
-					}
-				}
-			}
-			
-			widget = {
-				name = "Spacing_Widget_2"
-				size = { 4 4 }
-			}
-			
-			icon = {
-				name = "Ornament"
-				size = { 0 32 }
-				layoutpolicy_vertical = fixed
-				layoutpolicy_horizontal = expanding
-			}
-			hbox = {
-				spacing = 4
-				block "White_buttons" {
-				}
-			}
-			widget = {
-				size = { 10 8 }
 			}
 		}
+		blockoverride "Border" { texture = "gfx/interface/base_parts/new_elements/border_3_normal_base.dds" }
+		blockoverride "BorderOutlineShadow" { texture = "gfx/interface/base_parts/new_elements/border_3_shadow.dds" }
+		blockoverride "BorderOutline" { texture = "gfx/interface/base_parts/new_elements/border_3.dds" }
+		blockoverride "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_3_small_base.dds" }
+		blockoverride "Icon_visible" {
+			size = { 30 30 }
+			visible = yes
+		}
+		blockoverride "Icon" { }
 	}
-	type outliner_block = container {
+	type outliner_block = flowcontainer {
+		direction = vertical
+		ignoreinvisible = yes
+		widget = {
+			size = { 305 30 }
+			#parentanchor = right
+			style_base_tab = {
+				size = { 270 34 }
+				state = {
+					name = show_outliner
+					animation = { size = { 270 34 } }
+					bezier = { 0.44 1.11 0.74 0.91 }
+					trigger_when = "[GetVariableSystem.HasValue('outliner', 'show')]"
+					duration = 0.2
+				}
+				state = {
+					name = hide_outliner
+					animation = { size = { 230 34 } }
+					bezier = { 0.44 0.2 0.74 0.91 }
+					trigger_when = "[GetVariableSystem.HasValue('outliner', 'hide')]"
+					duration = 0.2
+				}
+				parentanchor = vcenter|right
+				blockoverride "Visible_open" { visible = "[Not(GetVariableSystem.HasValue(OutlinerCategory.GetName, 'hide'))]" }
+				blockoverride "On_click_close" {
+					onclick = "[OutlinerCategory.ToggleCollapsed]"
+					onclick = "[GetVariableSystem.Set(OutlinerCategory.GetName, 'hide')]"
+				}
+				blockoverride "Visible_close" { visible = "[GetVariableSystem.HasValue(OutlinerCategory.GetName, 'hide')]" }
+				blockoverride "On_click_open" {
+					onclick = "[OutlinerCategory.ToggleCollapsed]"
+					onclick = "[GetVariableSystem.Set(OutlinerCategory.GetName, 'show')]"
+				}
+				blockoverride "Text" { text = "[OutlinerCategory.GetName]" }
+			}
+		}
 		button = {
+			visible = no
 			size = { 270 30 }
 			position = { 37 0 }
 			gfxtype = buttongfx
@@ -2198,14 +2124,14 @@ types NEW_GUI {
 				visible = "[GetVariableSystem.HasValue(OutlinerCategory.GetName, 'hide')]"
 			}
 			state = {
-				name = "show_outliner"
+				name = show_outliner
 				animation = { position = { 37 0 } }
 				bezier = { 0.44 1.11 0.74 0.91 }
 				trigger_when = "[GetVariableSystem.HasValue('outliner', 'show')]"
 				duration = 0.2
 			}
 			state = {
-				name = "hide_outliner"
+				name = hide_outliner
 				animation = { position = { 65 0 } }
 				bezier = { 0.44 0.2 0.74 0.91 }
 				trigger_when = "[GetVariableSystem.HasValue('outliner', 'hide')]"
@@ -2224,18 +2150,18 @@ types NEW_GUI {
 		}
 	}
 	type outline_button = widget {
-		size = { 330 40 }
+		size = { 310 40 }
 		tooltip = "[OutlinerItem.GetTooltip]"
 		onclick = "[OutlinerItem.OnClick]"
 		onrightclick = "[OutlinerItem.OnRightClick]"
 		state = {
 			name = "character"
-			animation = { size = { 330 70 } }
+			animation = { size = { 310 70 } }
 			trigger_when = "[OutlinerItem.HasCharacter]"
 		}
 		state = {
 			name = "no_character"
-			animation = { size = { 330 40 } }
+			animation = { size = { 310 40 } }
 			trigger_when = "[Not(OutlinerItem.HasCharacter)]"
 		}
 		text_button_square_left_corner = {
@@ -2255,7 +2181,7 @@ types NEW_GUI {
 			}
 			state = {
 				name = hide_outliner
-				animation = { size = { 325 36 } }
+				animation = { size = { 310 36 } }
 				bezier = { 0.44 0.2 0.74 0.91 }
 				trigger_when = "[GetVariableSystem.HasValue('outliner', 'hide')]"
 				duration = 0.2
