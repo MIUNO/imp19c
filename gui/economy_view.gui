@@ -271,7 +271,6 @@ base_window = {
 								tooltip = "[EconomyView.GetPlayer.MakeScope.GetVariable('official_currency').GetProvince.MakeScope.GetVariable('currency_name').GetFlagName]"
 								blockoverride "Icon"
 								{
-									size = { 48 48 }
 									using = white_background
 									modify_texture = {
 										texture = "gfx/interface/icons/shared_icons/treasury.dds"

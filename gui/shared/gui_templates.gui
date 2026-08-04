@@ -1604,16 +1604,131 @@ types NEW_GUI {
 	@topbar_left_button_height = 54
 	type topbar_left_button = widget {
 		size = { 65 @topbar_left_button_height }
-		allow_outside = yes
+		#allow_outside = yes
 		tooltip_parentanchor = bottom|right
 		spacing = 5
+		background = {
+			shaderfile = "gfx/FX/pdxgui_default.shader"
+			using = beige_background
+			alpha = 0.5
+			modify_texture = {
+				texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black.dds"
+				blend_mode = alphamultiply
+			}
+			modify_texture = {
+				texture = "gfx/interface/base_parts/gradient_black.dds"
+				blend_mode = alphamultiply
+			}
+			modify_texture = {
+				texture = "gfx/interface/base_parts/gradient_black_flip.dds"
+				blend_mode = alphamultiply
+			}
+		}
+		widget = {
+			name = line
+			size = { 250 50 }
+			parentanchor = vcenter
+			alpha = 0
+			state = {
+				name = open
+				size = { 250 50 }
+				alpha = 1
+				duration = 0.1
+			}
+			state = {
+				name = close
+				size = { 50 50 }
+				alpha = 0
+				duration = 0.1
+			}
+			background = {
+				shaderfile = "gfx/FX/pdxgui_default.shader"
+				using = shadow_background
+				margin = { 3 3 }
+				alpha = 0.5
+				modify_texture = {
+					texture = "gfx/interface/base_parts/new_elements/border_5_normal_base_shadow.dds"
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
+				}
+				modify_texture = {
+					texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black.dds"
+					blend_mode = alphamultiply
+				}
+			}
+			icon = {
+				size = { 100% 100% }
+				using = black_background
+				modify_texture = {
+					texture = "gfx/interface/base_parts/new_elements/border_5_normal_base.dds"
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
+				}
+				modify_texture = {
+					texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black.dds"
+					blend_mode = alphamultiply
+				}
+			}
+			icon = {
+				size = { 100% 100% }
+				using = black_background
+				modify_texture = {
+					texture = "gfx/interface/base_parts/new_elements/border_5_small_base.dds"
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
+				}
+				modify_texture = {
+					texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black.dds"
+					blend_mode = alphamultiply
+				}
+			}
+			icon = {
+				size = { 100% 100% }
+				using = beige_background
+				alpha = 0.5
+				modify_texture = {
+					texture = "gfx/interface/base_parts/new_elements/border_5.dds"
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
+				}
+				modify_texture = {
+					texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black.dds"
+					blend_mode = alphamultiply
+				}
+			}
+			widget = {
+				name = "text"
+				position = { 65 0 }
+				size = { 150 48 }
+				textbox = {
+					size = { 100% 100% }
+					elide = right
+					block "Text" { text = "none" }
+					using = SubHeaderFont
+					using = Highlight_FontColor
+					align = left
+					fontsize_min = 12
+				}
+			}
+		}
 		icon_button_circle_50 = {
+			name = button
 			size = { 44 44 }
 			parentanchor = center
 			block "On_click_Sound" { }
 			blockoverride "On_click_additional" { onclick = "[GetVariableSystem.Set( 'supranational_window', 'close' )]" }
 			block "On_click_additional_1" { }
 			block "On_click_additional_2" { }
+			blockoverride "mouse_enter" {
+				on_start = "[PdxGuiWidget.AccessParent.AccessParent.FindChild('line').TriggerAnimation('open')]"
+			}
+			blockoverride "mouse_leave" {
+				on_start = "[PdxGuiWidget.AccessParent.AccessParent.FindChild('line').TriggerAnimation('close')]"
+			}
 			blockoverride "Icon" {
 				size = { 30 30 }
 				parentanchor = center
@@ -1636,271 +1751,61 @@ types NEW_GUI {
 					}
 				}
 			}
-			widget = {
+		}
+		widget = {
+			size = { 100% 100% }
+			block "Additional" { visible = no }
+			button = {
 				size = { 100% 100% }
-				block "Additional" { visible = no }
-				button = {
-					size = { 100% 100% }
-					block "Details" { }
-					block "On_click_additional_1" { }
+				state = {
+					name = _mouse_enter
+					on_start = "[PdxGuiWidget.AccessParent.AccessParent.FindChild('button').FindChild('button_highlight').Show]"
+					on_start = "[PdxGuiWidget.AccessParent.AccessParent.FindChild('line').TriggerAnimation('open')]"
 				}
-				button = {
-					size = { 100% 100% }
-					block "Details_toggled" { }
-					block "On_click_additional_2" { }
+				state = {
+					name = _mouse_leave
+					on_start = "[PdxGuiWidget.AccessParent.AccessParent.FindChild('button').FindChild('button_highlight').Hide]"
+					on_start = "[PdxGuiWidget.AccessParent.AccessParent.FindChild('line').TriggerAnimation('close')]"
 				}
+			    state = {
+			        name = _mouse_press
+					on_start = "[PdxGuiWidget.AccessParent.AccessParent.FindChild('button').FindChild('button_down').Show]"
+					on_start = "[PdxGuiWidget.AccessParent.AccessParent.FindChild('button').FindChild('button_base_down').Hide]"
+			    }
+			    state = {
+			        name = _mouse_release
+					on_start = "[PdxGuiWidget.AccessParent.AccessParent.FindChild('button').FindChild('button_down').Hide]"
+					on_start = "[PdxGuiWidget.AccessParent.AccessParent.FindChild('button').FindChild('button_base_down').Show]"
+			    }
+				block "Details" { }
+				block "On_click_additional_1" { }
+			}
+			button = {
+				size = { 100% 100% }
+				state = {
+					name = _mouse_enter
+					on_start = "[PdxGuiWidget.AccessParent.AccessParent.FindChild('button').FindChild('button_highlight').Show]"
+					on_start = "[PdxGuiWidget.AccessParent.AccessParent.FindChild('line').TriggerAnimation('open')]"
+				}
+				state = {
+					name = _mouse_leave
+					on_start = "[PdxGuiWidget.AccessParent.AccessParent.FindChild('button').FindChild('button_highlight').Hide]"
+					on_start = "[PdxGuiWidget.AccessParent.AccessParent.FindChild('line').TriggerAnimation('close')]"
+				}
+			    state = {
+			        name = _mouse_press
+					on_start = "[PdxGuiWidget.AccessParent.AccessParent.FindChild('button').FindChild('button_down').Show]"
+					on_start = "[PdxGuiWidget.AccessParent.AccessParent.FindChild('button').FindChild('button_base_down').Hide]"
+			    }
+			    state = {
+			        name = _mouse_release
+					on_start = "[PdxGuiWidget.AccessParent.AccessParent.FindChild('button').FindChild('button_down').Hide]"
+					on_start = "[PdxGuiWidget.AccessParent.AccessParent.FindChild('button').FindChild('button_base_down').Show]"
+			    }
+				block "Details_toggled" { }
+				block "On_click_additional_2" { }
 			}
 		}
-		#background = {
-		#	shaderfile = "gfx/FX/pdxgui_default.shader"
-		#	using = shadow_background
-		#	modify_texture = {
-		#		texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black.dds"
-		#		blend_mode = alphamultiply
-		#	}
-		#	modify_texture = {
-		#		texture = "gfx/interface/base_parts/gradient_black.dds"
-		#		blend_mode = alphamultiply
-		#	}
-		#	modify_texture = {
-		#		texture = "gfx/interface/base_parts/gradient_black_flip.dds"
-		#		blend_mode = alphamultiply
-		#	}
-		#}
-		#button = {
-		#	gfxtype = buttongfx
-		#	size = { 70 @topbar_left_button_height }
-		#	parentanchor = left
-		#	allow_outside = yes
-		#	#onmousehierarchyenter = "[PdxGuiWidget.FindChild('background').TriggerAnimation('open')]"
-		#	#onmousehierarchyleave = "[PdxGuiWidget.FindChild('background').TriggerAnimation('close')]"
-		#	onmousehierarchyenter = "[PdxGuiWidget.TriggerAnimation('lp_open')]"
-		#	onmousehierarchyenter = "[PdxGuiTriggerAllAnimations('lp_close_full')]"
-		#	onmousehierarchyleave = "[PdxGuiWidget.TriggerAnimation('lp_close')]"
-		#	block "On_click" { }
-		#	block "On_click_Sound" { }
-		#	state = {
-		#		name = lp_open
-		#		duration = 0.2
-		#		delay = 0.001
-		#		on_start = "[PdxGuiWidget.FindChild('text').TriggerAnimation('lp_open')]"
-		#		on_start = "[PdxGuiWidget.FindChild('background').TriggerAnimation('lp_open')]"
-		#		size = { 220 @topbar_left_button_height }
-		#	}
-		#	state = {
-		#		name = lp_close
-		#		delay = 0.1
-		#		duration = 0.2
-		#		on_start = "[PdxGuiWidget.FindChild('text').TriggerAnimation('lp_close')]"
-		#		on_start = "[PdxGuiWidget.FindChild('background').TriggerAnimation('lp_close')]"
-		#		on_finish = "[PdxGuiWidget.FindChild('text').TriggerAnimation('lp_close_full')]"
-		#		on_finish = "[PdxGuiWidget.TriggerAnimation('close_full')]"
-		#		size = { 70 @topbar_left_button_height }
-		#	}
-		#	state = {
-		#		name = lp_close_full
-		#		size = { 70 @topbar_left_button_height }
-		#	}
-		#	widget = {
-		#		name = "background"
-		#		size = { 100% @topbar_left_button_height }
-		#		parentanchor = left
-		#		alpha = 0
-		#		state = {
-		#			name = lp_open
-		#			delay = 0.001
-		#			alpha = 1
-		#		}
-		#		state = {
-		#			name = lp_close
-		#			duration = 0.1
-		#			alpha = 0
-		#		}
-		#		state = {
-		#			name = lp_close_full
-		#			alpha = 0
-		#		}
-		#		background = {
-		#			shaderfile = "gfx/FX/pdxgui_default.shader"
-		#			using = black_background
-		#			modify_texture = {
-		#				texture = "gfx/interface/base_parts/left_topbar.dds"
-		#				blend_mode = alphamultiply
-		#			}
-		#		}
-		#		background = {
-		#			shaderfile = "gfx/FX/pdxgui_default.shader"
-		#			using = beige_background
-		#			alpha = 0.25
-		#			modify_texture = {
-		#				texture = "gfx/interface/base_parts/left_topbar.dds"
-		#				blend_mode = alphamultiply
-		#			}
-		#			modify_texture = {
-		#				texture = "gfx/interface/base_parts/gradient_black_flip.dds"
-		#				blend_mode = alphamultiply
-		#			}
-		#		}
-		#		background = {
-		#			shaderfile = "gfx/FX/pdxgui_default.shader"
-		#			using = beige_background
-		#			margin_right = -75%
-		#			alpha = 0.25
-		#			modify_texture = {
-		#				texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black.dds"
-		#				blend_mode = alphamultiply
-		#			}
-		#		}
-		#		background = {
-		#			shaderfile = "gfx/FX/pdxgui_default.shader"
-		#			using = beige_background
-		#			alpha = 0.5
-		#			modify_texture = {
-		#				texture = "gfx/interface/base_parts/left_topbar.dds"
-		#				blend_mode = alphamultiply
-		#			}
-		#			modify_texture = {
-		#				texture = "gfx/interface/base_parts/horizontal_lines.dds"
-		#				blend_mode = alphamultiply
-		#				spriteType = corneredtiled
-		#				spriteborder = { 2 3 }
-		#			}
-		#		}
-		#		widget = {
-		#			name = "text"
-		#			position = { 80 0 }
-		#			size = { 0 @topbar_left_button_height }
-		#			alpha = 0
-		#			state = {
-		#				name = lp_open
-		#				delay = 0.1
-		#				alpha = 1
-		#				size = { 120 @topbar_left_button_height }
-		#			}
-		#			state = {
-		#				name = lp_close
-		#				duration = 0.1
-		#				alpha = 0
-		#				size = { 0 @topbar_left_button_height }
-		#			}
-		#			state = {
-		#				name = lp_close_full
-		#				alpha = 0
-		#			}
-		#			textbox = {
-		#				size = { 100% 100% }
-		#				elide = right
-		#				block "Text" { text = "none" }
-		#				using = SubHeaderFont
-		#				using = Default_FontColor
-		#				align = left
-		#				fontsize_min = 12
-		#			}
-		#		}
-		#	}
-		#	widget = {
-		#		name = "buttons"
-		#		size = { 68 @topbar_left_button_height }
-		#		position = { 4 0 }
-		#		allow_outside = yes
-		#		icon = {
-		#			size = { 54 54 }
-		#			parentanchor = center
-		#			using = shadow_background
-		#			modify_texture = {
-		#				texture = "gfx/interface/base_parts/round_button_frame_24_shadow.dds"
-		#				blend_mode = alphamultiply
-		#			}
-		#		}
-		#		button = {
-		#			gfxtype = buttongfx
-		#			size = { 68 @topbar_left_button_height }
-		#			block "Supranational" { onclick = "[GetVariableSystem.Set( 'supranational_window', 'close' )]" }
-		#			block "On_click" { }
-		#			block "On_click_Sound" { }
-		#			block "On_click_additional_1" { }
-		#			block "Details" { }
-		#			button = {
-		#				gfxtype = buttongfx
-		#				size = { 50 50 }
-		#				alpha = 0.5
-		#				parentanchor = center
-		#				using = red_background
-		#				block "Supranational" { onclick = "[GetVariableSystem.Set( 'supranational_window', 'close' )]" }
-		#				block "On_click" { }
-		#				block "On_click_Sound" { }
-		#				block "On_click_additional_1" { }
-		#				modify_texture = {
-		#					texture = "gfx/interface/base_parts/round_button_back_alpha.dds"
-		#					blend_mode = alphamultiply
-		#				}
-		#				icon = {
-		#					size = { 44 44 }
-		#					parentanchor = center
-		#					using = red_background
-		#					modify_texture = {
-		#						texture = "gfx/interface/base_parts/round_button_back_alpha.dds"
-		#						blend_mode = alphamultiply
-		#					}
-		#				}
-		#				icon = {
-		#					size = { 30 30 }
-		#					parentanchor = center
-		#					alpha = 2.0
-		#					using = white_background
-		#					modify_texture = {
-		#						block "Icon" {
-		#							texture = "gfx/interface/icons/menu_buttons/menu_mission.dds"
-		#						}
-		#						blend_mode = alphamultiply
-		#					}
-		#				}
-		#			}
-		#		}
-		#		button = {
-		#			gfxtype = buttongfx
-		#			size = { 68 @topbar_left_button_height }
-		#			block "On_click" { }
-		#			block "On_click_additional_2" { }
-		#			block "Details_toggled" { }
-		#			button = {
-		#				gfxtype = buttongfx
-		#				size = { 50 50 }
-		#				parentanchor = center
-		#				alpha = 0.5
-		#				using = gold_background
-		#				block "On_click" { }
-		#				block "On_click_additional_2" { }
-		#				modify_texture = {
-		#					texture = "gfx/interface/base_parts/round_button_back_alpha.dds"
-		#					blend_mode = alphamultiply
-		#				}
-		#				icon = {
-		#					size = { 44 44 }
-		#					parentanchor = center
-		#					alpha = 2.0
-		#					using = red_background
-		#					modify_texture = {
-		#						texture = "gfx/interface/base_parts/round_button_back_alpha.dds"
-		#						blend_mode = alphamultiply
-		#					}
-		#				}
-		#				icon = {
-		#					size = { 30 30 }
-		#					parentanchor = center
-		#					alpha = 2.0
-		#					using = gold_background
-		#					modify_texture = {
-		#						block "Icon" {
-		#							texture = "gfx/interface/icons/menu_buttons/menu_mission.dds"
-		#						}
-		#						blend_mode = alphamultiply
-		#					}
-		#				}
-		#			}
-		#		}
-		#	}
-		#}
 	}
 	type flag_area_button = widget {
 		size = { 145 33 }
@@ -2033,7 +1938,7 @@ types NEW_GUI {
 		direction = vertical
 		ignoreinvisible = yes
 		widget = {
-			size = { 305 30 }
+			size = { 308 30 }
 			#parentanchor = right
 			style_base_tab = {
 				size = { 270 34 }
@@ -2065,79 +1970,6 @@ types NEW_GUI {
 				blockoverride "Text" { text = "[OutlinerCategory.GetName]" }
 			}
 		}
-		button = {
-			visible = no
-			size = { 270 30 }
-			position = { 37 0 }
-			gfxtype = buttongfx
-			#onclick = "[OutlinerCategory.ToggleCollapsed]"
-			tooltip = "[OutlinerCategory.GetTooltip]"
-			alpha = 0.5
-			using = tooltip_es
-			using = black_background
-			widget = {
-				size = { 3 100% }
-				alpha = 2.0
-				background = {
-					shaderfile = "gfx/FX/pdxgui_default.shader"
-					using = brighten_red_background
-				}
-			}
-			open_list_subjects = {
-				size = { 18 18 }
-				parentanchor = vcenter
-				position = { 10 0 }
-				alpha = 2.0
-				blockoverride "Down" {
-					#onclick = "[GetVariableSystem.Toggle(OverviewGovernorshipItem.GetGovernorship.GetName)]"
-					visible = "[Not(GetVariableSystem.HasValue(OutlinerCategory.GetName, 'hide'))]"
-					#onclick = "[GetVariableSystem.Set( OverviewGovernorshipItem.GetGovernorship.GetName, 'yes' )]"
-					#visible = "[Or( Not( GetVariableSystem.Exists( OverviewGovernorshipItem.GetGovernorship.GetName ) ), GetVariableSystem.HasValue( OverviewGovernorshipItem.GetGovernorship.GetName, 'no' ) )]"
-				}
-				blockoverride "Right" {
-					#onclick = "[GetVariableSystem.Toggle(OverviewGovernorshipItem.GetGovernorship.GetName)]"
-					visible = "[GetVariableSystem.HasValue(OutlinerCategory.GetName, 'hide')]"
-					#onclick = "[GetVariableSystem.Set( OverviewGovernorshipItem.GetGovernorship.GetName, 'no' )]"
-					#visible = "[GetVariableSystem.HasValue( OverviewGovernorshipItem.GetGovernorship.GetName, 'yes' )]"
-				}
-			}
-			textbox = {
-				using = SubHeaderFont
-				using = Sub_Header_FontColor
-				alpha = 2.0
-				fontsize = 16
-				text = "[OutlinerCategory.GetName]"
-				autoresize = yes
-				parentanchor = left
-				position = { 35 6 }
-			}
-			button = {
-				size = { 100% 100% }
-				onclick = "[OutlinerCategory.ToggleCollapsed]"
-				onclick = "[GetVariableSystem.Set(OutlinerCategory.GetName, 'hide')]"
-				visible = "[Not(GetVariableSystem.HasValue(OutlinerCategory.GetName, 'hide'))]"
-			}
-			button = {
-				size = { 100% 100% }
-				onclick = "[OutlinerCategory.ToggleCollapsed]"
-				onclick = "[GetVariableSystem.Set(OutlinerCategory.GetName, 'show')]"
-				visible = "[GetVariableSystem.HasValue(OutlinerCategory.GetName, 'hide')]"
-			}
-			state = {
-				name = show_outliner
-				animation = { position = { 37 0 } }
-				bezier = { 0.44 1.11 0.74 0.91 }
-				trigger_when = "[GetVariableSystem.HasValue('outliner', 'show')]"
-				duration = 0.2
-			}
-			state = {
-				name = hide_outliner
-				animation = { position = { 65 0 } }
-				bezier = { 0.44 0.2 0.74 0.91 }
-				trigger_when = "[GetVariableSystem.HasValue('outliner', 'hide')]"
-				duration = 0.2
-			}
-		} 
 		dynamicgridbox = {
 			name = "item_grid"
 			position = { 0 30 }

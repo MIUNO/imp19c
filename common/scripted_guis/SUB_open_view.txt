@@ -77,3 +77,18 @@ remove_player_subjects = {
         }
 	}
 }
+
+player_subject_select = {
+	scope = country
+    saved_scopes = {
+        player
+    }
+	effect = {
+        scope:player = {
+            set_variable = {
+                name = player_subject_select
+                value = ROOT
+            }
+        }
+	}
+}

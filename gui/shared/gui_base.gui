@@ -4207,10 +4207,12 @@ types Base_GUI_Types
 			state = {
 				name = _mouse_enter
 				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_highlight').Show]"
+				block "mouse_enter" { }
 			}
 			state = {
 				name = _mouse_leave
 				on_start = "[PdxGuiWidget.AccessParent.FindChild('button_highlight').Hide]"
+				block "mouse_leave" { }
 			}
 		    state = {
 		        name = _mouse_press

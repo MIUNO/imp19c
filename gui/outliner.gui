@@ -1,4 +1,4 @@
-@outliner_height = 58
+@outliner_height = 78
 vbox = {
 	name = "outliner"
 	layer = middle_top_top
@@ -19,8 +19,8 @@ vbox = {
 		}
 		widget = {
 			parentanchor = top|right
-			position = { 5 @outliner_height }
-			size = { 275 580 }
+			position = { 0 @outliner_height }
+			size = { 275 552 }
 			allow_outside = yes
 
 			outline_header = {
@@ -99,7 +99,6 @@ vbox = {
 					}
 				}
 			}
-
 			margin_widget = {
 				position = { 0 32 }
 				size = { 310 536 }
@@ -119,7 +118,7 @@ vbox = {
 					duration = 0.2
 				}
 				scrollarea = {
-					size = { 330 536 }
+					size = { 310 520 }
 					scrollbarpolicy_horizontal = always_off
 					scrollbar_vertical = {
 						using = VerticalScrollBar
@@ -477,7 +476,7 @@ vbox = {
 			
 			state = {
 				name = "show_outliner"
-				animation = { position = { 3 @outliner_height } }
+				animation = { position = { 0 @outliner_height } }
 				bezier = { 0.44 1.11 0.74 0.91 }
 				trigger_when = "[GetVariableSystem.HasValue('outliner', 'show')]"
 				duration = 0.2
