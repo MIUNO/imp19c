@@ -859,7 +859,7 @@ types Imp19c_GUI_Types
 			size = { 100% 33 }
 			background = {
 				shaderfile = "gfx/FX/pdxgui_default.shader"
-				using = blue_color
+				block "Color" { using = blue_color }
 				alpha = 0.25
 				margin = { -2 -2 }
 			}

@@ -1646,9 +1646,8 @@ vbox = {
 							flowcontainer = {
 								icon_card_goods = {
 									tooltip = "grainDESC"
-									blockoverride "Icon" {
-										texture = "gfx/interface/icons/tradegoods/grain.dds"
-									}
+									blockoverride "Icon" { texture = "gfx/interface/icons/tradegoods/grain.dds" }
+									blockoverride "Color" { using = yellow_orange_color }
 									blockoverride "Stockpile" {
 										text = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('grain_stockpile').GetValue|0] [GuiScope.SetRoot(ProvinceWindow.GetState.GetGovernorship.MakeScope).ScriptValue('DEMAND_difference_grain')|0+=]"
 									}
@@ -1668,9 +1667,8 @@ vbox = {
 								}
 								icon_card_goods = {
 									tooltip = "fishDESC"
-									blockoverride "Icon" {
-										texture = "gfx/interface/icons/tradegoods/fish.dds" 
-									}
+									blockoverride "Icon" { texture = "gfx/interface/icons/tradegoods/fish.dds" }
+									blockoverride "Color" { using = yellow_orange_color }
 									blockoverride "Stockpile" {
 										text = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('fish_stockpile').GetValue|0] [GuiScope.SetRoot(ProvinceWindow.GetState.GetGovernorship.MakeScope).ScriptValue('DEMAND_difference_fish')|0+=]"
 									}
@@ -1690,9 +1688,8 @@ vbox = {
 								}
 								icon_card_goods = {
 									tooltip = "livestockDESC"
-									blockoverride "Icon" {
-										texture = "gfx/interface/icons/tradegoods/livestock.dds" 
-									}
+									blockoverride "Icon" { texture = "gfx/interface/icons/tradegoods/livestock.dds" }
+									blockoverride "Color" { using = yellow_orange_color }
 									blockoverride "Stockpile" {
 										text = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('livestock_stockpile').GetValue|0] [GuiScope.SetRoot(ProvinceWindow.GetState.GetGovernorship.MakeScope).ScriptValue('DEMAND_difference_livestock')|0+=]"
 									}
@@ -1712,9 +1709,8 @@ vbox = {
 								}
 								icon_card_goods = {
 									tooltip = "vegetablesDESC"
-									blockoverride "Icon" {
-										texture = "gfx/interface/icons/tradegoods/vegetables.dds" 
-									}
+									blockoverride "Icon" { texture = "gfx/interface/icons/tradegoods/vegetables.dds" }
+									blockoverride "Color" { using = yellow_orange_color }
 									blockoverride "Stockpile" {
 										text = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('vegetables_stockpile').GetValue|0] [GuiScope.SetRoot(ProvinceWindow.GetState.GetGovernorship.MakeScope).ScriptValue('DEMAND_difference_vegetables')|0+=]"
 									}
@@ -1737,9 +1733,8 @@ vbox = {
 							flowcontainer = {
 								icon_card_goods = {
 									tooltip = "temperate_fruitDESC"
-									blockoverride "Icon" {
-										texture = "gfx/interface/icons/tradegoods/temperate_fruit.dds" 
-									}
+									blockoverride "Icon" { texture = "gfx/interface/icons/tradegoods/temperate_fruit.dds" }
+									blockoverride "Color" { using = yellow_orange_color }
 									blockoverride "Stockpile" {
 										text = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('temperate_fruit_stockpile').GetValue|0] [GuiScope.SetRoot(ProvinceWindow.GetState.GetGovernorship.MakeScope).ScriptValue('DEMAND_difference_temperate_fruit')|0+=]"
 									}
@@ -1759,9 +1754,8 @@ vbox = {
 								}
 								icon_card_goods = {
 									tooltip = "leadDESC"
-									blockoverride "Icon" {
-										texture = "gfx/interface/icons/tradegoods/lead.dds" 
-									}
+									blockoverride "Icon" { texture = "gfx/interface/icons/tradegoods/lead.dds" }
+									blockoverride "Color" { using = brown_color }
 									blockoverride "Stockpile" {
 										text = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('lead_stockpile').GetValue|0] [GuiScope.SetRoot(ProvinceWindow.GetState.GetGovernorship.MakeScope).ScriptValue('DEMAND_difference_lead')|0+=]"
 									}
@@ -1781,9 +1775,8 @@ vbox = {
 								}
 								icon_card_goods = {
 									tooltip = "coalDESC"
-									blockoverride "Icon" {
-										texture = "gfx/interface/icons/tradegoods/coal.dds" 
-									}
+									blockoverride "Icon" { texture = "gfx/interface/icons/tradegoods/coal.dds" }
+									blockoverride "Color" { using = brown_color }
 									blockoverride "Stockpile" {
 										text = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('coal_stockpile').GetValue|0] [GuiScope.SetRoot(ProvinceWindow.GetState.GetGovernorship.MakeScope).ScriptValue('DEMAND_difference_coal')|0+=]"
 									}
@@ -1803,9 +1796,8 @@ vbox = {
 								}
 								icon_card_goods = {
 									tooltip = "gemsDESC"
-									blockoverride "Icon" {
-										texture = "gfx/interface/icons/tradegoods/gems.dds" 
-									}
+									blockoverride "Icon" { texture = "gfx/interface/icons/tradegoods/gems.dds" }
+									blockoverride "Color" { using = cyan_color }
 									blockoverride "Stockpile" {
 										text = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('gems_stockpile').GetValue|0] [GuiScope.SetRoot(ProvinceWindow.GetState.GetGovernorship.MakeScope).ScriptValue('DEMAND_difference_gems')|0+=]"
 									}
@@ -1827,9 +1819,8 @@ vbox = {
 							flowcontainer = {
 								icon_card_goods = {
 									tooltip = "stoneDESC"
-									blockoverride "Icon" {
-										texture = "gfx/interface/icons/tradegoods/stone.dds" 
-									}
+									blockoverride "Icon" { texture = "gfx/interface/icons/tradegoods/stone.dds" }
+									blockoverride "Color" { using = brown_color }
 									blockoverride "Stockpile" {
 										text = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('stone_stockpile').GetValue|0] [GuiScope.SetRoot(ProvinceWindow.GetState.GetGovernorship.MakeScope).ScriptValue('DEMAND_difference_stone')|0+=]"
 									}
@@ -1849,9 +1840,8 @@ vbox = {
 								}
 								icon_card_goods = {
 									tooltip = "sulphurDESC"
-									blockoverride "Icon" {
-										texture = "gfx/interface/icons/tradegoods/sulphur.dds" 
-									}
+									blockoverride "Icon" { texture = "gfx/interface/icons/tradegoods/sulphur.dds" }
+									blockoverride "Color" { using = brown_color }
 									blockoverride "Stockpile" {
 										text = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('sulphur_stockpile').GetValue|0] [GuiScope.SetRoot(ProvinceWindow.GetState.GetGovernorship.MakeScope).ScriptValue('DEMAND_difference_sulphur')|0+=]"
 									}
@@ -1872,9 +1862,8 @@ vbox = {
 								}
 								icon_card_goods = {
 									tooltip = "tinDESC"
-									blockoverride "Icon" {
-										texture = "gfx/interface/icons/tradegoods/tin.dds" 
-									}
+									blockoverride "Icon" { texture = "gfx/interface/icons/tradegoods/tin.dds" }
+									blockoverride "Color" { using = brown_color }
 									blockoverride "Stockpile" {
 										text = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('tin_stockpile').GetValue|0] [GuiScope.SetRoot(ProvinceWindow.GetState.GetGovernorship.MakeScope).ScriptValue('DEMAND_difference_tin')|0+=]"
 									}
@@ -1894,9 +1883,8 @@ vbox = {
 								}
 								icon_card_goods = {
 									tooltip = "copperDESC"
-									blockoverride "Icon" {
-										texture = "gfx/interface/icons/tradegoods/copper.dds" 
-									}
+									blockoverride "Icon" { texture = "gfx/interface/icons/tradegoods/copper.dds" }
+									blockoverride "Color" { using = brown_color }
 									blockoverride "Stockpile" {
 										text = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('copper_stockpile').GetValue|0] [GuiScope.SetRoot(ProvinceWindow.GetState.GetGovernorship.MakeScope).ScriptValue('DEMAND_difference_copper')|0+=]"
 									}
@@ -1918,9 +1906,8 @@ vbox = {
 							flowcontainer = {
 								icon_card_goods = {
 									tooltip = "opiumDESC"
-									blockoverride "Icon" {
-										texture = "gfx/interface/icons/tradegoods/opium.dds" 
-									}
+									blockoverride "Icon" { texture = "gfx/interface/icons/tradegoods/opium.dds" }
+									blockoverride "Color" { using = cyan_color }
 									blockoverride "Stockpile" {
 										text = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('opium_stockpile').GetValue|0] [GuiScope.SetRoot(ProvinceWindow.GetState.GetGovernorship.MakeScope).ScriptValue('DEMAND_difference_opium')|0+=]"
 									}
@@ -1940,9 +1927,8 @@ vbox = {
 								}
 								icon_card_goods = {
 									tooltip = "tobaccoDESC"
-									blockoverride "Icon" {
-										texture = "gfx/interface/icons/tradegoods/tobacco.dds" 
-									}
+									blockoverride "Icon" { texture = "gfx/interface/icons/tradegoods/tobacco.dds" }
+									blockoverride "Color" { using = cyan_color }
 									blockoverride "Stockpile" {
 										text = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('tobacco_stockpile').GetValue|0] [GuiScope.SetRoot(ProvinceWindow.GetState.GetGovernorship.MakeScope).ScriptValue('DEMAND_difference_tobacco')|0+=]"
 									}
@@ -1962,9 +1948,8 @@ vbox = {
 								}
 								icon_card_goods = {
 									tooltip = "coffeeDESC"
-									blockoverride "Icon" {
-										texture = "gfx/interface/icons/tradegoods/coffee.dds" 
-									}
+									blockoverride "Icon" { texture = "gfx/interface/icons/tradegoods/coffee.dds" }
+									blockoverride "Color" { using = cyan_color }
 									blockoverride "Stockpile" {
 										text = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('coffee_stockpile').GetValue|0] [GuiScope.SetRoot(ProvinceWindow.GetState.GetGovernorship.MakeScope).ScriptValue('DEMAND_difference_coffee')|0+=]"
 									}
@@ -1984,9 +1969,8 @@ vbox = {
 								}
 								icon_card_goods = {
 									tooltip = "teaDESC"
-									blockoverride "Icon" {
-										texture = "gfx/interface/icons/tradegoods/tea.dds" 
-									}
+									blockoverride "Icon" { texture = "gfx/interface/icons/tradegoods/tea.dds" }
+									blockoverride "Color" { using = cyan_color }
 									blockoverride "Stockpile" {
 										text = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('tea_stockpile').GetValue|0] [GuiScope.SetRoot(ProvinceWindow.GetState.GetGovernorship.MakeScope).ScriptValue('DEMAND_difference_tea')|0+=]"
 									}
@@ -2008,9 +1992,8 @@ vbox = {
 							flowcontainer = {
 								icon_card_goods = {
 									tooltip = "spicesDESC"
-									blockoverride "Icon" {
-										texture = "gfx/interface/icons/tradegoods/spices.dds" 
-									}
+									blockoverride "Icon" { texture = "gfx/interface/icons/tradegoods/spices.dds" }
+									blockoverride "Color" { using = cyan_color }
 									blockoverride "Stockpile" {
 										text = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('spices_stockpile').GetValue|0] [GuiScope.SetRoot(ProvinceWindow.GetState.GetGovernorship.MakeScope).ScriptValue('DEMAND_difference_spices')|0+=]"
 									}
@@ -2030,9 +2013,8 @@ vbox = {
 								}
 								icon_card_goods = {
 									tooltip = "sugarDESC"
-									blockoverride "Icon" {
-										texture = "gfx/interface/icons/tradegoods/sugar.dds" 
-									}
+									blockoverride "Icon" { texture = "gfx/interface/icons/tradegoods/sugar.dds" }
+									blockoverride "Color" { using = cyan_color }
 									blockoverride "Stockpile" {
 										text = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('sugar_stockpile').GetValue|0] [GuiScope.SetRoot(ProvinceWindow.GetState.GetGovernorship.MakeScope).ScriptValue('DEMAND_difference_sugar')|0+=]"
 									}
@@ -2052,9 +2034,8 @@ vbox = {
 								}
 								icon_card_goods = {
 									tooltip = "furDESC"
-									blockoverride "Icon" {
-										texture = "gfx/interface/icons/tradegoods/fur.dds" 
-									}
+									blockoverride "Icon" { texture = "gfx/interface/icons/tradegoods/fur.dds" }
+									blockoverride "Color" { using = cyan_color }
 									blockoverride "Stockpile" {
 										text = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('fur_stockpile').GetValue|0] [GuiScope.SetRoot(ProvinceWindow.GetState.GetGovernorship.MakeScope).ScriptValue('DEMAND_difference_fur')|0+=]"
 									}
@@ -2074,9 +2055,8 @@ vbox = {
 								}
 								icon_card_goods = {
 									tooltip = "industrial_fibresDESC"
-									blockoverride "Icon" {
-										texture = "gfx/interface/icons/tradegoods/industrial_fibres.dds" 
-									}
+									blockoverride "Icon" { texture = "gfx/interface/icons/tradegoods/industrial_fibres.dds" }
+									blockoverride "Color" { using = brown_color }
 									blockoverride "Stockpile" {
 										text = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('industrial_fibres_stockpile').GetValue|0] [GuiScope.SetRoot(ProvinceWindow.GetState.GetGovernorship.MakeScope).ScriptValue('DEMAND_difference_industrial_fibres')|0+=]"
 									}
@@ -2098,9 +2078,8 @@ vbox = {
 							flowcontainer = {
 								icon_card_goods = {
 									tooltip = "textile_fibresDESC"
-									blockoverride "Icon" {
-										texture = "gfx/interface/icons/tradegoods/textile_fibres.dds" 
-									}
+									blockoverride "Icon" { texture = "gfx/interface/icons/tradegoods/textile_fibres.dds" }
+									blockoverride "Color" { using = brown_color }
 									blockoverride "Stockpile" {
 										text = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('textile_fibres_stockpile').GetValue|0] [GuiScope.SetRoot(ProvinceWindow.GetState.GetGovernorship.MakeScope).ScriptValue('DEMAND_difference_textile_fibres')|0+=]"
 									}
@@ -2120,9 +2099,8 @@ vbox = {
 								}
 								icon_card_goods = {
 									tooltip = "silkDESC"
-									blockoverride "Icon" {
-										texture = "gfx/interface/icons/tradegoods/silk.dds" 
-									}
+									blockoverride "Icon" { texture = "gfx/interface/icons/tradegoods/silk.dds" }
+									blockoverride "Color" { using = brown_color }
 									blockoverride "Stockpile" {
 										text = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('silk_stockpile').GetValue|0] [GuiScope.SetRoot(ProvinceWindow.GetState.GetGovernorship.MakeScope).ScriptValue('DEMAND_difference_silk')|0+=]"
 									}
@@ -2142,9 +2120,8 @@ vbox = {
 								}
 								icon_card_goods = {
 									tooltip = "woodDESC"
-									blockoverride "Icon" {
-										texture = "gfx/interface/icons/tradegoods/wood.dds" 
-									}
+									blockoverride "Icon" { texture = "gfx/interface/icons/tradegoods/wood.dds" }
+									blockoverride "Color" { using = brown_color }
 									blockoverride "Stockpile" {
 										text = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('wood_stockpile').GetValue|0] [GuiScope.SetRoot(ProvinceWindow.GetState.GetGovernorship.MakeScope).ScriptValue('DEMAND_difference_wood')|0+=]"
 									}
@@ -2164,9 +2141,8 @@ vbox = {
 								}
 								icon_card_goods = {
 									tooltip = "dyeDESC"
-									blockoverride "Icon" {
-										texture = "gfx/interface/icons/tradegoods/dye.dds" 
-									}
+									blockoverride "Icon" { texture = "gfx/interface/icons/tradegoods/dye.dds" }
+									blockoverride "Color" { using = brown_color }
 									blockoverride "Stockpile" {
 										text = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('dye_stockpile').GetValue|0] [GuiScope.SetRoot(ProvinceWindow.GetState.GetGovernorship.MakeScope).ScriptValue('DEMAND_difference_dye')|0+=]"
 									}
@@ -2188,9 +2164,8 @@ vbox = {
 							flowcontainer = {
 								icon_card_goods = {
 									tooltip = "oilDESC"
-									blockoverride "Icon" {
-										texture = "gfx/interface/icons/tradegoods/oil.dds" 
-									}
+									blockoverride "Icon" { texture = "gfx/interface/icons/tradegoods/oil.dds" }
+									blockoverride "Color" { using = brown_color }
 									blockoverride "Stockpile" {
 										text = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('oil_stockpile').GetValue|0] [GuiScope.SetRoot(ProvinceWindow.GetState.GetGovernorship.MakeScope).ScriptValue('DEMAND_difference_oil')|0+=]"
 									}
@@ -2210,9 +2185,8 @@ vbox = {
 								}
 								icon_card_goods = {
 									tooltip = "hardwoodDESC"
-									blockoverride "Icon" {
-										texture = "gfx/interface/icons/tradegoods/hardwood.dds" 
-									}
+									blockoverride "Icon" { texture = "gfx/interface/icons/tradegoods/hardwood.dds" }
+									blockoverride "Color" { using = brown_color }
 									blockoverride "Stockpile" {
 										text = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('hardwood_stockpile').GetValue|0] [GuiScope.SetRoot(ProvinceWindow.GetState.GetGovernorship.MakeScope).ScriptValue('DEMAND_difference_hardwood')|0+=]"
 									}
@@ -2232,9 +2206,8 @@ vbox = {
 								}
 								icon_card_goods = {
 									tooltip = "rubberDESC"
-									blockoverride "Icon" {
-										texture = "gfx/interface/icons/tradegoods/rubber.dds" 
-									}
+									blockoverride "Icon" { texture = "gfx/interface/icons/tradegoods/rubber.dds" }
+									blockoverride "Color" { using = brown_color }
 									blockoverride "Stockpile" {
 										text = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('rubber_stockpile').GetValue|0] [GuiScope.SetRoot(ProvinceWindow.GetState.GetGovernorship.MakeScope).ScriptValue('DEMAND_difference_rubber')|0+=]"
 									}
@@ -2254,9 +2227,8 @@ vbox = {
 								}
 								icon_card_goods = {
 									tooltip = "ironDESC"
-									blockoverride "Icon" {
-										texture = "gfx/interface/icons/tradegoods/iron.dds" 
-									}
+									blockoverride "Icon" { texture = "gfx/interface/icons/tradegoods/iron.dds" }
+									blockoverride "Color" { using = brown_color }
 									blockoverride "Stockpile" {
 										text = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('iron_stockpile').GetValue|0] [GuiScope.SetRoot(ProvinceWindow.GetState.GetGovernorship.MakeScope).ScriptValue('DEMAND_difference_iron')|0+=]"
 									}
@@ -2278,9 +2250,8 @@ vbox = {
 							flowcontainer = {
 								icon_card_goods = {
 									tooltip = "goldDESC"
-									blockoverride "Icon" {
-										texture = "gfx/interface/icons/tradegoods/gold.dds" 
-									}
+									blockoverride "Icon" { texture = "gfx/interface/icons/tradegoods/gold.dds" }
+									blockoverride "Color" { using = cyan_color }
 									blockoverride "Stockpile" {
 										text = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('gold_stockpile').GetValue|0] [GuiScope.SetRoot(ProvinceWindow.GetState.GetGovernorship.MakeScope).ScriptValue('DEMAND_difference_gold')|0+=]"
 									}
@@ -2300,9 +2271,8 @@ vbox = {
 								}
 								icon_card_goods = {
 									tooltip = "silverDESC"
-									blockoverride "Icon" {
-										texture = "gfx/interface/icons/tradegoods/silver.dds" 
-									}
+									blockoverride "Icon" { texture = "gfx/interface/icons/tradegoods/silver.dds" }
+									blockoverride "Color" { using = cyan_color }
 									blockoverride "Stockpile" {
 										text = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('silver_stockpile').GetValue|0] [GuiScope.SetRoot(ProvinceWindow.GetState.GetGovernorship.MakeScope).ScriptValue('DEMAND_difference_silver')|0+=]"
 									}
@@ -2322,9 +2292,8 @@ vbox = {
 								}
 								icon_card_goods = {
 									tooltip = "saltDESC"
-									blockoverride "Icon" {
-										texture = "gfx/interface/icons/tradegoods/salt.dds" 
-									}
+									blockoverride "Icon" { texture = "gfx/interface/icons/tradegoods/salt.dds" }
+									blockoverride "Color" { using = brown_color }
 									blockoverride "Stockpile" {
 										text = "[ProvinceWindow.GetState.GetGovernorship.MakeScope.GetVariable('salt_stockpile').GetValue|0] [GuiScope.SetRoot(ProvinceWindow.GetState.GetGovernorship.MakeScope).ScriptValue('DEMAND_difference_salt')|0+=]"
 									}
