@@ -2425,11 +2425,10 @@ GT_split_update_wealth_owed_for_tradegoods = {
 	}
 	change_variable = {
 		name = wealth_owed_for_$tradegood$
-		multiply = owner.var:country_unit_price_$tradegood$
-	}
-	change_variable = {
-		name = wealth_owed_for_$tradegood$
-		multiply = owner.var:order_size_modifier_$tradegood$
+		multiply = {
+			value = owner.var:country_unit_price_$tradegood$
+			add = owner.var:order_size_modifier_$tradegood$
+		}
 	}
 	if = {
 		limit = {
@@ -2655,7 +2654,7 @@ GT_split_get_global_import_unit_price_tradegood = {
 
 	remove_local_variable = result
 	sqrt = {
-		global_var:global_base_import_price_$tradegood$
+		input = global_var:global_base_import_price_$tradegood$
 	}
 	set_global_variable = {
 		name = global_base_import_price_$tradegood$
@@ -5784,11 +5783,15 @@ GT_set_tradegood_price = {
 			name = local_price_$tradegood$
 			value = {
 				value = global_var:$tradezone$_total_order_size_$tradegood$
+				min = 0.001
 				if = {
 					limit = {
 						global_var:$tradezone$_stockpile_$tradegood$ > 0
 					}
-					divide = global_var:$tradezone$_stockpile_$tradegood$
+					divide = {
+						value = global_var:$tradezone$_stockpile_$tradegood$
+						min = 0.001
+					}
 				}
 				multiply = 0.6 # The yearly total of all trade should be loosely in the range of 15-30% of a country's GDP, thus the quarterly total about 4% - 8%
 				if = {
