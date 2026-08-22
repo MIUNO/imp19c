@@ -146,8 +146,8 @@ types economy_types {
 	}
 }
 
-@mincategorybuttonwidth = 181
-@maxcategorybuttonwidth = 181
+@mincategorybuttonwidth = 160
+@maxcategorybuttonwidth = 160
 @mincategorybuttonheight = 42
 @maxcategorybuttonheight = 42
 @window_width = 660
@@ -179,7 +179,7 @@ base_window = {
 	flowcontainer = {
 		direction = vertical
 		widget = {
-			size = { @window_width 12 }
+			size = { @window_width 10 }
 			using = MainWindowHeaderLine
 		}
 		margin_widget = {
@@ -205,8 +205,7 @@ base_window = {
 					}
 				}
 				flowcontainer = {
-					spacing = 2
-					category_tab = {
+					category_tab_left = {
 						blockoverride "MinSize" { size = { @mincategorybuttonwidth @mincategorybuttonheight } }
 						blockoverride "MaxSize" { size = { @maxcategorybuttonwidth @maxcategorybuttonheight } }
 						blockoverride "MinVisible" { visible = "[Not( GetVariableSystem.HasValue('economy_tabs', 'national_economy'))]" }
@@ -214,12 +213,10 @@ base_window = {
 						######## Shared Overrides
 						blockoverride "Center_text" { text = "economy_tab_national_economy" }
 						######## Small Button Overrides
-						blockoverride "ClickFunction"
-						{
-							onclick = "[GetVariableSystem.Set('economy_tabs', 'national_economy')]"
-						}
+						blockoverride "On_click" { onclick = "[GetVariableSystem.Set('economy_tabs', 'national_economy')]" }
 					}
-					category_tab = {
+					category_spacer_horizontal = { }
+					category_tab_right = {
 						blockoverride "MinSize" { size = { @mincategorybuttonwidth @mincategorybuttonheight } }
 						blockoverride "MaxSize" { size = { @maxcategorybuttonwidth @maxcategorybuttonheight } }
 						blockoverride "MinVisible" { visible = "[Not( GetVariableSystem.HasValue('economy_tabs', 'global_economy'))]" }
@@ -227,10 +224,7 @@ base_window = {
 						######## Shared Overrides
 						blockoverride "Center_text" { text = "economy_tab_global_economy" }
 						######## Small Button Overrides
-						blockoverride "ClickFunction"
-						{
-							onclick = "[GetVariableSystem.Set('economy_tabs', 'global_economy')]"
-						}
+						blockoverride "On_click" { onclick = "[GetVariableSystem.Set('economy_tabs', 'global_economy')]" }
 					}
 				}
 				margin_widget = {
@@ -277,7 +271,6 @@ base_window = {
 								tooltip = "[EconomyView.GetPlayer.MakeScope.GetVariable('official_currency').GetProvince.MakeScope.GetVariable('currency_name').GetFlagName]"
 								blockoverride "Icon"
 								{
-									size = { 48 48 }
 									using = white_background
 									modify_texture = {
 										texture = "gfx/interface/icons/shared_icons/treasury.dds"

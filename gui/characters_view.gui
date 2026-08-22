@@ -1,5 +1,5 @@
-@mincategorybuttonwidth = 261
-@maxcategorybuttonwidth = 261
+@mincategorybuttonwidth = 260
+@maxcategorybuttonwidth = 260
 @mincategorybuttonheight = 42
 @maxcategorybuttonheight = 42
 @window_width = 1200
@@ -386,9 +386,10 @@ base_window = {
 		}
 	}
 	
-	vbox = {
+	flowcontainer = {
+		direction = vertical
 		widget = {
-			size = { @window_width 12 }
+			size = { @window_width 10 }
 			using = MainWindowHeaderLine
 		}
 		margin_widget = {
@@ -414,8 +415,7 @@ base_window = {
 					}
 				}
 				flowcontainer = {
-					spacing = 2
-					category_tab = {
+					category_tab_left = {
 						name = "characters_tab"
 						blockoverride "MinSize" { size = { @mincategorybuttonwidth @mincategorybuttonheight } }
 						blockoverride "MaxSize" { size = { @maxcategorybuttonwidth @maxcategorybuttonheight } }
@@ -424,30 +424,20 @@ base_window = {
 						######## Shared Overrides
 						datacontext = "[CharactersView]"
 						blockoverride "Center_text" { text = "CHARACTERS_LIST" }
-						blockoverride "Icon" { visible = no }
 						######## Small Button Overrides
-						blockoverride "ClickFunction"
-						{
-							onclick = "[CharactersView.ShowCharacters]"
-						}
+						blockoverride "On_click" { onclick = "[CharactersView.ShowCharacters]" }
 					}   
-					
-					category_tab = {
+					category_spacer_horizontal = { }
+					category_tab_right = {
 						name = "families_tab"
 						blockoverride "MinSize" { size = { @mincategorybuttonwidth @mincategorybuttonheight } }
 						blockoverride "MaxSize" { size = { @maxcategorybuttonwidth @maxcategorybuttonheight } }
 						blockoverride "MinVisible" { visible = "[Not( CharactersView.IsShowFamily )]" }
 						blockoverride "MaxVisible" { visible = "[CharactersView.IsShowFamily]" }
 						######## Shared Overrides
-						blockoverride "Center_text" { 
-							text = "FAMILY_LIST" 
-						}
-						blockoverride "Icon" { visible = no }
+						blockoverride "Center_text" { text = "FAMILY_LIST" }
 						######## Small Button Overrides
-						blockoverride "ClickFunction"
-						{
-							onclick = "[CharactersView.ShowFamily]"
-						}
+						blockoverride "On_click" { onclick = "[CharactersView.ShowFamily]" }
 					}
 				}
 				margin_widget = {

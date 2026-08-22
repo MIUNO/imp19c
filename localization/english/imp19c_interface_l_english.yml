@@ -7,8 +7,8 @@
  diplomatic_view:0 "Diplomatic"
  subject_view:0 "Subject"
  list_subjects:0 "List of subjects"
- capita_dip:0 "Capital: [DiplomaticView.GetTargetCountry.GetCapital.GetName|Y]"
- provinces_dip:0 "Provinces: [DiplomaticView.GetTargetCountry.GetOwnedProvinceCount|Y]"
+ #capita_dip:0 "Capital: [DiplomaticView.GetTargetCountry.GetCapital.GetName|Y]"
+ #provinces_dip:0 "Provinces: [DiplomaticView.GetTargetCountry.GetOwnedProvinceCount|Y]"
  opinionsTT:0 "Opinions"
  show_national_interactions:0 "Show National Interactions"
  CAPITAL:0 "Capital"
@@ -68,6 +68,7 @@
  # Diplomatic >>>
  DIPLO_play_title:0 "#T [Scope.GetProvince.MakeScope.GetVariable('play_instigator').GetCountry.GetAdjective] play for [Scope.GetProvince.MakeScope.GetVariable('play_target_area').GetProvince.GetArea.GetNameWithNoTooltip] \nagainst [Scope.GetProvince.MakeScope.GetVariable('play_target_country').GetCountry.GetNameWithNoTooltip]#!"
  DIPLO_play_target_area:0 "[Province.MakeScope.GetVariable('play_target_area').GetProvince.GetArea.GetName]"
+ diplomatic_ruler:0 "Ruler"
 
  # Province >>>
  province_category:0 "Сategory"

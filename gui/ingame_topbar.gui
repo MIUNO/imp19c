@@ -45,8 +45,6 @@ types IngameTopbar
 	}
 }
 
-
-
 types Mapmodestuff
 {
 	type mapmodebutton = button {
@@ -552,8 +550,6 @@ template toolbar2
 	}
 }
 
-
-
 vbox = {
 	name = "ingame_topbar"
 	layer = middle
@@ -607,7 +603,7 @@ vbox = {
 			flowcontainer = {
 				name = "pause text"
 				parentanchor = hcenter|top
-				position = { 0 130 }
+				position = { 0 140 }
 				visible = "[IsGamePaused]"
 				background = {
 					shaderfile = "gfx/FX/pdxgui_default.shader"
@@ -635,181 +631,173 @@ vbox = {
 				}	
 			}
 		}
-		
-		#widget = {
-		#	allow_outside = yes
-		#}
-
-		widget = {
-			size = { 86 86 }
-			position = { 65 100 }
-			background = {
-				shaderfile = "gfx/FX/pdxgui_default.shader"
-				using = shadow_background
-				alpha = 0.5
-				modify_texture = {
-					texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black.dds"
-					blend_mode = alphamultiply
-				}
-				modify_texture = {
-					texture = "gfx/interface/base_parts/gradient_black_short.dds"
-					blend_mode = alphamultiply
-				}
-			}
-			background = {
-				shaderfile = "gfx/FX/pdxgui_default.shader"
-				using = darken_red_background
-				modify_texture = {
-					texture = "gfx/interface/images/elements/right_image.dds"
-					blend_mode = alphamultiply
-				}
-			}
-		}
-
-		# GUI REWORK
-		widget = {
-			name = "SideBar"
-			position = { 0 35 }
-			size = { 70 1000 }
-			alwaystransparent = no
-			allow_outside = yes
-			#visible = no
-			background = {
-				shaderfile = "gfx/FX/pdxgui_default.shader"
-				using = shadow_background
-				alpha = 0.5
-				modify_texture = {
-					texture = "gfx/interface/base_parts/shadows/side_bar_shadow.dds"
-					blend_mode = alphamultiply
-					spriteType = Corneredtiled
-					spriteborder = { 70 75 }
-				}
-			}
-			background = {
-				shaderfile = "gfx/FX/pdxgui_default.shader"
-				using = red_background
-				alpha = 0.95
-				modify_texture = {
-					texture = "gfx/interface/base_parts/side_bar_alpha.dds"
-					blend_mode = alphamultiply
-					spriteType = Corneredtiled
-					spriteborder = { 70 75 }
-				}
-			}
-			icon = {
-				size = { 100% 100% }
-				using = darken_red_background
-				modify_texture = {
-					texture = "gfx/interface/base_parts/background_pattern_01.dds"
-					blend_mode = alphamultiply
-					spriteType = Corneredtiled
-				}
-				modify_texture = {
-					texture = "gfx/interface/base_parts/side_bar_alpha.dds"
-					blend_mode = alphamultiply
-					spriteType = Corneredtiled
-					spriteborder = { 70 75 }
-				}
-			}
-			icon = {
-				size = { 100% 100% }
-				using = darken_red_background
-				modify_texture = {
-					texture = "gfx/interface/base_parts/background_pattern_02.dds"
-					blend_mode = alphamultiply
-					spriteType = Corneredtiled
-				}
-				modify_texture = {
-					texture = "gfx/interface/base_parts/side_bar_alpha.dds"
-					blend_mode = alphamultiply
-					spriteType = Corneredtiled
-					spriteborder = { 70 75 }
-				}
-			}
-			icon = {
-				size = { 70 210 }
-				using = shadow_background
-				modify_texture = {
-					texture = "gfx/interface/base_parts/gradient_black.dds"
-					blend_mode = alphamultiply
-				}
-				modify_texture = {
-					texture = "gfx/interface/base_parts/side_bar_alpha_2.dds"
-					blend_mode = alphamultiply
-					spriteType = Corneredtiled
-					spriteborder = { 70 75 }
-				}
-			}
-		}
-		# GUI REWORK
+		# Top Bar
 		widget = {
 			name = "TopBar"
-			size = { 800 55 }
+			size = { 1690 60 }
 			alwaystransparent = no
-			background = {
-				shaderfile = "gfx/FX/pdxgui_default.shader"
-				using = shadow_background
-				alpha = 0.5
-				modify_texture = {
-					texture = "gfx/interface/base_parts/shadows/top_bar_shadow.dds"
-					blend_mode = alphamultiply
-					spriteType = Corneredtiled
-					spriteborder = { 62 0 }
-				}
+			datacontext = "[InGameTopbar.GetPlayer]"
+			state = {
+				name = rectangle
+				trigger_when = "[Not(EqualTo_int32(FixedPointToInt(GuiScope.SetRoot( Country.MakeScope ).ScriptValue('DIPLOMACY_flag_shape') ), '(int32)3'))]"
+				size = { 1690 60 }
 			}
-			background = {
-				shaderfile = "gfx/FX/pdxgui_default.shader"
-				using = black_background
-				alpha = 0.95
-				modify_texture = {
-					texture = "gfx/interface/base_parts/top_bar_alpha.dds"
-					blend_mode = alphamultiply
-					spriteType = Corneredtiled
-					spriteborder = { 62 0 }
+			state = {
+				name = square
+				trigger_when = "[EqualTo_int32(FixedPointToInt(GuiScope.SetRoot( Country.MakeScope ).ScriptValue('DIPLOMACY_flag_shape') ), '(int32)3')]"
+				size = { 1640 60 }
+			}
+			widget = {
+				size = { 1730 80 }
+				state = {
+					name = rectangle
+					trigger_when = "[Not(EqualTo_int32(FixedPointToInt(GuiScope.SetRoot( Country.MakeScope ).ScriptValue('DIPLOMACY_flag_shape') ), '(int32)3'))]"
+					size = { 1730 80 }
+				}
+				state = {
+					name = square
+					trigger_when = "[EqualTo_int32(FixedPointToInt(GuiScope.SetRoot( Country.MakeScope ).ScriptValue('DIPLOMACY_flag_shape') ), '(int32)3')]"
+					size = { 1680 80 }
+				}
+				icon = {
+					size = { 100% 100% }
+					using = shadow_background
+					alpha = 0.5
+					modify_texture = {
+						texture = "gfx/interface/base_parts/new_elements/top_panel_base_shadow.dds"
+						blend_mode = alphamultiply
+						spriteType = corneredtiled
+						spriteborder = { 180 40 }
+					}
+				}
+				icon = {
+					size = { 100% 100% }
+					using = red_background
+					modify_texture = {
+						texture = "gfx/interface/base_parts/new_elements/top_panel_base.dds"
+						blend_mode = alphamultiply
+						spriteType = corneredtiled
+						spriteborder = { 180 40 }
+					}
+				}
+				icon = {
+					size = { 100% 100% }
+					using = black_background
+					modify_texture = {
+						texture = "gfx/interface/base_parts/new_elements/top_panel_base_small.dds"
+						blend_mode = alphamultiply
+						spriteType = corneredtiled
+						spriteborder = { 180 40 }
+					}
+				}
+				icon = {
+					size = { 100% 100% }
+					using = pattern_black_background_layer_01
+					modify_texture = {
+						texture = "gfx/interface/base_parts/new_elements/top_panel_base_small.dds"
+						blend_mode = alphamultiply
+						spriteType = Corneredtiled
+						spriteborder = { 180 40 }
+					}
+				}
+				icon = {
+					size = { 100% 100% }
+					using = pattern_black_background_layer_02
+					modify_texture = {
+						texture = "gfx/interface/base_parts/new_elements/top_panel_base_small.dds"
+						blend_mode = alphamultiply
+						spriteType = corneredtiled
+						spriteborder = { 180 40 }
+					}
+				}
+				icon = {
+					size = { 100% 100% }
+					using = shadow_background
+					alpha = 0.25
+					modify_texture = {
+						texture = "gfx/interface/base_parts/new_elements/top_panel_border_shadow.dds"
+						blend_mode = alphamultiply
+						spriteType = corneredtiled
+						spriteborder = { 180 40 }
+					}
+				}
+				icon = {
+					size = { 100% 100% }
+					using = shadow_background
+					alpha = 0.25
+					modify_texture = {
+						texture = "gfx/interface/base_parts/new_elements/gradient_black_tile.dds"
+						blend_mode = alphamultiply
+						spriteType = corneredtiled
+						spriteborder = { 21 34 }
+					}
+					modify_texture = {
+						texture = "gfx/interface/base_parts/new_elements/top_panel_base.dds"
+						blend_mode = alphamultiply
+						spriteType = corneredtiled
+						spriteborder = { 180 40 }
+					}
+				}
+				icon = {
+					size = { 100% 100% }
+					using = brighten_red_background
+					modify_texture = {
+						texture = "gfx/interface/base_parts/new_elements/top_panel_border.dds"
+						blend_mode = alphamultiply
+						spriteType = corneredtiled
+						spriteborder = { 180 40 }
+					}
+				}
+				icon = {
+					size = { 100% 100% }
+					using = gold_background
+					modify_texture = {
+						texture = "gfx/interface/base_parts/new_elements/top_panel_border_deco.dds"
+						blend_mode = alphamultiply
+						spriteType = corneredtiled
+						spriteborder = { 180 40 }
+					}
 				}
 			}
 			flowcontainer = {
-				margin = { 0 5 }
+				margin = { 5 5 }
 				spacing = 5
-				resizeparent = yes
 				ignoreinvisible = yes
 				widget = {
-					name = "Flag"
-					size = { 300 45 }
+					size = { 295 40 }
 					datacontext = "[InGameTopbar.GetPlayer]"
 					state = {
-						name = "rectangle"
+						name = rectangle
 						trigger_when = "[Not(EqualTo_int32(FixedPointToInt(GuiScope.SetRoot( Country.MakeScope ).ScriptValue('DIPLOMACY_flag_shape') ), '(int32)3'))]"
-						size = { 300 45 }
+						size = { 295 40 }
 					}
 					state = {
-						name = "square"
+						name = square
 						trigger_when = "[EqualTo_int32(FixedPointToInt(GuiScope.SetRoot( Country.MakeScope ).ScriptValue('DIPLOMACY_flag_shape') ), '(int32)3')]"
-						size = { 250 45 }
+						size = { 245 40 }
 					}
 				}
 				icon_and_text_with_change_topbar = {
 					name = "Treasury"
-					size = { 130 45 }
+					size = { 110 46 }
 					tooltipwidget = { nation_treasury_tt = { } }
 					blockoverride "Background" { visible = yes }
-					blockoverride "SizeIcon" { size = { 42 42 } }
+					blockoverride "SizeIcon" { size = { 32 32 } }
 					blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/treasury.dds" }
 					blockoverride "Plus" { visible = "[GreaterThan_CFixedPoint(Player.MakeScope.GetVariable('INCOME_national_total_quarterly').GetValue, '(CFixedPoint)0')]" }
 					blockoverride "Minus" { visible = "[Not(GreaterThan_CFixedPoint(Player.MakeScope.GetVariable('INCOME_national_total_quarterly').GetValue, '(CFixedPoint)0'))]" }
 					blockoverride "Text" { text = "[InGameTopbar.GetPlayer.GetTreasury|2]" }
 					blockoverride "Change" { text = "[Player.MakeScope.GetVariable('INCOME_national_total_quarterly').GetValue|3+=]" }
 				}
-				separator_topbar = { }
+				macro_divider_vertical = { }
 				icon_and_text_with_change_topbar = {
 					name = "Manpower"
-					size = { 110 45 }
 					tooltip = "[InGameTopbar.GetPlayer.GetManpowerTooltip]"
 					blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/manpower.dds" }
 					blockoverride "Text" { text = "[InGameTopbar.GetPlayer.GetManpower]" }
 					blockoverride "Change" { text = "[InGameTopbar.GetPlayer.GetManpowerChange]" }
 				}
-				separator_topbar = { }
+				macro_divider_vertical = { }
 				icon_and_text_with_change_topbar = {
 					name = "Military supplies"
 					tooltip = "MILITARY_SUPPLIES_TT"
@@ -817,24 +805,25 @@ vbox = {
 					blockoverride "Text" { text = "[Player.MakeScope.GetVariable('MILITARY_supplies_country').GetValue|2]" }
 					blockoverride "Change" { text = "[GuiScope.SetRoot(Player.MakeScope).ScriptValue('MILITARY_supplies_balance_country')|+=2]" }
 				}
-				separator_topbar = { }
+				macro_divider_vertical = { }
 				icon_and_text_with_change_topbar = {
 					name = "Political_Influence"
-					size = { 90 45 }
+					size = { 90 46 }
 					tooltip = "[InGameTopbar.GetPlayer.GetPoliticalInfluenceDescription]"
 					blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/political_influence.dds" }
 					blockoverride "Text" { text = "[InGameTopbar.GetPlayer.GetPoliticalInfluence|0]" }
 					blockoverride "Change" { text = "[InGameTopbar.GetPlayer.GetPoliticalInfluenceChange|2+=]" }
 				}
-				separator_topbar = { }
+				macro_divider_vertical = { }
 				icon_and_text_with_change_topbar = {
 					name = "Military_Experience"
+					size = { 90 46 }
 					tooltip = "[InGameTopbar.GetPlayer.GetMilitaryExperienceDescription]"
 					blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/military_experience.dds" }
 					blockoverride "Text" { text = "[InGameTopbar.GetPlayer.GetMilitaryExperience|2]" }
 					blockoverride "Change" { text = "[InGameTopbar.GetPlayer.GetMilitaryExperienceChange|2+=]" }
 				}
-				separator_topbar = { }
+				macro_divider_vertical = { }
 				icon_and_text_with_change_topbar = {
 					name = "Stability"
 					tooltip = "[InGameTopbar.GetPlayer.GetStabilityTooltipPlayer]"
@@ -844,7 +833,7 @@ vbox = {
 					blockoverride "Text" { text = "[InGameTopbar.GetPlayer.GetStability|2]" }
 					blockoverride "Change" { text = "[InGameTopbar.GetPlayer.GetMonthlyStabilityChange|2+=]" }
 				}
-				separator_topbar = { }
+				macro_divider_vertical = { }
 				icon_and_text_with_change_topbar = {
 					name = "Aggressive_expansion"
 					tooltip = "[InGameTopbar.GetPlayer.GetCurrentAgressiveExpansionInfo]"
@@ -852,7 +841,7 @@ vbox = {
 					blockoverride "Text" { text = "[InGameTopbar.GetPlayer.GetCurrentAgressiveExpansion|2]" }
 					blockoverride "Change" { text = "[InGameTopbar.GetPlayer.GetAggressiveExpansionChange|2-=]" }
 				}
-				separator_topbar = { }
+				macro_divider_vertical = { }
 				icon_and_text_with_change_topbar = {
 					name = "War_exhaustion"
 					tooltip = "[InGameTopbar.GetPlayer.GetWarExhaustionTooltipPlayer]"
@@ -860,7 +849,7 @@ vbox = {
 					blockoverride "Text" { text = "[InGameTopbar.GetPlayer.GetWarExhaustion|2]" }
 					blockoverride "Change" { text = "[InGameTopbar.GetPlayer.GetWarExhaustionChange|2-=]" }
 				}
-				separator_topbar = { }
+				macro_divider_vertical = { }
 				icon_and_text_with_change_topbar = {
 					name = "Tyranny"
 					tooltip = "[InGameTopbar.GetPlayer.GetTyrannyTooltip]"
@@ -868,7 +857,7 @@ vbox = {
 					blockoverride "Text" { text = "[InGameTopbar.GetPlayer.GetTyranny|2]" }
 					blockoverride "Change" { text = "[InGameTopbar.GetPlayer.GetTyrannyChange|2-=]" }
 				}
-				separator_topbar = { visible = "[InGameTopbar.GetPlayer.GetGovernment.IsRepublic]" }
+				macro_divider_vertical = { visible = "[InGameTopbar.GetPlayer.GetGovernment.IsRepublic]" }
 				icon_and_text_with_change_topbar = {
 					name = "Senate_Approval"
 					tooltip = "[InGameTopbar.GetPlayer.GetSenateApprovalTooltip]"
@@ -895,7 +884,7 @@ vbox = {
 					}
 					blockoverride "Change" { visible = no }
 				}
-				separator_topbar = { visible = "[InGameTopbar.GetPlayer.GetGovernment.IsMonarchy]" }
+				macro_divider_vertical = { visible = "[InGameTopbar.GetPlayer.GetGovernment.IsMonarchy]" }
 				icon_and_text_with_change_topbar = {
 					name = "Legitimacy"
 					visible = "[InGameTopbar.GetPlayer.GetGovernment.IsMonarchy]"
@@ -907,7 +896,7 @@ vbox = {
 					}
 					blockoverride "Change" { visible = no }
 				}
-				separator_topbar = { visible = "[InGameTopbar.GetPlayer.GetGovernment.IsTribal]" }
+				macro_divider_vertical = { visible = "[InGameTopbar.GetPlayer.GetGovernment.IsTribal]" }
 				icon_and_text_with_change_topbar = {
 					name = "Centralization"
 					visible = "[InGameTopbar.GetPlayer.GetGovernment.IsTribal]"
@@ -919,7 +908,7 @@ vbox = {
 					}
 					blockoverride "Change" { visible = no }
 				}
-				separator_topbar = { visible = "[Not(IsDataModelEmpty( InGameTopbar.GetPlayer.MakeScope.GetList('captured_eagles') ))]"  }
+				macro_divider_vertical = { visible = "[Not(IsDataModelEmpty( InGameTopbar.GetPlayer.MakeScope.GetList('captured_eagles') ))]"  }
 				overlappingitembox = {
 					size = { 180 45 }
 					parentanchor = vcenter
@@ -940,258 +929,368 @@ vbox = {
 						}
 					}
 				}				
-				widget = { size = { 10 0 } }
-				widget = {
-					size = { 260 45 }
-					widget = { 
+				#widget = { size = { 10 45 } }
+				flowcontainer = {
+					direction = vertical
+					spacing = 4
+					icon_time_indicator = {
+						parentanchor = hcenter
+						frame = "[GetCurrentGameSpeed]"
+						modify_texture = {
+							spriteborder = { 16 16 }
+							spriteType = Corneredtiled
+							texture = "gfx/interface/base_parts/button_s.dds"
+							blend_mode = add
+						}
+					} 
+					flowcontainer = {
 						name = "speed_control_and_date"
-						size = { 200 52 }
-						vbox = {
-							layoutpolicy_horizontal = expanding
-							layoutpolicy_vertical = expanding
-							hbox = {
-								layoutpolicy_horizontal = expanding
-								layoutpolicy_vertical = expanding
-								minimumsize = { 0 26 }
-								spacing = 2
-								button_minus = {
-									blockoverride "On_click"
-									{
-										onclick = "[OnDecreaseGameSpeed]"
-										shortcut = "decrease_speed"
-									}
-									tooltip = "DECREASE_GAME_SPEED"
-									using = tooltip_se
-									enabled = "[CanChangeGameSpeed]" 
+						spacing = 5
+						parentanchor = bottom
+						icon_button_circle = {
+							size = { 30 30 }
+							blockoverride "On_click" {
+								onclick = "[OnDecreaseGameSpeed]"
+								shortcut = "decrease_speed"
+							}
+							blockoverride "Icon" {
+								using = white_background
+								modify_texture = {
+									texture = "gfx/interface/base_parts/minus.dds"
+									blend_mode = alphamultiply                  
 								}
-								
-								### TODO Art needs unique button
-								button = {
-									minimumsize = { 140 28 }
-									maximumsize = { 140 28 }
-									using = red_background
-									onclick = "[OnPause]"
-									tooltip = "CURRENT_DATE_TOOLTIP"
-									using = tooltip_se
+							}
+							tooltip = "DECREASE_GAME_SPEED"
+							using = tooltip_se
+							enabled = "[CanChangeGameSpeed]" 
+						}
+						flowcontainer = {
+							ignoreinvisible = yes
+							text_button_square_highlighted_inner = {
+								visible = "[Not(IsGamePaused)]"
+								size = { 140 30 }
+								tooltip = "CURRENT_DATE_TOOLTIP"
+								using = tooltip_se
+								blockoverride "On_click" { onclick = "[OnPause]" }
+								blockoverride "Decoration" {
 									margin_widget = {
-										margin = { 2 2 }
 										size = { 100% 100% }
-										margin_widget = {
-											size = { 100% 100% }
-											background = {
-												shaderfile = "gfx/FX/pdxgui_default.shader"
-												using = black_background
-												using = portrait_x32y32bd_alpha
+										margin = { 3 3 }
+										progressbar = {
+											size = { 17 16 }
+											parentanchor = bottom
+											gfxtype = framedprogressbargfx
+											texture = "gfx/interface/base_parts/gear.dds"
+											framesize = { 17 16 }
+											loopinterval = 0.5
+											max=0
+											modify_texture = {
+												spriteborder = { 16 16 }
+												spriteType = Corneredtiled
+												texture = "gfx/interface/base_parts/button_g.dds"
+												blend_mode = add
 											}
-											progressbar = {
-												size = { 17 16 }
-												parentanchor = bottom
-												gfxtype = framedprogressbargfx
-												texture = "gfx/interface/base_parts/gear.dds"
-												framesize = { 17 16 }
-												loopinterval = 0.5
-												max=0
-												modify_texture = {
-													spriteborder = { 16 16 }
-													spriteType = Corneredtiled
-													texture = "gfx/interface/base_parts/button_s.dds"
-													blend_mode = add
-												}
-											}
-											progressbar = {
-												size = { 17 16 }
-												parentanchor = right
-												gfxtype = framedprogressbargfx
-												texture = "gfx/interface/base_parts/gear_top.dds"
-												framesize = { 17 16 }
-												loopinterval = 0.5
-												max=0
-												modify_texture = {
-													spriteborder = { 16 16 }
-													spriteType = Corneredtiled
-													texture = "gfx/interface/base_parts/button_s.dds"
-													blend_mode = add
-												}
-											}
-											textbox = {
-												name = "Text"
-												position = { 0 -2}
-												widgetanchor = center
-												parentanchor = center				
-												using = BaseFontS
-												autoresize = yes
-												align = center
-												elide = right
-												fontsize_min = 12
-												text = "CURRENT_DATE"
-												using = Default_FontColor
+										}
+										progressbar = {
+											size = { 17 16 }
+											parentanchor = right
+											gfxtype = framedprogressbargfx
+											texture = "gfx/interface/base_parts/gear_top.dds"
+											framesize = { 17 16 }
+											loopinterval = 0.5
+											max=0
+											modify_texture = {
+												spriteborder = { 16 16 }
+												spriteType = Corneredtiled
+												texture = "gfx/interface/base_parts/button_g.dds"
+												blend_mode = add
 											}
 										}
 									}
-									visible = "[Not(IsGamePaused)]"
 								}
-
-								### TODO Art needs unique button
-
-								text_button_square_highlighted = {
-									name = "filled"
-									layoutpolicy_horizontal = expanding
-									blockoverride "MinimumSize" 
-									{
-										minimumsize = { 140 28 }
-										maximumsize = { 140 28 }
-									}
-									tooltip = "CURRENT_DATE_TOOLTIP"
-									using = tooltip_se
-									blockoverride "Center_text"
-									{
-										text = "CURRENT_DATE"
-									}
-									
-									blockoverride "On_click"
-									{
-										onclick = "[OnPause]"
-									}
-									
-									visible = "[IsGamePaused]"
-									
+								blockoverride "Center_text" {
+									using = Highlight_FontColor
+									text = "CURRENT_DATE"
 								}
-								
-								button_plus = { 
-									
-									blockoverride "On_click"
-									{
-										onclick = "[OnIncreaseGameSpeed]"
-										shortcut = "increase_speed"
-									} 
-									tooltip = "INCREASE_GAME_SPEED"
-									enabled = "[CanChangeGameSpeed]" 
-									using = tooltip_se
-								}
+							}
+							text_button_square_highlighted = {
+								visible = "[IsGamePaused]"
+								size = { 140 30 }
+								tooltip = "CURRENT_DATE_TOOLTIP"
+								using = tooltip_se
+								blockoverride "On_click" { onclick = "[OnPause]" }
+								blockoverride "Center_text" { text = "CURRENT_DATE" }
 							}
 						}
-					}
-					widget = {
-						size = { 200 46 }
-						icon_time_indicator = {
-							position = { 0 3 }
-							parentanchor = hcenter
-							frame = "[GetCurrentGameSpeed]"
-							modify_texture = {
-								spriteborder = { 16 16 }
-								spriteType = Corneredtiled
-								texture = "gfx/interface/base_parts/button_s.dds"
-								blend_mode = add
+						icon_button_circle = { 
+							size = { 30 30 }
+							blockoverride "On_click" {
+								onclick = "[OnIncreaseGameSpeed]"
+								shortcut = "increase_speed"
+							} 
+							blockoverride "Icon" {
+								using = white_background
+								modify_texture = {
+									texture = "gfx/interface/base_parts/plus.dds"
+									blend_mode = alphamultiply                  
+								}
 							}
-						} 
+							tooltip = "INCREASE_GAME_SPEED"
+							enabled = "[CanChangeGameSpeed]" 
+							using = tooltip_se
+						}
 					}
 				}
 			}
 		}
-		flowcontainer = {
-			margin_left = 1
+		# Side Bar
+		widget = {
+			name = "SideBar"
+			size = { 65 900 }
+			position = { 0 96 }
+			alwaystransparent = no
+			allow_outside = yes
+			widget = {
+				size = { 150 950 }
+				icon = {
+					size = { 100% 100% }
+					using = shadow_background
+					alpha = 0.5
+					modify_texture = {
+						texture = "gfx/interface/base_parts/new_elements/left_panel_base_shadow.dds"
+						blend_mode = alphamultiply
+						spriteType = corneredtiled
+						spriteborder = { 75 86 }
+					}
+				}
+				icon = {
+					size = { 100% 100% }
+					using = red_background
+					modify_texture = {
+						texture = "gfx/interface/base_parts/new_elements/left_panel_base.dds"
+						blend_mode = alphamultiply
+						spriteType = corneredtiled
+						spriteborder = { 75 86 }
+					}
+				}
+				icon = {
+					size = { 100% 100% }
+					using = shadow_background
+					alpha = 0.75
+					modify_texture = {
+						texture = "gfx/interface/base_parts/new_elements/gradient_black_tile.dds"
+						blend_mode = alphamultiply
+						spriteType = corneredtiled
+						spriteborder = { 21 34 }
+					}
+					modify_texture = {
+						texture = "gfx/interface/base_parts/new_elements/left_panel_base.dds"
+						blend_mode = alphamultiply
+						spriteType = corneredtiled
+						spriteborder = { 75 86 }
+					}
+				}
+				icon = {
+					size = { 100% 100% }
+					using = black_background
+					modify_texture = {
+						texture = "gfx/interface/base_parts/new_elements/left_panel_base_small.dds"
+						blend_mode = alphamultiply
+						spriteType = corneredtiled
+						spriteborder = { 75 86 }
+					}
+				}
+				icon = {
+					size = { 100% 100% }
+					using = pattern_black_background_layer_01
+					modify_texture = {
+						texture = "gfx/interface/base_parts/new_elements/left_panel_base_small.dds"
+						blend_mode = alphamultiply
+						spriteType = Corneredtiled
+						spriteborder = { 75 86 }
+					}
+				}
+				icon = {
+					size = { 100% 100% }
+					using = pattern_black_background_layer_02
+					modify_texture = {
+						texture = "gfx/interface/base_parts/new_elements/left_panel_base_small.dds"
+						blend_mode = alphamultiply
+						spriteType = Corneredtiled
+						spriteborder = { 75 86 }
+					}
+				}
+				icon = {
+					size = { 100% 100% }
+					using = shadow_background
+					alpha = 0.25
+					modify_texture = {
+						texture = "gfx/interface/base_parts/new_elements/horizontal_gradient_black_tile.dds"
+						blend_mode = alphamultiply
+						spriteType = corneredtiled
+						spriteborder = { 40 20 }
+					}
+					modify_texture = {
+						texture = "gfx/interface/base_parts/new_elements/left_panel_base_small.dds"
+						blend_mode = alphamultiply
+						spriteType = corneredtiled
+						spriteborder = { 75 86 }
+					}
+				}
+				icon = {
+					size = { 100% 100% }
+					using = shadow_background
+					alpha = 0.25
+					modify_texture = {
+						texture = "gfx/interface/base_parts/new_elements/left_panel_border_shadow.dds"
+						blend_mode = alphamultiply
+						spriteType = corneredtiled
+						spriteborder = { 75 86 }
+					}
+				}
+				icon = {
+					size = { 100% 100% }
+					using = brighten_red_background
+					modify_texture = {
+						texture = "gfx/interface/base_parts/new_elements/left_panel_border.dds"
+						blend_mode = alphamultiply
+						spriteType = corneredtiled
+						spriteborder = { 75 86 }
+					}
+				}
+				icon = {
+					size = { 100% 100% }
+					using = gold_background
+					modify_texture = {
+						texture = "gfx/interface/base_parts/new_elements/left_panel_border_deco.dds"
+						blend_mode = alphamultiply
+						spriteType = corneredtiled
+						spriteborder = { 75 86 }
+					}
+				}
+			}
+		}
+		margin_widget = {
+			size = { 300 90 }
+			alwaystransparent = no
 			background = {
 				shaderfile = "gfx/FX/pdxgui_default.shader"
 				using = shadow_background
 				margin = { 3 3 }
 				alpha = 0.5
 				modify_texture = {
-					texture = "gfx/interface/base_parts/button_square_dropshadow_x16y16bd.dds"
+					texture = "gfx/interface/base_parts/new_elements/border_9_normal_base_shadow.dds"
 					blend_mode = alphamultiply
 					spriteType = corneredtiled
-					spriteborder = { 8 8 }
+					spriteborder = { 15 15 }
 				}
 			}
-			background = {
-				shaderfile = "gfx/FX/pdxgui_default.shader"
-				using = black_background
+			button = {
+				size = { 100% 100% }
+				state = {
+					name = _mouse_enter
+					on_start = "[PdxGuiWidget.AccessParent.FindChild('button_highlight').Show]"
+				}
+				state = {
+					name = _mouse_leave
+					on_start = "[PdxGuiWidget.AccessParent.FindChild('button_highlight').Hide]"
+				}
+			    state = {
+			        name = _mouse_press
+					on_start = "[PdxGuiWidget.AccessParent.FindChild('button_down').Show]"
+					on_start = "[PdxGuiWidget.AccessParent.FindChild('button_base_down').Hide]"
+			    }
+			    state = {
+			        name = _mouse_release
+					on_start = "[PdxGuiWidget.AccessParent.FindChild('button_down').Hide]"
+					on_start = "[PdxGuiWidget.AccessParent.FindChild('button_base_down').Show]"
+			    }
 			}
-			#cpt_button = {
-			#	size = { 68 96 }
-			#	parentanchor = vcenter
-			#	datacontext = "[InGameTopbar.GetPlayer.GetRuler]"
-			#	blockoverride "ShowHeadOfFamily" { visible = no }
-			#	blockoverride "ShowIcons" { visible = no }
-			#}
+			icon = {
+				size = { 100% 100% }
+				using = black_background
+				modify_texture = {
+					texture = "gfx/interface/base_parts/new_elements/border_9_normal_base.dds"
+					blend_mode = alphamultiply
+					spriteType = corneredtiled
+					spriteborder = { 15 15 }
+				}
+			}
 			flowcontainer = {
-				datacontext = "[InGameTopbar.GetPlayer]"
-				tooltip = "[InGameTopbar.GetFlagDesc]"
-				parentanchor = vcenter
-				margin_right = 1
-				widget = {
-					size = { 150 100 }
-					state = {
-						name = "rectangle"
-						trigger_when = "[Not(EqualTo_int32(FixedPointToInt(GuiScope.SetRoot( Country.MakeScope ).ScriptValue('DIPLOMACY_flag_shape') ), '(int32)3'))]"
+				resizeparent = yes
+				flowcontainer = {
+					datacontext = "[InGameTopbar.GetPlayer]"
+					tooltip = "[InGameTopbar.GetFlagDesc]"
+					parentanchor = vcenter
+					margin_right = 1
+					widget = {
 						size = { 150 100 }
+						state = {
+							name = rectangle
+							trigger_when = "[Not(EqualTo_int32(FixedPointToInt(GuiScope.SetRoot( Country.MakeScope ).ScriptValue('DIPLOMACY_flag_shape') ), '(int32)3'))]"
+							size = { 150 100 }
+						}
+						state = {
+							name = square
+							trigger_when = "[EqualTo_int32(FixedPointToInt(GuiScope.SetRoot( Country.MakeScope ).ScriptValue('DIPLOMACY_flag_shape') ), '(int32)3')]"
+							size = { 100 100 }
+						}
+						new_country_flag = {
+							blockoverride "Size" { size = { 150 150 } }
+							parentanchor = center
+							blockoverride "On_click" { onclick = "[ToggleGameView('overview')]" }
+							blockoverride "Flag" {
+								texture = "[Country.AccessCoatOfArms.GetTexture('(int32)155','(int32)355')]"
+								frame = "[Country.AccessCoatOfArms.GetFrame('(int32)155','(int32)355')]"
+								framesize = { 155 355 }
+							}
+						}
 					}
-					state = {
-						name = "square"
-						trigger_when = "[EqualTo_int32(FixedPointToInt(GuiScope.SetRoot( Country.MakeScope ).ScriptValue('DIPLOMACY_flag_shape') ), '(int32)3')]"
-						size = { 100 100 }
-					}
-					new_country_flag = {
-						blockoverride "Size" { size = { 150 150 } }
-						parentanchor = center
-						blockoverride "On_click" { onclick = "[ToggleGameView('overview')]" }
-						blockoverride "Flag" {
-							texture = "[Country.AccessCoatOfArms.GetTexture('(int32)155','(int32)355')]"
-							frame = "[Country.AccessCoatOfArms.GetFrame('(int32)155','(int32)355')]"
-							framesize = { 155 355 }
+					widget = {
+						size = { 8 96 }
+						parentanchor = vcenter
+						using = color_background
+						blockoverride "Color" {
+							using = red_background
+							color = "[Country.GetMapColor]"
 						}
 					}
 				}
-				widget = {
-					size = { 10 94 }
-					parentanchor = vcenter
-					using = color_background
-					blockoverride "Color" {
-						using = red_background
-						color = "[Country.GetMapColor]"
-					}
-				}
-			}
-			widget = {
-				size = { 142 102 }
 				flowcontainer = {
-					margin = { 2 3 }
-					spacing = 3
 					direction = vertical
-					icon_card = {
-						size = { 138 30 }
-						blockoverride "Icon" { }
+					parentanchor = bottom
+					flag_area_button = {
 						tooltip = "GDP"
 						textbox = {
 							text = "£[GuiScope.SetRoot(Player.MakeScope).ScriptValue('WEALTH_total_private_moveable_wealth')|3]"
-							size = { 124 20 }
+							size = { 130 20 }
 							align = right
-							position = { 6 6 }
+							position = { 5 5 }
 							using = BaseFontM
 							using = Default_FontColor
 						}
 					}
-					icon_card = {
-						size = { 138 30 }
-						blockoverride "Icon" { }
+					flag_area_button = {
 						tooltip = "SHIPPING_CONTROLLED_TT_topbar"
 						textbox = {
 							text = "[GuiScope.SetRoot(Player.MakeScope).ScriptValue('TRADE_percentage_of_global_shipping')|%]"
-							size = { 124 20 }
+							size = { 130 20 }
 							align = right
-							position = { 6 6 }
+							position = { 5 5 }
 							using = BaseFontM
 							using = Default_FontColor
 						}
 					}
-					icon_card = {
-						size = { 138 30 }
-						blockoverride "Icon" { }
+					flag_area_button = {
+						blockoverride "BaseSmall" { texture = "gfx/interface/base_parts/new_elements/border_9_small_base.dds" }
+						blockoverride "BorderOutlineShadow" { texture = "gfx/interface/base_parts/new_elements/border_9_shadow.dds" }
+						blockoverride "BorderOutline" { texture = "gfx/interface/base_parts/new_elements/border_9.dds" }
 						tooltip = "TRADE_ACTIVITY_VALUE_TT_topbar"
 						textbox = {
 							text = "£[GuiScope.SetRoot(Player.MakeScope).ScriptValue('TRADE_activity_value')|3]"
-							size = { 124 20 }
+							size = { 130 20 }
 							align = right
-							position = { 6 6 }
+							position = { 5 5 }
 							using = BaseFontM
 							using = Default_FontColor
 						}
@@ -1204,8 +1303,8 @@ vbox = {
 			spacing = 4
 			parentanchor = right
 			ignoreinvisible = yes
-			icon_button_square = {
-				size = { 32 32 }
+			icon_button_square_left_corner = {
+				size = { 32 40 }
 				visible = "[Not(GetVariableSystem.HasValue( 'wiki_ui', 'open' ))]"
 				blockoverride "On_click" 
 				{ 
@@ -1215,7 +1314,8 @@ vbox = {
 				}
 				blockoverride "Icon"
 				{
-					size = { 28 28 }
+					size = { 24 24 }
+					parentanchor = center
 					using = white_background
 					modify_texture = {
 						texture = "gfx/interface/base_parts/topbar_icons/wiki.dds"
@@ -1223,8 +1323,8 @@ vbox = {
 					}
 				}
 			}
-			icon_button_square = {
-				size = { 32 32 }
+			icon_button_square_left_corner = {
+				size = { 32 40 }
 				visible = "[GetVariableSystem.HasValue( 'wiki_ui', 'open' )]"
 				blockoverride "On_click" 
 				{ 
@@ -1234,7 +1334,8 @@ vbox = {
 				}
 				blockoverride "Icon"
 				{
-					size = { 28 28 }
+					size = { 24 24 }
+					parentanchor = center
 					using = white_background
 					modify_texture = {
 						texture = "gfx/interface/base_parts/topbar_icons/wiki.dds"
@@ -1242,8 +1343,8 @@ vbox = {
 					}
 				}
 			}
-			icon_button_square = {
-				size = { 32 32 }
+			icon_button_square_hard_corner = {
+				size = { 32 40 }
 				blockoverride "On_click" 
 				{ 
 					onclick = "[InGameTopbar.OpenView('ledger')]"
@@ -1252,7 +1353,8 @@ vbox = {
 				}
 				blockoverride "Icon"
 				{
-					size = { 28 28 }
+					size = { 24 24 }
+					parentanchor = center
 					using = white_background
 					modify_texture = {
 						texture = "gfx/interface/base_parts/topbar_icons/ledger.dds"
@@ -1260,8 +1362,8 @@ vbox = {
 					}
 				}
 			}
-			icon_button_square = {
-				size = { 32 32 }
+			icon_button_square_hard_corner = {
+				size = { 32 40 }
 				blockoverride "On_click" 
 				{ 
 					onclick = "[InGameTopbar.OpenView('view_score')]"
@@ -1270,7 +1372,8 @@ vbox = {
 				}
 				blockoverride "Icon"
 				{
-					size = { 28 28 }
+					size = { 24 24 }
+					parentanchor = center
 					using = white_background
 					modify_texture = {
 						texture = "gfx/interface/base_parts/topbar_icons/score.dds"
@@ -1278,8 +1381,8 @@ vbox = {
 					}
 				}
 			}
-			icon_button_square = {
-				size = { 32 32 }
+			icon_button_square_hard_corner = {
+				size = { 32 40 }
 				blockoverride "On_click" 
 				{ 
 					onclick = "[ToggleMessageLog]"
@@ -1288,7 +1391,8 @@ vbox = {
 				}
 				blockoverride "Icon"
 				{
-					size = { 28 28 }
+					size = { 24 24 }
+					parentanchor = center
 					using = white_background
 					modify_texture = {
 						texture = "gfx/interface/base_parts/topbar_icons/log.dds"
@@ -1296,7 +1400,7 @@ vbox = {
 					}
 				}
 			}
-			icon_button_square = {
+			icon_button_square_lb_corner = {
 				size = { 40 50 }
 				name = "ingame_menu_button"
 				blockoverride "On_click" 
@@ -1309,6 +1413,7 @@ vbox = {
 				blockoverride "Icon"
 				{
 					size = { 26 26 }
+					parentanchor = center
 					using = white_background
 					modify_texture = {
 						texture = "gfx/interface/base_parts/topbar_icons/menu.dds"
@@ -1626,12 +1731,6 @@ vbox = {
 				align = center|nobaseline
 				parentanchor = center
 			}
-		}
-		supranational = {
-			visible = "[GetVariableSystem.HasValue( 'supranational_window', 'open' )]"
-		}
-		wiki_window = {
-			
 		}
 		widget = {
 			size = { 100% 100% }
