@@ -778,6 +778,103 @@
 			}
 		}
 
+		Sample={
+			Name="Побережье скал"
+			Materials={
+				Material={
+					MaterialId="grass_plain"
+					Value=72
+				}
+
+				Material={
+					MaterialId="beach"
+					Value=45
+				}
+
+				Material={
+					MaterialId="boulders_european"
+					Value=40
+				}
+
+				Material={
+					MaterialId="gravel_1"
+					Value=30
+				}
+
+				Material={
+					MaterialId="woodlands"
+					Value=25
+				}
+
+				Material={
+					MaterialId="grass_2"
+					Value=13
+				}
+
+				Material={
+					MaterialId="grass_yellow"
+					Value=12
+				}
+
+				Material={
+					MaterialId="grass_hills"
+					Value=7
+				}
+
+				Material={
+					MaterialId="seafloor"
+					Value=7
+				}
+
+				Material={
+					MaterialId="farmlands"
+					Value=2
+				}
+
+				Material={
+					MaterialId="hills_india"
+					Value=2
+				}
+
+			}
+		}
+
+		Sample={
+			Name="Sample from 4607, 3989"
+			Materials={
+				Material={
+					MaterialId="grass_hills"
+					Value=98
+				}
+
+				Material={
+					MaterialId="grass_plain"
+					Value=67
+				}
+
+				Material={
+					MaterialId="grass_2"
+					Value=56
+				}
+
+				Material={
+					MaterialId="boulders_european"
+					Value=26
+				}
+
+				Material={
+					MaterialId="rock_european"
+					Value=6
+				}
+
+				Material={
+					MaterialId="farmlands"
+					Value=2
+				}
+
+			}
+		}
+
 	}
 }
 
