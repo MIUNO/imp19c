@@ -12602,8 +12602,7 @@ template MainWindowHeaderContentRight
 template MainWindowHeaderLine
 {
 	hbox = {
-		margin_top = 8
-		margin_right = -1
+		margin_top = 5
 		layoutpolicy_horizontal = expanding 
 		top_window_header_line = {  
 			layoutpolicy_horizontal = expanding

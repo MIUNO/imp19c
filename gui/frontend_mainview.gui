@@ -124,7 +124,7 @@ widget = {
 					}
 				}
 				widget = {
-					size = { 180 6 }
+					size = { 180 3 }
 					parentanchor = hcenter
 					using = brown_underline
 				}
@@ -177,7 +177,7 @@ widget = {
 					}
 				}
 				widget = {
-					size = { 180 6 }
+					size = { 180 3 }
 					parentanchor = hcenter
 					using = brown_underline
 				}
