@@ -149,149 +149,153 @@ base_window = {
 			spriteborder = { 40 40 }
 		}
 	}
-	flowcontainer = {
+	widget = {
+		size = { @window_width 580 }
 		position = { 15 70 }
 		flowcontainer = {
-			name = "portraits_left"
-			visible = "[EventWindow.HasLeftPortraitCharacter('0')]"
-			ignoreinvisible = yes
-			direction = vertical
-			spacing = 4
-			#position = { 19 @portraittopspacer }
-			container = {
-				using = event_portrait
-				name = "portrait_left"
-				parentanchor = hcenter
-				datacontext = "[EventWindow.GetLeftPortraitCharacter('0')]"
-				visible = "[EventWindow.HasLeftPortraitCharacter('0')]"
-			}
-			container = {
-				using = event_portrait
-				name = "portrait_left_small_1"
-				parentanchor = hcenter
-				datacontext = "[EventWindow.GetLeftPortraitCharacter('1')]"
-				visible = "[EventWindow.HasLeftPortraitCharacter('1')]"
-			}
-			container = {
-				using = event_portrait
-				name = "portrait_left_small_2"
-				parentanchor = hcenter
-				datacontext = "[EventWindow.GetLeftPortraitCharacter('2')]"
-				visible = "[EventWindow.HasLeftPortraitCharacter('2')]"
-			}
-			widget = { size = { 1 24 } visible = "[EventWindow.HasLeftPortraitCharacter('2')]" }
-		}
-		flowcontainer = {
-			name = "Bottom"
-			#position = { 0 0 }
 			parentanchor = vcenter
-			ignoreinvisible = yes
 			flowcontainer = {
+				name = "portraits_left"
+				visible = "[EventWindow.HasLeftPortraitCharacter('0')]"
+				ignoreinvisible = yes
 				direction = vertical
+				spacing = 4
+				#position = { 19 @portraittopspacer }
+				container = {
+					using = event_portrait
+					name = "portrait_left"
+					parentanchor = hcenter
+					datacontext = "[EventWindow.GetLeftPortraitCharacter('0')]"
+					visible = "[EventWindow.HasLeftPortraitCharacter('0')]"
+				}
+				container = {
+					using = event_portrait
+					name = "portrait_left_small_1"
+					parentanchor = hcenter
+					datacontext = "[EventWindow.GetLeftPortraitCharacter('1')]"
+					visible = "[EventWindow.HasLeftPortraitCharacter('1')]"
+				}
+				container = {
+					using = event_portrait
+					name = "portrait_left_small_2"
+					parentanchor = hcenter
+					datacontext = "[EventWindow.GetLeftPortraitCharacter('2')]"
+					visible = "[EventWindow.HasLeftPortraitCharacter('2')]"
+				}
+				widget = { size = { 1 24 } visible = "[EventWindow.HasLeftPortraitCharacter('2')]" }
+			}
+			flowcontainer = {
+				name = "Bottom"
+				#position = { 0 0 }
+				parentanchor = vcenter
 				ignoreinvisible = yes
 				flowcontainer = {
-					name = "Center_Box_big"
 					direction = vertical
-					margin = { 5 10 }
 					ignoreinvisible = yes
-					minimumsize = { 0 0 }
-					#visible = "[Or( EventWindow.HasRightPortraitCharacter('0'), EventWindow.HasLeftPortraitCharacter('0') )]"
-					scrollarea = {
-						parentanchor = hcenter
-						name = "description_scrollarea_big"
-						maximumsize = { -1 400 }
-						scrollbarpolicy_horizontal = always_off
-						scrollbar_vertical = {
-							using = VerticalScrollBar
+					flowcontainer = {
+						name = "Center_Box_big"
+						direction = vertical
+						margin = { 5 10 }
+						ignoreinvisible = yes
+						minimumsize = { 0 0 }
+						#visible = "[Or( EventWindow.HasRightPortraitCharacter('0'), EventWindow.HasLeftPortraitCharacter('0') )]"
+						scrollarea = {
+							parentanchor = hcenter
+							name = "description_scrollarea_big"
+							maximumsize = { -1 400 }
+							scrollbarpolicy_horizontal = always_off
+							scrollbar_vertical = {
+								using = VerticalScrollBar
+							}
+							
+							scrollwidget = {
+								textbox = {
+									name = "description_big"
+									resizeparent = yes
+									minimumsize = { 580 0 }
+									maximumsize = { 580 -1 }
+									multiline = yes
+									using = BaseFontM
+									using = Default_FontColor
+									autoresize = yes
+									margin = { 12 3 }
+									align = top|left
+									text = "[EventWindow.GetDescription]"
+								}
+							}
 						}
-						
-						scrollwidget = {
-							textbox = {
-								name = "description_big"
-								resizeparent = yes
-								minimumsize = { 580 0 }
-								maximumsize = { 580 -1 }
-								multiline = yes
-								using = BaseFontM
-								using = Default_FontColor
-								autoresize = yes
-								margin = { 12 3 }
-								align = top|left
-								text = "[EventWindow.GetDescription]"
+					} 
+					widget = {
+						size = { 0 20 }
+					}
+					fixedgridbox = {
+						parentanchor = hcenter
+						name = "option_grid"
+						addcolumn = 550
+						addrow = 38
+						minimumsize = { 0 0 }
+						item = {
+							container = {
+								using = eventbutton
 							}
 						}
 					}
-				} 
-				widget = {
-					size = { 0 20 }
+					
+					widget = {
+						name = "spacer_big_3"
+						size = { 0 20 }
+					} 
+					
 				}
-				fixedgridbox = {
+			}
+			flowcontainer = {
+				name = "portraits_right"
+				visible = "[EventWindow.HasRightPortraitCharacter('0')]"
+				ignoreinvisible = yes
+				direction = vertical
+				spacing = 4
+				#parentanchor = right
+				#position = { -19 @portraittopspacer }
+				container = {
+					using = event_portrait
+					name = "portrait_right"
 					parentanchor = hcenter
-					name = "option_grid"
-					addcolumn = 550
-					addrow = 38
-					minimumsize = { 0 0 }
-					item = {
-						container = {
-							using = eventbutton
-						}
+					datacontext = "[EventWindow.GetRightPortraitCharacter('0')]"
+					visible = "[EventWindow.HasRightPortraitCharacter('0')]"
+					blockoverride "portrait_transformation"
+					{
+						portrait_scale = { -1 1 }
+						portrait_offset = { 1 0 }
 					}
 				}
 				
-				widget = {
-					name = "spacer_big_3"
-					size = { 0 20 }
-				} 
+				container = {
+					using = event_portrait
+					name = "portrait_right_small_1"
+					parentanchor = hcenter
+					datacontext = "[EventWindow.GetRightPortraitCharacter('1')]"
+					visible = "[EventWindow.HasRightPortraitCharacter('1')]"
+					blockoverride "portrait_transformation"
+					{
+						portrait_scale = { -1 1 }
+						portrait_offset = { 1 0 }
+					}
+				}
 				
-			}
-		}
-		flowcontainer = {
-			name = "portraits_right"
-			visible = "[EventWindow.HasRightPortraitCharacter('0')]"
-			ignoreinvisible = yes
-			direction = vertical
-			spacing = 4
-			#parentanchor = right
-			#position = { -19 @portraittopspacer }
-			container = {
-				using = event_portrait
-				name = "portrait_right"
-				parentanchor = hcenter
-				datacontext = "[EventWindow.GetRightPortraitCharacter('0')]"
-				visible = "[EventWindow.HasRightPortraitCharacter('0')]"
-				blockoverride "portrait_transformation"
-				{
-					portrait_scale = { -1 1 }
-					portrait_offset = { 1 0 }
+				container = {
+					using = event_portrait
+					name = "portrait_right_small_2"
+					parentanchor = hcenter
+					datacontext = "[EventWindow.GetRightPortraitCharacter('2')]"
+					visible = "[EventWindow.HasRightPortraitCharacter('2')]"
+					blockoverride "portrait_transformation"
+					{
+						portrait_scale = { -1 1 }
+						portrait_offset = { 1 0 }
+					}
 				}
+				widget = { size = { 1 24 } visible = "[EventWindow.HasLeftPortraitCharacter('2')]" }
 			}
-			
-			container = {
-				using = event_portrait
-				name = "portrait_right_small_1"
-				parentanchor = hcenter
-				datacontext = "[EventWindow.GetRightPortraitCharacter('1')]"
-				visible = "[EventWindow.HasRightPortraitCharacter('1')]"
-				blockoverride "portrait_transformation"
-				{
-					portrait_scale = { -1 1 }
-					portrait_offset = { 1 0 }
-				}
-			}
-			
-			container = {
-				using = event_portrait
-				name = "portrait_right_small_2"
-				parentanchor = hcenter
-				datacontext = "[EventWindow.GetRightPortraitCharacter('2')]"
-				visible = "[EventWindow.HasRightPortraitCharacter('2')]"
-				blockoverride "portrait_transformation"
-				{
-					portrait_scale = { -1 1 }
-					portrait_offset = { 1 0 }
-				}
-			}
-			widget = { size = { 1 24 } visible = "[EventWindow.HasLeftPortraitCharacter('2')]" }
 		}
 	}
 	container = {
