@@ -11070,54 +11070,7 @@ types Base_GUI_Types
 	type frontend_button = widget {
 		size = { 376 44 }
 		#minimumsize = { 376 44 }
-		parentanchor = bottom|hcenter
-		
-		state = {
-			#name = _mouse_enter
-			name = _mouse_hierarchy_enter
-			#on_start = "[PdxGuiWidget.FindChild('shiner').InterruptAnimation('pseudo_show')]"
-			#on_start = "[PdxGuiWidget.FindChild('shiner').InterruptAnimation('pseudo_hide')]"
-
-			on_start = "[PdxGuiWidget.FindChild('shiner').TriggerAnimation('pseudo_show')]"
-
-			#on_start = "[PdxGuiWidget.FindChild('left_deco').InterruptAnimation('pseudo_show')]"
-			#on_start = "[PdxGuiWidget.FindChild('left_deco').InterruptAnimation('pseudo_hide')]"
-			#on_start = "[PdxGuiWidget.FindChild('right_deco').InterruptAnimation('pseudo_show')]"
-			#on_start = "[PdxGuiWidget.FindChild('right_deco').InterruptAnimation('pseudo_hide')]"
-			#on_start = "[PdxGuiWidget.FindChild('left_deco_item').InterruptAnimation('pseudo_show')]"
-			#on_start = "[PdxGuiWidget.FindChild('left_deco_item').InterruptAnimation('pseudo_hide')]"
-			#on_start = "[PdxGuiWidget.FindChild('right_deco_item').InterruptAnimation('pseudo_show')]"
-			#on_start = "[PdxGuiWidget.FindChild('right_deco_item').InterruptAnimation('pseudo_hide')]"
-
-			on_start = "[PdxGuiWidget.FindChild('left_deco').TriggerAnimation('pseudo_show')]"
-			on_start = "[PdxGuiWidget.FindChild('right_deco').TriggerAnimation('pseudo_show')]"
-			on_start = "[PdxGuiWidget.FindChild('left_deco_item').TriggerAnimation('pseudo_show')]"
-			on_start = "[PdxGuiWidget.FindChild('right_deco_item').TriggerAnimation('pseudo_show')]"
-		}
-		
-		state = {
-			#name = _mouse_enter
-			name = _mouse_hierarchy_leave
-			#on_start = "[PdxGuiWidget.FindChild('shiner').InterruptAnimation('pseudo_hide')]"
-			#on_start = "[PdxGuiWidget.FindChild('shiner').InterruptAnimation('pseudo_show')]"
-
-			on_start = "[PdxGuiWidget.FindChild('shiner').TriggerAnimation('pseudo_hide')]"
-
-			#on_start = "[PdxGuiWidget.FindChild('left_deco').InterruptAnimation('pseudo_show')]"
-			#on_start = "[PdxGuiWidget.FindChild('left_deco').InterruptAnimation('pseudo_hide')]"
-			#on_start = "[PdxGuiWidget.FindChild('right_deco').InterruptAnimation('pseudo_show')]"
-			#on_start = "[PdxGuiWidget.FindChild('right_deco').InterruptAnimation('pseudo_hide')]"
-			#on_start = "[PdxGuiWidget.FindChild('left_deco_item').InterruptAnimation('pseudo_show')]"
-			#on_start = "[PdxGuiWidget.FindChild('left_deco_item').InterruptAnimation('pseudo_hide')]"
-			#on_start = "[PdxGuiWidget.FindChild('right_deco_item').InterruptAnimation('pseudo_show')]"
-			#on_start = "[PdxGuiWidget.FindChild('right_deco_item').InterruptAnimation('pseudo_hide')]"
-
-			on_start = "[PdxGuiWidget.FindChild('left_deco').TriggerAnimation('pseudo_hide')]"
-			on_start = "[PdxGuiWidget.FindChild('right_deco').TriggerAnimation('pseudo_hide')]"
-			on_start = "[PdxGuiWidget.FindChild('left_deco_item').TriggerAnimation('pseudo_hide')]"
-			on_start = "[PdxGuiWidget.FindChild('right_deco_item').TriggerAnimation('pseudo_hide')]"
-		}
-		
+		parentanchor = bottom|hcenter	
 		button = {
 			name = "shiner"
 			size = { 100% 100% }
@@ -11126,7 +11079,7 @@ types Base_GUI_Types
 			modify_texture = {
 				texture = "gfx/interface/base_parts/horizontal_gradient_stretch_black_double.dds"
 				blend_mode = alphamultiply
-			}		
+			}	
 			state = {
 				name = pseudo_show
 				animation = { alpha = 0.9 }
@@ -11138,16 +11091,34 @@ types Base_GUI_Types
 				duration = 0.15
 			}
 			parentanchor = center
+		}
+		button = {
+			size = { 100% 100% }
+			parentanchor = center
 			block "On_click" {}
-			
-			#Fontend buttons?
 			block "ClickSound"
 			{
 				clicksound = "event:/SFX/UI/Generic/2.0/sfx_ui_button_primary"
 				oversound = "event:/SFX/UI/Generic/2.0/sfx_ui_button_oversound"
 			}
+			state = {
+				name = _mouse_enter
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('shiner').TriggerAnimation('pseudo_show')]"
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('left_deco').TriggerAnimation('pseudo_show')]"
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('right_deco').TriggerAnimation('pseudo_show')]"
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('left_deco_item').TriggerAnimation('pseudo_show')]"
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('right_deco_item').TriggerAnimation('pseudo_show')]"
+			}
+			
+			state = {
+				name = _mouse_leave
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('shiner').TriggerAnimation('pseudo_hide')]"
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('left_deco').TriggerAnimation('pseudo_hide')]"
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('right_deco').TriggerAnimation('pseudo_hide')]"
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('left_deco_item').TriggerAnimation('pseudo_hide')]"
+				on_start = "[PdxGuiWidget.AccessParent.FindChild('right_deco_item').TriggerAnimation('pseudo_hide')]"
+			}
 		}
-		
 		textbox = {
 			autoresize = yes
 			block "Text" { text = "BUTTON TEXT HERE" }
@@ -11166,13 +11137,11 @@ types Base_GUI_Types
 						name = pseudo_show
 						position = { -58 0 }
 						duration = 0.15
-						#on_start = "[PdxGuiWidget.FindChild('deco_item').TriggerAnimation('pseudo_show')]"
 					}
 					state = {
 						name = pseudo_hide
 						position = { -50 0 }
 						duration = 0.15
-						#on_start = "[PdxGuiWidget.FindChild('deco_item').TriggerAnimation('pseudo_hide')]"
 					}
 					icon = {
 						size = { 44 24 }
@@ -11217,13 +11186,11 @@ types Base_GUI_Types
 						name = pseudo_show
 						position = { 58 0 }
 						duration = 0.15
-						#on_start = "[PdxGuiWidget.FindChild('deco_item').TriggerAnimation('pseudo_show')]"
 					}
 					state = {
 						name = pseudo_hide
 						position = { 50 0 }
 						duration = 0.15
-						#on_start = "[PdxGuiWidget.FindChild('deco_item').TriggerAnimation('pseudo_hide')]"
 					}
 					icon = {
 						size = { 44 24 }
@@ -11279,7 +11246,6 @@ types Base_GUI_Types
 			}
 			widget = {
 				visible = no
-				#name = "shiner2"
 				size = { 100% 24 }
 				parentanchor = center
 				alpha = 0.0
