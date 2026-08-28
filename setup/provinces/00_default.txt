@@ -19025,10 +19025,10 @@
 }
 
 11984={ #PROV11984
-	terrain="ocean"
-	culture=""
-	religion=""
-	trade_goods=""
+	terrain="boreal_forest"
+	culture="sami"
+	religion="orthodox"
+	trade_goods="fur"
 	civilization_value=0
 	barbarian_power=0
 	province_rank="settlement"
@@ -22135,10 +22135,10 @@
 }
 
 12318={ #PROV12318
-	terrain="ocean"
-	culture=""
-	religion=""
-	trade_goods=""
+	terrain="tundra"
+	culture="sami"
+	religion="orthodox"
+	trade_goods="fur"
 	civilization_value=0
 	barbarian_power=0
 	province_rank="settlement"
@@ -22255,13 +22255,16 @@
 }
 
 12331={ #PROV12331
-	terrain="ocean"
-	culture=""
-	religion=""
-	trade_goods=""
+	terrain="boreal_forest"
+	culture="sami"
+	religion="orthodox"
+	trade_goods="fur"
 	civilization_value=0
 	barbarian_power=0
 	province_rank="settlement"
+	tribesmen={
+		amount=1
+	}
 }
 
 12333={ #PROV12333
@@ -27385,13 +27388,16 @@
 }
 
 12932={ #PROV12932
-	terrain="ocean"
-	culture=""
-	religion=""
-	trade_goods=""
+	terrain="tundra"
+	culture="sami"
+	religion="orthodox"
+	trade_goods="fur"
 	civilization_value=0
 	barbarian_power=0
 	province_rank="settlement"
+	tribesmen={
+		amount=1
+	}
 }
 
 12933={ #Atlantic

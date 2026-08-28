@@ -5644,7 +5644,7 @@
 }
 
 9562={ #Kola
-	terrain="tundra"
+	terrain="boreal_forest"
 	culture="sami"
 	religion="orthodox"
 	trade_goods="fur"
