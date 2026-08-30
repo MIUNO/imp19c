@@ -125,10 +125,16 @@ PixelShader =
 		float4 MixLayer(float Value, float Color)
 		{
 			float MinValue = Value;
-			float MaxValue = MinValue + 1;
-			float Min = (MinValue * 100 / 255) * 0.001;
-			// float Max = 0.01765;
-			float Max = (MaxValue * 100 / 255) * 0.001;
+			float MaxValue = MinValue + 1.0;
+			float Min = (MinValue * 100.0 / 255.0) * 0.001;
+			float Max = (MaxValue * 100.0 / 255.0) * 0.001;
+			float Alpha = smoothstep(Min, Max, clamp(Color, Min, Max));
+			return Alpha;
+		}
+		float4 MixLayerWater(float MinValue, float MaxValue, float Color)
+		{
+			float Min = (MinValue * 100.0 / 255.0) * 0.001;
+			float Max = (MaxValue * 100.0 / 255.0) * 0.001;
 			float Alpha = smoothstep(Min, Max, clamp(Color, Min, Max));
 			return Alpha;
 		}
@@ -146,20 +152,40 @@ PixelShader =
 			// float3 BorderColor = float3( 0.239, 0.212, 0.169 );
 			float3 BorderColor = PdxTex2D( BorderToFlatmap, UV ).rgb;
 
-			float BaseValue = 60;
+			float BaseValue = 60.0;
 
 			float4 FinalColor = float4( 0.0, 0.0, 0.0, 1.0 );
 			float BaseAlpha = MixLayer(BaseValue, Color.r);
 
+			float DotsTile = 20000.0;
+			float2 DotsUV = UV;
+			DotsUV.x *= 2.0;
+			float2 oo =  sin(DotsUV*DotsTile + float2(0.0,10.0))*0.5 + 0.5;
+			float doo = smoothstep(0.2, 0.8, 1.0 - dot(oo, float2(1.0,1.0)));
+			float3 DotsColor = PdxTex2D(GroundToFlatmap, DotsUV).rgb * doo;
+			float DotsAlpha = DotsColor.r;
 
+			float Step = 40.0;
+			float StartStep = 2.0;
+			float BaseAlphaLayer01 = 0.0;
+			float BaseAlphaLayer02 = 0.0;
+			float3 BaseAlphaLayer04 = (0.0, 0.0, 0.0);
+			float3 BaseAlphaLayerFinish = GroundColor;
+
+			for (float i = StartStep; i < 60; i++ ) {
+				BaseAlphaLayer01 = MixLayer(i * Step, Color.r);
+				BaseAlphaLayer02 = MixLayer(i * Step + (Step * 0.5), Color.r);
+				BaseAlphaLayer04 = lerp(GroundColor * 2.0, BorderColor, BaseAlphaLayer01 - BaseAlphaLayer02);
+				BaseAlphaLayerFinish = lerp(BaseAlphaLayerFinish, BaseAlphaLayer04, BaseAlphaLayer01 * 0.05);
+			}
+			float3 BaseGround = lerp(GroundColor, BaseAlphaLayerFinish, MixLayer(StartStep * Step, Color.r));
 
 			float LakeAlpha = PdxTex2D( LakesToFlatmap, UV ).r;
 			BaseAlpha = BaseAlpha - LakeAlpha;
 			float3 RiverColor = PdxTex2D( RiversToFlatmap, UV ).rgb;
 			float3 RiverBase = float3(1.0, 1.0, 1.0) - RiverColor;
-			// float RiverAlpha = smoothstep(0.0, 1.0, RiverBase.r + RiverBase.g + RiverBase.b);
 			float RiverAlpha = (RiverBase.r + RiverBase.g + RiverBase.b) * 0.5;
-			FinalColor = lerp(float4( GroundColor, 1.0 ), float4( lerp( GroundColor, BorderColor, 0.5 ), 1.0 ), (1 - BaseAlpha) + RiverAlpha );
+			FinalColor = lerp(float4( BaseGround, 1.0 ), float4( lerp(GroundColor, BorderColor, 0.5), 1.0 ), (1.0 - BaseAlpha) + RiverAlpha );
 
 			FinalColor = lerp(float4( WaterColor, 1.0 ), float4( FinalColor.rgb, 1.0 ), BaseAlpha );
 
@@ -182,12 +208,17 @@ PixelShader =
 				FinalColor.rgb = lerp( FinalColor.rgb, HighlightColor.rgb, HighlightColor.a );
 			#endif
 
-			float WaterLayer01 = MixLayer(35, Color.r) * 0.025;
-			float WaterLayer02 = MixLayer(20, Color.r) * 0.025;
-			float WaterLayer03 = MixLayer(5, Color.r) * 0.025;
-			float3 WaterBase = WaterColor + WaterLayer01;
+			float3 WaterBase = WaterColor;
+			float WaterLayer01 = MixLayer(35.0, Color.r) * 0.025;
+			float WaterLayer02 = MixLayer(20.0, Color.r) * 0.025;
+			float WaterLayer03 = MixLayer(5.0, Color.r) * 0.025;
+			WaterBase = WaterBase + WaterLayer01;
 			WaterBase = WaterBase + WaterLayer02;
 			WaterBase = WaterBase + WaterLayer03;
+
+			float WaterLayerGradient = MixLayerWater(5.0, BaseValue, Color.r); 
+			WaterLayerGradient = lerp(float3(0.0,0.0,0.0), DotsAlpha, WaterLayerGradient);
+			WaterBase = lerp(float4( WaterBase, 1.0 ), float4( WaterBase * 0.9, 1.0 ), lerp(WaterLayerGradient, WaterLayerGradient * 2.0, WaterLayerGradient) );
 
 			FinalColor = lerp(float4( WaterBase, 1.0 ), float4( FinalColor.rgb, 1.0 ), BaseAlpha );
 
