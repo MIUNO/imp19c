@@ -96,7 +96,7 @@ PixelShader =
 			PDX_MAIN
 			{
 				float4 Diffuse = PdxTex2D( BorderTexture, Input.UV );
-				
+				float4 DiffuseBase = Diffuse;
 				#ifdef PULSATE
 					Diffuse.rgb *= 1.0f + pow( sin( GlobalTime * 2 ) * 0.5f + 0.5f, 1.5 ) * 3.0f;
 				#endif
@@ -104,6 +104,8 @@ PixelShader =
 				Diffuse.rgb = GH_ApplyAtmosphericEffects( Diffuse.rgb, Input.WorldSpacePos, FogOfWarAlpha );
 				Diffuse.rgb = ApplyDistanceFog( Diffuse.rgb, Input.WorldSpacePos );
 				
+				Diffuse.rgb = lerp( Diffuse.rgb, DiffuseBase.rgb, FlatMapLerp );
+
 				Diffuse.a *= vAlpha;
 				
 				return Diffuse;

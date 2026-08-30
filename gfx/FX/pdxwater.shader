@@ -178,7 +178,7 @@ PixelShader =
 				// Lerp to flat map terrain for smooth transition. When FlatMapLerp >= 1.0 this shader is not called at all!
 				#ifdef TERRAIN_FLAT_MAP_LERP
 					#ifndef PDX_OPENGL // [TK] Note: Definitely exceeds the limit of 16 samplers on anything but windows
-						float4 FlatTerrainColor = FlatTerrainShader( Input.WorldSpacePos, ColorMapCoords, FlatMapTexture );
+						float4 FlatTerrainColor = FlatTerrainShader( Input.WorldSpacePos, ColorMapCoords );
 						Water.rgb = lerp( Water.rgb, FlatTerrainColor.rgb, FlatMapLerp );
 					#endif
 				#endif
