@@ -8053,7 +8053,6 @@ Erzeroum = {
 
 Khurasan = {
    provinces = {
-      599
       968
       3426
       3700
