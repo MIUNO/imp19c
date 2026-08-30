@@ -12,7 +12,7 @@ PixelShader =
 		MipFilter = "Linear"
 		SampleModeU = "Wrap"
 		SampleModeV = "Wrap"
-		File = "map_data/heightmap_flatmap.png"
+		File = "gfx/map/textures/heightmap_flatmap.png"
 		srgb = yes
 	}
 	TextureSampler RiversToFlatmap
@@ -26,6 +26,63 @@ PixelShader =
 		File = "map_data/rivers.png"
 		srgb = yes
 	}
+	TextureSampler BordersToFlatmap
+	{
+		Index = 19
+		MagFilter = "Linear"
+		MinFilter = "Linear"
+		MipFilter = "Linear"
+		SampleModeU = "Wrap"
+		SampleModeV = "Wrap"
+		File = "gfx/map/textures/flatmap_alpha.png"
+		srgb = yes
+	}
+	TextureSampler SymbolsToFlatmap
+	{
+		Index = 20
+		MagFilter = "Linear"
+		MinFilter = "Linear"
+		MipFilter = "Linear"
+		SampleModeU = "Wrap"
+		SampleModeV = "Wrap"
+		File = "gfx/map/textures/flatmap_deco.png"
+		srgb = yes
+	}
+	TextureSampler GroundToFlatmap
+	{
+		Index = 24
+		MagFilter = "Linear"
+		MinFilter = "Linear"
+		MipFilter = "Linear"
+		SampleModeU = "Wrap"
+		SampleModeV = "Wrap"
+		File = "gfx/map/textures/ground.png"
+		srgb = yes
+	}
+	TextureSampler WaterToFlatmap
+	{
+		Index = 25
+		MagFilter = "Linear"
+		MinFilter = "Linear"
+		MipFilter = "Linear"
+		SampleModeU = "Wrap"
+		SampleModeV = "Wrap"
+		File = "gfx/map/textures/water.png"
+		srgb = yes
+	}
+	TextureSampler BorderToFlatmap
+	{
+		Index = 26
+		MagFilter = "Linear"
+		MinFilter = "Linear"
+		MipFilter = "Linear"
+		SampleModeU = "Wrap"
+		SampleModeV = "Wrap"
+		File = "gfx/map/textures/border.png"
+		srgb = yes
+	}
+
+
 	Code
 	[[
 		float3 ApplyGradientBorderColor( in float3 BaseColor, inout float3 BorderColor, in float BlendAmount )
@@ -84,50 +141,67 @@ PixelShader =
 			// 	FinalColor.rgb = lerp( FinalColor.rgb, HighlightColor.rgb, HighlightColor.a );
 			// #endif
 
-			
-			// #ifdef TERRAIN_DEBUG
-			// 	TerrainDebug( FinalColor, WorldSpacePos );
-			// #endif
-			
-			//DebugReturn( FinalColor, lightingProperties, ShadowTerm );
 
 			float2 UV = float2( ColorMapCoords.x, 1.0 - ColorMapCoords.y );
 			float4 Color = PdxTex2D( HeightmapToFlatmap, UV );
 
-			float3 GroundColor = float3( 0.824, 0.769, 0.663 );
-			float3 WaterColor = float3( 0.761, 0.765, 0.682 );
-			float3 BorderColor = float3( 0.239, 0.212, 0.169 );
+			// float3 GroundColor = float3( 0.824, 0.769, 0.663 );
+			float3 GroundColor = PdxTex2D( GroundToFlatmap, UV ).rgb;
+			// float3 WaterColor = float3( 0.761, 0.765, 0.682 );
+			float3 WaterColor = PdxTex2D( WaterToFlatmap, UV ).rgb;
+			// float3 BorderColor = float3( 0.239, 0.212, 0.169 );
+			float3 BorderColor = PdxTex2D( BorderToFlatmap, UV ).rgb;
 
 			float BaseValue = 60;
 
 			float4 FinalColor = float4( 0.0, 0.0, 0.0, 1.0 );
 			float BaseAlpha = MixLayer(BaseValue, Color.r);
 
-			float3 RiverColor = PdxTex2D( RiversToFlatmap, float2( ColorMapCoords.x, 1.0 - ColorMapCoords.y ) ).rgb;
+			float3 RiverColor = PdxTex2D( RiversToFlatmap, UV ).rgb;
 			float3 RiverBase = float3(1.0, 1.0, 1.0) - RiverColor;
 			float RiverAlpha = smoothstep(0.0, 1.0, RiverBase.r + RiverBase.g + RiverBase.b);
-			FinalColor = lerp(float4( GroundColor, 1.0 ), float4( BorderColor, 1.0 ), (1 - BaseAlpha) + RiverAlpha );
+			FinalColor = lerp(float4( GroundColor, 1.0 ), float4( lerp( GroundColor, BorderColor, 0.5 ), 1.0 ), (1 - BaseAlpha) + RiverAlpha );
 
 			FinalColor = lerp(float4( WaterColor, 1.0 ), float4( FinalColor.rgb, 1.0 ), BaseAlpha );
 
+			float4 Borders = PdxTex2D( BordersToFlatmap, UV );
+			Borders.a = smoothstep(0.0, 1.0, Borders.r + Borders.g + Borders.b);
+			Borders = float4( BorderColor, Borders.a );
+			FinalColor = lerp(float4( FinalColor.rgb, 1.0 ), float4( Borders.rgb, 1.0 ), Borders.a );
 
+			#ifdef TERRAIN_COLOR_OVERLAY
+				float3 ColorOverlay;
+				float PreLightingBlend;
+				float PostLightingBlend;
+				GetBorderColorAndBlend( ColorMapCoords, ColorOverlay, PreLightingBlend, PostLightingBlend );
 
-			// #ifdef TERRAIN_COLOR_OVERLAY
-			// 	float3 ColorOverlay;
-			// 	float PreLightingBlend;
-			// 	float PostLightingBlend;
-			// 	GetBorderColorAndBlend( ColorMapCoords, ColorOverlay, PreLightingBlend, PostLightingBlend );
+				FinalColor.rgb = lerp( FinalColor.rgb, ColorOverlay, saturate( PreLightingBlend + PostLightingBlend ) );
+			#endif
 
-			// 	FinalColor.rgb = lerp( FinalColor.rgb, ColorOverlay, saturate( PreLightingBlend + PostLightingBlend ) );
-			// #endif
+			#ifdef TERRAIN_COLOR_OVERLAY
+				float4 HighlightColor = BilinearColorSampleAtOffset( ColorMapCoords, IndirectionMapSize, InvIndirectionMapSize, ProvinceColorIndirectionTexture, ProvinceColorTexture, HighlightProvinceColorsOffset );
+				FinalColor.rgb = lerp( FinalColor.rgb, HighlightColor.rgb, HighlightColor.a );
+			#endif
 
-			// #ifdef TERRAIN_COLOR_OVERLAY
-			// 	float4 HighlightColor = BilinearColorSampleAtOffset( ColorMapCoords, IndirectionMapSize, InvIndirectionMapSize, ProvinceColorIndirectionTexture, ProvinceColorTexture, HighlightProvinceColorsOffset );
-			// 	FinalColor.rgb = lerp( FinalColor.rgb, HighlightColor.rgb, HighlightColor.a );
-			// #endif
+			float WaterLayer01 = MixLayer(35, Color.r) * 0.025;
+			float WaterLayer02 = MixLayer(20, Color.r) * 0.025;
+			float WaterLayer03 = MixLayer(5, Color.r) * 0.025;
+			float3 WaterBase = WaterColor + WaterLayer01;
+			WaterBase = WaterBase + WaterLayer02;
+			WaterBase = WaterBase + WaterLayer03;
 
-			// FinalColor = lerp(float4( WaterColor, 1.0 ), float4( FinalColor.rgb, 1.0 ), BaseAlpha );
+			FinalColor = lerp(float4( WaterBase, 1.0 ), float4( FinalColor.rgb, 1.0 ), BaseAlpha );
 
+			float4 Symbols = PdxTex2D( SymbolsToFlatmap, UV );
+			Symbols.a = smoothstep(0.0, 1.0, Symbols.r + Symbols.g + Symbols.b);
+			Symbols = float4( BorderColor, Symbols.a );
+			FinalColor = lerp(float4( FinalColor.rgb, 1.0 ), float4( Symbols.rgb, 1.0 ), Symbols.a );
+
+			#ifdef TERRAIN_DEBUG
+				TerrainDebug( FinalColor, WorldSpacePos );
+			#endif
+			
+			// DebugReturn( FinalColor, lightingProperties, ShadowTerm );
 			return float4( FinalColor.rgb, 1 );
 		}
 	]]
