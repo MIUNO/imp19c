@@ -42,7 +42,18 @@ PixelShader =
 		SampleModeU = "Wrap"
 		SampleModeV = "Wrap"
 	}
-	
+	TextureSampler BorderToFlatmap
+	{
+		Index = 26
+		MagFilter = "Linear"
+		MinFilter = "Linear"
+		MipFilter = "Linear"
+		SampleModeU = "Wrap"
+		SampleModeV = "Wrap"
+		File = "gfx/map/flatmap/border.png"
+		srgb = yes
+	}
+
 	MainCode MapNamePixelShader
 	{
 		Input = "VS_OUTPUT_MAPNAME"
@@ -56,9 +67,9 @@ PixelShader =
 				Color = ApplyFogOfWar( Color, Input.WorldSpacePos, FogOfWarAlpha );
 				float3 ColorFog = ApplyDistanceFog( Color, Input.WorldSpacePos );
 
-				Color = lerp( ColorFog, Color, FlatMapLerp );
+				Color = lerp( ColorFog, PdxTex2D( BorderToFlatmap, Input.TexCoord ).rgb, FlatMapLerp );
 
-				return float4( Color, Alpha * 0.93 );
+				return float4( Color, lerp( Alpha * 0.93, Alpha, FlatMapLerp ) );
 			}
 		]]
 	}

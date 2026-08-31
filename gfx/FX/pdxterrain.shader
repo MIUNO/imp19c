@@ -172,7 +172,7 @@ PixelShader =
 			float ColorMapOverlayStrength = COLORMAP_OVERLAY_STRENGTH;
 
 			#ifdef TERRAIN_FLAT_MAP_LERP
-				float3 FlatMap = PdxTex2D( FlatMapTexture, float2( ColorMapCoords.x, 1.0 - ColorMapCoords.y ) ).rgb;
+				float3 FlatMap = FlatTerrainShader( Input.WorldSpacePos, ColorMapCoords ).rgb;
 			#endif
 
 			float3 Normal = CalculateNormal( Input.WorldSpacePos.xz );
@@ -299,7 +299,11 @@ PixelShader =
 			{
 				clip( vec2(1.0) - Input.WorldSpacePos.xz * WorldSpaceToTerrain0To1 );
 				float2 ColorMapCoords = Input.WorldSpacePos.xz * WorldSpaceToTerrain0To1;
-				return FlatTerrainShader( Input.WorldSpacePos, ColorMapCoords, FlatMapTexture );
+				float3 DetailDiffuse;
+				float3 DetailNormal;
+				float4 DetailMaterial;
+				CalculateDetails( Input.WorldSpacePos.xz, DetailDiffuse, DetailNormal, DetailMaterial );
+				return FlatTerrainShader( Input.WorldSpacePos, ColorMapCoords );
 			}
 		]]
 	}
