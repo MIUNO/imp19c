@@ -324,16 +324,6 @@
 	}
 }
 
-4004={ #PROV4004
-	terrain="desert"
-	culture="kazakh"
-	religion="sunni"
-	trade_goods="livestock"
-	civilization_value=0
-	barbarian_power=0
-	province_rank="settlement"
-}
-
 4121={ #Daşoguz
 	terrain="farmland"
 	culture="kazakh"
@@ -426,16 +416,6 @@
 	culture="turkmen"
 	religion="sunni"
 	trade_goods="livestock"
-	civilization_value=0
-	barbarian_power=0
-	province_rank="settlement"
-}
-
-5865={ #Turush
-	terrain="desert"
-	culture="kazakh"
-	religion="sunni"
-	trade_goods="temperate_fruit"
 	civilization_value=0
 	barbarian_power=0
 	province_rank="settlement"
@@ -588,28 +568,6 @@
 	lower_strata={
 		amount=4
 	}
-}
-
-
-
-9855={ #PROV9855
-	terrain="desert"
-	culture="turkmen"
-	religion="sunni"
-	trade_goods="fish"
-	civilization_value=0
-	barbarian_power=0
-	province_rank="settlement"
-}
-
-9899={ #PROV9899
-	terrain="desert"
-	culture="kazakh"
-	religion="sunni"
-	trade_goods="livestock"
-	civilization_value=0
-	barbarian_power=0
-	province_rank="settlement"
 }
 
 10025={ #Beyneu

@@ -6146,6 +6146,16 @@
 	province_rank="settlement"
 }
 
+11984={ #PROV11984
+	terrain="boreal_forest"
+	culture="sami"
+	religion="orthodox"
+	trade_goods="fur"
+	civilization_value=0
+	barbarian_power=0
+	province_rank="settlement"
+}
+
 12239={ #PROV12239
 	terrain="tundra"
 	culture="samoyed"
@@ -6156,6 +6166,29 @@
 	province_rank="settlement"
 }
 
+12318={ #PROV12318
+	terrain="tundra"
+	culture="sami"
+	religion="orthodox"
+	trade_goods="fur"
+	civilization_value=0
+	barbarian_power=0
+	province_rank="settlement"
+}
+
+12331={ #PROV12331
+	terrain="boreal_forest"
+	culture="sami"
+	religion="orthodox"
+	trade_goods="fur"
+	civilization_value=0
+	barbarian_power=0
+	province_rank="settlement"
+	tribesmen={
+		amount=1
+	}
+}
+
 12410={ #PROV12410
 	terrain="tundra"
 	culture="samoyed"
@@ -6164,5 +6197,18 @@
 	civilization_value=0
 	barbarian_power=0
 	province_rank="settlement"
+}
+
+12932={ #PROV12932
+	terrain="tundra"
+	culture="sami"
+	religion="orthodox"
+	trade_goods="fur"
+	civilization_value=0
+	barbarian_power=0
+	province_rank="settlement"
+	tribesmen={
+		amount=1
+	}
 }
 

@@ -111,6 +111,16 @@
 	province_rank="settlement"
 }
 
+276={ #Haima
+	terrain="extreme_desert"
+	culture="omani"
+	religion="ibadi"
+	trade_goods="wool"
+	civilization_value=0
+	barbarian_power=0
+	province_rank="settlement"
+}
+
 319={ #Anyê Maqên
 	terrain="extreme_mountain"
 	culture="amdo"
@@ -137,6 +147,16 @@
 	religion=""
 	trade_goods=""
 	civilization_value=0
+	barbarian_power=0
+	province_rank="settlement"
+}
+
+490={ #Elburz Mountains
+	terrain="extreme_mountain"
+	culture="persian"
+	religion="shiite"
+	trade_goods="camel"
+	civilization_value=8
 	barbarian_power=0
 	province_rank="settlement"
 }
@@ -181,6 +201,16 @@
 	province_rank="settlement"
 }
 
+599={ #Dasht-e Kavir
+	terrain="extreme_desert"
+	culture="persian"
+	religion="shiite"
+	trade_goods="temperate_fruit"
+	civilization_value=8
+	barbarian_power=0
+	province_rank="settlement"
+}
+
 609={ #Ryökäsvesi
 	terrain="coastal_terrain"
 	culture=""
@@ -216,6 +246,16 @@
 	culture="mexican"
 	religion="roman_pantheon"
 	trade_goods="cloth"
+	civilization_value=0
+	barbarian_power=0
+	province_rank="settlement"
+}
+
+636={ #Shishan
+	terrain="extreme_desert"
+	culture="bedouin"
+	religion="sunni"
+	trade_goods="wool"
 	civilization_value=0
 	barbarian_power=0
 	province_rank="settlement"
@@ -994,6 +1034,16 @@
 	province_rank="settlement"
 }
 
+4004={ #PROV4004
+	terrain="desert"
+	culture="kazakh"
+	religion="sunni"
+	trade_goods="livestock"
+	civilization_value=0
+	barbarian_power=0
+	province_rank="settlement"
+}
+
 4024={ #Sahara Desert
 	terrain="extreme_desert"
 	culture="tobou"
@@ -1644,6 +1694,16 @@
 	province_rank="settlement"
 }
 
+5865={ #Turush
+	terrain="desert"
+	culture="kazakh"
+	religion="sunni"
+	trade_goods="temperate_fruit"
+	civilization_value=0
+	barbarian_power=0
+	province_rank="settlement"
+}
+
 5906={ #Rijm Maatoug
 	terrain="extreme_desert"
 	culture="tamazight"
@@ -1740,6 +1800,16 @@
 	religion=""
 	trade_goods=""
 	civilization_value=0
+	barbarian_power=0
+	province_rank="settlement"
+}
+
+6341={ #Kuh-e-Birk
+	terrain="extreme_desert"
+	culture="persian"
+	religion="shiite"
+	trade_goods="lead"
+	civilization_value=8
 	barbarian_power=0
 	province_rank="settlement"
 }
@@ -2364,6 +2434,16 @@
 	province_rank="settlement"
 }
 
+8855={ #Lop Nur
+	terrain="extreme_desert"
+	culture="uighur"
+	religion="sunni"
+	trade_goods="livestock"
+	civilization_value=0
+	barbarian_power=0
+	province_rank="settlement"
+}
+
 8982={ #Chilean Andes
 	terrain="extreme_mountain"
 	culture="chilean"
@@ -2424,6 +2504,16 @@
 	province_rank="settlement"
 }
 
+9611={ #PROV9611
+	terrain="extreme_desert"
+	culture="uighur"
+	religion="sunni"
+	trade_goods="livestock"
+	civilization_value=0
+	barbarian_power=0
+	province_rank="settlement"
+}
+
 9695={ #Hülun
 	terrain="ocean"
 	culture="mongolian"
@@ -2464,11 +2554,31 @@
 	province_rank="settlement"
 }
 
+9855={ #PROV9855
+	terrain="desert"
+	culture="turkmen"
+	religion="sunni"
+	trade_goods="fish"
+	civilization_value=0
+	barbarian_power=0
+	province_rank="settlement"
+}
+
 9872={ #Austrian Alps
 	terrain="extreme_mountain"
 	culture="austrian"
 	religion="catholic"
 	trade_goods="wood"
+	civilization_value=0
+	barbarian_power=0
+	province_rank="settlement"
+}
+
+9899={ #PROV9899
+	terrain="desert"
+	culture="kazakh"
+	religion="sunni"
+	trade_goods="livestock"
 	civilization_value=0
 	barbarian_power=0
 	province_rank="settlement"
@@ -19024,16 +19134,6 @@
 	province_rank="settlement"
 }
 
-11984={ #PROV11984
-	terrain="boreal_forest"
-	culture="sami"
-	religion="orthodox"
-	trade_goods="fur"
-	civilization_value=0
-	barbarian_power=0
-	province_rank="settlement"
-}
-
 11985={ #PROV11985
 	terrain="ocean"
 	culture=""
@@ -22134,16 +22234,6 @@
 	province_rank="settlement"
 }
 
-12318={ #PROV12318
-	terrain="tundra"
-	culture="sami"
-	religion="orthodox"
-	trade_goods="fur"
-	civilization_value=0
-	barbarian_power=0
-	province_rank="settlement"
-}
-
 12319={ #Aral
 	terrain="coastal_terrain"
 	culture=""
@@ -22252,19 +22342,6 @@
 	civilization_value=0
 	barbarian_power=0
 	province_rank="settlement"
-}
-
-12331={ #PROV12331
-	terrain="boreal_forest"
-	culture="sami"
-	religion="orthodox"
-	trade_goods="fur"
-	civilization_value=0
-	barbarian_power=0
-	province_rank="settlement"
-	tribesmen={
-		amount=1
-	}
 }
 
 12333={ #PROV12333
@@ -27385,19 +27462,6 @@
 	civilization_value=0
 	barbarian_power=0
 	province_rank="settlement"
-}
-
-12932={ #PROV12932
-	terrain="tundra"
-	culture="sami"
-	religion="orthodox"
-	trade_goods="fur"
-	civilization_value=0
-	barbarian_power=0
-	province_rank="settlement"
-	tribesmen={
-		amount=1
-	}
 }
 
 12933={ #Atlantic

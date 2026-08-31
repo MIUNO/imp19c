@@ -1745,16 +1745,6 @@
 	}
 }
 
-9611={ #PROV9611
-	terrain="extreme_desert"
-	culture="uighur"
-	religion="sunni"
-	trade_goods="livestock"
-	civilization_value=0
-	barbarian_power=0
-	province_rank="settlement"
-}
-
 9651={ #Togyz
 	terrain="semi_arid"
 	culture="kazakh"
