@@ -12,7 +12,7 @@ PixelShader =
 		MipFilter = "Linear"
 		SampleModeU = "Wrap"
 		SampleModeV = "Wrap"
-		File = "gfx/map/flatmap/heightmap_flatmap.png"
+		File = "gfx/map/flatmap/flatmap_heightmap.png"
 		srgb = yes
 	}
 	TextureSampler RiversToFlatmap
@@ -45,7 +45,7 @@ PixelShader =
 		MipFilter = "Linear"
 		SampleModeU = "Wrap"
 		SampleModeV = "Wrap"
-		File = "gfx/map/flatmap/flatmap_alpha.png"
+		File = "gfx/map/flatmap/flatmap_borders.png"
 		srgb = yes
 	}
 	TextureSampler SymbolsToFlatmap
@@ -56,7 +56,7 @@ PixelShader =
 		MipFilter = "Linear"
 		SampleModeU = "Wrap"
 		SampleModeV = "Wrap"
-		File = "gfx/map/flatmap/flatmap_deco.png"
+		File = "gfx/map/flatmap/flatmap_decorations.png"
 		srgb = yes
 	}
 	TextureSampler GroundToFlatmap
@@ -67,7 +67,7 @@ PixelShader =
 		MipFilter = "Linear"
 		SampleModeU = "Wrap"
 		SampleModeV = "Wrap"
-		File = "gfx/map/flatmap/ground.png"
+		File = "gfx/map/flatmap/flatmap_ground.png"
 		srgb = yes
 	}
 	TextureSampler WaterToFlatmap
@@ -78,7 +78,7 @@ PixelShader =
 		MipFilter = "Linear"
 		SampleModeU = "Wrap"
 		SampleModeV = "Wrap"
-		File = "gfx/map/flatmap/water.png"
+		File = "gfx/map/flatmap/flatmap_water.png"
 		srgb = yes
 	}
 	TextureSampler BorderToFlatmap
@@ -89,7 +89,7 @@ PixelShader =
 		MipFilter = "Linear"
 		SampleModeU = "Wrap"
 		SampleModeV = "Wrap"
-		File = "gfx/map/flatmap/border.png"
+		File = "gfx/map/flatmap/flatmap_border.png"
 		srgb = yes
 	}
 
