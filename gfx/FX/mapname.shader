@@ -50,7 +50,7 @@ PixelShader =
 		MipFilter = "Linear"
 		SampleModeU = "Wrap"
 		SampleModeV = "Wrap"
-		File = "gfx/map/flatmap/border.png"
+		File = "gfx/map/flatmap/flatmap_border.png"
 		srgb = yes
 	}
 
