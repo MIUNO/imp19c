@@ -875,6 +875,37 @@
 			}
 		}
 
+		Sample={
+			Name="Sample from 4806, 3816"
+			Materials={
+				Material={
+					MaterialId="grass_plain"
+					Value=129
+				}
+
+				Material={
+					MaterialId="marshlands_europe"
+					Value=74
+				}
+
+				Material={
+					MaterialId="woodlands"
+					Value=50
+				}
+
+				Material={
+					MaterialId="gravel_1"
+					Value=1
+				}
+
+				Material={
+					MaterialId="hills_india"
+					Value=1
+				}
+
+			}
+		}
+
 	}
 }
 

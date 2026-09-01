@@ -152,7 +152,7 @@ PixelShader =
 			// float3 BorderColor = float3( 0.239, 0.212, 0.169 );
 			float3 BorderColor = PdxTex2D( BorderToFlatmap, UV ).rgb;
 
-			float BaseValue = 60.0;
+			float BaseValue = 42.0;
 
 			float4 FinalColor = float4( 0.0, 0.0, 0.0, 1.0 );
 			float BaseAlpha = MixLayer(BaseValue, Color.r);
@@ -168,7 +168,7 @@ PixelShader =
 
 			// Ground Gradient
 			float Step = 40.0;
-			float StartStep = 3.0;
+			float StartStep = 2.0;
 			float BaseAlphaLayer01 = 0.0;
 			float BaseAlphaLayer02 = 0.0;
 			float3 BaseAlphaLayer03 = (0.0, 0.0, 0.0);
@@ -176,7 +176,7 @@ PixelShader =
 
 			for (float i = StartStep; i < 60; i++ ) {
 				BaseAlphaLayer01 = MixLayer(i * Step, Color.r);
-				BaseAlphaLayer02 = MixLayer(i * Step + (Step * 0.5), Color.r);
+				BaseAlphaLayer02 = MixLayer( (i * Step) + (Step * 0.5), Color.r);
 				BaseAlphaLayer03 = lerp(GroundColor * 1.75, BorderColor, BaseAlphaLayer01 - BaseAlphaLayer02);
 				BaseAlphaLayerFinish = lerp(BaseAlphaLayerFinish, BaseAlphaLayer03, BaseAlphaLayer01 * 0.05);
 			}
