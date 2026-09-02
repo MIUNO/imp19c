@@ -69,6 +69,7 @@
  DIPLO_play_title:0 "#T [Scope.GetProvince.MakeScope.GetVariable('play_instigator').GetCountry.GetAdjective] play for [Scope.GetProvince.MakeScope.GetVariable('play_target_area').GetProvince.GetArea.GetNameWithNoTooltip] \nagainst [Scope.GetProvince.MakeScope.GetVariable('play_target_country').GetCountry.GetNameWithNoTooltip]#!"
  DIPLO_play_target_area:0 "[Province.MakeScope.GetVariable('play_target_area').GetProvince.GetArea.GetName]"
  diplomatic_ruler:0 "Ruler"
+ diplomatic_monarch:0 "Monarch"
 
  # Province >>>
  province_category:0 "Сategory"

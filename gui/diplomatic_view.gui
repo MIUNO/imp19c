@@ -1651,8 +1651,8 @@ base_window = {
 								}
 							}
 						}
-						flowcontainer = {
-							#size = { 175 195 }
+						widget = {
+							size = { 175 195 }
 							direction = vertical
 							margin = { 5 5 }
 							spacing = 5
@@ -1667,6 +1667,7 @@ base_window = {
 							}
 							flowcontainer = {
 								ignoreinvisible = yes
+								position = { 0 40 }
 								parentanchor = hcenter
 								flowcontainer = {
 									margin = { 2 0 }
@@ -1686,20 +1687,46 @@ base_window = {
 								}
 								flowcontainer = {
 									margin = { 2 0 }
-									visible = "[And(DiplomaticView.GetTargetCountry.MakeScope.Var('monarch_character').IsSet,Not(And(DiplomaticView.GetTargetCountry.MakeScope.Var('monarch_character').GetCharacter.IsRuler,EqualTo_string(DiplomaticView.GetTargetCountry.MakeScope.Var('monarch_character').GetCharacter.GetEmployer.GetTag,DiplomaticView.GetTargetCountry.GetTag))))]"
-									cpt_button = {
-										size = { 80 120 }
-										datacontext = "[DiplomaticView.GetTargetCountry.MakeScope.Var('monarch_character').GetCharacter]"
-									}
-								}
-								flowcontainer = {
-									margin = { 2 0 }
 									visible = "[And( DiplomaticView.GetTargetCountry.GetGovernment.IsRepublic, DiplomaticView.GetTargetCountry.UseCoRuler)]"
 									cpt_button = {
 										size = { 80 120 }
 										datacontext = "[DiplomaticView.GetTargetCountry.GetSuccession.GetSecondaryHeir]"
 									}
 								}
+							}
+							widget = {
+								size = { 50 70 }
+								parentanchor = right|bottom
+								visible = "[And(DiplomaticView.GetTargetCountry.MakeScope.Var('monarch_character').IsSet,Not(And(DiplomaticView.GetTargetCountry.MakeScope.Var('monarch_character').GetCharacter.IsRuler,EqualTo_string(DiplomaticView.GetTargetCountry.MakeScope.Var('monarch_character').GetCharacter.GetEmployer.GetTag,DiplomaticView.GetTargetCountry.GetTag))))]"
+								icon = {
+									size = { 140 140 }
+									parentanchor = right|bottom
+									using = shadow_background
+									modify_texture = {
+										texture = "gfx/interface/base_parts/gradient_black_flip.dds"
+										blend_mode = alphamultiply
+									}
+									modify_texture = {
+										texture = "gfx/interface/base_parts/horizontal_gradient_stretch_inverted.dds"
+										blend_mode = alphamultiply
+									}
+								}
+								cpt_button = {
+									size = { 40 60 }
+									position = { -5 -5 }
+									parentanchor = right|bottom
+									datacontext = "[DiplomaticView.GetTargetCountry.MakeScope.Var('monarch_character').GetCharacter]"
+								}
+							}
+							textbox = {
+								text = "diplomatic_monarch"
+								size = { 120 35 }
+								position = { 5 0 }
+								parentanchor = bottom
+								align = right|vcenter
+								fontsize = 16
+								using = BaseFontM
+								using = Default_FontColor
 							}
 						}
 					}
