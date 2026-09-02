@@ -1340,6 +1340,7 @@ vbox = {
 			icon_button_square_left_corner = {
 				size = { 32 40 }
 				visible = "[Not(GetVariableSystem.HasValue( 'wiki_ui', 'open' ))]"
+				enabled = no
 				blockoverride "On_click" 
 				{ 
 					onclick = "[GetVariableSystem.Set( 'wiki_ui', 'open' )]"
@@ -1360,6 +1361,7 @@ vbox = {
 			icon_button_square_left_corner = {
 				size = { 32 40 }
 				visible = "[GetVariableSystem.HasValue( 'wiki_ui', 'open' )]"
+				enabled = no
 				blockoverride "On_click" 
 				{ 
 					onclick = "[GetVariableSystem.Set( 'wiki_ui', 'close' )]"

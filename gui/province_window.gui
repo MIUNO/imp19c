@@ -4675,7 +4675,7 @@ vbox = {
 									spacing = 5
 									parentanchor = hcenter
 									text_button_square_highlighted = {
-										size = { 200 0 }
+										size = { 200 30 }
 										blockoverride "On_click" { onclick = "[ProvinceWindow.ShowPopDetails('slaves')]" }
 										blockoverride "Center_text" 
 										{ 
@@ -4739,7 +4739,7 @@ vbox = {
 									enabled = yes
 									blockoverride "Title_text" { text = "province_diplomatic_play_list" }
 									text_button_square = { #Update Button
-										size = { 200 28 }
+										size = { 200 30 }
 										position = { 0 2 }
 										parentanchor = right
 										enabled = "[GetScriptedGui('DIPLO_begin_or_end_play').IsValid( GuiScope.SetRoot( ProvinceWindow.GetProvince.MakeScope ).AddScope('player', Player.MakeScope ).End )]"
@@ -4918,7 +4918,7 @@ vbox = {
 											tooltip = "province_current_score_tt"
 										}
 										text_button_square = {
-											size = { 180 28 }
+											size = { 180 30 }
 											parentanchor = hcenter
 											blockoverride "Center_text" { text = "province_colonization_declare" }
 											blockoverride "On_click"
@@ -5137,7 +5137,7 @@ vbox = {
 								text_button_square_highlighted = { #Update Button						
 									parentanchor = bottom|right
 									position = { 0 -16 }
-									size = { 160 28 }
+									size = { 160 30 }
 
 									visible = "[And(HasDlc('Heirs of Alexander'),Not(GreatWork.IsAncientWonder))]"
 
@@ -5329,7 +5329,7 @@ vbox = {
 									parentanchor = bottom|right
 									widgetanchor = bottom|right
 									position = {-5 -12}
-									size = { 160 28 }			
+									size = { 160 30 }			
 						
 									visible = "[And( And(HasDlc('Heirs of Alexander'),Not(GreatWork.IsAncientWonder)), ProvinceWindow.IsPlayerProvince )]"
 									
@@ -5343,7 +5343,7 @@ vbox = {
 									parentanchor = bottom|right
 									widgetanchor = bottom|right
 									position = {-5 -12}
-									size = { 160 28 }
+									size = { 160 30 }
 									
 									visible = "[And( GreatWork.IsAncientWonder, ProvinceWindow.IsPlayerProvince )]"
 

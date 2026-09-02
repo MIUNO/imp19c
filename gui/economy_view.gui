@@ -150,7 +150,7 @@ types economy_types {
 @maxcategorybuttonwidth = 160
 @mincategorybuttonheight = 42
 @maxcategorybuttonheight = 42
-@window_width = 660
+@window_width = 710
 @window_height = 900
 
 base_window = {
@@ -303,7 +303,7 @@ base_window = {
 						}
 						flowcontainer = {
 							spacing = 2
-							text_button_square = {
+							text_button_square_left_corner = {
 								name = "decrease_reserve_exchange"
 								datacontext = "[GetScriptedGui('CURRENCY_decrease_reserve_exchange')]"
 								blockoverride "Center_text" { text = "v" }
@@ -311,10 +311,10 @@ base_window = {
 									onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
 								}
 								tooltip = "DECREASE_RESERVE_EXCHANGE_RATE_TT"
-								size = { 24 24 }
+								size = { 30 30 }
 								enabled = "[ScriptedGui.IsValid( GuiScope.SetRoot( Player.MakeScope ).End )]"
 							}
-							text_button_square = {
+							text_button_square_right_corner = {
 								name = "increase_reserve_exchange"
 								datacontext = "[GetScriptedGui('CURRENCY_increase_reserve_exchange')]"
 								blockoverride "Center_text" { text = "^" }
@@ -322,7 +322,7 @@ base_window = {
 									onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
 								}
 								tooltip = "INCREASE_RESERVE_EXCHANGE_RATE_TT"
-								size = { 24 24 }
+								size = { 30 30 }
 								enabled = "[ScriptedGui.IsValid( GuiScope.SetRoot( Player.MakeScope ).End )]"
 							}
 						}
@@ -362,7 +362,7 @@ base_window = {
 						}
 						tooltip = "FREEZE_RESERVES_TT"
 						parentanchor = hcenter
-						size = { 160 24 }
+						size = { 160 30 }
 					}
 					flowcontainer = {
 						spacing = 5
@@ -378,7 +378,7 @@ base_window = {
 						}
 						flowcontainer = {
 							spacing = 2
-							text_button_square = {
+							text_button_square_left_corner = {
 								name = "increase_gold_reserve_rate"
 								datacontext = "[GetScriptedGui('CURRENCY_increase_reserve_accumulation_gold')]"
 								blockoverride "Center_text" { text = "+" }
@@ -387,9 +387,9 @@ base_window = {
 									onrightclick = "[GetScriptedGui('CURRENCY_increase_reserve_accumulation_gold_10x').Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
 								}
 								tooltip = "economy_tt_increase"
-								size = { 24 24 }
+								size = { 30 30 }
 							}
-							text_button_square = {
+							text_button_square_right_corner = {
 								name = "decrease_gold_reserve_rate"
 								datacontext = "[GetScriptedGui('CURRENCY_decrease_reserve_accumulation_gold')]"
 								blockoverride "Center_text" { text = "-" }
@@ -398,7 +398,7 @@ base_window = {
 									onrightclick = "[GetScriptedGui('CURRENCY_decrease_reserve_accumulation_gold_10x').Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
 								}
 								tooltip = "economy_tt_decrease"
-								size = { 24 24 }
+								size = { 30 30 }
 							}
 						}
 						text_button_square = {
@@ -410,7 +410,7 @@ base_window = {
 								onrightclick = "[GetScriptedGui('CURRENCY_sell_off_reserve_gold_10').Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
 							}
 							tooltip = "SELL_OFF_RESERVE_GOLD_TT"
-							size = { 24 24 }
+							size = { 30 30 }
 						}
 					}
 					flowcontainer = {
@@ -427,7 +427,7 @@ base_window = {
 						}
 						flowcontainer = {
 							spacing = 2
-							text_button_square = {
+							text_button_square_left_corner = {
 								name = "increase_silver_reserve_rate"
 								datacontext = "[GetScriptedGui('CURRENCY_increase_reserve_accumulation_silver')]"
 								visible = "[Not(WarOverview.GetWar.IsCivilWar)]"
@@ -437,9 +437,9 @@ base_window = {
 									onrightclick = "[GetScriptedGui('CURRENCY_increase_reserve_accumulation_silver_10x').Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
 								}
 								tooltip = "economy_tt_increase"
-								size = { 24 24 }
+								size = { 30 30 }
 							}
-							text_button_square = {
+							text_button_square_right_corner = {
 								name = "decrease_silver_reserve_rate"
 								datacontext = "[GetScriptedGui('CURRENCY_decrease_reserve_accumulation_silver')]"
 								visible = "[Not(WarOverview.GetWar.IsCivilWar)]"
@@ -449,7 +449,7 @@ base_window = {
 									onrightclick = "[GetScriptedGui('CURRENCY_decrease_reserve_accumulation_silver_10x').Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
 								}
 								tooltip = "economy_tt_decrease"
-								size = { 24 24 }
+								size = { 30 30 }
 							}
 						}
 						text_button_square = {
@@ -461,7 +461,7 @@ base_window = {
 								onrightclick = "[GetScriptedGui('CURRENCY_sell_off_reserve_silver_10').Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
 							}
 							tooltip = "SELL_OFF_RESERVE_SILVER_TT"
-							size = { 24 24 }
+							size = { 30 30 }
 						}
 					}
 				}
@@ -947,7 +947,7 @@ base_window = {
 								}
 								enabled = "[EconomyView.GetPlayer.MakeScope.GetVariable('public_debt_administration').IsSet]"
 								tooltip = "NATIONAL_DEBT_LOCK_TT"
-								size = { 24 24 }
+								size = { 30 30 }
 							}
 							icon_and_text = {
 								tooltip = "NATIONAL_DEBT_TOOLTIP"
@@ -960,7 +960,7 @@ base_window = {
 							}
 							flowcontainer = {
 								spacing = 2
-								text_button_square = {
+								text_button_square_left_corner = {
 									name = "issue_national_debt_big"
 									datacontext = "[GetScriptedGui('CURRENCY_issue_national_debt_100k')]"
 									enabled = "[And(GetVariableSystem.Exists('national_debt_lock'), ScriptedGui.IsValid( GuiScope.SetRoot( Player.MakeScope ).End ))]"
@@ -970,9 +970,9 @@ base_window = {
 										onrightclick = "[GetScriptedGui('CURRENCY_issue_national_debt_1m').Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
 									}
 									tooltip = "[EconomyView.GetPlayer.Custom('issue_debt_large_loc')]"
-									size = { 24 24 }
+									size = { 30 30 }
 								}
-								text_button_square = {
+								text_button_square_hard_corner = {
 									name = "issue_national_debt"
 									datacontext = "[GetScriptedGui('CURRENCY_issue_national_debt')]"
 									enabled = "[And(GetVariableSystem.Exists('national_debt_lock'), ScriptedGui.IsValid( GuiScope.SetRoot( Player.MakeScope ).End ))]"
@@ -982,9 +982,9 @@ base_window = {
 										onrightclick = "[GetScriptedGui('CURRENCY_issue_national_debt_10k').Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
 									}
 									tooltip = "[EconomyView.GetPlayer.Custom('issue_debt_small_loc')]"
-									size = { 24 24 }
+									size = { 30 30 }
 								}
-								text_button_square = {
+								text_button_square_hard_corner = {
 									name = "repay_national_debt"
 									datacontext = "[GetScriptedGui('CURRENCY_repay_national_debt')]"
 									enabled = "[And(GetVariableSystem.Exists('national_debt_lock'), ScriptedGui.IsValid( GuiScope.SetRoot( Player.MakeScope ).End ))]"
@@ -994,9 +994,9 @@ base_window = {
 										onrightclick = "[GetScriptedGui('CURRENCY_repay_national_debt_10k').Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
 									}
 									tooltip = "[EconomyView.GetPlayer.Custom('repay_debt_small_loc')]"
-									size = { 24 24 }
+									size = { 30 30 }
 								}
-								text_button_square = {
+								text_button_square_right_corner = {
 									name = "repay_national_debt_big" 
 									datacontext = "[GetScriptedGui('CURRENCY_repay_national_debt_100k')]"
 									enabled = "[And(GetVariableSystem.Exists('national_debt_lock'), ScriptedGui.IsValid( GuiScope.SetRoot( Player.MakeScope ).End ))]"
@@ -1006,7 +1006,7 @@ base_window = {
 										onrightclick = "[GetScriptedGui('CURRENCY_repay_national_debt_1m').Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
 									}
 									tooltip = "[EconomyView.GetPlayer.Custom('repay_debt_large_loc')]"
-									size = { 24 24 }
+									size = { 30 30 }
 								}
 							}
 						}
@@ -1046,7 +1046,7 @@ base_window = {
 							}
 							flowcontainer = {
 								spacing = 2
-								text_button_square = {
+								text_button_square_left_corner = {
 									name = "increase_minting_rate"
 									datacontext = "[GetScriptedGui('CURRENCY_increase_minting_rate')]"
 									blockoverride "Center_text" { text = "+" }
@@ -1055,9 +1055,9 @@ base_window = {
 										onrightclick = "[GetScriptedGui('CURRENCY_increase_minting_rate_10k').Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
 									}
 									tooltip = "economy_tt_increase_minting"
-									size = { 24 24 }
+									size = { 30 30 }
 								}
-								text_button_square = {
+								text_button_square_right_corner = {
 									name = "decrease_minting_rate"
 									datacontext = "[GetScriptedGui('CURRENCY_decrease_minting_rate')]"
 									blockoverride "Center_text" { text = "-" }
@@ -1066,7 +1066,7 @@ base_window = {
 										onrightclick = "[GetScriptedGui('CURRENCY_decrease_minting_rate_10k').Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
 									}
 									tooltip = "economy_tt_decrease_minting"
-									size = { 24 24 }
+									size = { 30 30 }
 								}
 							}
 						}
@@ -1121,7 +1121,7 @@ base_window = {
 						}
 						tooltip = "AUTO_FUND_DEFICIT_TT"
 						parentanchor = hcenter
-						size = { 250 24 }
+						size = { 280 30 }
 					}
 				}
 				flowcontainer = {

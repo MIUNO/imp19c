@@ -2128,9 +2128,7 @@ base_window = {
 													blockoverride "Icon"
 													{
 														texture = "gfx/interface/icons/shared_icons/change.dds"
-														size = { 30 30 }
 													}
-													
 													tooltip = "[OfficeHolderItem.GetChangeTooltip]"
 												}
 												widget = {
