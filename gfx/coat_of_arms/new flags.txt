@@ -236,6 +236,9 @@ WNT
 PMO
 NUU
 SLU
+MGO
+BRU
+MNA
 
 ottoman empire:
 TUR

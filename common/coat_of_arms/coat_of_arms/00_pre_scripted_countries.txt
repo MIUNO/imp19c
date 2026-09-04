@@ -730,8 +730,8 @@ BRS = { #barotse
 
 BRU = { #brunei
 	pattern = "pattern_solid.dds"
-	color1 = "roman_gold"
-	color2 = "roman_gold"
+	color1 = "BRU_yellow"
+	color2 = "BRU_yellow"
 }
 
 BRZ = { # Flag of the united kingdom of Brazil and Portugal brazil
@@ -7050,6 +7050,34 @@ PEI = { #prince_edward_island
 		color1 = "PEI_brown"
 		color2 = "PEI_green"
 		instance = { position = { 0.5 0.68 } scale = { 0.66 0.5 } }
+	}
+}
+
+MGO = { #maguindanao
+	pattern = "pattern_solid.dds"
+	color1 = "MGO_yellow"
+	color2 = "MGO_yellow"
+}
+
+MNA = { #maranao
+	pattern = "pattern_checkers_diagonal_02.dds"
+	color1 = "MNA_yellow"
+	color2 = "MNA_blue"
+
+	colored_emblem = {
+		texture = "symbols/box.dds"
+		color1 = "MNA_green"
+		instance = { position = { 0.25 0.5 } scale = { 0.5 1.0 } }
+	}
+	colored_emblem = {
+		texture = "symbols/crescent_03.dds"
+		color1 = "full_white"
+		instance = { position = { 0.23 0.5 } scale = { 0.3 0.45 } }
+	}
+	colored_emblem = {
+		texture = "symbols/star_01.dds"
+		color1 = "full_white"
+		instance = { position = { 0.36 0.5 } scale = { 0.15 0.22 } }
 	}
 }
 

@@ -553,4 +553,9 @@
 	
 	SLU_red = rgb { 214 21 36 }
 	SLU_blue = rgb { 5 53 143 }
+	MGO_yellow = rgb { 249 218 4 }
+	BRU_yellow = rgb { 247 224 23 }
+	MNA_green = rgb { 23 121 11 }
+	MNA_yellow = rgb { 255 235 60 }
+	MNA_blue = rgb { 63 81 182 }
 }
