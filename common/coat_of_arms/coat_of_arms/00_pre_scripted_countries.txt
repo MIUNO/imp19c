@@ -4690,11 +4690,23 @@ SLP = { #san_luis_potosi
 
 SLU = { #sulu
 	pattern = "pattern_solid.dds"
-	color1 = "ck2_purple"
-	color2 = "pure_white"
+	color1 = "SLU_red"
+	color2 = "SLU_blue"
 	
-	textured_emblem = {
-		texture = "m_archipelago/te_SLU.dds"
+	colored_emblem = {
+		texture = "symbols/box.dds"
+		color1 = "full_white"
+		instance = { position = { 0.08 0.5 } scale = { 0.2 1.0 } }
+	}
+	colored_emblem = {
+		texture = "symbols/box.dds"
+		color1 = "SLU_blue"
+		instance = { position = { 0.06 0.5 } scale = { 0.1 1.0 } }
+	}
+	colored_emblem = {
+		texture = "indonesia/SLU/SLU.dds"
+		color1 = "full_white"
+		instance = { position = { 0.4 0.5 } scale = { 0.33 0.75 } }
 	}
 }
 

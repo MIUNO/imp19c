@@ -550,4 +550,7 @@
 	ROZ_yellow = rgb { 255 211 0 }
 	ROZ_green = rgb { 0 100 0 }
 	BEN_red = rgb { 209 4 34 }
+	
+	SLU_red = rgb { 214 21 36 }
+	SLU_blue = rgb { 5 53 143 }
 }
