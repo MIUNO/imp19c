@@ -59,7 +59,6 @@ VertexShader = {
 
 				float3 WorldSpacePos = float3( Input.position.x, FlatMapHeight, Input.position.y );
 				#ifndef SURROUND_SHADOW
-					// WorldSpacePos.y += CloudHeight * ( 1.0 - FlatMapLerp );
 					WorldSpacePos.y += CloudHeight;
 				#endif
 				VertexOut.position = FixProjectionAndMul( ViewProjectionMatrix, float4( WorldSpacePos, 1.0 ) );
@@ -107,7 +106,6 @@ PixelShader =
 		MipFilter = "Linear"
 		SampleModeU = "Wrap"
 		SampleModeV = "Wrap"
-		#File = "gfx/map/surround_map/test2.dds"
 	}
 	TextureSampler EnvironmentMap
 	{
@@ -139,17 +137,6 @@ PixelShader =
 			float3 CalculateNormal( PdxTextureSampler2D Texture, float2 UV, float Scale )
 			{
 				float3 n;
-
-				//float4 h;
-				//h[0] = PdxTex2DLod0( Texture, UV + float2(-PixelSize, 0) ).r;
-				//h[1] = PdxTex2DLod0( Texture, UV + float2(PixelSize, 0) ).r;
-				//h[2] = PdxTex2DLod0( Texture, UV + float2(0, -PixelSize) ).r;
-				//h[3] = PdxTex2DLod0( Texture, UV + float2(0, PixelSize) ).r;
-				//
-				//n.z = h[3] - h[2];
-				//n.x = h[0] - h[1];
-				//n.y = Scale;
-
 
 				float h00 = PdxTex2DLod0( Texture, UV + float2(-PixelSize, -PixelSize) ).r;
 				float h10 = PdxTex2DLod0( Texture, UV + float2(PixelSize, -PixelSize) ).r;
@@ -184,7 +171,6 @@ PixelShader =
 
 				float2 Offset = vec2(0.0);
 				float2 DV = -TangentSpaceCameraDir.xz * ParallaxStrength / TangentSpaceCameraDir.y / NumLayers;
-				//float2 DV = -TangentSpaceCameraDir.xz * ParallaxStrength / NumLayers;
 
 				float Height = 1.0 - PdxTex2DLod0( CloudTexture, UV ).r;
 
@@ -227,7 +213,6 @@ PixelShader =
 				TangentSpaceCameraDir.z = -TangentSpaceCameraDir.z;
 
 				float ParallaxScale = saturate( length(ToCamera) / ParallaxFadeFactor + 0.35 );
-				//float2 ParallaxOffset = CalculateParallaxOffset( TangentSpaceCameraDir, AnimatedBaseCloudUV, ParallaxScale );
 				float2 ParallaxOffset = CalculateParallaxOffsetSteep( TangentSpaceCameraDir, AnimatedBaseCloudUV, ParallaxScale );
 				AnimatedBaseCloudUV += ParallaxOffset;
 
@@ -253,10 +238,9 @@ PixelShader =
 				DebugReturn( Color, MaterialProps, LightingProps, EnvironmentMap );
 
 				float FinalAlpha = smoothstep( MinCloudAlpha, MaxCloudAlpha, Alpha ) - saturate(1.0 - Depth);
-				// float FinalAlpha = smoothstep( MinCloudAlpha, MaxCloudAlpha, Alpha );
 				FinalAlpha = lerp( FinalAlpha, ZoomedOut.a, FlatMapLerp ) * Mask;
+				// FinalAlpha = 0.0;
 				return float4( Color, saturate( FinalAlpha ) );
-				// return float4( Color, 0.0 );
 			}
 		]]
 	}
@@ -272,8 +256,8 @@ PixelShader =
 				float2 UV = Input.uv;
 				float Mask = PdxTex2D( SurroundMask, UV ).r;
 
+				// Mask = 0.0;
 				return float4( ShadowColor, Mask * ( 1.0 - saturate( FlatMapLerp * 2.0 - 1.0 ) ) );
-				// return float4( ShadowColor, 0.0 );
 			}
 		]]
 	}
