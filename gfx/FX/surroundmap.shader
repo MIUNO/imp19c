@@ -60,7 +60,7 @@ VertexShader = {
 				float3 WorldSpacePos = float3( Input.position.x, FlatMapHeight, Input.position.y );
 				#ifndef SURROUND_SHADOW
 					// WorldSpacePos.y += CloudHeight * ( 1.0 - FlatMapLerp );
-					WorldSpacePos.y += CloudHeight);
+					WorldSpacePos.y += CloudHeight;
 				#endif
 				VertexOut.position = FixProjectionAndMul( ViewProjectionMatrix, float4( WorldSpacePos, 1.0 ) );
 				VertexOut.uv = Input.position / MapSize;
