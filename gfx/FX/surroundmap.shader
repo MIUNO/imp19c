@@ -1,5 +1,6 @@
 Includes = {
 	"cw/camera.fxh"
+	"cw/heightmap.fxh"
 	"standardfuncsgfx.fxh"
 	"jomini/jomini_fog.fxh"
 	"jomini/jomini_lighting.fxh"
@@ -58,7 +59,8 @@ VertexShader = {
 
 				float3 WorldSpacePos = float3( Input.position.x, FlatMapHeight, Input.position.y );
 				#ifndef SURROUND_SHADOW
-					WorldSpacePos.y += CloudHeight * ( 1.0 - FlatMapLerp );
+					// WorldSpacePos.y += CloudHeight * ( 1.0 - FlatMapLerp );
+					WorldSpacePos.y += CloudHeight);
 				#endif
 				VertexOut.position = FixProjectionAndMul( ViewProjectionMatrix, float4( WorldSpacePos, 1.0 ) );
 				VertexOut.uv = Input.position / MapSize;
@@ -210,6 +212,9 @@ PixelShader =
 				float2 UV = Input.uv;
 				float Mask = dot( PdxTex2D( SurroundMask, UV ).rg, vec2(0.5) );
 
+				float Height = GetHeightMultisample( Input.WorldSpacePos.xz, 0.65 );
+				float Depth = Input.WorldSpacePos.y - Height;
+
 				float2 BaseCloudUV = UV * BaseCloudTileFactor;
 				float2 BaseCloudOffset = GlobalTime * BaseCloudScrolling;
 				float2 AnimatedBaseCloudUV = BaseCloudUV;
@@ -247,7 +252,8 @@ PixelShader =
 
 				DebugReturn( Color, MaterialProps, LightingProps, EnvironmentMap );
 
-				float FinalAlpha = smoothstep( MinCloudAlpha, MaxCloudAlpha, Alpha );
+				float FinalAlpha = smoothstep( MinCloudAlpha, MaxCloudAlpha, Alpha ) - saturate(1.0 - Depth);
+				// float FinalAlpha = smoothstep( MinCloudAlpha, MaxCloudAlpha, Alpha );
 				FinalAlpha = lerp( FinalAlpha, ZoomedOut.a, FlatMapLerp ) * Mask;
 				return float4( Color, saturate( FinalAlpha ) );
 				// return float4( Color, 0.0 );
