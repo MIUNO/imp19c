@@ -19,16 +19,6 @@
 	}
 }
 
-490={ #Elburz Mountains
-	terrain="extreme_mountain"
-	culture="persian"
-	religion="shiite"
-	trade_goods="camel"
-	civilization_value=8
-	barbarian_power=0
-	province_rank="settlement"
-}
-
 839={ #Gorgan
 	terrain="plains"
 	culture="mazandarani"

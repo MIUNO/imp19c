@@ -1,14 +1,4 @@
-﻿276={ #Haima
-	terrain="extreme_desert"
-	culture="omani"
-	religion="ibadi"
-	trade_goods="wool"
-	civilization_value=0
-	barbarian_power=0
-	province_rank="settlement"
-}
-
-397={ #Ibra
+﻿397={ #Ibra
 	terrain="desert_hills"
 	culture="omani"
 	religion="ibadi"
@@ -38,16 +28,6 @@
 	lower_strata={
 		amount=3
 	}
-}
-
-636={ #Shishan
-	terrain="extreme_desert"
-	culture="bedouin"
-	religion="sunni"
-	trade_goods="wool"
-	civilization_value=0
-	barbarian_power=0
-	province_rank="settlement"
 }
 
 1035={ #Al-Gayda

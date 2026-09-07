@@ -3,17 +3,15 @@ types Imp19c_Types
 
 type TradeGoodOverviewItem = widget {
 	size = { 880 80 }
-	using = list_item
+	using = background_widget
 	flowcontainer = {
-		spacing = 50
-		margin_left = 30
 		widget = {
-			size = { 65 80 }
+			size = { 125 80 }
 			background = {
 				shaderfile = "gfx/FX/pdxgui_default.shader"
 				using = beige_background
 				alpha = 0.15
-				margin= { 27 -3 }
+				margin = { 0 0 }
 			}
 			icon = {
 				size = { 50 50 }
@@ -35,8 +33,13 @@ type TradeGoodOverviewItem = widget {
 				block "name" { text = "tin" }
 			}
 		}
+		icon = {
+			size = { 2 80 }
+			using = beige_background
+			alpha = 0.3
+		}
 		textbox = {
-			size = { 90 80 }
+			size = { 125 80 }
 			align = hcenter
 			using = BaseFontL
 			using = Default_FontColor
@@ -45,13 +48,17 @@ type TradeGoodOverviewItem = widget {
 				text = "[GuiScope.SetRoot(TradeView.GetPlayer.MakeScope).ScriptValue('GOODS_national_production_tin')|0]"
 			}
 		}
+		icon = {
+			size = { 2 80 }
+			using = beige_background
+			alpha = 0.3
+		}
 		widget = {
-			size = { 65 80 }
+			size = { 125 80 }
 			background = {
 				shaderfile = "gfx/FX/pdxgui_default.shader"
 				using = beige_background
 				alpha = 0.15
-				margin= { 27 -3 }
 			}
 			textbox = {
 				size = { 100% 100% }
@@ -64,8 +71,13 @@ type TradeGoodOverviewItem = widget {
 				}
 			}
 		}
+		icon = {
+			size = { 2 80 }
+			using = beige_background
+			alpha = 0.3
+		}
 		textbox = {
-			size = { 95 80 }
+			size = { 135 80 }
 			align = hcenter
 			using = BaseFontL
 			using = Default_FontColor
@@ -74,13 +86,17 @@ type TradeGoodOverviewItem = widget {
 				text = "[GuiScope.SetRoot(TradeView.GetPlayer.MakeScope).ScriptValue('DEMAND_shortage_country_tin')|%]"
 			}
 		}
+		icon = {
+			size = { 2 80 }
+			using = beige_background
+			alpha = 0.3
+		}
 		widget = {
-			size = { 85 80 }
+			size = { 145 80 }
 			background = {
 				shaderfile = "gfx/FX/pdxgui_default.shader"
 				using = beige_background
 				alpha = 0.15
-				margin= { 27 -3 }
 			}
 			textbox = {
 				size = { 100% 100% }
@@ -93,11 +109,17 @@ type TradeGoodOverviewItem = widget {
 				}
 			}
 		}
-		widget = {
-			size = { 220 80 }
+		icon = {
+			size = { 2 80 }
+			using = beige_background
+			alpha = 0.3
+		}
+		flowcontainer = {
+			direction = vertical
+			margin = { 25 10 }
+			spacing = 5
 	        overlappingitembox = {
 	            size = { 180 27 }
-	            position = { 20 10 }
 				block "top_producers_datamodel" {
 					datamodel = "[Player.MakeScope.GetList('top_producers_grain')]"
 				}
@@ -124,7 +146,6 @@ type TradeGoodOverviewItem = widget {
 	        }
 	        overlappingitembox = {
 	            size = { 180 27 }
-	            position = { 20 45 }
 				block "top_consumers_datamodel" {
 					datamodel = "[Player.MakeScope.GetList('top_consumers_grain')]"
 				}

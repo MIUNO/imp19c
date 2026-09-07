@@ -9,8 +9,10 @@ Includes = {
 	"jomini/jomini_water.fxh"
 	"standardfuncsgfx.fxh"
 	"terrain.fxh"
-	"fog_of_war.fxh"
 	"winter.fxh"
+	"fxhs/clouds.fxh"
+	"fxhs/terrain_tint.fxh"
+	"fxhs/gh_atmospheric.fxh"
 }
 
 VertexStruct VS_OUTPUT_PDX_TERRAIN
@@ -170,7 +172,7 @@ PixelShader =
 			float ColorMapOverlayStrength = COLORMAP_OVERLAY_STRENGTH;
 
 			#ifdef TERRAIN_FLAT_MAP_LERP
-				float3 FlatMap = PdxTex2D( FlatMapTexture, float2( ColorMapCoords.x, 1.0 - ColorMapCoords.y ) ).rgb;
+				float3 FlatMap = FlatTerrainShader( Input.WorldSpacePos, ColorMapCoords ).rgb;
 			#endif
 
 			float3 Normal = CalculateNormal( Input.WorldSpacePos.xz );
@@ -180,7 +182,6 @@ PixelShader =
 			//#endif
 			
 			float3 Diffuse = GetOverlay( DetailDiffuse.rgb, ColorMap, ColorMapOverlayStrength );
-			
 			
 			float3 ReorientedNormal = ReorientNormal( Normal, DetailNormal );
 
@@ -202,14 +203,18 @@ PixelShader =
 			SMaterialProperties MaterialProps = GetMaterialProperties( Diffuse, ReorientedNormal, DetailMaterial.a, DetailMaterial.g, DetailMaterial.b );
 			SLightingProperties LightingProps = GetSunLightingProperties( Input.WorldSpacePos, ShadowTerm );
 
-			float3 FinalColor = CalculateSunLighting( MaterialProps, LightingProps, EnvironmentMap );
+			float FogOfWarAlphaValue = 1.0;
+			float CloudMask = GetCloudShadowMask( Input.WorldSpacePos.xz, FogOfWarAlphaValue );
+
+			float3 FinalColor = CalculateTerrainDualScenarioLighting( MaterialProps, LightingProps, CloudMask, EnvironmentMap );
+			FinalColor = ApplyTerrainShadowTintWithClouds( FinalColor, Input.WorldSpacePos.xz, CloudMask, ShadowTerm, ReorientedNormal, Normal );
 
 			#ifdef TERRAIN_COLOR_OVERLAY
 				FinalColor = lerp( FinalColor, BorderColor, BorderPostLightingBlend );
 			#endif
 			
 			#ifndef TERRAIN_UNDERWATER
-				FinalColor = ApplyFogOfWar( FinalColor, Input.WorldSpacePos, FogOfWarAlpha );
+				FinalColor = GH_ApplyAtmosphericEffects( FinalColor, Input.WorldSpacePos, FogOfWarAlpha );
 				float vFogFactor = min(CalculateDistanceFogFactor( Input.WorldSpacePos ),0.6);
 				FinalColor = ApplyDistanceFog( FinalColor, vFogFactor );
 			#endif
@@ -294,7 +299,11 @@ PixelShader =
 			{
 				clip( vec2(1.0) - Input.WorldSpacePos.xz * WorldSpaceToTerrain0To1 );
 				float2 ColorMapCoords = Input.WorldSpacePos.xz * WorldSpaceToTerrain0To1;
-				return FlatTerrainShader( Input.WorldSpacePos, ColorMapCoords, FlatMapTexture );
+				float3 DetailDiffuse;
+				float3 DetailNormal;
+				float4 DetailMaterial;
+				CalculateDetails( Input.WorldSpacePos.xz, DetailDiffuse, DetailNormal, DetailMaterial );
+				return FlatTerrainShader( Input.WorldSpacePos, ColorMapCoords );
 			}
 		]]
 	}

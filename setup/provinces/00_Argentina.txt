@@ -1044,6 +1044,19 @@
 	}
 }
 
+9078={ #Castaño Viejo
+	terrain="extreme_mountain"
+	culture="platense"
+	religion="catholic"
+	trade_goods="gold"
+	civilization_value=10
+	barbarian_power=0
+	province_rank="settlement"
+	lower_strata={
+		amount=1
+	}
+}
+
 9246={ #San Pedro
 	terrain="plains"
 	culture="platense"

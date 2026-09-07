@@ -1983,6 +1983,7 @@ types Standard_Types
 	
 	# Time Controls Button
 	type icon_time_indicator = icon {
+		size = { 140 6 }
 		texture = "gfx/interface/base_parts/icon_time_indicator.dds"
 		framesize = { 140 6 }
 	}

@@ -730,8 +730,8 @@ BRS = { #barotse
 
 BRU = { #brunei
 	pattern = "pattern_solid.dds"
-	color1 = "roman_gold"
-	color2 = "roman_gold"
+	color1 = "BRU_yellow"
+	color2 = "BRU_yellow"
 }
 
 BRZ = { # Flag of the united kingdom of Brazil and Portugal brazil
@@ -4228,6 +4228,45 @@ PR1 = { #Flag of Spanish Peru #peru
 		color1 = "SPA_red"
 		instance = { position = { 0.5 0.5 } scale = { 1.0 1.0 } }
 	}
+	colored_emblem = {
+		texture = "europe/SPA/SPA_crown_2.dds"
+		color1 = "SPA_yellow"
+		color2 = "SPA_green"
+		color3 = "SPA_blue"
+		instance = { position = { 0.5 0.24 } scale = { 0.33 0.25 } }
+	}
+	colored_emblem = {
+		texture = "symbols/shield_02.dds"
+		color1 = "SPA_blue"
+		instance = { position = { 0.5 0.58 } scale = { 0.28 0.637 } }
+	}
+	colored_emblem = {
+		texture = "symbols/shield_02.dds"
+		color1 = "full_white"
+		instance = { position = { 0.5 0.58 } scale = { 0.198 0.45 } }
+	}
+	colored_emblem = {
+		texture = "south_america/PR1/PR1_lion.dds"
+		color1 = "PR1_orange"
+		color2 = "SPA_red"
+		color3 = "full_white"
+		instance = { position = { 0.495 0.565 } scale = { 0.215 0.325 } }
+	}
+	colored_emblem = {
+		texture = "south_america/PR1/PR1_shell.dds"
+		color1 = "SPA_yellow"
+		instance = { position = { 0.385 0.37 } scale = { 0.033 0.05 } }
+		instance = { position = { 0.5 0.37 } scale = { 0.033 0.05 } }
+		instance = { position = { 0.615 0.37 } scale = { 0.033 0.05 } }
+		
+		instance = { position = { 0.385 0.55 } scale = { 0.033 0.05 } }
+		instance = { position = { 0.615 0.55 } scale = { 0.033 0.05 } }
+		
+		instance = { position = { 0.4 0.7 } scale = { 0.033 0.05 } }
+		instance = { position = { 0.6 0.7 } scale = { 0.033 0.05 } }
+		
+		instance = { position = { 0.5 0.8 } scale = { 0.033 0.05 } }
+	}
 }
 
 PR2 = { #persia
@@ -4651,11 +4690,23 @@ SLP = { #san_luis_potosi
 
 SLU = { #sulu
 	pattern = "pattern_solid.dds"
-	color1 = "ck2_purple"
-	color2 = "pure_white"
+	color1 = "SLU_red"
+	color2 = "SLU_blue"
 	
-	textured_emblem = {
-		texture = "m_archipelago/te_SLU.dds"
+	colored_emblem = {
+		texture = "symbols/box.dds"
+		color1 = "full_white"
+		instance = { position = { 0.08 0.5 } scale = { 0.2 1.0 } }
+	}
+	colored_emblem = {
+		texture = "symbols/box.dds"
+		color1 = "SLU_blue"
+		instance = { position = { 0.06 0.5 } scale = { 0.1 1.0 } }
+	}
+	colored_emblem = {
+		texture = "indonesia/SLU/SLU.dds"
+		color1 = "full_white"
+		instance = { position = { 0.4 0.5 } scale = { 0.33 0.75 } }
 	}
 }
 
@@ -6999,6 +7050,34 @@ PEI = { #prince_edward_island
 		color1 = "PEI_brown"
 		color2 = "PEI_green"
 		instance = { position = { 0.5 0.68 } scale = { 0.66 0.5 } }
+	}
+}
+
+MGO = { #maguindanao
+	pattern = "pattern_solid.dds"
+	color1 = "MGO_yellow"
+	color2 = "MGO_yellow"
+}
+
+MNA = { #maranao
+	pattern = "pattern_checkers_diagonal_02.dds"
+	color1 = "MNA_yellow"
+	color2 = "MNA_blue"
+
+	colored_emblem = {
+		texture = "symbols/box.dds"
+		color1 = "MNA_green"
+		instance = { position = { 0.25 0.5 } scale = { 0.5 1.0 } }
+	}
+	colored_emblem = {
+		texture = "symbols/crescent_03.dds"
+		color1 = "full_white"
+		instance = { position = { 0.23 0.5 } scale = { 0.3 0.45 } }
+	}
+	colored_emblem = {
+		texture = "symbols/star_01.dds"
+		color1 = "full_white"
+		instance = { position = { 0.36 0.5 } scale = { 0.15 0.22 } }
 	}
 }
 

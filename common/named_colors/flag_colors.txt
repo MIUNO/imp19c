@@ -76,6 +76,7 @@
 	CHL_blue = rgb { 0 46 161 }
 	VLG_blue = rgb { 0 48 154 }
 	CSC_red = rgb { 169 3 3 }
+	PR1_orange = rgb { 212 85 0 }
 
 	VNZ_yellow = rgb { 255 221 50 }
 	VNZ_blue = rgb { 33 58 140 }
@@ -549,4 +550,12 @@
 	ROZ_yellow = rgb { 255 211 0 }
 	ROZ_green = rgb { 0 100 0 }
 	BEN_red = rgb { 209 4 34 }
+	
+	SLU_red = rgb { 214 21 36 }
+	SLU_blue = rgb { 5 53 143 }
+	MGO_yellow = rgb { 249 218 4 }
+	BRU_yellow = rgb { 247 224 23 }
+	MNA_green = rgb { 23 121 11 }
+	MNA_yellow = rgb { 255 235 60 }
+	MNA_blue = rgb { 63 81 182 }
 }

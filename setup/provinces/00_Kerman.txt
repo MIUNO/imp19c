@@ -65,16 +65,6 @@
 	}
 }
 
-6341={ #Kuh-e-Birk
-	terrain="extreme_desert"
-	culture="persian"
-	religion="shiite"
-	trade_goods="lead"
-	civilization_value=8
-	barbarian_power=0
-	province_rank="settlement"
-}
-
 6706={ #Zabol
 	terrain="desert"
 	culture="persian"

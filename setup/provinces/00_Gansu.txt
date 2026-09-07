@@ -886,16 +886,6 @@
 	}
 }
 
-8855={ #Lop Nur
-	terrain="extreme_desert"
-	culture="uighur"
-	religion="sunni"
-	trade_goods="livestock"
-	civilization_value=0
-	barbarian_power=0
-	province_rank="settlement"
-}
-
 8872={ #Xayar
 	terrain="extreme_desert"
 	culture="uighur"
