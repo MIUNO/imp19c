@@ -982,7 +982,6 @@ widget = {
 				size = { 380 140 }
 				fontsize = 50
 				align = center
-				#font = NewHeaderFont
 				font = HeaderFont
 				using = Highlight_FontColor
 				text = "[LobbyView.GetSelectedPlayable.GetCountry.GetNameWithNoTooltip]"
