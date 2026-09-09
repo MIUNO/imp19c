@@ -1,5 +1,6 @@
 Includes = {
 	"jomini/jomini_gradient_borders.fxh"
+	"fxhs/debug.fxh"
 }
 
 PixelShader =
@@ -115,8 +116,10 @@ PixelShader =
 		{
 			float BorderPreLightingBlend;
 			GetBorderColorAndBlend( ColorMapCoords, BorderColor, BorderPreLightingBlend, BorderPostLightingBlend );
-			Diffuse = ApplyGradientBorderColor( Diffuse, BorderColor, BorderPreLightingBlend );
-
+			if ( DEBUG != 1.0 )
+			{
+				Diffuse = ApplyGradientBorderColor( Diffuse, BorderColor, BorderPreLightingBlend );
+			}
 			#ifdef TERRAIN_FLAT_MAP_LERP
 				FlatMap = lerp( FlatMap, BorderColor, saturate( BorderPreLightingBlend + BorderPostLightingBlend ) );
 			#endif
