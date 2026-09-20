@@ -907,3 +907,46 @@
 	}
 }
 
+10188={ #PROV10188
+	terrain="extreme_desert"
+	culture="bedouin"
+	religion="sunni"
+	trade_goods="livestock"
+	civilization_value=0
+	barbarian_power=0
+	province_rank="settlement"
+}
+
+10621={ #PROV10621
+	terrain="extreme_desert"
+	culture="bedouin"
+	religion="sunni"
+	trade_goods="livestock"
+	civilization_value=0
+	barbarian_power=0
+	province_rank="settlement"
+}
+
+11743={ #PROV11743
+	terrain="extreme_desert"
+	culture="bedouin"
+	religion="sunni"
+	trade_goods="livestock"
+	civilization_value=0
+	barbarian_power=0
+	province_rank="settlement"
+	tribesmen={
+		amount=1
+	}
+}
+
+12377={ #PROV12377
+	terrain="extreme_desert"
+	culture="bedouin"
+	religion="sunni"
+	trade_goods="livestock"
+	civilization_value=0
+	barbarian_power=0
+	province_rank="settlement"
+}
+

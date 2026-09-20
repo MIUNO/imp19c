@@ -38131,7 +38131,7 @@ country = {
 			capital = 6924
 
 			own_control_core = { 
-				6924
+				6924 11020
 			}
 		}
 

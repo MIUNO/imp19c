@@ -153,16 +153,6 @@
 	}
 }
 
-1964={ #An Nafud
-	terrain="extreme_desert"
-	culture="bedouin"
-	religion="wahhabi"
-	trade_goods="livestock"
-	civilization_value=0
-	barbarian_power=0
-	province_rank="settlement"
-}
-
 2025={ #Ras al Mishab
 	terrain="desert"
 	culture="bedouin"
@@ -655,9 +645,6 @@
 	civilization_value=0
 	barbarian_power=0
 	province_rank="settlement"
-	tribesmen={
-		amount=2
-	}
 }
 
 10048={ #Qaryat al Ulya
@@ -773,6 +760,16 @@
 	tribesmen={
 		amount=7
 	}
+}
+
+11025={ #PROV11025
+	terrain="desert"
+	culture="bedouin"
+	religion="wahhabi"
+	trade_goods="textile_fibres"
+	civilization_value=0
+	barbarian_power=0
+	province_rank="settlement"
 }
 
 11113={ #Sajir
@@ -898,6 +895,36 @@
 	lower_strata={
 		amount=6
 	}
+}
+
+12329={ #PROV12329
+	terrain="extreme_desert"
+	culture="bedouin"
+	religion="wahhabi"
+	trade_goods="livestock"
+	civilization_value=0
+	barbarian_power=0
+	province_rank="settlement"
+}
+
+12384={ #PROV12384
+	terrain="extreme_desert"
+	culture="bedouin"
+	religion="wahhabi"
+	trade_goods="livestock"
+	civilization_value=0
+	barbarian_power=0
+	province_rank="settlement"
+}
+
+12414={ #PROV12414
+	terrain="desert"
+	culture="bedouin"
+	religion="wahhabi"
+	trade_goods="textile_fibres"
+	civilization_value=0
+	barbarian_power=0
+	province_rank="settlement"
 }
 
 12550={ #An Nimas

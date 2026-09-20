@@ -504,6 +504,16 @@
 	province_rank="settlement"
 }
 
+1964={ #An Nafud
+	terrain="extreme_desert"
+	culture="bedouin"
+	religion="wahhabi"
+	trade_goods="livestock"
+	civilization_value=0
+	barbarian_power=0
+	province_rank="settlement"
+}
+
 2238={ #PROV2238
 	terrain="desert"
 	culture="shoshone"
@@ -2945,16 +2955,6 @@
 }
 
 10187={ #PROV10187
-	terrain="ocean"
-	culture=""
-	religion=""
-	trade_goods=""
-	civilization_value=0
-	barbarian_power=0
-	province_rank="settlement"
-}
-
-10188={ #PROV10188
 	terrain="ocean"
 	culture=""
 	religion=""
@@ -5415,7 +5415,7 @@
 }
 
 10483={ #Atlantic
-	terrain="ocean"
+	terrain="coastal_terrain"
 	culture=""
 	religion=""
 	trade_goods=""
@@ -5845,7 +5845,7 @@
 }
 
 10535={ #Atlantic
-	terrain="ocean"
+	terrain="coastal_terrain"
 	culture=""
 	religion=""
 	trade_goods=""
@@ -6646,16 +6646,6 @@
 
 10620={ #PROV10620
 	terrain="coastal_terrain"
-	culture=""
-	religion=""
-	trade_goods=""
-	civilization_value=0
-	barbarian_power=0
-	province_rank="settlement"
-}
-
-10621={ #PROV10621
-	terrain="ocean"
 	culture=""
 	religion=""
 	trade_goods=""
@@ -9575,10 +9565,10 @@
 }
 
 10997={ #PROV10997
-	terrain="ocean"
-	culture=""
-	religion=""
-	trade_goods=""
+	terrain="extreme_desert"
+	culture="bedouin"
+	religion="wahhabi"
+	trade_goods="livestock"
 	civilization_value=0
 	barbarian_power=0
 	province_rank="settlement"
@@ -9784,16 +9774,6 @@
 	province_rank="settlement"
 }
 
-11020={ #PROV11020
-	terrain="ocean"
-	culture=""
-	religion=""
-	trade_goods=""
-	civilization_value=0
-	barbarian_power=0
-	province_rank="settlement"
-}
-
 11022={ #PROV11022
 	terrain="ocean"
 	culture=""
@@ -9815,16 +9795,6 @@
 }
 
 11024={ #PROV11024
-	terrain="ocean"
-	culture=""
-	religion=""
-	trade_goods=""
-	civilization_value=0
-	barbarian_power=0
-	province_rank="settlement"
-}
-
-11025={ #PROV11025
 	terrain="ocean"
 	culture=""
 	religion=""
@@ -14225,7 +14195,7 @@
 }
 
 11476={ #PROV11476
-	terrain="ocean"
+	terrain="coastal_terrain"
 	culture=""
 	religion=""
 	trade_goods=""
@@ -16825,16 +16795,6 @@
 }
 
 11742={ #PROV11742
-	terrain="ocean"
-	culture=""
-	religion=""
-	trade_goods=""
-	civilization_value=0
-	barbarian_power=0
-	province_rank="settlement"
-}
-
-11743={ #PROV11743
 	terrain="ocean"
 	culture=""
 	religion=""
@@ -22324,16 +22284,6 @@
 	province_rank="settlement"
 }
 
-12329={ #PROV12329
-	terrain="ocean"
-	culture=""
-	religion=""
-	trade_goods=""
-	civilization_value=0
-	barbarian_power=0
-	province_rank="settlement"
-}
-
 12330={ #PROV12330
 	terrain="ocean"
 	culture=""
@@ -22694,16 +22644,6 @@
 	province_rank="settlement"
 }
 
-12377={ #PROV12377
-	terrain="ocean"
-	culture=""
-	religion=""
-	trade_goods=""
-	civilization_value=0
-	barbarian_power=0
-	province_rank="settlement"
-}
-
 12378={ #PROV12378
 	terrain="extreme_mountain"
 	culture="armenian"
@@ -22746,16 +22686,6 @@
 
 12383={ #PROV12383
 	terrain="coastal_terrain"
-	culture=""
-	religion=""
-	trade_goods=""
-	civilization_value=0
-	barbarian_power=0
-	province_rank="settlement"
-}
-
-12384={ #PROV12384
-	terrain="ocean"
 	culture=""
 	religion=""
 	trade_goods=""
@@ -23025,16 +22955,6 @@
 }
 
 12413={ #PROV12413
-	terrain="ocean"
-	culture=""
-	religion=""
-	trade_goods=""
-	civilization_value=0
-	barbarian_power=0
-	province_rank="settlement"
-}
-
-12414={ #PROV12414
 	terrain="ocean"
 	culture=""
 	religion=""
@@ -27535,16 +27455,6 @@
 }
 
 12943={ #PROV12943
-	terrain="ocean"
-	culture=""
-	religion=""
-	trade_goods=""
-	civilization_value=0
-	barbarian_power=0
-	province_rank="settlement"
-}
-
-12944={ #PROV12944
 	terrain="ocean"
 	culture=""
 	religion=""

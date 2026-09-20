@@ -500,3 +500,16 @@
 	province_rank="settlement"
 }
 
+11020={ #PROV11020
+	terrain="desert_hills"
+	culture="yemeni"
+	religion="sunni"
+	trade_goods="textile_fibres"
+	civilization_value=5
+	barbarian_power=0
+	province_rank="settlement"
+	tribesmen={
+		amount=1
+	}
+}
+
