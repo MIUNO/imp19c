@@ -38216,10 +38216,10 @@ country = {
 		QSM = { 
 			government = hereditary_theocracy
 			diplomatic_stance = appeasement_stance
-			primary_culture = bedouin
+			primary_culture = yemeni
 			religion = shiite
 
-			capital = 2827
+			capital = 6933
 
 			own_control_core = { 
 				2827 6933 7051 7202 7212

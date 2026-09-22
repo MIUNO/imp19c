@@ -75,6 +75,7 @@ widget = {
 			alpha = 1
 		}
 		vbox = {
+			position = { 0 5 }
 			visible = "[Not( GetVariableSystem.HasValue('mp_start_screen', 'start'))]"
 			using = MainWindowHeaderBox
 			blockoverride "White_buttons" { visible = no }
