@@ -632,8 +632,7 @@ argentine_event.7 = { #From Persecuted Outlaws to Citizen Soldiers
     }
 }
 
-#argentine_event.8 = { #Liberation of Chile
-
+argentine_event.8 = { #Liberation of Chile
 	type = country_event
 	title = argentine_event.8.t
 	desc = argentine_event.8.d
@@ -642,90 +641,89 @@ argentine_event.7 = { #From Persecuted Outlaws to Citizen Soldiers
 
     picture = war_council
 
-   trigger = {
-			tag = AR1
-            NOT = { c:CHL = { exists = yes } }
-            AND = { #Chile at game start
-                        owns = 8255
-                        owns = 1584
-                        owns = 6934
-                        owns = 9078
-                        owns = 9905
-                        owns = 9285
-                        owns = 5066
-                        owns = 3757
-                        owns = 1250
-                        owns = 2822
-                        owns = 5007
-                        owns = 7209
-                        owns = 3968
-                        owns = 1648
-                        owns = 8331
-                        owns = 392
-                        owns = 10796
-                        owns = 6631
-                        owns = 8754
-                        owns = 1312
-                        owns = 10413
-
-            }
-			}
+    trigger = {
+        tag = AR1
+        NOT = { c:CHL = { exists = yes } }
+        AND = { #Chile at game start
+            owns = 8255
+            owns = 1584
+            owns = 6934
+            owns = 9078
+            owns = 9905
+            owns = 9285
+            owns = 5066
+            owns = 3757
+            owns = 1250
+            owns = 2822
+            owns = 5007
+            owns = 7209
+            owns = 3968
+            owns = 1648
+            owns = 8331
+            owns = 392
+            owns = 10796
+            owns = 6631
+            owns = 8754
+            owns = 1312
+            owns = 10413
+        }
+    }
 
     fire_only_once = yes
 
     option = { 
-
         name = "argentine_event.8.a" #Release an Independent Chile
-        
-    
-   p:9285 = {
-        create_country = {
-            name = {
-                name = "CCH"
-                adjective = "CCH_ADJ"
-            }
-            change_country_tag = CCH
-            set_primary_culture = chilean
-            set_country_religion = catholic
-            change_country_flag = CHL_R1 #La Estrella Solitaria
-            save_scope_as = new_cch_country
-            add_opinion = {
-                modifier = opinion_appreciate_protection
-                target = root
-            }
-        }
-    }
-
-    every_owned_province = {
-        limit = {
-            OR = {
-                is_in_area = Norte_Grande
-                is_in_area = Norte_Chico
-                is_in_area = Chile_Central
-                is_in_area = Chile_del_Sur
-                is_in_area = Valdivia
+        p:9285 = {
+            create_country = {
+                name = {
+                    name = "CCH"
+                    adjective = "CCH_ADJ"
+                }
+                save_scope_as = new_cch_country
+                add_opinion = {
+                    modifier = opinion_appreciate_protection
+                    target = root
+                }
+                hidden_effect = {
+                    change_country_tag = CCH
+                    set_primary_culture = chilean
+                    set_country_religion = catholic
+                    change_government = revolutionary_republic
+                    change_country_flag = CHL_R1 #La Estrella Solitaria
+                    char:555 = {
+                        move_country_with_message = scope:new_cch_country
+                    }
+                    set_as_ruler = char:555
+                }
             }
         }
-        set_owned_by = scope:new_cch_country
-    }
-    add_aggressive_expansion = -30
-    add_legitimacy = 100
-    add_military_experience = 25   
-    add_war_exhaustion = -7
-    add_stability = 15 
-    add_political_influence = 100
+        every_owned_province = {
+            limit = {
+                OR = {
+                    is_in_area = Norte_Grande
+                    is_in_area = Norte_Chico
+                    is_in_area = Chile_Central
+                    is_in_area = Chile_del_Sur
+                    is_in_area = Valdivia
+                }
+            }
+            set_owned_by = scope:new_cch_country
+        }
+        add_aggressive_expansion = -30
+        add_legitimacy = 100
+        add_military_experience = 25   
+        add_war_exhaustion = -7
+        add_stability = 15 
+        add_political_influence = 100
     }
 
     option = { 
-
         name = "argentine_event.8.b" #Keep the land
-
-	add_aggressive_expansion = 20
-    add_legitimacy = -30  
-    add_war_exhaustion = 5
-    add_stability = -15
-    add_political_influence = -75
-
+        add_aggressive_expansion = 20
+        add_legitimacy = -30  
+        add_war_exhaustion = 5
+        add_stability = -15
+        add_political_influence = -75
     }
 }
 
