@@ -1,0 +1,64 @@
+﻿"QSM"={
+	country="QSM"
+	557={
+		first_name="Ahmad"
+		family_name="Al-Mutawakkil"
+		birth_date=1756.09.10
+		culture="yemeni"
+		religion="shiite"
+		no_traits=yes
+		add_gold=70
+		add_popularity=80
+		c:QSM={
+			set_as_ruler=char:557
+		}
+		dna=""
+	}
+}
+"DRY"={
+	country="DRY"
+	558={
+		first_name="Abdullah bin Saud"
+		family_name="Al-Saud"
+		birth_date=1785.04.27
+		culture="bedouin"
+		religion="wahhabi"
+		no_traits=yes
+		add_gold=120
+		add_popularity=70
+		c:DRY={
+			set_as_ruler=char:558
+		}
+		dna=""
+	}
+}
+"NJR"={
+	country="NJR"
+	559={
+		first_name="Yusuf"
+		family_name="Al-Makrami"
+		birth_date=1772.11.10
+		culture="yemeni"
+		religion="shiite"
+		no_traits=yes
+		c:NJR={
+			set_as_ruler=char:559
+		}
+		dna=""
+	}
+}
+"LHJ"={
+	country="LHJ"
+	560={
+		first_name="Ahmad I ibn Abd al-Karim"
+		family_name="Al-Abdali"
+		birth_date=1762.05.02
+		culture="yemeni"
+		religion="sunni"
+		no_traits=yes
+		c:LHJ={
+			set_as_ruler=char:560
+		}
+		dna=""
+	}
+}

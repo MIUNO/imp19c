@@ -7081,6 +7081,12 @@ MNA = { #maranao
 	}
 }
 
+NJR = { #najran
+	pattern = "pattern_solid.dds"
+	color1 = "NJR_green"
+	color2 = "NJR_green"
+}
+
 #TS4 = {
 #	pattern = "pattern_solid.dds"
 #	color1 = "full_black"

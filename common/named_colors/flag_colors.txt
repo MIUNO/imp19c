@@ -347,6 +347,7 @@
 	KHV_blue = rgb { 64 189 174 }
 	KOK_green = rgb { 87 162 54 }
 	KOK_yellow = rgb { 255 249 96 }
+	NJR_green = rgb { 47 105 12 }
 
 	PR2_green = rgb { 4 122 4 }
 	PR2_yellow = rgb { 245 183 27 }

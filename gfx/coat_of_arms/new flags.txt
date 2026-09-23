@@ -239,6 +239,7 @@ SLU
 MGO
 BRU
 MNA
+NJR
 
 ottoman empire:
 TUR

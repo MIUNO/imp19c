@@ -183,9 +183,6 @@
 		c:FRK={
 			set_as_ruler=char:394 #senior mayor
 		}
-		c:FRK={
-			set_as_coruler=char:395 #actually no junior mayor until next september
-		}
 	}
 	395={
 		first_name="Johann Wilhelm"
@@ -193,6 +190,9 @@
 		birth_date=1755.11.16
 		culture="north_german"
 		religion="lutheran"
+		c:FRK={
+			set_as_coruler=char:395 #actually no junior mayor until next september
+		}
 	}
 	396={
 		first_name="Friedrich Joseph"
