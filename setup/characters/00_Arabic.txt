@@ -18,7 +18,7 @@
 "DRY"={
 	country="DRY"
 	558={
-		first_name="Abdullah bin Saud"
+		first_name="Abdullah"
 		family_name="Al-Saud"
 		birth_date=1785.04.27
 		culture="bedouin"
@@ -50,7 +50,7 @@
 "LHJ"={
 	country="LHJ"
 	560={
-		first_name="Ahmad I ibn Abd al-Karim"
+		first_name="Ahmad"
 		family_name="Al-Abdali"
 		birth_date=1762.05.02
 		culture="yemeni"
@@ -58,6 +58,141 @@
 		no_traits=yes
 		c:LHJ={
 			set_as_ruler=char:560
+		}
+		dna=""
+	}
+}
+"HSB"={
+	country="HSB"
+	561={
+		first_name="Fatin"
+		family_name="Al-Hawshabi"
+		birth_date=1776.02.20
+		culture="yemeni"
+		religion="sunni"
+		no_traits=yes
+		c:HSB={
+			set_as_ruler=char:561
+		}
+		dna=""
+	}
+}
+"FDL"={
+	country="FDL"
+	562={
+		first_name="Ahmed III"
+		family_name="Al-Fadhli"
+		birth_date=1755.12.02
+		culture="yemeni"
+		religion="sunni"
+		no_traits=yes
+		c:FDL={
+			set_as_ruler=char:562
+		}
+		dna=""
+	}
+}
+"LAU"={
+	country="LAU"
+	563={
+		first_name="Nasir"
+		family_name="Al-Awlaqi"
+		birth_date=1776.07.03
+		culture="yemeni"
+		religion="sunni"
+		no_traits=yes
+		c:LAU={
+			set_as_ruler=char:563
+		}
+		dna=""
+	}
+}
+"UAU"={
+	country="UAU"
+	564={
+		first_name="Munassar"
+		family_name="Al-Awlaqi"
+		birth_date=1768.05.19
+		culture="yemeni"
+		religion="sunni"
+		no_traits=yes
+		c:UAU={
+			set_as_ruler=char:564
+		}
+		dna=""
+	}
+}
+"BEI"={
+	country="BEI"
+	565={
+		first_name="Hussein"
+		family_name="Al-Habieli"
+		birth_date=1770.08.22
+		culture="yemeni"
+		religion="sunni"
+		no_traits=yes
+		c:BEI={
+			set_as_ruler=char:565
+		}
+		dna=""
+	}
+}
+"WHD"={
+	country="WHD"
+	566={
+		first_name="Abd Allah"
+		family_name="Al-Wahidi"
+		birth_date=1787.01.15
+		culture="yemeni"
+		religion="sunni"
+		no_traits=yes
+		c:WHD={
+			set_as_ruler=char:566
+		}
+		dna=""
+	}
+}
+"KTR"={
+	country="KTR"
+	567={
+		first_name="Husein"
+		family_name="Al-Mansur"
+		birth_date=1769.09.08
+		culture="yemeni"
+		religion="sunni"
+		no_traits=yes
+		c:KTR={
+			set_as_ruler=char:567
+		}
+		dna=""
+	}
+}
+"MHR"={
+	country="MHR"
+	568={
+		first_name="Sad"
+		family_name="Al-Mahri"
+		birth_date=1788.03.17
+		culture="yemeni"
+		religion="sunni"
+		no_traits=yes
+		c:MHR={
+			set_as_ruler=char:568
+		}
+		dna=""
+	}
+}
+"OMA"={
+	country="OMA"
+	569={
+		first_name="Said"
+		family_name="Al-Said"
+		birth_date=1791.06.05
+		culture="omani"
+		religion="ibadi"
+		no_traits=yes
+		c:OMA={
+			set_as_ruler=char:569
 		}
 		dna=""
 	}

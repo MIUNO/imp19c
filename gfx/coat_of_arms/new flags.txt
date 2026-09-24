@@ -240,6 +240,8 @@ MGO
 BRU
 MNA
 NJR
+FDL
+KTR
 
 ottoman empire:
 TUR

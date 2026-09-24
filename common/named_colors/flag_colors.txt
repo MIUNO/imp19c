@@ -348,6 +348,11 @@
 	KOK_green = rgb { 87 162 54 }
 	KOK_yellow = rgb { 255 249 96 }
 	NJR_green = rgb { 47 105 12 }
+	FDL_green = rgb { 73 137 96 }
+	FDL_blue = rgb { 36 174 214 }
+	KTR_red = rgb { 156 51 39 }
+	KTR_yellow = rgb { 209 170 57 }
+	KTR_green = rgb { 47 105 12 }
 
 	PR2_green = rgb { 4 122 4 }
 	PR2_yellow = rgb { 245 183 27 }

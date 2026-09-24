@@ -38156,6 +38156,13 @@ country = {
 
 			capital = 8162
 
+			historical_regnal_numbers = {
+				Othman = 1
+				Fadhl = 1
+				Abdullah = 2
+				Ahmed = 3
+			}
+
 			own_control_core = { 
 				8162
 			}
