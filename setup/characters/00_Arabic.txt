@@ -197,3 +197,108 @@
 		dna=""
 	}
 }
+"ALJ"={
+	country="ALJ"
+	570={
+		first_name="Rahmah"
+		family_name="Al-Jalahma"
+		birth_date=1760.11.25
+		culture="bedouin"
+		religion="shiite"
+		no_traits=yes
+		c:ALJ={
+			set_as_ruler=char:570
+		}
+		dna=""
+	}
+}
+"BHR"={
+	country="BHR"
+	571={
+		first_name="Abdullah"
+		family_name="Al-Khalifa"
+		birth_date=1769.09.23
+		culture="bedouin"
+		religion="shiite"
+		no_traits=yes
+		c:BHR={
+			set_as_ruler=char:571
+		}
+		dna=""
+	}
+}
+"ABU"={
+	country="ABU"
+	572={
+		first_name="Shakhbut"
+		family_name="Al-Nahyan"
+		birth_date=1773.07.04
+		culture="bedouin"
+		religion="sunni"
+		no_traits=yes
+		c:ABU={
+			set_as_ruler=char:572
+		}
+		dna=""
+	}
+}
+"DUB"={
+	country="DUB"
+	573={
+		first_name="Hasher"
+		family_name="Al-Maktoum"
+		birth_date=1792.05.12
+		culture="bedouin"
+		religion="sunni"
+		no_traits=yes
+		c:DUB={
+			set_as_ruler=char:573
+		}
+		dna=""
+	}
+}
+"SHJ"={
+	country="SHJ"
+	574={
+		first_name="Sheikh"
+		family_name="Al-Qasimi"
+		birth_date=1781.09.17
+		culture="bedouin"
+		religion="sunni"
+		no_traits=yes
+		c:SHJ={
+			set_as_ruler=char:574
+		}
+		dna=""
+	}
+}
+"RSA"={
+	country="RSA"
+	575={
+		first_name="Hassan"
+		family_name="Al-Qasimi"
+		birth_date=1787.04.21
+		culture="bedouin"
+		religion="sunni"
+		no_traits=yes
+		c:RSA={
+			set_as_ruler=char:575
+		}
+		dna=""
+	}
+}
+"KWT"={
+	country="KWT"
+	576={
+		first_name="Jaber"
+		family_name="Al-Sabah"
+		birth_date=1775.07.01
+		culture="bedouin"
+		religion="sunni"
+		no_traits=yes
+		c:KWT={
+			set_as_ruler=char:576
+		}
+		dna=""
+	}
+}
