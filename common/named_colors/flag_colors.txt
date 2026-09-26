@@ -353,6 +353,27 @@
 	KTR_red = rgb { 156 51 39 }
 	KTR_yellow = rgb { 209 170 57 }
 	KTR_green = rgb { 47 105 12 }
+	LHJ_red = rgb { 182 60 53 }
+	LAU_blue = rgb { 7 72 124 }
+	LAU_green = rgb { 47 105 12 }
+	LAU_red = rgb { 182 60 53 }
+	LAU_brown = rgb { 136 80 65 }
+	HSB_red = rgb { 130 33 29 }
+	DUB_red = rgb { 200 16 46 }
+	BEI_brown = rgb { 88 49 38 }
+	BEI_green = rgb { 47 105 12 }
+	BEI_yellow = rgb { 255 207 5 }
+	BEI_red = rgb { 182 60 53 }
+	QSM_red = rgb { 130 33 29 }
+	MHR_green = rgb { 1 137 1 }
+	MHR_red = rgb { 235 22 41 }
+	OMA_red = rgb { 219 23 27 }
+	OMA_green = rgb { 2 128 2 }
+	SHJ_red = rgb { 191 0 1 }
+	ABU_red = rgb { 191 0 0 }
+	KWT_red = rgb { 206 17 38 }
+	RSA_red = rgb { 206 17 38 }
+	RSA_green = rgb { 0 115 47 }
 
 	PR2_green = rgb { 4 122 4 }
 	PR2_yellow = rgb { 245 183 27 }

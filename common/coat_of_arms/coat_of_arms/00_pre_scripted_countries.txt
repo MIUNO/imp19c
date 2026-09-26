@@ -65,9 +65,14 @@ ABK = { #abkhazia
 
 ABU = { #abu_dhabi
 	pattern = "pattern_solid.dds"
-	color1 = "phrygia_red"
-	color2 = "phrygia_red"
-
+	color1 = "ABU_red"
+	color2 = "full_white"
+	
+	colored_emblem = {
+		texture = "symbols/box.dds"
+		color1 = "full_white"
+		instance = { position = { 0.2 0.2 } scale = { 0.4 0.4 } }
+	}
 }
 
 ADM = { #adamawa
@@ -466,12 +471,20 @@ BDE = { #bedde
 }
 
 BEI = { #beihan
-	pattern = "pattern_solid.dds"
-	color1 = "maurya_brown"
-	color2 = "ck2_green"
+	pattern = "pattern_tricolor_horizontal_01.dds"
+	color1 = "BEI_brown"
+	color2 = "BEI_green"
+	color3 = "BEI_yellow"
 
-	textured_emblem = {
-		texture = "te_BEI.dds"
+	colored_emblem = {
+		texture = "symbols/box_02.dds"
+		color1 = "BEI_red"
+		instance = { position = { -0.17 0.5 } scale = { 1.0 1.0 } rotation = 45 }
+	}
+	colored_emblem = {
+		texture = "symbols/crescent_02.dds"
+		color1 = "full_white"
+		instance = { position = { 0.16 0.5 } scale = { -0.25 0.5 } }
 	}
 }
 
@@ -1484,7 +1497,7 @@ DRY = { #diryah
 	colored_emblem = {
 		texture = "symbols/crescent_01.dds"
 		color1 = "full_white"
-		instance = { position = { 0.35 0.5 } scale = { 0.5 0.7 } }
+		instance = { position = { 0.35 0.5 } scale = { 0.5 0.75 } }
 	}
 }
 
@@ -1502,11 +1515,13 @@ DTE = { #date
 
 DUB = { #dubai
 	pattern = "pattern_solid.dds"
-	color1 = "phrygia_red"
-	color2 = "pure_white"
+	color1 = "DUB_red"
+	color2 = "full_white"
 
-	textured_emblem = {
-		texture = "te_DUB.dds"
+	colored_emblem = {
+		texture = "symbols/box.dds"
+		color1 = "full_white"
+		instance = { position = { 0.15 0.5 } scale = { 0.3 1.0 } }
 	}
 }
 
@@ -2116,11 +2131,13 @@ HOL = { #holstein
 
 HSB = { #haushabi
 	pattern = "pattern_solid.dds"
-	color1 = "spartan_rust"
-	color2 = "pure_white"
+	color1 = "HSB_red"
+	color2 = "full_white"
 
-	textured_emblem = {
-		texture = "te_HSB.dds"
+	colored_emblem = {
+		texture = "middle_east/HSB/HSB.dds"
+		color1 = "full_white"
+		instance = { position = { 0.5 0.5 } scale = { 0.75 0.25 } }
 	}
 }
 
@@ -2842,8 +2859,14 @@ KWA = { #kwararafa
 
 KWT = { #kuwait
 	pattern = "pattern_solid.dds"
-	color1 = "roman_red"
-	color2 = "roman_red"
+	color1 = "KWT_red"
+	color2 = "full_white"
+
+	colored_emblem = {
+		texture = "symbols/teeth_left.dds"
+		color1 = "full_white"
+		instance = { position = { -0.1 0.5 } scale = { 0.6 1.2 } }
+	}
 }
 
 KYR = { #kyrgyzstan
@@ -2879,12 +2902,25 @@ LAK = { #lakota
 }
 
 LAU = { #lower_aulaki
-	pattern = "pattern_solid.dds"
-	color1 = "pitch_black"
-	color2 = "ck2_blue"
+	pattern = "pattern_horizontal_split_01.dds"
+	color1 = "full_black"
+	color2 = "LAU_blue"
 
-	textured_emblem = {
-		texture = "te_LAU.dds"
+	colored_emblem = {
+		texture = "symbols/box_02.dds"
+		color1 = "LAU_green"
+		instance = { position = { -0.09 0.5 } scale = { 0.6 1.0 } rotation = 45 }
+	}
+	colored_emblem = {
+		texture = "symbols/circle_01.dds"
+		color1 = "full_white"
+		instance = { position = { 0.6 0.5 } scale = { 0.396 0.6 } }
+	}
+	colored_emblem = {
+		texture = "middle_east/LAU/LAU.dds"
+		color1 = "LAU_brown"
+		color2 = "LAU_red"
+		instance = { position = { 0.6 0.53 } scale = { 0.33 0.5 } }
 	}
 }
 
@@ -2959,12 +2995,14 @@ NGQ = { #nangchen
 }
 
 LHJ = { #lahej
-	pattern = "pattern_solid.dds"
-	color1 = "phrygia_red"
-	color2 = "pure_white"
+	pattern = "pattern_vertical_split_01.dds"
+	color1 = "LHJ_red"
+	color2 = "full_white"
 
-	textured_emblem = {
-		texture = "te_LHJ.dds"
+	colored_emblem = {
+		texture = "middle_east/LHJ/LHJ.dds"
+		color1 = "full_white"
+		instance = { position = { 0.265 0.5 } scale = { 0.5 0.75 } }
 	}
 }
 
@@ -3992,10 +4030,13 @@ OLD = { #oldenburg
 
 OMA = { #oman
 	pattern = "pattern_solid.dds"
-	color1 = "pure_white"
-	color2 = "pure_white"
-	textured_emblem = {
-		texture = "te_OMA.dds"
+	color1 = "full_white"
+	color2 = "OMA_red"
+
+	colored_emblem = {
+		texture = "middle_east/OMA/OMA.dds"
+		color1 = "OMA_red"
+		instance = { position = { 0.2 0.3 } scale = { 0.33 0.5 } }
 	}
 } 
 
@@ -4340,8 +4381,8 @@ QNG = { #qinghai
 
 QSM = { #qasimi
 	pattern = "pattern_solid.dds"
-	color1 = "roman_red"
-	color2 = "roman_red"
+	color1 = "QSM_red"
+	color2 = "full_white"
 }
 
 QTO = { #quito
@@ -5130,7 +5171,6 @@ TUR = { #turkey
 		color1 = "full_white"
 		instance = { position = { 0.52 0.5 } scale = { 0.2 0.25 } }
 	}
-
 	colored_emblem = {
 		texture = "symbols/crescent_01.dds"
 		color1 = "full_white"
@@ -5140,11 +5180,13 @@ TUR = { #turkey
 
 UAU = { #upper_aulaki
 	pattern = "pattern_solid.dds"
-	color1 = "pitch_black"
-	color2 = "pure_white"
+	color1 = "full_black"
+	color2 = "full_white"
 
-	textured_emblem = {
-		texture = "te_UAU.dds"
+	colored_emblem = {
+		texture = "middle_east/UAU/UAU.dds"
+		color1 = "full_white"
+		instance = { position = { 0.5 0.5 } scale = { 0.75 0.25 } }
 	}
 }
 
@@ -5730,12 +5772,20 @@ ISQ = {
 }
 
 MHR = {
-	pattern = "pattern_solid.dds"
-	color1 = "bone_white"
-	color2 = "bone_white"
+	pattern = "pattern_tricolor_horizontal_01.dds"
+	color1 = "MHR_green"
+	color2 = "full_white"
+	color3 = "MHR_red"
 
-	textured_emblem = {
-		texture = "te_MHR.dds"
+	colored_emblem = {
+		texture = "symbols/star_01.dds"
+		color1 = "full_black"
+		instance = { position = { 0.6 0.49 } scale = { 0.08 0.1 } rotation = 45 }
+	}
+	colored_emblem = {
+		texture = "symbols/crescent_03.dds"
+		color1 = "full_black"
+		instance = { position = { 0.5 0.5 } scale = { 0.18 0.25 } }
 	}
 }
 
@@ -7112,6 +7162,43 @@ KTR = { #kathiri
 		instance = { position = { 0.13 0.35 } scale = { 0.15 0.22 } }
 		instance = { position = { 0.28 0.5 } scale = { 0.15 0.22 } }
 		instance = { position = { 0.13 0.65 } scale = { 0.15 0.22 } }
+	}
+}
+
+SHJ = { #sharjah
+	pattern = "pattern_solid.dds"
+	color1 = "full_white"
+	color2 = "SHJ_red"
+	
+	colored_emblem = {
+		texture = "symbols/box_02.dds"
+		color1 = "SHJ_red"
+		instance = { position = { 0.5 0.5 } scale = { 0.825 0.5 } }
+	}
+}
+
+RSA = { #ras_al_khaimah
+	pattern = "pattern_tricolor_horizontal_01.dds"
+	color1 = "RSA_green"
+	color2 = "full_white"
+	color3 = "RSA_red"
+	
+	colored_emblem = {
+		texture = "middle_east/RSA/RSA.dds"
+		color1 = "full_black"
+		instance = { position = { 0.5 0.5 } scale = { 0.75 0.25 } }
+	}
+}
+
+ALJ = { #al_jalahma
+	pattern = "pattern_solid.dds"
+	color1 = "DRY_green"
+	color2 = "full_white"
+
+	colored_emblem = {
+		texture = "middle_east/ALJ/ALJ.dds"
+		color1 = "full_white"
+		instance = { position = { 0.5 0.5 } scale = { 0.75 0.25 } }
 	}
 }
 
